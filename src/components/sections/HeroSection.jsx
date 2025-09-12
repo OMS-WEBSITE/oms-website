@@ -12,7 +12,7 @@ const HeroSection = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
           <div>
             <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-800 mb-4">
-              <span className="marker-underline">OMS Software</span> — Workflow &amp; Compliance Platform
+              <span className="marker-underline">OMS Software</span> — Workflow &amp; TIC Compliance Platform
             </h1>
             <p className="text-lg text-gray-700 mb-8">
               Cloud-based solutions for Testing, Inspection, and Certification (TIC) companies, NDT/DT operations, and laboratories.
