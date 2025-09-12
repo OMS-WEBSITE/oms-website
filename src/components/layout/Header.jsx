@@ -6,7 +6,7 @@ const Header = () => {
     <header className="bg-white py-4 border-b border-gray-100">
       <div className="container mx-auto max-w-7xl px-4">
         <div className="flex justify-between items-center">
-        <a href="/" className="text-orange-500 text-2xl font-bold">audit pro</a>
+        <a href="/" className="text-orange-500 text-2xl font-bold">OMS logo</a>
           
           <nav className="hidden md:flex space-x-8">
             <a href="#" className="text-gray-600 hover:text-gray-900">Platform</a>

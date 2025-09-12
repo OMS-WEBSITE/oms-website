@@ -26,7 +26,7 @@ const HeroSection = () => {
                 Explore features
               </Button>
             </div>
-            <p className="text-sm text-gray-500 mt-4">Trusted by TIC teams and labs.</p>
+            <p className="text-sm text-gray-500 mt-4">The choice of TIC professionals and labs across the globe.</p>
           </div>
 
           <div className="relative bg-white p-6 rounded-xl shadow-lg">
