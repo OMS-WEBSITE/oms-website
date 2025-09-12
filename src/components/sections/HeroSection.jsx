@@ -42,16 +42,16 @@ const HeroSection = () => {
                 <span className="mr-2">❤</span> Save report
               </Button>
             </div>
-
-            <div
-              className="relative mt-4 mb-8 h-48 bg-gray-100 rounded-lg flex items-center justify-center cursor-pointer"
-              onClick={() => setVideoOpen(true)}
-            >
-              <div className="w-16 h-16 bg-indigo-600 rounded-full flex items-center justify-center">
-                <Play className="w-8 h-8 text-white" />
-              </div>
+            <div className="aspect-video rounded-lg overflow-hidden">
+              <video
+                src="/videos/oms-video.mp4"
+                controls
+                autoPlay
+                className="w-full h-full rounded-lg"
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
-
             <div className="grid grid-cols-2 gap-4">
               <div className="bg-gray-50 p-4 rounded-lg">
                 <p className="text-xs text-gray-500">24</p>
@@ -66,7 +66,7 @@ const HeroSection = () => {
         </div>
       </div>
 
-      <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
+      {/* <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
         <DialogContent className="sm:max-w-3xl">
           <DialogClose className="absolute right-4 top-4 text-gray-500 hover:text-gray-800">
             <X className="h-5 w-5" />
@@ -77,7 +77,25 @@ const HeroSection = () => {
             </p>
           </div>
         </DialogContent>
+      </Dialog> */}
+      <Dialog open={videoOpen} onOpenChange={setVideoOpen}>
+        <DialogContent className="sm:max-w-3xl">
+          <DialogClose className="absolute right-4 top-4 text-gray-500 hover:text-gray-800">
+            <X className="h-5 w-5" />
+          </DialogClose>
+          <div className="aspect-video rounded-lg overflow-hidden">
+            <video
+              src="/videos/oms-video.mp4"
+              controls
+              autoPlay
+              className="w-full h-full rounded-lg"
+            >
+              Your browser does not support the video tag.
+            </video>
+          </div>
+        </DialogContent>
       </Dialog>
+
     </div>
   );
 };

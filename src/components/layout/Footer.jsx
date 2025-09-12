@@ -8,13 +8,20 @@ const Footer = () => {
           <div>
             <h3 className="text-orange-500 text-2xl font-bold mb-6">audit pro </h3>
             <div className="flex space-x-4 text-gray-600">
-              <span>in</span>
+              <a
+                href="https://www.linkedin.com/in/pranay-wadyalkar-00054276/recent-activity/all/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-blue-600 transition-colors"
+              >
+                LinkedIn
+              </a>
               <span>f</span>
               <span>x</span>
               <span>yt</span>
             </div>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-medium text-gray-800 mb-4">Platform</h3>
             <ul className="space-y-3">
@@ -25,7 +32,7 @@ const Footer = () => {
               <li><a href="/help-center" className="text-gray-600 hover:text-gray-900">Help Center</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-medium text-gray-800 mb-4">Why Audit Pro</h3>
             <ul className="space-y-3">
@@ -35,7 +42,7 @@ const Footer = () => {
               <li><a href="/faq" className="text-gray-600 hover:text-gray-900">FAQ</a></li>
             </ul>
           </div>
-          
+
           <div>
             <h3 className="text-lg font-medium text-gray-800 mb-4">Resources</h3>
             <ul className="space-y-3">
@@ -47,7 +54,7 @@ const Footer = () => {
             </ul>
           </div>
         </div>
-        
+
         <div className="border-t border-gray-200 mt-12 pt-8 text-sm text-gray-600">
           © 2025, Audit Pro. All rights reserved
         </div>
