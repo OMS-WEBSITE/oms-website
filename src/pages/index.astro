@@ -4,10 +4,47 @@ import AuditProApp from '../components/AuditProApp';
 
 // SEO metadata specific to homepage
 const seo = {
-	title: "Audit Pro - Modern Security Auditing & Compliance Platform",
-	description: "Transform your security auditing process with AI-powered assessment tools, automated compliance checks, and comprehensive quality management. Built with Astro, React, and TypeScript for optimal performance.",
-	image: "/og-image.png",
-	canonicalURL: Astro.site + Astro.url.pathname,
+	title: "OMS Software - Workflow & Compliance Platform for Testing, Inspection, and Certification",
+  description:
+    "OMS Software delivers cloud-based solutions for Testing, Inspection, and Certification (TIC) companies, NDT/DT operations, and laboratories. Streamline workflow management, audits, reporting, and compliance with a secure and scalable platform.",
+  image: "/og-image.png", // update with your hosted OG image path
+  canonicalURL: Astro.site + Astro.url.pathname,
+
+  // Extended Meta
+  keywords: [
+    "OMS Software",
+    "workflow management",
+    "compliance software",
+    "TIC software",
+    "testing software",
+    "inspection software",
+    "NDT software",
+    "DT software",
+    "quality management",
+    "audit automation",
+    "ISO compliance",
+    "laboratory software"
+  ],
+
+  openGraph: {
+    type: "website",
+    url: Astro.site + Astro.url.pathname,
+    title: "OMS Software - Workflow & Compliance Platform",
+    description:
+      "Cloud-based platform for testing, inspection, certification, and compliance. Empowering TIC companies and labs with automation and efficiency.",
+    image: "/og-image.png",
+    site_name: "OMS Software",
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    site: "@omssoftware", // replace with your actual handle if available
+    creator: "@omssoftware",
+    title: "OMS Software - Workflow & Compliance Platform",
+    description:
+      "Streamline testing, inspection, and compliance with OMS Software. Secure, cloud-based, and built for TIC companies & labs.",
+    image: "/og-image.png",
+  },
 };
 ---
 
