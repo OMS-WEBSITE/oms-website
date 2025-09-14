@@ -1,10 +1,10 @@
-# Audit Pro - Modern IT Security Auditing Platform
+# OMS Software - The choice of TIC professionals and labs across the globe.
 
 A professional Astro 5 theme built with React, TypeScript, and Tailwind CSS that transforms security auditing with AI-powered assessment tools, automated compliance checks, and comprehensive quality management workflows.
 
 [**_Live Preview Here_**](https://audit.corytrimm.com/)
 
-![Audit Pro Preview](./preview.png)
+![OMS Software Preview](./preview.png)
 
 ## Getting Started
 

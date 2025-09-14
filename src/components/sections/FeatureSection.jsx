@@ -166,10 +166,10 @@ const FeatureSection = () => {
           
           <div className="md:col-span-1">
             <h2 className="text-4xl font-bold text-gray-800 mb-6 leading-tight">
-              You Can Do It All With <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">Audit Pro</span>
+              You Can Do It All With <span className="bg-gradient-to-r from-blue-600 to-indigo-600 text-transparent bg-clip-text">OMS Software</span>
             </h2>
             <p className="text-xl text-gray-600 mb-10">
-              Experience the future of IT security auditing with Audit Pro.
+              Experience the future of IT security auditing with OMS Software.
             </p>
             
             <div className="space-y-6">

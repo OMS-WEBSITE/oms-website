@@ -6,7 +6,7 @@ const Footer = () => {
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-orange-500 text-2xl font-bold mb-6">audit pro </h3>
+            <h3 className="text-orange-500 text-2xl font-bold mb-6">OMS Software </h3>
             <div className="flex space-x-4 text-gray-600">
               <a
                 href="https://www.linkedin.com/in/pranay-wadyalkar-00054276/recent-activity/all/"
@@ -34,7 +34,7 @@ const Footer = () => {
           </div>
 
           <div>
-            <h3 className="text-lg font-medium text-gray-800 mb-4">Why Audit Pro</h3>
+            <h3 className="text-lg font-medium text-gray-800 mb-4">Why OMS Software</h3>
             <ul className="space-y-3">
               <li><a href="/why-different" className="text-gray-600 hover:text-gray-900">How We're Different</a></li>
               <li><a href="/success-stories" className="text-gray-600 hover:text-gray-900">Success Stories</a></li>
@@ -56,7 +56,7 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-200 mt-12 pt-8 text-sm text-gray-600">
-          © 2025, Audit Pro. All rights reserved
+          © 2025, OMS Software. All rights reserved
         </div>
       </div>
     </footer>

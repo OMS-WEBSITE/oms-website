@@ -11,7 +11,7 @@ const CTASection = () => {
         </h2>
         
         <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-          Since 2015, over 4,000 organizations have used Audit Pro to find and win more audit opportunities, empowering them to expand their impact on critical missions such as evaluating cybersecurity measures, ensuring data protection, and improving IT security standards.
+          Since 2015, over 4,000 organizations have used OMS Software to find and win more audit opportunities, empowering them to expand their impact on critical missions such as evaluating cybersecurity measures, ensuring data protection, and improving IT security standards.
         </p>
         
         <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">

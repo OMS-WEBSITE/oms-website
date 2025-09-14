@@ -6,19 +6,19 @@ import { Star } from 'lucide-react';
 const TestimonialsSection = () => {
   const testimonials = [
     {
-      quote: "Audit Pro is a one-stop shop where I can research and track organizations' security needs all in one place.",
+      quote: "OMS Software is a one-stop shop where I can research and track organizations' security needs all in one place.",
       name: "Sarah Chen",
       title: "Chief Information Security Officer",
       company: "TechSecure Solutions"
     },
     {
-      quote: "Audit Pro has fundamentally changed the way we work, especially finding organizations that match our security expertise.",
+      quote: "OMS Software has fundamentally changed the way we work, especially finding organizations that match our security expertise.",
       name: "Theresa Anderson",
       title: "Security Audit Director",
       company: "CyberGuard Consulting"
     },
     {
-      quote: "Audit Pro is an all-year round platform where we can track security assessments and compliance history. The documentation and reporting features make everything easier.",
+      quote: "OMS Software is an all-year round platform where we can track security assessments and compliance history. The documentation and reporting features make everything easier.",
       name: "Beth Noble",
       title: "Senior Security Auditor",
       company: "SecureNet Systems"
@@ -45,7 +45,7 @@ const TestimonialsSection = () => {
             ))}
           </div>
           <h2 className="text-3xl font-bold text-gray-800 mb-6">
-            Teams of 1 to 100 Win More with Audit Pro
+            Teams of 1 to 100 Win More with OMS Software
           </h2>
         </div>
         

@@ -19,7 +19,7 @@ const PricingSection = () => {
         {/* Comparison Section */}
         <div className="mb-20">
           <h2 className="text-3xl font-bold text-center text-gray-800 mb-12">
-            Why choose Audit Pro over spreadsheets?
+            Why choose OMS Software over spreadsheets?
           </h2>
           <div className="grid md:grid-cols-2 gap-8">
             {/* Google Sheets */}
@@ -58,13 +58,13 @@ const PricingSection = () => {
               </ul>
             </div>
 
-            {/* Audit Pro */}
+            {/* OMS Software */}
             <div className="bg-gradient-to-br from-blue-50 to-indigo-50 rounded-2xl p-8 border border-blue-100">
               <div className="flex items-center mb-6">
                 <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
                   ✨
                 </div>
-                <h3 className="text-xl font-semibold text-gray-800">Audit Pro</h3>
+                <h3 className="text-xl font-semibold text-gray-800">OMS Software</h3>
               </div>
               <ul className="space-y-4">
                 <li className="flex items-start">
