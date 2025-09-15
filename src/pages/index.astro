@@ -2,9 +2,11 @@
 import Layout from '../layouts/main.astro';
 import AuditProApp from '../components/AuditProApp';
 
+const currentYear = new Date().getFullYear();
+
 // SEO metadata specific to homepage
 const seo = {
-	title: "OMS Software - Bangalore - Workflow & Compliance Platform for Testing, Inspection, and Certification",
+  title: `OMS Software — Workflow & TIC Compliance Platform © ${currentYear}`,
   description:
     "OMS Software delivers cloud-based solutions for Testing, Inspection, and Certification (TIC) companies, NDT/DT operations, and laboratories. Streamline workflow management, audits, reporting, and compliance with a secure and scalable platform.",
   image: "/og-image.png", // update with your hosted OG image path
@@ -23,13 +25,13 @@ const seo = {
     "quality management",
     "audit automation",
     "ISO compliance",
-    "laboratory software"
+    "laboratory software",
   ],
 
   openGraph: {
     type: "website",
     url: Astro.site + Astro.url.pathname,
-    title: "OMS Software - Workflow & Compliance Platform",
+    title: `OMS Software — Workflow & TIC Compliance Platform © ${currentYear}`,
     description:
       "Cloud-based platform for testing, inspection, certification, and compliance. Empowering TIC companies and labs with automation and efficiency.",
     image: "/og-image.png",
@@ -40,7 +42,7 @@ const seo = {
     card: "summary_large_image",
     site: "@omssoftware", // replace with your actual handle if available
     creator: "@omssoftware",
-    title: "OMS Software - Workflow & Compliance Platform",
+    title: `OMS Software — Workflow & TIC Compliance Platform © ${currentYear}`,
     description:
       "Streamline testing, inspection, and compliance with OMS Software. Secure, cloud-based, and built for TIC companies & labs.",
     image: "/og-image.png",
@@ -49,5 +51,5 @@ const seo = {
 ---
 
 <Layout {...seo}>
-	<AuditProApp client:load />
+  <AuditProApp client:load />
 </Layout>

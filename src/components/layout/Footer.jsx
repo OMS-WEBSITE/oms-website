@@ -56,7 +56,9 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-200 mt-12 pt-8 text-sm text-gray-600">
-          © 2025, OMS Software. All rights reserved
+          <footer className="text-center py-6 text-sm text-gray-500">
+  © {new Date().getFullYear()}, OMS Software. All rights reserved
+</footer>
         </div>
       </div>
     </footer>

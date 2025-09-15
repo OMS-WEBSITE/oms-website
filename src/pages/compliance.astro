@@ -1,0 +1,22 @@
+---
+import Layout from "../layouts/main.astro";
+
+const seo = {
+  title: "Compliance & Accreditation — OMS Software",
+  description: "Stay audit-ready for ISO/IEC 17025, 17020, 15189, and ISO 9001 with OMS Software. Digital records, document control, competency, reports, and equipment assurance.",
+  image: "/og-image.png",
+  canonicalURL: Astro.site + Astro.url.pathname,
+};
+---
+
+<Layout {...seo}>
+  <section class="max-w-6xl mx-auto px-4 md:px-8 py-12">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">Compliance & Accreditation</h1>
+    <p class="text-gray-700 mb-8">
+      OMS Software helps laboratories and inspection bodies maintain continuous compliance with
+      <strong>ISO/IEC 17025</strong>, <strong>ISO/IEC 17020</strong>, <strong>ISO 15189</strong>, and <strong>ISO 9001</strong>.
+      Your system stays audit-ready by design—no last-minute scramble.
+    </p>
+    <!-- More content here -->
+  </section>
+</Layout>
