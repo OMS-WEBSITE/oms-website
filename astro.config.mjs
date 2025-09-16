@@ -5,7 +5,7 @@ import react from '@astrojs/react';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'http://audit.corytrimm.com',
+  site: 'https://omssoftware.netlify.app/',
   vite: {
       plugins: [tailwindcss()]
 	},
