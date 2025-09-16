@@ -11,13 +11,15 @@ import TestimonialsSection from './sections/TestimonialsSection';
 import FundersSection from './sections/FundersSection';
 import CTASection from './sections/CTASection';
 import PricingCallout from './sections/PricingCallout';
+import VideoSection from './sections/Video';
 
 const AuditProApp = () => {
   return (
     <div className="min-h-screen bg-white">
       <Header />
-      
+
       <main>
+        <VideoSection />
         <HeroSection />
         <ScrollingLogos />
         <FeatureSection />
@@ -29,7 +31,7 @@ const AuditProApp = () => {
         <PricingCallout />
         <CTASection />
       </main>
-      
+
       <Footer />
     </div>
   );
