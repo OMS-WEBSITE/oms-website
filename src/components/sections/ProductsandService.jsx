@@ -3,7 +3,7 @@ import Navbar from "../layout/Navbar";
 
 const ProductsandService = () => {
   return (
-    <section id="productsandservice" className="py-20 bg-gray-50">
+    <section id="productsandservice" className="bg-white-50">
       <Navbar />
     </section>
   );
