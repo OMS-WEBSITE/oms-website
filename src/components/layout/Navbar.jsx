@@ -135,8 +135,6 @@
 
 // export default HeaderWithContent;
 
-
-
 import React, { useState } from "react";
 import { contentMap } from "./ContentData";
 
@@ -166,7 +164,7 @@ const HeaderWithContent = () => {
       {/* Navbar */}
       <header className="sticky top-0 left-0 w-full bg-white border-b border-gray-200 shadow z-50">
         <div className="container mx-auto max-w-7xl px-4 py-4 flex flex-wrap items-center">
-          <nav className="flex flex-wrap space-x-4">
+          <nav className="flex flex-wrap space-x-1">
             {navItems.map((label) => (
               <button
                 key={label}
@@ -174,7 +172,7 @@ const HeaderWithContent = () => {
                   setActiveItem(label);
                   setExpandedSection(null); // close all sections when changing tab
                 }}
-                className={`px-4 py-2 font-semibold rounded-md transition-all duration-300 ${
+                className={`px-2 py-2 font-semibold rounded-md transition-all duration-300 ${
                   activeItem === label
                     ? "bg-orange-100 text-orange-600 border-b-2 border-orange-500"
                     : "text-gray-700 hover:text-orange-500 hover:bg-orange-50"
@@ -235,14 +233,14 @@ const HeaderWithContent = () => {
                         return (
                           <div
                             key={idx}
-                            className="grid grid-cols-1 sm:grid-cols-2 gap-4 my-4"
+                            className="my-4 flex flex-col items-center gap-4"
                           >
                             {block.items.map((img, i) => (
                               <img
                                 key={i}
                                 src={img}
                                 alt={`Image ${i + 1}`}
-                                className="rounded-md shadow-md border border-gray-200"
+                                className="w-full max-w-4xl rounded-md shadow-md border border-gray-200"
                               />
                             ))}
                           </div>
