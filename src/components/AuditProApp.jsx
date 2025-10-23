@@ -38,7 +38,7 @@ const AuditProApp = () => {
         <Support />
         <Partners />
 
-        <HeroSection />
+        {/* <HeroSection />
         <ScrollingLogos />
         <FeatureSection />
         <MatchFinder />
@@ -47,7 +47,7 @@ const AuditProApp = () => {
         <TestimonialsSection />
         <FundersSection />
         <PricingCallout />
-        <CTASection />
+        <CTASection /> */}
       </main>
 
       <Footer />

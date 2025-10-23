@@ -1,64 +1,127 @@
-import React from 'react';
+import React from "react";
+import { FaLinkedin, FaFacebookF, FaTwitter, FaYoutube } from "react-icons/fa";
 
 const Footer = () => {
+  const socials = [
+    {
+      icon: <FaLinkedin size={24} />,
+      href: "https://www.linkedin.com/in/pranay-wadyalkar-00054276/recent-activity/all/",
+      color: "text-blue-700",
+      hoverGlow: "shadow-lg shadow-blue-700/50",
+    },
+    {
+      icon: <FaFacebookF size={24} />,
+      href: "https://www.facebook.com/",
+      color: "text-blue-600",
+      hoverGlow: "shadow-lg shadow-blue-600/50",
+    },
+    {
+      icon: <FaTwitter size={24} />,
+      href: "https://twitter.com/",
+      color: "text-sky-400",
+      hoverGlow: "shadow-lg shadow-sky-400/50",
+    },
+    {
+      icon: <FaYoutube size={24} />,
+      href: "https://www.youtube.com/",
+      color: "text-red-600",
+      hoverGlow: "shadow-lg shadow-red-600/50",
+    },
+  ];
+
   return (
     <footer className="bg-gray-100 py-16">
       <div className="container mx-auto max-w-7xl">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-orange-500 text-2xl font-bold mb-6">OMS Software </h3>
-            <div className="flex space-x-4 text-gray-600">
-              <a
-                href="https://www.linkedin.com/in/pranay-wadyalkar-00054276/recent-activity/all/"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-blue-600 transition-colors"
-              >
-                LinkedIn
-              </a>
-              <span>f</span>
-              <span>x</span>
-              <span>yt</span>
+            <h3 className="text-orange-500 text-2xl font-bold mb-6">
+              OMS Software
+            </h3>
+            <div className="flex space-x-4">
+              {socials.map((social, idx) => (
+                <a
+                  key={idx}
+                  href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className={`w-11 h-11 flex items-center justify-center border border-gray-300 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm shadow-md hover:shadow-lg transition-all duration-300 ${social.color} hover:${social.hoverGlow}`}
+                >
+                  {social.icon}
+                </a>
+              ))}
             </div>
           </div>
 
           <div>
             <h3 className="text-lg font-medium text-gray-800 mb-4">Platform</h3>
             <ul className="space-y-3">
-              <li><a href="/pricing" className="text-gray-600 hover:text-gray-900">Pricing</a></li>
-              <li><a href="/explore-organizations" className="text-gray-600 hover:text-gray-900">Explore Organizations</a></li>
-              <li><a href="/explore-industries" className="text-gray-600 hover:text-gray-900">Explore Industries</a></li>
-              <li><a href="/best-practices" className="text-gray-600 hover:text-gray-900">Best Practices</a></li>
-              <li><a href="/help-center" className="text-gray-600 hover:text-gray-900">Help Center</a></li>
+              {[
+                "Pricing",
+                "Explore Organizations",
+                "Explore Industries",
+                "Best Practices",
+                "Help Center",
+              ].map((item, idx) => (
+                <li key={idx}>
+                  <a
+                    href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="relative text-gray-600 transition-all duration-300 hover:text-orange-500 hover:pl-2 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-orange-500 hover:after:w-full after:transition-all"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-medium text-gray-800 mb-4">Why OMS Software</h3>
+            <h3 className="text-lg font-medium text-gray-800 mb-4">
+              Why OMS Software
+            </h3>
             <ul className="space-y-3">
-              <li><a href="/why-different" className="text-gray-600 hover:text-gray-900">How We're Different</a></li>
-              <li><a href="/success-stories" className="text-gray-600 hover:text-gray-900">Success Stories</a></li>
-              <li><a href="/testimonials" className="text-gray-600 hover:text-gray-900">Testimonials</a></li>
-              <li><a href="/faq" className="text-gray-600 hover:text-gray-900">FAQ</a></li>
+              {[
+                "How We're Different",
+                "Success Stories",
+                "Testimonials",
+                "FAQ",
+              ].map((item, idx) => (
+                <li key={idx}>
+                  <a
+                    href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    className="relative text-gray-600 transition-all duration-300 hover:text-orange-500 hover:pl-2 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-orange-500 hover:after:w-full after:transition-all"
+                  >
+                    {item}
+                  </a>
+                </li>
+              ))}
             </ul>
           </div>
 
           <div>
-            <h3 className="text-lg font-medium text-gray-800 mb-4">Resources</h3>
+            <h3 className="text-lg font-medium text-gray-800 mb-4">
+              Resources
+            </h3>
             <ul className="space-y-3">
-              <li><a href="/blog" className="text-gray-600 hover:text-gray-900">Blog</a></li>
-              <li><a href="/ebooks" className="text-gray-600 hover:text-gray-900">Ebooks</a></li>
-              <li><a href="/newsletter" className="text-gray-600 hover:text-gray-900">Newsletter</a></li>
-              <li><a href="/about" className="text-gray-600 hover:text-gray-900">About Us</a></li>
-              <li><a href="/careers" className="text-gray-600 hover:text-gray-900">Careers</a></li>
+              {["Blog", "Ebooks", "Newsletter", "About Us", "Careers"].map(
+                (item, idx) => (
+                  <li key={idx}>
+                    <a
+                      href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                      className="relative text-gray-600 transition-all duration-300 hover:text-orange-500 hover:pl-2 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-orange-500 hover:after:w-full after:transition-all"
+                    >
+                      {item}
+                    </a>
+                  </li>
+                )
+              )}
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-200 mt-12 pt-8 text-sm text-gray-600">
-          <footer className="text-center py-6 text-sm text-gray-500">
-  © {new Date().getFullYear()}, OMS Software. All rights reserved
-</footer>
+          <div className="text-center py-6 text-sm text-gray-500">
+            © {new Date().getFullYear()}, OMS Software. All rights reserved
+          </div>
         </div>
       </div>
     </footer>

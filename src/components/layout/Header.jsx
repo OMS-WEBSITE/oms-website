@@ -12,7 +12,7 @@ const Header = () => {
     { name: "Partners", id: "partners" },
   ];
 
-  const [activeSection, setActiveSection] = useState("productsandservice");
+  const [activeSection, setActiveSection] = useState(null);
 
   const handleScroll = (id) => {
     const section = document.getElementById(id);
@@ -26,6 +26,11 @@ const Header = () => {
   useEffect(() => {
     const handleScrollEvent = () => {
       const scrollPos = window.scrollY + window.innerHeight / 3;
+
+      if (window.scrollY < 100) {
+        setActiveSection(null);
+        return;
+      }
 
       navItems.forEach((item) => {
         const section = document.getElementById(item.id);
@@ -62,14 +67,18 @@ const Header = () => {
                 <button
                   key={item.id}
                   onClick={() => handleScroll(item.id)}
-                  className={`relative text-gray-700 tracking-wide font-semibold transition-all duration-300 group ${
-                    activeSection === item.id ? "text-orange-500" : "hover:text-orange-500"
+                  className={`relative text-gray-700 tracking-wide font-semibold transition-colors duration-300 group ${
+                    activeSection === item.id
+                      ? "text-orange-500"
+                      : "hover:text-orange-500"
                   }`}
                 >
                   {item.name}
                   <span
-                    className={`absolute left-0 -bottom-1 w-0 h-[2px] bg-orange-500 transition-all duration-300 ${
-                      activeSection === item.id ? "w-full" : "group-hover:w-full"
+                    className={`absolute left-0 -bottom-1 h-[2px] bg-orange-500 w-full origin-left transform transition-transform duration-300 ${
+                      activeSection === item.id
+                        ? "scale-x-100"
+                        : "scale-x-0 group-hover:scale-x-100"
                     }`}
                   />
                 </button>

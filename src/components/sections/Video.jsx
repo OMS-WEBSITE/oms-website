@@ -3,16 +3,120 @@ import AOS from "aos";
 import "aos/dist/aos.css";
 
 const features = [
-  { label: "Business Performance", style: { top: "10%", right: "30%" } },
-  { label: "Accounting", style: { top: "25%", right: "25%" } },
-  { label: "Personnel", style: { top: "40%", right: "20%" } },
-  { label: "Supplier Management", style: { top: "55%", right: "25%" } },
-  { label: "CRM", style: { top: "70%", right: "30%" } },
-  { label: "System Configuration", style: { top: "70%", left: "30%" } },
-  { label: "QMS", style: { top: "55%", left: "25%" } },
-  { label: "Assets", style: { top: "40%", left: "20%" } },
-  { label: "Specification", style: { top: "25%", left: "25%" } },
-  { label: "Test Data Management", style: { top: "10%", left: "30%" } },
+  {
+    label: "Business Performance",
+    sub: [
+      "Sales Report",
+      "Statement",
+      "Productivity Report",
+      "Payroll Report",
+      "Timesheet Report",
+      "Sales Summary",
+      "Revenue Summary",
+      "Bank Summary Statement",
+      "Aged Receivables",
+      "DSO – Days of Sales Open",
+    ],
+
+    style: { top: "10%", right: "30%" },
+  },
+  {
+    label: "Accounting",
+    sub: ["Invoices", "Debt Collection", "Reports"],
+    style: { top: "25%", right: "25%" },
+  },
+  {
+    label: "Personnel",
+    sub: [
+      "Personnel Records",
+      "Timesheets",
+      "Manage Users",
+      "Contact List",
+      "Activity Approval",
+    ],
+    style: { top: "40%", right: "20%" },
+  },
+  {
+    label: "Supplier Management",
+    sub: ["Supplier", "Purchase Order", "Upload Bills"],
+    style: { top: "55%", right: "25%" },
+  },
+  {
+    label: "CRM",
+    sub: [
+      "Leads",
+      "Fee Proposals and Tenders",
+      "Quotation Management",
+      "Managed Industry Types",
+      "Clients",
+      "Bounced Contacts",
+      "Client Info Form",
+      "Reviewed Clients",
+    ],
+    style: { top: "70%", right: "30%" },
+  },
+  {
+    label: "System Configuration",
+    sub: [
+      "System Codes",
+      "Reference Data",
+      "System Images",
+      "Result Table Configuration",
+      "Sales Classification",
+      "Branches",
+      "Country / States",
+      "Timesheet Activities",
+      "Timesheet Locations",
+      "Terms & Conditions",
+      "Emails Configuration",
+    ],
+
+    style: { top: "70%", left: "30%" },
+  },
+  {
+    label: "QMS",
+    sub: [
+      "Policies",
+      "Quality Manual",
+      "System Administration",
+      "Test Record Format",
+      "OHS & E Document",
+      "Operation Procedure",
+      "Format - System Management",
+      "Format - Admin",
+      "Format - Operations",
+    ],
+    style: { top: "55%", left: "25%" },
+  },
+  {
+    label: "Assets",
+    sub: ["Asset Management", "Client Assets Register"],
+    style: { top: "40%", left: "20%" },
+  },
+  {
+    label: "Specification",
+    sub: [
+      "Materials",
+      "Test Specifications",
+      "Process Standards",
+      "Procedures",
+      "Reference Data",
+      "Rail Specification",
+      "Result Table Config.",
+      "Client Contact RTC",
+    ],
+    style: { top: "25%", left: "25%" },
+  },
+  {
+    label: "Test Data Management",
+    sub: [
+      "Create Job",
+      "Search – Add Process Data",
+      "Search Jobs",
+      "Statistics",
+    ],
+    style: { top: "10%", left: "30%" },
+  },
 ];
 
 const VideoSection = () => {
@@ -24,15 +128,13 @@ const VideoSection = () => {
     const logoTimer = setTimeout(() => {
       setShowLogo(false);
 
-      // Step 2: Start showing glowing features immediately
-      let index = 0;
+      // Step 2: Start showing glowing features gradually
       const featureInterval = setInterval(() => {
         setVisibleCount((prev) => {
           if (prev < features.length) return prev + 1;
           clearInterval(featureInterval);
           return prev;
         });
-        index++;
       }, 1000); // one new feature every second
     }, 3000);
 
@@ -50,12 +152,12 @@ const VideoSection = () => {
         }`}
       />
 
-      {/* Gradual feature reveal with glow */}
+      {/* Gradual feature reveal with hover sub-labels */}
       {!showLogo &&
         features.slice(0, visibleCount).map((feature, idx) => (
           <div
             key={idx}
-            className={`absolute z-10 px-3 py-1 text-sm border border-white rounded-full text-white font-semibold transition-all duration-500 feature-glow`}
+            className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold transition-all duration-500 feature-glow"
             style={{
               ...feature.style,
               transform: "translate(-50%, -50%)",
@@ -67,6 +169,25 @@ const VideoSection = () => {
             }}
           >
             {feature.label}
+
+            {/* Sub-labels (slide-out on hover) */}
+            {/* Sub-labels (slide-out on hover, avoid overlapping) */}
+            <div
+              className={`absolute top-1/2 transform -translate-y-1/2 transition-all duration-500 ease-out z-50 ${
+                feature.style.right
+                  ? "left-full translate-x-2 group-hover:translate-x-4"
+                  : "right-full -translate-x-2 group-hover:-translate-x-4"
+              } opacity-0 group-hover:opacity-100`}
+            >
+              {feature.sub.map((sublabel, i) => (
+                <div
+                  key={i}
+                  className="bg-white text-black text-xs font-medium px-3 py-1 rounded-full shadow-md mb-1 whitespace-nowrap hover:bg-orange-100"
+                >
+                  {sublabel}
+                </div>
+              ))}
+            </div>
           </div>
         ))}
 
