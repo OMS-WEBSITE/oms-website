@@ -18,8 +18,7 @@ const Utility = () => {
   ];
 
   return (
-    <div className="w-full bg-gray-100 border-b border-gray-200 shadow-sm z-40">
-      {/* match header width and centering */}
+    <div className="hidden md:flex w-full bg-gray-100 border-b border-gray-200 shadow-sm z-40">
       <div className="container mx-auto max-w-7xl h-[50px] flex justify-end items-center space-x-4 px-4">
         {/* Try Free Button */}
         <Button
@@ -41,7 +40,7 @@ const Utility = () => {
         {/* Language Selector */}
         <div className="relative">
           <button
-            className="flex items-center justify-center gap-2 p-2 rounded-full border border-gray-200 hover:bg-orange-50 transition-all duration-300 w-28"
+            className="flex items-center justify-center gap-2 p-2 rounded-full border border-gray-200 hover:bg-orange-50 transition-all duration-300 w-28 z-50 relative"
             style={{ height: "46px", minHeight: "46px" }}
             onClick={toggleDropdown}
           >
@@ -50,7 +49,7 @@ const Utility = () => {
           </button>
 
           {dropdownOpen && (
-            <div className="absolute right-0 mt-2 w-40 bg-white border border-gray-200 rounded-md shadow-lg z-50">
+            <div className="fixed right-20 top-[60px] w-40 bg-white border border-gray-200 rounded-md shadow-lg z-[9999]">
               {languages.map((lang) => (
                 <button
                   key={lang.code}
