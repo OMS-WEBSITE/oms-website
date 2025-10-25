@@ -1009,4 +1009,735 @@ The payroll officer can view or download this approved payroll report to process
       },
     ],
   },
+
+  "System Configuration": {
+    title: "System Configuration",
+    sections: [
+      {
+        heading: "System Code",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
+          },
+          {
+            type: "paragraph",
+            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+      {
+        heading: "System Images",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
+          },
+          {
+            type: "paragraph",
+            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+      {
+        heading: "Sales Classification",
+        content: [
+          {
+            type: "paragraph",
+            text: "Sales classifications can be customised based on your business requirements.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Country / State",
+        content: [
+          {
+            type: "paragraph",
+            text: "Country and State preferences can be customised based on your current business operations; for example, if you currently only operate in Australia, the OMS database can be customised to only receive enquiries from Australian businesses.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Timesheet Location",
+        content: [
+          {
+            type: "paragraph",
+            text: "It is important to know the location of your staff at any given point, especially in the current world we live in with COVID-19. You can configure the OMS platform to list the locations specific to your business, i.e. client site, home, office etc. When a staff member enters their timesheet, they can select their location at the time of completing that work.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Email Configuration",
+        content: [
+          {
+            type: "paragraph",
+            text: "The primary objective in the OMS platform has always been to provide a complete auditable and traceable LIMS+ERP system with a full suite of productivity tools that can take care of most repetitive tasks, by automating those recurring functions.",
+          },
+          {
+            type: "paragraph",
+            text: "Automation of recurring functions not only increases productivity of the Enterprise but also morale of the staff as they do not have to repeat the same work every day.",
+          },
+          {
+            type: "paragraph",
+            text: "One of the productivity features in the OMS is the configuration and customisation aspects for repetitive emails.",
+          },
+          {
+            type: "paragraph",
+            text: "In most organisations, composing and sending an email can take a minimum of 5 minutes. On average, a business might be sending 20-30 recurring emails per day to communicate with various parties for business purpose e.g., seeking remittance advice or reminding overdue invoices or other general business activities.",
+          },
+          {
+            type: "paragraph",
+            text: "In this section, the entire recurring email process can be automated to save time and increase productivity. An OMS platform authorised user can simply configure a recurring email. From the information provided in this process, the OMS platform will look for the relevant topics and automatically distribute the email to internal or external parties.",
+          },
+          {
+            type: "images",
+            items: ["/images/Email-config-4.jpg"],
+          },
+          {
+            type: "paragraph",
+            text: "This productivity suite eliminates the entire manual process of recurring emails. Depending on the speed of your staff and the nature of recurring emails, this automation can save a minimum of $64,000/annum (260 workdays/annum x 20 emails/day x 5 mins/email x $2.50 per min business cost).",
+          },
+        ],
+      },
+      {
+        heading: "Reference Data",
+        content: [
+          {
+            type: "paragraph",
+            text: "One of our main focuses is to save our clients time and money and to free staff up to do more important tasks rather than spending hours on data entry.",
+          },
+          {
+            type: "paragraph",
+            text: "OMS Software stores reference data in the system to ensure staff are not spending time entering the same data repeatedly.",
+          },
+          {
+            type: "paragraph",
+            text: "Reference data allows a user to select content from a pre-defined list minimising spelling errors and enhancing reporting capability.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Result Table Configuration",
+        content: [
+          {
+            type: "paragraph",
+            text: "The Result table can be configured to your requirements. The information entered into the result table configuration section of the platform will be the prepopulated data accessed when entering a job in the platform.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Branches",
+        content: [
+          {
+            type: "paragraph",
+            text: "A list of Branches or Locations is an important feature in the OMS platform. You can configure the OMS platform to list the specific Branches or locations relevant to your business.",
+          },
+          {
+            type: "paragraph",
+            text: "The list of branches can be used in numerous search criteria, such as: timesheets, personnel, contact list, etc., and is a key feature when initially logging into the OMS platform.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Timesheet Activities",
+        content: [
+          {
+            type: "paragraph",
+            text: "It is important to know the activity your staff member was undertaking during their time working — is this something that should be billed to a client, or is the staff member using their time on unbillable tasks?",
+          },
+          {
+            type: "paragraph",
+            text: "You can configure the OMS platform to list the specific activities relevant to your business, i.e., Administration, Chemical testing, NDT, Report writing, Training, meetings etc.",
+          },
+          {
+            type: "paragraph",
+            text: "When a staff member enters their timesheet, they can select the activity they were undertaking at the time of completing that work.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Terms and Conditions",
+        content: [
+          {
+            type: "paragraph",
+            text: "Most businesses have a comprehensive Terms and Conditions document, as these terms and conditions are set to change on a regular basis, depending on changes within the industry or your company. It is important to ensure that the platform you use to make these changes is easy to access, change, or update regularly.",
+          },
+          {
+            type: "paragraph",
+            text: "There is also a requirement to publish these changes, ensuring that staff, clients, and stakeholders have access to the most up-to-date information.",
+          },
+          {
+            type: "paragraph",
+            text: "The OMS Platform has an area specific for pre-configured Terms and Conditions for your business. When updating the terms and conditions section in the OMS platform, these updates can be directly linked to an external source, like a website, to ensure the most current information is available.",
+          },
+          {
+            type: "paragraph",
+            text: "Terms and conditions form a critical part of any contract between your business and a client. When a new client registers their details through the platform, they will have access to the most up-to-date terms and conditions which they must accept to proceed further.",
+          },
+        ],
+      },
+    ],
+  },
+
+  QMS: {
+    title: "QMS",
+    sections: [
+      {
+        heading: "Policies",
+        content: [
+          {
+            type: "paragraph",
+            text: "The OMS platform is designed to ensure business compliance, whether it is to comply with the quality standards such as ISO 17025, ISO 17020, ISO 9001 or any safety or human resources related local regulatory requirements.",
+          },
+          {
+            type: "paragraph",
+            text: "When a new policy is published by your organisation, staff will receive a notification on their OMS platform login. The notification will request your staff to read the policy. Like an event reminder in MS Outlook, your staff can choose to read or snooze this reminder (up to maximum 5 times). If snoozed, then the OMS platform will display the notification again after 1 hour. If staff do not read after 5 attempts, the OMS platform removes access to the OMS platform menu until the user has read the published company policy.",
+          },
+          {
+            type: "paragraph",
+            text: "The OMS platform keeps traceable audit records of the date and time your staff read the published policy. This compliance system ensures that all your staff are aware of your current company policies and adhere to company protocols.",
+          },
+          {
+            type: "paragraph",
+            text: "Authorised users from your company can upload all company policies. An existing policy can be revised with a single click and updated with the newest version.",
+          },
+          {
+            type: "images",
+            items: ["/images/Policies.jpg"],
+          },
+        ],
+      },
+      {
+        heading: "Quality Manual",
+        content: [
+          {
+            type: "paragraph",
+            text: "The OMS platform is designed to ensure business compliance, whether it is to comply with the quality standards such as ISO 17025, ISO 17020, ISO 9001 or any safety or human resources related local regulatory requirements.",
+          },
+          {
+            type: "paragraph",
+            text: "The quality manuals can be easily edited (by an approved user) from the quality manual section. Once updated, all staff will receive a notification on their OMS platform login requesting them to read the policy.",
+          },
+          {
+            type: "paragraph",
+            text: "Like an event reminder in MS Outlook, your staff can choose to read or snooze this reminder (up to maximum 5 times). If snoozed, the OMS platform will display the notification again after 1 hour. If staff do not read after 5 attempts, the OMS platform removes access to the OMS platform menu until the user has read the policy.",
+          },
+          {
+            type: "images",
+            items: ["/images/Quality-Manual.png"],
+          },
+        ],
+      },
+      {
+        heading: "System Administration",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+      {
+        heading: "Test Record Format",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+      {
+        heading: "OHS & E Document",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+      {
+        heading: "Operation Procedure",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+      {
+        heading: "Format System Management",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+      {
+        heading: "Format Admin",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+      {
+        heading: "Format Operations",
+        content: [
+          {
+            type: "paragraph",
+            text: "Thank you for visiting",
+          },
+          {
+            type: "paragraph",
+            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+          },
+        ],
+      },
+    ],
+  },
+
+  Assets: {
+    title: "Assets",
+    sections: [
+      {
+        heading: "Asset Management",
+        content: [
+          {
+            type: "paragraph",
+            text: "Organisations of all sizes can use OMS Software to track and manage equipment. Whether assigning items to users or scheduling asset maintenance. The OMS platform provides comprehensive information on each asset you maintain, it can help businesses streamline maintenance processes, improve asset performances, reduce operational costs, and boost productivity, all in a digitalised format.",
+          },
+          {
+            type: "paragraph",
+            text: "The OMS platform will assist your business to:",
+          },
+          {
+            type: "list",
+            items: [
+              "Assign an asset to a staff member",
+              "Send reminders for scheduled maintenance",
+              "Send reminders for registration renewal",
+              "Deactivate an asset that has not completed the required maintenance schedule",
+              "Provide a dollar value of all assets for insurance purposes",
+              "Provide a report of all assets for yearend reporting",
+              "Link an asset to a job",
+              "Provide a history of an asset",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Preventative measures: Never miss a maintenance procedure again. The OMS platform provides a streamlined scheduling processes to alert technicians and managers of an upcoming maintenance requirment, retaining high levels of safety, compliance, and reliability for your business.",
+          },
+          {
+            type: "paragraph",
+            text: "Yearend reporting: The OMS platform improves statutory compliance and accelerates year-end reporting. All assets have a current value, the list of assets can be exported to excel for insurance estimation requirements and yearend financial reporting.",
+          },
+          {
+            type: "paragraph",
+            text: "The OMS platform is your go-to solution to improve not only your maintenance management but also the performance levels of all your assets across the entire organisation.",
+          },
+          {
+            type: "paragraph",
+            text: "Product User Manual: Never lose a user manual again! Upload and store the product user manual, along with asset information all in the one place.",
+          },
+          {
+            type: "images",
+            items: ["/images/Assets.png"],
+          },
+        ],
+      },
+      {
+        heading: "Client Asset Register",
+        content: [
+          {
+            type: "paragraph",
+            text: "We are currently working on some exciting new features in the OMS platform.",
+          },
+          {
+            type: "paragraph",
+            text: "Check back later for further updates or contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Pressure Equipment",
+        content: [
+          {
+            type: "paragraph",
+            text: "We are currently working on some exciting new features in the OMS platform.",
+          },
+          {
+            type: "paragraph",
+            text: "Check back later for further updates or contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+    ],
+  },
+
+  Specification: {
+    title: "Specification",
+    sections: [
+      {
+        heading: "Materials",
+        content: [
+          {
+            type: "paragraph",
+            text: "Material grades are used to distinguish different types of material based on their unique properties. The OMS platform allows you to store relevant information regarding material grade. There is no need to add this type of information on numerous occasions, once entered the OMS platform it is stored for future use.",
+          },
+          {
+            type: "paragraph",
+            text: "When you receive client specific material requirements for a job, the OMS will be able to provide detailed information of the grade of material (if added to the system prior). This information includes: Grade, Description, Engineering Properties, Charpy impact strength, Chemical composition, Other chemical properties.",
+          },
+          {
+            type: "images",
+            items: ["/images/Material-Grade.png"],
+          },
+
+          {
+            type: "list",
+            items: ["Material identification"],
+          },
+          {
+            type: "paragraph",
+            text: "Material identification is a systematic approach to identify a particular grade of material. The OMS platform can assist by piecing together the composite of the material and identify the original source. Once this information is entered into the platform, it can be used as a reference point for future use.",
+          },
+        ],
+      },
+      {
+        heading: "Test Specification",
+        content: [
+          {
+            type: "paragraph",
+            text: "In this section you can list all specifications this information could be provided by: your client, product or manufacturing standards, acceptance criteria given by your client, or acceptance criteria specified in the standards.",
+          },
+          {
+            type: "paragraph",
+            text: "Within the rail specifications section, you can also upload documents and store for future use. Documents that can be stored include, client specification or an extract or a commentary on various product or manufacturing standards.",
+          },
+          {
+            type: "images",
+            items: ["/images/Specification.jpg"],
+          },
+          {
+            type: "list",
+            items: ["Never lose your documents"],
+          },
+          {
+            type: "paragraph",
+            text: "Never lose your documents. As OMS is designed to protect data from any loss or inadvertent deletion or any act of sabotage, nothing can be deleted in the OMS. If one of your staff do not need the uploaded document, then they may choose to make that document inactive or archive or discard or stow-away within the OMS. There is no delete button throughout the OMS platform.",
+          },
+        ],
+      },
+      {
+        heading: "Process Standards",
+        content: [
+          {
+            type: "paragraph",
+            text: "The OMS platform groups all standards in the one safe, convenient place for a user to access at a time and place that is convenient to them.",
+          },
+          {
+            type: "paragraph",
+            text: "The OMS platform will list: ",
+          },
+          {
+            type: "list",
+            items: [
+              "Standard number",
+              "Technique",
+              "Description",
+              "Module Name",
+              "Active Status",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "The original PDF standard can be attached, and additional information or updates can be made at any time, ensuring the most up to date information is available at any time.",
+          },
+          {
+            type: "images",
+            items: ["/images/Process-Standards.png"],
+          },
+          {
+            type: "list",
+            items: ["Adding a new Process Standard"],
+          },
+          {
+            type: "paragraph",
+            text: "Adding a new Process standard is easy and can be completed in 6 easy steps.",
+          },
+          {
+            type: "images",
+            items: ["/images/Create-Process-Standard.png"],
+          },
+        ],
+      },
+      {
+        heading: "Procedures",
+        content: [
+          {
+            type: "paragraph",
+            text: "The primary objective in the OMS has always been to provide a complete auditable and traceable LIMS+ERP system with a full suite of productivity tools that can take care of most repetitive tasks by automating those recurring functions.",
+          },
+          {
+            type: "paragraph",
+            text: "When utilising test procedures on a job, the OMS Platform will provide relevant test procedures depending on the test module. The OMS Platform can pre-fill as much data as possible with a predefined set of information, using intuitive tools to help if the user has any questions/concerns.",
+          },
+          {
+            type: "paragraph",
+            text: "This will assist to capture accurate and valid data, reducing errors overall, ensuring consistency with data records, and completing the task in timely manner.",
+          },
+          {
+            type: "paragraph",
+            text: "Some key features include: The OMS platform Search Grid will show all test procedures that exists for the company. Staff can search for a specific test procedure by procedure number, description, active/inactive status. Staff can view, edit, or hide the test procedure. Staff can create new test procedure. The OMS Platform has a ‘Tool-tips’ section to assist staff with relevant procedures.",
+          },
+        ],
+      },
+      {
+        heading: "Reference Data",
+        content: [
+          {
+            type: "paragraph",
+            text: "This is the OMS platforms reference library is the key component to any prepopulated dropdown menus available throughout the platform. This was designed to limit the amount of manual data entry that a user is required to input into the system.",
+          },
+          {
+            type: "paragraph",
+            text: "As an example: If the user is required to enter a coating type for a specific job, the prepopulated dropdown menu will provide: Key: The key information / type, Name and Value: Prepopulated dropdown associated to the Key, Order: the order they will appear in the prepopulated dropdown.",
+          },
+          {
+            type: "paragraph",
+            text: "Additional items can be added to the reference data at any time.",
+          },
+        ],
+      },
+      {
+        heading: "Rail Specification",
+        content: [
+          {
+            type: "paragraph",
+            text: "In this section you can list all rail specifications, this information could be provided by: your client, product or manufacturing standards, acceptance criteria given by your client or acceptance criteria specified in the standards.",
+          },
+          {
+            type: "paragraph",
+            text: "Within the rail specifications section, you can also upload documents and store for future use. Documents that can be stored include, client specification or an extract or a commentary on various product or manufacturing standards.",
+          },
+        ],
+      },
+      {
+        heading: "Result Table Configurations",
+        content: [
+          {
+            type: "paragraph",
+            text: "Detailed information is stored in the OMS platform for every test module used in your business. Each module has a list of testing requirements that are either reportable, mandatory, or discretionary.",
+          },
+          {
+            type: "paragraph",
+            text: "The most competent user will have access to the section and will select what is required to be listed on any test data report. The items selected will appear on any test data report when that module is selected.",
+          },
+        ],
+      },
+      {
+        heading: "Client Contact RTC",
+        content: [
+          {
+            type: "List",
+            items: ["Client Contact RTC"],
+          },
+          {
+            type: "paragraph",
+            text: "Detailed information is stored in the OMS platform for every test module used in your business. Each module has a list of testing requirements that are either reportable, mandatory, or discretionary.",
+          },
+          {
+            type: "paragraph",
+            text: "On occasion a particular client or client contact will need additional testing requirements to be reported. The OMS platform has this covered. You can create a specific client-based module configuration created using the specific requirements from your client contact.",
+          },
+        ],
+      },
+    ],
+  },
+
+  "Test Data Management": {
+    title: "Test Data Management",
+    sections: [
+      {
+        heading: "Create a Job",
+        content: [
+          {
+            type: "paragraph",
+            text: "This section is designed to manage process control within a business so that a job can be created only using permitted data input including:",
+          },
+          {
+            type: "list",
+            items: [
+              "Active clients only",
+              "Frequently used one of the client’s addresses",
+              "Frequently providing one of the client’s staff",
+              "Automatic pre-filling of client contact details such as email ID, contact number, any special instructions",
+              "Active Specifications such as Product Standards, test-inspection or process Standards, Materials Standards",
+              "Prompting user to complete several other mandatory data selection to create a self-explanatory Job sheet.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Job confirmation automatic email: The OMS Software platform is designed to operate in accordance with ISO 17025, ISO 17020, ISO 9001 and similar quality Standards where several quality events are required to be completed effectively.",
+          },
+          {
+            type: "paragraph",
+            text: "ISO 17025 Cl. 7 specifies that the laboratory shall adequately document and understand work requests and contracts. Laboratories shall select appropriate methods and procedures that meet the customers’ requirements and inform them when any deviation from the work request or a contract occurs. The standard also specifies that any differences between the contract or work request shall be resolved before laboratory activities commence.",
+          },
+          {
+            type: "paragraph",
+            text: "To comply with the above requirements and as a best industry practice, the OMS platform will automatically email job details to the customer after a job has been created in the OMS platform. Automatic email can be configured at each client contact level and ceased at the job creation level or job revision process.",
+          },
+          {
+            type: "paragraph",
+            text: "In accordance with ISO 17025 Clause 7.1.4, any differences between the work request / contract shall be resolved before laboratory activities commence. Each contract shall be acceptable to both, the laboratory, and the customer.",
+          },
+          {
+            type: "paragraph",
+            text: "The automated email provides an opportunity to your customer to review the job details and contact you for any discrepancies. This process achieves the ISO requirements and ensures that your business is operating efficiently.",
+          },
+          {
+            type: "paragraph",
+            text: "Editing a pre-configured email: OMS Software is designed to eliminate as many manual processes as possible, including having pre-configured emails, however we do understand that some elements of a process need to be customisable to allow for client specific information and communication.",
+          },
+          {
+            type: "paragraph",
+            text: "When emailing a report to a client, the pre-configured email text in the email body, can be modified before sending the email and report to a client.",
+          },
+        ],
+      },
+      {
+        heading: "List of Modules",
+        content: [
+          {
+            type: "paragraph",
+            text: "Currently, there are several test, inspection and process modules available in the OMS. Some of them are *Intelligence Augmented Automatic Compliance Evaluator (IAACE) modules which use Standards and material properties to evaluate test results to eliminate human errors in interpreting Standards requirements. These modules have been used by laboratories for years witnessing Million+ hours of production testing on actual data by real people (150+ users).",
+          },
+          {
+            type: "list",
+            items: [
+              "NDT modules – VT, MT, PT, ET, UT, UTT, RT and ….",
+              "Mechanical testing – Tensile*, Impact* and …",
+              "Weld mechanical testing – VT, Macro, Bend, fracture, transverse tension*, web-flange tension*, impact*, hardness survey*",
+              "Inspection modules – VI, PVI and …",
+              "Pressure testing – Hydrostatic test",
+              "Survey modules – Rail alignment*, Pipe ovality measurement and …",
+              "Process modules – Welding supervision and …",
+              "Chemical testing – O.E.S Spectroscopy* (Beta) and …",
+              "* IAACE – Intelligence Augmented Automatic Compliance Evaluator modules",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Structure of modules: The most common excuses for data losses in the industry are tablet broke down, battery drained, internet lost, user forgot to save, and so on.",
+          },
+          {
+            type: "paragraph",
+            text: "OMS is designed to ensure almost nothing is lost or at the most previous 3 minutes of data loss, in case of a major outage. All modules for test, inspection or process are divided into 8 sections to eliminate or minimise entire data loss. All sections are designed to reduce data entry (typing) by human data and reduce fatigue on the user.",
+          },
+          {
+            type: "list",
+            items: [
+              "JSA Section – Before any onsite job commencement, a user needs to complete Job safety analysis on their smart phone or tablet or smart glasses in the near future.",
+              "Section 1 – Displays client information for review before commencing a job. No need to enter anything.",
+              "Section 2 – Displays job related information. Again, nothing to enter except review of job data.",
+              "Section 3 – User shall enter instrument information. All items are a simple selection of items from the Asset database available within the OMS. Users need to only key in the first 3 letters of the asset number or asset classification and then select from the list. OMS do not display any non-calibrated assets which ensures that the user do not use invalid instruments.",
+              "Section 4 – The user needs to enter job specific or technique specific information. Most of the information is selection from reference libraries rather than manual typing. All reference libraries are created by Level 3 or competent authorities which your company can modify to suit your needs. Selection of data from reference libraries minimises data entry errors and standardises terminologies used.",
+              "Section 5 – User needs to type in relevant information because this section contains description, identification of all items and test data. Most fields can be completed by selection of data from the reference libraries but there is still substantial need for data entry by the user. As the user can be on this section for a long time, OMS saves data automatically after every 3 minutes.",
+              "Section 6 – Designed to manage all photographs and documents which can be stored in the OMS permanently and the user can decide whether to print on a report.",
+              "Section 7 – Costing and administration section wherein the user needs to enter job related times and cost.",
+            ],
+          },
+        ],
+      },
+      {
+        heading: "Search Jobs",
+        content: [
+          {
+            type: "paragraph",
+            text: "In this section of the OMS platform, a user can easily search and modify any job that is in the system.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+      {
+        heading: "Job Statistics",
+        content: [
+          {
+            type: "paragraph",
+            text: "This section provides statistics around the productivity of any test, inspection, process or the job in its entirety.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation free demonstration.",
+          },
+        ],
+      },
+    ],
+  },
 };

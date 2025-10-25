@@ -30,21 +30,23 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-100 py-16">
-      <div className="container mx-auto max-w-7xl">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-          <div>
-            <h3 className="text-orange-500 text-2xl font-bold mb-6">
+    <footer className="bg-gray-100 py-12 md:py-16">
+      <div className="container mx-auto max-w-7xl px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+          {/* OMS + Social Icons */}
+          {/* OMS + Social Icons */}
+          <div className="flex flex-col items-center md:items-start text-center md:text-left mb-6 md:mb-0">
+            <h3 className="text-orange-500 text-2xl font-bold mb-4 md:mb-6">
               OMS Software
             </h3>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 justify-center md:justify-start">
               {socials.map((social, idx) => (
                 <a
                   key={idx}
                   href={social.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className={`w-11 h-11 flex items-center justify-center border border-gray-300 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm shadow-md hover:shadow-lg transition-all duration-300 ${social.color} hover:${social.hoverGlow}`}
+                  className={`w-10 h-10 flex items-center justify-center border border-gray-300 rounded-xl bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-sm shadow-md hover:shadow-lg transition-all duration-300 ${social.color} hover:${social.hoverGlow}`}
                 >
                   {social.icon}
                 </a>
@@ -52,7 +54,8 @@ const Footer = () => {
             </div>
           </div>
 
-          <div>
+          {/* Platform */}
+          <div className="text-center sm:text-left">
             <h3 className="text-lg font-medium text-gray-800 mb-4">Platform</h3>
             <ul className="space-y-3">
               {[
@@ -74,7 +77,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* Why OMS Software */}
+          <div className="text-center sm:text-left">
             <h3 className="text-lg font-medium text-gray-800 mb-4">
               Why OMS Software
             </h3>
@@ -97,7 +101,8 @@ const Footer = () => {
             </ul>
           </div>
 
-          <div>
+          {/* Resources */}
+          <div className="text-center sm:text-left">
             <h3 className="text-lg font-medium text-gray-800 mb-4">
               Resources
             </h3>
@@ -118,10 +123,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-gray-200 mt-12 pt-8 text-sm text-gray-600">
-          <div className="text-center py-6 text-sm text-gray-500">
-            © {new Date().getFullYear()}, OMS Software. All rights reserved
-          </div>
+        {/* Copyright */}
+        <div className="border-t border-gray-200 mt-12 pt-8 text-sm text-gray-600 text-center">
+          © {new Date().getFullYear()}, OMS Software. All rights reserved
         </div>
       </div>
     </footer>
