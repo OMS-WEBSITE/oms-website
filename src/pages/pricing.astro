@@ -17,7 +17,8 @@ const seo = {
 ---
 
 <Layout {...seo}>
-  <Header />
+ <Header client:only="react" />
+
   {/* Hero section specific to pricing */}
   <div class="min-h-screen">
     {/* Hero section specific to pricing */}

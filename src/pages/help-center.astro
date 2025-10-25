@@ -14,7 +14,8 @@ const seo = {
 ---
 
 <Layout {...seo}>
-  <Header />
+ <Header client:only="react" />
+
   <main>
     {/* Hero Section */}
     <section class="bg-gradient-to-b from-indigo-50 to-white py-20">

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react"; // ✅ make sure to import useState
 import Utility from "./layout/Utility";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
@@ -23,11 +23,13 @@ import Support from "./sections/Support";
 import Partners from "./sections/Partners";
 
 const AuditProApp = () => {
+  const [language, setLanguage] = useState("EN-IN"); // <--- added state
+
   return (
     <div className="min-h-screen bg-white">
-      <Utility />
+      {/* Pass language state to Utility */}
+      <Utility language={language} setLanguage={setLanguage} />
       <Header />
-
       <main>
         <VideoSection />
         <ProductsandService />
@@ -49,8 +51,7 @@ const AuditProApp = () => {
         <PricingCallout />
         <CTASection /> */}
       </main>
-
-      <Footer />
+      <Footer language={language} />{" "}
     </div>
   );
 };

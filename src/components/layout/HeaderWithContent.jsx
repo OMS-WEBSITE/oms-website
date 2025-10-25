@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { contentMap } from "./ContentData";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const HeaderWithContent = () => {
   const navItems = [
@@ -15,7 +16,7 @@ const HeaderWithContent = () => {
     "Test Data Management",
   ];
 
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState("Business Performance");
   const [expandedSection, setExpandedSection] = useState(null);
   const [highlightAllSections, setHighlightAllSections] = useState(true);
   const [isClient, setIsClient] = useState(false);
@@ -46,14 +47,41 @@ const HeaderWithContent = () => {
     if (!isClient) return;
     const sectionEl = document.getElementById("header-content-section");
     if (!sectionEl) return;
-    const navbarHeight = document.querySelector("header")?.offsetHeight || 0;
+    const outerNavbarHeight =
+      document.querySelector("body > header")?.offsetHeight || 0; // only main header
+    const innerNavbarHeight = 65; // adjust if your second navbar (HeaderWithContent) is tall
+
     const scrollTop =
       sectionEl.getBoundingClientRect().top +
       window.pageYOffset -
-      navbarHeight -
-      10;
+      (outerNavbarHeight + innerNavbarHeight + 2);
+
     window.scrollTo({
       top: scrollTop,
+      behavior: "smooth",
+    });
+  };
+
+  const handleMiniTabClick = (index) => {
+    setExpandedSection(index);
+    setHighlightAllSections(true);
+
+    if (!isClient) return;
+    const sectionEl = document.getElementById(`section-${index}`);
+    if (!sectionEl) return;
+    const rect = sectionEl.getBoundingClientRect();
+
+    const outerNavbarHeight =
+      document.querySelector("body > header")?.offsetHeight || 0;
+    const innerNavbarHeight = 70;
+
+    const scrollTo =
+      rect.top +
+      window.pageYOffset -
+      (outerNavbarHeight + innerNavbarHeight + 10);
+
+    window.scrollTo({
+      top: scrollTo,
       behavior: "smooth",
     });
   };
@@ -65,27 +93,11 @@ const HeaderWithContent = () => {
     if (isClient) scrollToTop();
   };
 
-  const handleMiniTabClick = (index) => {
-    setExpandedSection(index);
-    setHighlightAllSections(true);
-
-    if (!isClient) return;
-    const sectionEl = document.getElementById(`section-${index}`);
-    if (!sectionEl) return;
-    const rect = sectionEl.getBoundingClientRect();
-    const sectionTop = rect.top + window.pageYOffset;
-    const scrollTo = sectionTop - window.innerHeight / 2 + rect.height / 2;
-    window.scrollTo({
-      top: scrollTo,
-      behavior: "smooth",
-    });
-  };
-
   return (
     <div id="header-content-section" className="min-h-screen bg-gray-100">
       {/* Header */}
-      <header className="sticky top-0 left-0 w-full bg-white border-b border-gray-200 shadow z-50">
-        <div className="container mx-auto max-w-7xl px-4 py-4">
+      <header className="sticky top-0 left-0 w-full bg-white border-t-2 border-b border-orange-500 shadow z-50">
+        <div className="container mx-auto max-w-7xl px-4 py-4 px-2">
           {/* Desktop View */}
           <div className="hidden md:flex flex-col">
             <nav className="flex flex-wrap gap-x-2 gap-y-2">
@@ -93,10 +105,10 @@ const HeaderWithContent = () => {
                 <button
                   key={label}
                   onClick={() => handleMainTabClick(label)}
-                  className={`px-2 py-2 text-center font-semibold rounded-lg transition-all duration-300 ease-in-out ${
+                  className={`px-1.5 py-2 text-center font-semibold rounded-lg transition-all duration-300 ease-in-out border-l-4 ${
                     activeItem === label
-                      ? "bg-orange-100 text-orange-600 border-l-4 border-orange-500 shadow-sm"
-                      : "text-gray-700 hover:text-orange-500 hover:bg-orange-50 hover:shadow-md"
+                      ? "bg-orange-100 text-orange-600 border-orange-500 shadow-sm"
+                      : "border-transparent text-gray-700 hover:text-orange-500 hover:bg-orange-50 hover:shadow-md"
                   }`}
                 >
                   {label}
@@ -105,12 +117,12 @@ const HeaderWithContent = () => {
             </nav>
 
             {sectionList.length > 0 && (
-              <nav className="flex flex-wrap mt-2 gap-x-3 gap-y-3 z-20 relative">
+              <nav className="flex flex-wrap mt-2 gap-x-3 gap-y-2 z-20 relative">
                 {sectionList.map((section, idx) => (
                   <button
                     key={idx}
                     onClick={() => handleMiniTabClick(idx)}
-                    className={`px-2 py-1.5 text-base font-medium rounded-lg transition-all duration-300 ease-in-out ${
+                    className={`px-2 py-1 text-base font-medium rounded-lg transition-all duration-300 ease-in-out ${
                       expandedSection === idx
                         ? "bg-orange-200 text-orange-800 shadow-md border-l-4 border-orange-500 font-semibold"
                         : highlightAllSections
@@ -248,8 +260,12 @@ const HeaderWithContent = () => {
                     className="w-full text-left text-lg font-semibold text-gray-800 mb-2 flex justify-between items-center focus:outline-none"
                   >
                     {section.heading}
-                    <span className="text-orange-500 text-xl">
-                      {expandedSection === index ? "−" : "+"}
+                    <span
+                      className={`text-orange-500 text-xl transition-transform duration-300 ${
+                        expandedSection === index ? "rotate-180" : ""
+                      }`}
+                    >
+                      <FiChevronDown />
                     </span>
                   </button>
 

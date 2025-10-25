@@ -164,10 +164,21 @@ const VideoSection = () => {
     <section className="relative w-full h-screen overflow-hidden bg-black text-white">
       {/* Background Image */}
       <img
-        src="BlackBrainImage.jpg"
+        src="BlackBrainImage2.png"
         alt="Brain Wallpaper"
         className="absolute inset-0 w-full h-full object-cover z-0"
       />
+
+      {/* <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 w-full h-full object-cover z-0"
+      >
+        <source src="videos/Slow_Motion_Outer_Circuit_Video.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video> */}
 
       {/* Desktop Features */}
       <div className="hidden md:block">
@@ -210,6 +221,14 @@ const VideoSection = () => {
         @keyframes fadeIn {
           0% { opacity: 0; }
           100% { opacity: 1; }
+        }
+
+         @media (max-width: 768px) {
+          .brain-image {
+            height: 50vh !important; 
+            object-fit: cover !important;
+            top: 0;
+          }
         }
       `}</style>
     </section>

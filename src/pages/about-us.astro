@@ -1,0 +1,63 @@
+---
+import Layout from "../layouts/main.astro";
+import Header from '@/components/layout/Header';
+import Footer from '@/components/layout/Footer';
+import { buildSEO } from "../utils/seo";
+
+const seo = buildSEO
+  ? buildSEO(Astro, { title: "About — OMS Software" })
+  : {
+      title: "About — OMS Software",
+      description: "About OMS Software: our mission, team, and approach.",
+      image: "/og-image.png",
+      canonicalURL: Astro.site + Astro.url.pathname,
+    };
+---
+
+<Layout {...seo}>
+  <Header client:only="react" />
+
+  <main class="max-w-5xl mx-auto px-4 md:px-8 py-12 prose">
+    <h1>About OMS Software</h1>
+
+    <p>
+      OMS Software PTY LTD is a cloud-based enterprise LIMS+ERP system, designed with direct input from NDT industry specialists in Australia.
+    </p>
+
+    <p>
+      The OMS platform incorporates:
+      <ul class="list-disc pl-6 mt-2">
+        <li>Business Process Automation</li>
+        <li>Laboratory Information Management Systems (LIMS)</li>
+        <li>Enterprise Software (ERP)</li>
+        <li>Quality Management System (QMS) in accordance with ISO 17025, 17020, 9001</li>
+      </ul>
+    </p>
+
+    <p>
+      Based in Melbourne, OMS Software offers real-time business data and information that can be accessed by owners, managers, technicians, administrative staff, and clients, anytime, anywhere, all at the click of a button.
+    </p>
+
+    <p>
+      Owners and managers have full control over their business with direct insights into:
+      <ul class="list-disc pl-6 mt-2">
+        <li>Job scope</li>
+        <li>HR management</li>
+        <li>Work requests</li>
+        <li>Technician location</li>
+        <li>Accounts and assets</li>
+      </ul>
+      All whilst ensuring compliance with ISO 17020 and 17025 (NATA).
+    </p>
+
+    <p>
+      OMS Software was registered as a business in 2019. The technology behind it has been in production for 12 years and is supported by a team of professional engineers with expertise in engineering, ERP pre-sales, integration, and e-commerce. Combined with input from NDT speciality groups including Aerospace, Engineering, Heavy Construction, and Oil & Gas, the OMS platform is one of the most advanced in the NDT field. Once implemented, it could save your business thousands of dollars annually.
+    </p>
+
+    <p>
+      If you are looking for an inclusive Laboratory Information Management System (LIMS), Enterprise Software (ERP), Quality Management System (QMS), or Business Process Automation, give us a call. We’d be happy to provide a free demonstration!
+    </p>
+  </main>
+
+  <Footer />
+</Layout>

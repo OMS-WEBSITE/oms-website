@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { FaGlobe } from "react-icons/fa";
 
-const Utility = () => {
-  const [language, setLanguage] = useState("EN-IN");
+const Utility = ({ language, setLanguage }) => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
@@ -15,6 +14,8 @@ const Utility = () => {
   const languages = [
     { code: "EN-IN", label: "India English" },
     { code: "EN-AU", label: "Australia English" },
+    // { code: "EN-US", label: "USA English" },
+    // add more languages as needed
   ];
 
   return (
