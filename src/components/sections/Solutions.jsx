@@ -1,6 +1,11 @@
-import React from "react";
+
+
+import React, { useState } from "react";
+import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const Solutions = () => {
+  const [expandedSection, setExpandedSection] = useState(null);
+
   const sections = [
     {
       id: "nabl-lab-verification",
@@ -22,7 +27,9 @@ const Solutions = () => {
             preparation, and provides real-time operational visibility.
           </p>
 
-          <h4 className="font-semibold mt-4">🔍 Verify Reports Instantly</h4>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            🔍 Verify Reports Instantly
+          </h4>
           <p>
             Introducing OMS ULR and QR Verification, a digital gateway to
             confirm the authenticity of any test report or calibration
@@ -39,7 +46,9 @@ const Solutions = () => {
             traceable, and verifiable.
           </p>
 
-          <h4 className="font-semibold mt-4">Why It Matters</h4>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Why It Matters
+          </h4>
           <ul className="list-disc ml-5">
             <li>🔒 Prevent Fraud: Stop misuse or alteration of lab reports</li>
             <li>
@@ -61,7 +70,9 @@ const Solutions = () => {
             accredited laboratories."
           </p>
 
-          <h4 className="font-semibold mt-4">Built for Labs that Lead</h4>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Built for Labs that Lead
+          </h4>
           <p>
             OMS Software consolidates all lab data — jobs, assets, personnel,
             and certifications — into one secure platform with:
@@ -80,9 +91,13 @@ const Solutions = () => {
             </li>
           </ul>
 
-          <h4 className="font-semibold mt-4">Testing Capabilities</h4>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Testing Capabilities
+          </h4>
 
-          <h5 className="font-semibold mt-2">Non-Destructive Testing (NDT)</h5>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Non-Destructive Testing (NDT)
+          </h4>
           <p>
             Comprehensive coverage for component, weld, and material integrity
             assessment.
@@ -100,7 +115,9 @@ const Solutions = () => {
             </li>
           </ul>
 
-          <h5 className="font-semibold mt-2">Mechanical Testing</h5>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Mechanical Testing
+          </h4>
           <p>
             Evaluation of material strength, toughness, and hardness under
             controlled conditions.
@@ -117,7 +134,9 @@ const Solutions = () => {
             </li>
           </ul>
 
-          <h5 className="font-semibold mt-2">Chemical Testing</h5>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Chemical Testing
+          </h4>
           <p>
             Chemical analysis for composition verification and contamination
             control.
@@ -133,7 +152,9 @@ const Solutions = () => {
             </li>
           </ul>
 
-          <h5 className="font-semibold mt-2">Environmental Testing</h5>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Environmental Testing
+          </h4>
           <p>
             Performance evaluation under simulated climatic and environmental
             conditions.
@@ -158,7 +179,9 @@ const Solutions = () => {
             <li>Vibration & Shock: MIL-STD-810, IEC 60068 series, ISO 9022</li>
           </ul>
 
-          <p className="font-semibold mt-4">Don't Just Test. Verify.</p>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Don't Just Test. Verify.
+          </h4>
           <p>
             Join leading NABL-accredited laboratories adopting OMS and ULR + QR
             verification to ensure every report stands up to scrutiny.
@@ -190,6 +213,12 @@ const Solutions = () => {
             Business owners to manage documents for various quality types. Each
             document belongs to one type which could be:
           </p>
+          <img
+            src="/images/Solutions-quality-management-documents.png"
+            alt="Solutions-quality-management-documents"
+            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+          />
+
           <ul className="list-disc ml-5">
             <li>Policy document</li>
             <li>Quality manual</li>
@@ -204,18 +233,47 @@ const Solutions = () => {
           </ul>
           <p>
             New documents pertaining to quality management can be created, and
-            relevant document uploaded for this type. OMS displays Edit, View,
-            Hide, and Download buttons depending on user authorization. Quality
-            Managers have full access to create and manage documents.
+            relevant document uploaded for this type.
           </p>
+          <img
+            src="/images/Solutions-create.png"
+            alt="Solutions-create"
+            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+          />
+          <img
+            src="/images/solutions-create-new.png"
+            alt="solutions-create-new"
+            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+          />
+
+          <p>
+            OMS displays Edit, View, Hide, View and Download buttons on search
+            grid depending on user authorization. Quality Managers are given
+            full access to create new Documents, and update / hide existing
+            documents. We treat Quality Managers as Competent Personnel and give
+            full access to the Quality Management module.
+          </p>
+          <img
+            src="/images/solutions-search.png"
+            alt="solutions-search"
+            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+          />
+          <img
+            src="/images/solutions-system-procedures.png"
+            alt="solutions-system-procedures"
+            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+          />
         </>
       ),
     },
     {
-      id: "secured-signing-of-reports",
-      title: "Secured Signing of Reports",
+      id: "Job Test Record Management",
+      title: "Job Test Record Management",
       content: (
         <>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Secured Signing of Reports
+          </h4>
           <p>
             Unlike other fragmented or individual document signing software
             systems, the OMS Software Platform is a fully integrated system,
@@ -223,18 +281,85 @@ const Solutions = () => {
           </p>
           <p>
             Within OMS Software, a signature of a signatory is uploaded only
-            once and stored securely within the program. Only approved users can
-            sign documents, and the process is fully traceable.
+            once and stored securely within the program. No other users from
+            your company can view or download or misuse the uploaded signature.
           </p>
           <p>
-            This digital process eliminates printing, scanning, and manual
-            signing, saving cost and time. Changes to report status are
-            automatically logged for full auditability.
+            When an OMS Software user is approved as a signatory, in a specific
+            test method, or inspection procedure or a manufacturing process,
+            only then will the OMS platform prompt a user for the signature
+            feature.
+          </p>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            With a simple single click, a document can be viewed as a PDF, then
+            digitally signed and then emailed to the pre-loaded email ID..
+          </h4>
+          <img
+            src="/images/Solutions-Report-sign.jpg"
+            alt="Solutions-Report-sign"
+            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+          />
+          <p>
+            This simple process eliminates the entire process of downloading
+            documents and then printing, picking from the printer and then
+            manually signing and then scanning, storing on your server and then
+            emailing to the concerned party. It also eliminates unsatisfactory
+            security process wherein some organisations import their signatures
+            in a word document and then convert that document into a PDF.
           </p>
           <p>
-            Example: Generating 100 reports per month at $2.50/minute for 5
-            minutes each saves ~$15,000 annually, excluding stationery and
-            printing costs. This process is also environmentally sustainable.
+            As the OMS platform is designed to be fully traceable and auditable
+            software, any changes by your staff to the status of a report such
+            as signing or emailing is automatically registered. This provides
+            additional productivity suite to your organisation to review when
+            and who signed or emailed reports or documents, if and when needed.
+          </p>
+          <p>
+            The integrated, digitalised & fully secured process in the OMS
+            platform can save your organisation’s stationary cost and manual
+            document handling cost, resulting in increased productivity.
+          </p>
+          <p>As an example,</p>
+          <p>
+            if your company is generating approximately 100 reports per month
+            and your company’s average operating cost is approximately
+            $2.50/minute then at a rate of 5minutes per report you would be
+            saving approximately $15,000 per annum ($2.50 x 5 x 100 x 12) as a
+            minimum cost. This does not include the cost of stationery, printer
+            ink and asset depreciation or rental cost.
+          </p>
+          <p>
+            In addition to the cost saving, you are indirectly contributing to
+            the environmental sustainability by elimination of printing; which
+            is more significant than cost saving.
+          </p>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Signature security on reports
+          </h4>
+          <p> OMS Software is all about data security and privacy of users.</p>
+          <p>
+            In most document signing software, signature is either adopted to
+            some random cursive font generated your full name or your signature
+            is uploaded into their document or their system. This signature is
+            then printed on documents which can copied by other parties without
+            your consent and pasted in other documents again without your
+            consent.
+          </p>
+          <p>
+            In the OMS platform, we handle signatures differently to ensure
+            integrity of the signature is secured and maintained. Firstly, any
+            signature printed on a document is digitally watermarked so that the
+            copied signature cannot be used in other documents as the document
+            number will not match.
+          </p>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Reports on hold
+          </h4>
+          <p>
+            At times a signatory may find an issue or problem with a report and
+            cannot sign off final approval. The OMS platform has a feature that
+            enables the signatory to include comments for the tester to receive
+            via a pop-up on their login similar to the below.
           </p>
         </>
       ),
@@ -261,26 +386,85 @@ const Solutions = () => {
       content: (
         <>
           <p>
-            This is the OMS platform's reference library, used throughout the
-            system to limit manual data entry.
+            This is the OMS platforms reference library and is the key component
+            to any pre-populated dropdown menus, available throughout the
+            platform. It was designed to limit the amount of manual data entry
+            that a user is required to input into the system.
           </p>
-          <p>Specifications include:</p>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Specifications include:
+          </h4>
+
+          <p>Specifications in the OMS platform include:</p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Materials specifications
+          </h4>
           <ul className="list-disc ml-5">
+            <li>Grade</li>
+            <li>Description</li>
+            <li>Engineering Properties</li>
+            <li>Charpy impact strength</li>
+            <li>Chemical composition</li>
+            <li>Other chemical properties</li>
+          </ul>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Test specifications
+          </h4>
+          <ul className="list-disc ml-5">
+            <li>your client,</li>
+            <li>product or manufacturing standards</li>
+            <li>acceptance criteria given by your client or</li>
+            <li>acceptance criteria specified in the standards. </li>
+          </ul>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Rail Specifications
+          </h4>
+          <ul className="list-disc ml-6 mt-2 space-y-1">
+            <li>Provided by your client</li>
+            <li>Product or manufacturing standards</li>
+            <li>Acceptance criteria given by your client</li>
+            <li>Acceptance criteria specified in the standards</li>
+          </ul>
+
+          {/* Process Standards */}
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Process Standards
+          </h4>
+          <ul className="list-disc ml-6 mt-2 space-y-1">
+            <li>Standard number</li>
+            <li>Technique</li>
+            <li>Description</li>
+            <li>Module name</li>
+            <li>Active status</li>
+          </ul>
+
+          {/* Procedures */}
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Procedures
+          </h4>
+          <ul className="list-disc ml-6 mt-2 space-y-1">
+            <li>Test procedures</li>
+            <li>Procedure number</li>
+          </ul>
+
+          <p className="mb-3">
+            Reference Data defines reusable master values used across different
+            modules of OMS. It ensures standardization and consistency.
+          </p>
+
+          <ul className="list-disc ml-6 mt-2 space-y-1">
             <li>
-              Material specifications: Grade, Description, Engineering
-              Properties, Charpy impact strength, Chemical composition
+              <strong>Key:</strong> The key information or type.
             </li>
             <li>
-              Test specifications: Client or product standards, acceptance
-              criteria
-            </li>
-            <li>Rail specifications: Client or product standards</li>
-            <li>
-              Process standards: Standard number, technique, description, module
-              name, active status
+              <strong>Name and Value:</strong> Prepopulated dropdown options
+              associated with the Key.
             </li>
             <li>
-              Procedures: Test procedures, Procedure number, Reference data
+              <strong>Order:</strong> The sequence in which the values appear in
+              the prepopulated dropdown.
             </li>
           </ul>
         </>
@@ -292,18 +476,70 @@ const Solutions = () => {
       content: (
         <>
           <p>
-            OMS Software helps organisations track and manage equipment, assign
-            items, schedule maintenance, and maintain digital records of assets.
+            Organisations of all sizes can use OMS Software to track and manage
+            equipment. Whether assigning items to users or scheduling asset
+            maintenance. The OMS platform provides comprehensive information on
+            each asset you maintain, it can help businesses streamline
+            maintenance processes, improve asset performances, reduce
+            operational costs, and boost productivity, all in a digitalised
+            format.
           </p>
+          <p> The OMS platform will assist your business to:</p>
           <ul className="list-disc ml-5">
-            <li>Assign assets to staff</li>
-            <li>Send reminders for maintenance and registration renewal</li>
-            <li>Deactivate assets missing maintenance</li>
-            <li>Provide asset value for insurance purposes</li>
-            <li>Export reports for year-end reporting</li>
-            <li>Link assets to jobs</li>
-            <li>Maintain asset history</li>
+            <li>Assign an asset to a staff member</li>
+            <li>Send reminders for scheduled maintenance</li>
+            <li>Send reminders for registration renewal</li>
+            <li>
+              Deactivate an asset that has not completed the required
+              maintenance schedule
+            </li>
+            <li>Provide a dollar value of all assets for insurance purposes</li>
+            <li>Provide a report of all assets for yearend reporting</li>
+            <li>Link an asset to a job</li>
+            <li>Provide a history of an asset</li>
           </ul>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Preventative measures
+          </h4>
+
+          <p>
+            Never miss a maintenance procedure again. The OMS platform provides
+            a streamlined scheduling processes to alert technicians and managers
+            of an upcoming maintenance requirment, retaining high levels of
+            safety, compliance, and reliability for your business.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Yearend reporting
+          </h4>
+
+          <p>
+            The OMS platform improves statutory compliance and accelerates
+            year-end reporting. All assets have a current value, the list of
+            assets can be exported to excel for insurance estimation
+            requirements and yearend financial reporting.
+          </p>
+
+          <p>
+            The OMS platform is your go-to solution to improve not only your
+            maintenance management but also the performance levels of all your
+            assets across the entire organisation.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Product User Manual{" "}
+          </h4>
+
+          <p>
+            Never lose a user manual again! Upload and store the product user
+            manual, along with asset information all in the one place.
+          </p>
+          <img
+            src="/images/solutions-Assets.png"
+            alt="solutions-Assets"
+            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+          />
         </>
       ),
     },
@@ -312,20 +548,59 @@ const Solutions = () => {
       title: "Employee Management",
       content: (
         <>
-          <p>
-            OMS platform assists in managing employees efficiently and ensuring
-            productivity.
+          <p className="mb-3">
+            The processes within the OMS Platform assist in managing employees,
+            enabling them to perform their best each day and contribute toward
+            achieving your business goals.
           </p>
-          <ul className="list-disc ml-5">
-            <li>Timesheets: track activities and customizable lists</li>
-            <li>
-              Allowances and leave: legislative compliance, car/meal allowances
-            </li>
-            <li>Invoicing: allocate time directly to client job numbers</li>
-            <li>
-              Employee records: Certification, Qualification, Skills management
-            </li>
-          </ul>
+
+          <p className="mb-4">
+            There are many tasks that fall under employee management, and the
+            OMS Platform covers the following areas:
+          </p>
+
+          {/* Timesheets */}
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Timesheets
+          </h4>
+          <p className="mt-2">
+            Time worked can be broken down into numerous activities such as
+            forklift operations, coatings, NDT, meetings, and more. The list of
+            activities can also be customized to meet your business
+            requirements.
+          </p>
+
+          {/* Allowances and Leave */}
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Allowances and Leave
+          </h4>
+          <p className="mt-2">
+            In compliance with legislative requirements, staff can include their
+            car allowance, meal allowance, living away from home allowance, and
+            leave within the same timesheet.
+          </p>
+
+          {/* Invoicing for Staff Time */}
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Invoicing for Staff Time
+          </h4>
+          <p className="mt-2">
+            Time entries can be directly allocated to a client job number,
+            allowing seamless invoicing for staff time and improving billing
+            accuracy.
+          </p>
+
+          {/* Employee Records */}
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Employee Records (Certification, Qualification, and Skills
+            Management)
+          </h4>
+          <p className="mt-2">
+            Staff records can be easily managed within the OMS Platform. The
+            system lists all certifications, qualifications, or competencies
+            associated with the logged-in user, ensuring accurate tracking and
+            compliance.
+          </p>
         </>
       ),
     },
@@ -335,84 +610,112 @@ const Solutions = () => {
       content: (
         <>
           <p>
-            OMS Software provides a complete general accounting suite with
-            bookkeeping, productivity features, and auditability.
+            OMS Software offers a complete suite of general accounting
+            (bookkeeping) features.
           </p>
           <p>
-            Niche features save time and increase productivity without
-            compromising traceability of accounting data.
+            Some of the niche features, are implemented in the OMS platform to
+            save time for your business, while increasing productivity. All of
+            this can be achieved without compromising the auditability and
+            traceability of the accounting data.
+          </p>
+          <p>
+            Refer to the individual sections for details about niche features
+            and productivity suite.
           </p>
         </>
       ),
     },
   ];
 
+  const toggleSection = (index) => {
+    const newIndex = expandedSection === index ? null : index;
+    setExpandedSection(newIndex);
+
+    // Scroll to section if opening
+    if (newIndex !== null) {
+      // Wait for DOM update
+      setTimeout(() => {
+        const el = document.getElementById(sections[newIndex].id);
+        if (el) {
+          const navbarHeight = 80; // Adjust to your fixed navbar height
+          window.scrollTo({
+            top: el.offsetTop - navbarHeight,
+            behavior: "smooth",
+          });
+        }
+      }, 100);
+    }
+  };
+
   return (
-    <section id="solutions" className="min-h-screen bg-gray-50 py-12 md:py-20">
-      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        {/* Section Header */}
-        <h2 className="text-2xl sm:text-3xl font-bold mb-4 sm:mb-6 text-center text-gray-800">
+    <section id="solutions" className="min-h-screen bg-gray-100 py-12 md:py-20">
+      <div className="container mx-auto max-w-7xl px-4 py-4 px-2">
+        {/* Header */}
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
           <span className="border-b-4 border-orange-500 pb-1">Solutions</span>
         </h2>
-        <p className="text-center max-w-2xl mx-auto text-gray-600 mb-8 sm:mb-12 text-sm sm:text-base px-2">
-          Discover our tailored solutions that address your business challenges
-          efficiently.
+        <p className="text-center max-w-2xl mx-auto text-gray-600 mb-10">
+          Explore our powerful modules designed to simplify lab operations and
+          ensure compliance.
         </p>
 
-        {sections.map((section) => (
-          <div
-            key={section.id}
-            className="mb-12 sm:mb-16 w-full sm:w-11/12 md:w-full mx-auto bg-white p-4 sm:p-6 rounded-xl shadow-md"
-          >
-            {/* Section Title with Orange Accent */}
-            <h3 className="text-xl sm:text-2xl font-semibold mb-4 sm:mb-6 text-orange-600 border-l-4 border-orange-500 pl-3">
-              {section.title}
-            </h3>
+        {/* Accordion List */}
+        <div className="space-y-6">
+          {sections.map((section, index) => (
+            <div
+              key={section.id}
+              id={section.id}
+              className="bg-white rounded-xl shadow-md border border-gray-200"
+            >
+              {/* Accordion Header */}
+              <button
+                onClick={() => toggleSection(index)}
+                className="w-full flex justify-between items-center px-5 py-4 text-left text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors rounded-xl"
+              >
+                <span>{section.title}</span>
+                <span className="text-orange-500 text-2xl">
+                  {expandedSection === index ? (
+                    <FiChevronUp />
+                  ) : (
+                    <FiChevronDown />
+                  )}
+                </span>
+              </button>
 
-            {/* Section Content */}
-            <div className="text-gray-700 space-y-3 sm:space-y-4 leading-relaxed text-sm sm:text-base">
-              {section.content}
+              {/* Accordion Content */}
+              {expandedSection === index && (
+                <div className="px-6 pb-5 text-gray-700 text-sm sm:text-base leading-relaxed border-t border-gray-200">
+                  {React.Children.map(
+                    section.content.props.children,
+                    (child) => {
+                      if (!React.isValidElement(child)) return null;
+
+                      // Conditional styling based on element type
+                      if (child.type === "p") {
+                        return <div className="mb-3">{child}</div>;
+                      }
+                      if (child.type === "ul") {
+                        return <div className="my-4">{child}</div>;
+                      }
+                      if (child.type === "img") {
+                        return (
+                          <div className="my-5 flex justify-center">
+                            {child}
+                          </div>
+                        );
+                      }
+
+                      return child;
+                    }
+                  )}
+                </div>
+              )}
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
     </section>
-
-
-
-
-
-
-
-    // <section id="solutions" className="min-h-screen bg-gray-50 py-20">
-    //   <div className="container mx-auto max-w-7xl px-4">
-    //     {/* Section Header */}
-    //     <h2 className="text-3xl font-bold mb-6 text-center text-gray-800">
-    //       <span className="border-b-4 border-orange-500 pb-1">Solutions</span>
-    //     </h2>
-    //     <p className="text-center max-w-2xl mx-auto text-gray-600 mb-12">
-    //       Discover our tailored solutions that address your business challenges
-    //       efficiently.
-    //     </p>
-
-    //     {sections.map((section, idx) => (
-    //       <div
-    //         key={section.id}
-    //         className="mb-16 w-full mx-auto bg-white p-6 rounded-xl shadow-md"
-    //       >
-    //         {/* Section Title with Orange Accent */}
-    //         <h3 className="text-2xl font-semibold mb-6 text-orange-600 border-l-4 border-orange-500 pl-3">
-    //           {section.title}
-    //         </h3>
-
-    //         {/* Section Content */}
-    //         <div className="text-gray-700 space-y-4 leading-relaxed">
-    //           {section.content}
-    //         </div>
-    //       </div>
-    //     ))}
-    //   </div>
-    // </section>
   );
 };
 
