@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { FaSearch, FaBars, FaTimes, FaGlobe } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
+import SearchBar from "@/components/ui/SearchBar";
 
 const Header = () => {
   const navItems = [
@@ -23,7 +24,7 @@ const Header = () => {
   const [language, setLanguage] = useState("");
   const [dropdownOpen, setDropdownOpen] = useState(false);
 
-  // Scroll spy effect (only runs in browser)
+  // Scroll spy effect
   useEffect(() => {
     if (typeof window === "undefined") return;
 
@@ -51,28 +52,37 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScrollEvent);
   }, []);
 
-  // Client-safe scroll / navigation
   const handleScroll = (id) => {
     if (typeof window === "undefined") return;
 
     if (window.location.pathname === "/") {
-      // Landing page scroll
+      // Already on landing page
       const section = document.getElementById(id);
       if (section) {
         section.scrollIntoView({ behavior: "smooth" });
         setActiveSection(id);
         setMobileMenuOpen(false);
+
+        // After scroll, reset URL to `/`
+        setTimeout(() => {
+          window.history.replaceState(null, "", "/");
+        }, 800); // delay slightly to allow smooth scroll to finish
       }
     } else {
-      // Navigate to landing page with hash
-      window.location.href = "/#" + id;
+      // Navigate to landing page and scroll
+      window.location.href = `/#${id}`;
+
+      // After navigation completes, reset URL to `/`
+      setTimeout(() => {
+        window.history.replaceState(null, "", "/");
+      }, 1200);
     }
   };
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
   const selectLanguage = (lang) => {
     setLanguage(lang);
-    localStorage.setItem("preferredLanguage", lang); // persist selection
+    localStorage.setItem("preferredLanguage", lang);
     setDropdownOpen(false);
     setMobileMenuOpen(false);
   };
@@ -91,7 +101,7 @@ const Header = () => {
         // 2️⃣ GeoIP API
         const res = await fetch("https://ipapi.co/json/");
         const data = await res.json();
-        let lang = "EN-IN"; // default
+        let lang = "EN-IN";
         if (data.country_code === "AU") lang = "EN-AU";
         else if (data.country_code === "IN") lang = "EN-IN";
         setLanguage(lang);
@@ -108,16 +118,16 @@ const Header = () => {
 
   return (
     <header className="sticky top-0 left-0 w-full bg-white backdrop-blur-md border-b border-orange-500 shadow-sm z-50">
-      <div className="container mx-auto max-w-7xl px-4 py-4 flex items-center justify-between">
+      <div className="w-[90%] mx-auto py-4 flex items-center justify-between">
+        {" "}
         {/* Logo */}
-        <a href="/" className="flex items-center h-8 md:h-10">
+        <a href="/" className="flex items-center h-8 md:h-10 pl-3">
           <img
             src="/OMS Logo.jpg"
             alt="OMS logo"
             className="h-full w-auto transform scale-110 md:scale-125 transition-transform duration-300 hover:scale-125 md:hover:scale-135"
           />
         </a>
-
         {/* Desktop Navigation */}
         <nav className="hidden md:flex space-x-6">
           {navItems.map((item) => (
@@ -139,12 +149,11 @@ const Header = () => {
             </button>
           ))}
         </nav>
-
         {/* Right side: Search + Mobile Hamburger */}
         <div className="flex items-center space-x-4">
-          <button className="flex items-center justify-center p-2 rounded-full border border-gray-200 hover:bg-orange-50 transition-all duration-300">
-            <FaSearch className="text-orange-500" size={18} />
-          </button>
+          <div className="relative flex items-center justify-center w-10">
+            <SearchBar />
+          </div>
 
           {/* Mobile Hamburger */}
           <button

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { contentMap } from "./ContentData";
-import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+import { FiChevronDown } from "react-icons/fi";
 
 const HeaderWithContent = () => {
   const navItems = [
@@ -20,10 +20,10 @@ const HeaderWithContent = () => {
   const [expandedSection, setExpandedSection] = useState(null);
   const [highlightAllSections, setHighlightAllSections] = useState(true);
   const [isClient, setIsClient] = useState(false);
+  const [shouldScrollToSection, setShouldScrollToSection] = useState(null);
 
   const sectionList = activeItem ? contentMap[activeItem]?.sections || [] : [];
 
-  // ✅ Runs only on client
   useEffect(() => {
     setIsClient(true);
   }, []);
@@ -43,45 +43,39 @@ const HeaderWithContent = () => {
     return () => window.removeEventListener("activateTab", handleActivateTab);
   }, [isClient]);
 
+  useEffect(() => {
+    if (shouldScrollToSection !== null && isClient) {
+      const sectionEl = document.getElementById(
+        `section-${shouldScrollToSection}`
+      );
+      if (sectionEl) {
+        // Dynamically calculate total header height (sticky header)
+        const totalHeaderHeight =
+          document.querySelector("#header-content-section > header")
+            ?.offsetHeight || 0;
+
+        const rect = sectionEl.getBoundingClientRect();
+        const scrollTo = rect.top + window.pageYOffset - totalHeaderHeight; // Small buffer for padding
+
+        window.scrollTo({
+          top: scrollTo,
+          behavior: "smooth",
+        });
+      }
+      setShouldScrollToSection(null); // Reset after scrolling
+    }
+  }, [shouldScrollToSection, isClient]);
+
   const scrollToTop = () => {
     if (!isClient) return;
+
     const sectionEl = document.getElementById("header-content-section");
     if (!sectionEl) return;
-    const outerNavbarHeight =
-      document.querySelector("body > header")?.offsetHeight || 0; // only main header
-    const innerNavbarHeight = 65; // adjust if your second navbar (HeaderWithContent) is tall
 
-    const scrollTop =
-      sectionEl.getBoundingClientRect().top +
-      window.pageYOffset -
-      (outerNavbarHeight + innerNavbarHeight + 2);
+    const topPosition = sectionEl.offsetTop;
 
     window.scrollTo({
-      top: scrollTop,
-      behavior: "smooth",
-    });
-  };
-
-  const handleMiniTabClick = (index) => {
-    setExpandedSection(index);
-    setHighlightAllSections(true);
-
-    if (!isClient) return;
-    const sectionEl = document.getElementById(`section-${index}`);
-    if (!sectionEl) return;
-    const rect = sectionEl.getBoundingClientRect();
-
-    const outerNavbarHeight =
-      document.querySelector("body > header")?.offsetHeight || 0;
-    const innerNavbarHeight = 70;
-
-    const scrollTo =
-      rect.top +
-      window.pageYOffset -
-      (outerNavbarHeight + innerNavbarHeight + 10);
-
-    window.scrollTo({
-      top: scrollTo,
+      top: topPosition,
       behavior: "smooth",
     });
   };
@@ -90,14 +84,21 @@ const HeaderWithContent = () => {
     setActiveItem(label);
     setExpandedSection(null);
     setHighlightAllSections(true);
-    if (isClient) scrollToTop();
+    setShouldScrollToTop(true); // Trigger deferred scroll
+  };
+
+  const handleMiniTabClick = (index) => {
+    setExpandedSection(index);
+    setHighlightAllSections(true);
+    setShouldScrollToSection(index); // Trigger scroll after state update
   };
 
   return (
     <div id="header-content-section" className="min-h-screen bg-gray-100">
       {/* Header */}
       <header className="sticky top-0 left-0 w-full bg-white border-t-2 border-b border-orange-500 shadow z-50">
-        <div className="container mx-auto max-w-7xl px-4 py-4 px-2">
+        <div className="w-[90%] mx-auto py-4 px-2">
+          {" "}
           {/* Desktop View */}
           <div className="hidden md:flex flex-col">
             <nav className="flex flex-wrap gap-x-2 gap-y-2">
@@ -105,7 +106,7 @@ const HeaderWithContent = () => {
                 <button
                   key={label}
                   onClick={() => handleMainTabClick(label)}
-                  className={`px-1.5 py-2 text-center font-semibold rounded-lg transition-all duration-300 ease-in-out border-l-4 ${
+                  className={`px-1.5 py-2 text-center font-semibold rounded-lg transition-all duration-300 ease-in-out border-l-4 cursor-pointer ${
                     activeItem === label
                       ? "bg-orange-100 text-orange-600 border-orange-500 shadow-sm"
                       : "border-transparent text-gray-700 hover:text-orange-500 hover:bg-orange-50 hover:shadow-md"
@@ -117,26 +118,36 @@ const HeaderWithContent = () => {
             </nav>
 
             {sectionList.length > 0 && (
-              <nav className="flex flex-wrap mt-2 gap-x-3 gap-y-2 z-20 relative">
-                {sectionList.map((section, idx) => (
-                  <button
-                    key={idx}
-                    onClick={() => handleMiniTabClick(idx)}
-                    className={`px-2 py-1 text-base font-medium rounded-lg transition-all duration-300 ease-in-out ${
-                      expandedSection === idx
-                        ? "bg-orange-200 text-orange-800 shadow-md border-l-4 border-orange-500 font-semibold"
-                        : highlightAllSections
-                        ? "bg-orange-100 text-orange-600 shadow-sm font-normal"
-                        : "bg-transparent text-gray-600 hover:text-orange-500 hover:bg-orange-50 hover:shadow-md font-normal"
-                    }`}
-                  >
-                    {section.heading}
-                  </button>
-                ))}
-              </nav>
+              <div className="relative mt-2 z-20">
+                <div className="absolute left-0 w-full h-[2px] bg-orange-400 rounded-full top-[-4px]" />
+                <nav className="flex flex-wrap gap-x-3 gap-y-2 bg-orange-50 p-2 rounded-lg shadow-sm">
+                  <p className="text-sm text-orange-600 font-semibold w-full mb-1">
+                    <span className="text-orange-600 text-lg font-semibold">
+                      {activeItem}
+                    </span>
+                  </p>
+                  {sectionList.map((section, idx) => (
+                    <button
+                      key={idx}
+                      onClick={() => handleMiniTabClick(idx)}
+                      className={`px-2 py-1 text-base font-medium rounded-lg transition-colors duration-200 ease-in-out border-l-4 cursor-pointer
+            ${
+              expandedSection === idx
+                ? "bg-orange-200 text-orange-800 border-orange-500 font-semibold"
+                : "bg-transparent text-gray-700 hover:text-orange-600 hover:bg-orange-100 border-transparent"
+            }`}
+                      style={{
+                        minWidth: "fit-content",
+                        boxSizing: "border-box",
+                      }}
+                    >
+                      {section.heading}
+                    </button>
+                  ))}
+                </nav>
+              </div>
             )}
           </div>
-
           {/* Mobile View */}
           <div className="md:hidden relative overflow-hidden mt-2 h-[calc(100vh-10px)]">
             {/* Step 1: Main Items */}
@@ -237,7 +248,8 @@ const HeaderWithContent = () => {
       </header>
 
       {/* Main Content (Desktop) */}
-      <main className="container mx-auto max-w-7xl px-4 py-8">
+      {/* <main className="container mx-auto max-w-7xl px-4 py-8"> */}
+      <main className="w-[90%] mx-auto py-4 px-2">
         <div className="hidden md:block">
           {activeItem && sectionList.length > 0 ? (
             <div className="p-6 bg-white rounded-md shadow-md border border-gray-200">
@@ -257,7 +269,7 @@ const HeaderWithContent = () => {
                         prev === index ? null : index
                       )
                     }
-                    className="w-full text-left text-lg font-semibold text-gray-800 mb-2 flex justify-between items-center focus:outline-none"
+                    className="w-full text-left text-lg font-semibold text-gray-800 mb-2 flex justify-between items-center focus:outline-none cursor-pointer"
                   >
                     {section.heading}
                     <span

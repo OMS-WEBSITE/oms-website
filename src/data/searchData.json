@@ -1,0 +1,152 @@
+[
+  {
+    "title": "About Us",
+    "description": "Explore OMS About Us page for details.",
+    "url": "/about-us"
+  },
+  {
+    "title": "Best Practices",
+    "description": "Explore OMS Best Practices page for details.",
+    "url": "/best-practices"
+  },
+  {
+    "title": "Top 5 Lab Non Conformances",
+    "description": "Explore OMS Top 5 Lab Non Conformances page for details.",
+    "url": "/blog/top-5-lab-non-conformances"
+  },
+  {
+    "title": "Blog",
+    "description": "Explore OMS Blog page for details.",
+    "url": "/blog"
+  },
+  {
+    "title": "Careers",
+    "description": "Explore OMS Careers page for details.",
+    "url": "/careers"
+  },
+  {
+    "title": "Compliance",
+    "description": "Explore OMS Compliance page for details.",
+    "url": "/compliance"
+  },
+  {
+    "title": "Ebooks",
+    "description": "Explore OMS Ebooks page for details.",
+    "url": "/ebooks"
+  },
+  {
+    "title": "Explore Industries",
+    "description": "Explore OMS Explore Industries page for details.",
+    "url": "/explore-industries"
+  },
+  {
+    "title": "Explore Organizations",
+    "description": "Explore OMS Explore Organizations page for details.",
+    "url": "/explore-organizations"
+  },
+  {
+    "title": "Faq",
+    "description": "Explore OMS Faq page for details.",
+    "url": "/faq"
+  },
+  {
+    "title": "Forgot Password",
+    "description": "Explore OMS Forgot Password page for details.",
+    "url": "/forgot-password"
+  },
+  {
+    "title": "Help Center",
+    "description": "Explore OMS Help Center page for details.",
+    "url": "/help-center"
+  },
+  {
+    "title": "How We Are Different",
+    "description": "Explore OMS How We Are Different page for details.",
+    "url": "/how-we-are-different"
+  },
+  {
+    "title": "Home",
+    "description": "Explore OMS Home page for details.",
+    "url": "/"
+  },
+  {
+    "title": "New",
+    "description": "Explore OMS New page for details.",
+    "url": "/new"
+  },
+  {
+    "title": "Newsletter",
+    "description": "Explore OMS Newsletter page for details.",
+    "url": "/newsletter"
+  },
+  {
+    "title": "Pricing",
+    "description": "Explore OMS Pricing page for details.",
+    "url": "/pricing"
+  },
+  {
+    "title": "Sign In",
+    "description": "Explore OMS Sign In page for details.",
+    "url": "/sign-in"
+  },
+  {
+    "title": "Sign Up",
+    "description": "Explore OMS Sign Up page for details.",
+    "url": "/sign-up"
+  },
+  {
+    "title": "Success Stories",
+    "description": "Explore OMS Success Stories page for details.",
+    "url": "/success-stories"
+  },
+  {
+    "title": "Testimonials",
+    "description": "Explore OMS Testimonials page for details.",
+    "url": "/testimonials"
+  },
+  {
+    "title": "Solutions",
+    "description": "Explore OMS solutions designed for modern businesses.",
+    "url": "/#solutions"
+  },
+  {
+    "title": "Why OMS",
+    "description": "Learn why global organizations trust OMS software.",
+    "url": "/#why-oms"
+  },
+  {
+    "title": "How to Buy",
+    "description": "Step-by-step guide to purchasing and deploying OMS.",
+    "url": "/#how-to-buy"
+  },
+  {
+    "title": "Learn",
+    "description": "Tutorials, documentation, and resources for OMS users.",
+    "url": "/#learn"
+  },
+  {
+    "title": "Support",
+    "description": "Reach support or browse FAQs for quick help.",
+    "url": "/#support"
+  },
+  {
+    "title": "Partners",
+    "description": "Explore collaborations and partnerships with OMS.",
+    "url": "/#partners"
+  },
+  {
+    "title": "Reports",
+    "description": "Access and analyze OMS business performance reports with real-time insights.",
+    "url": "/#productsandservice"
+  },
+  {
+    "title": "Business Performance - Dashboards",
+    "description": "View key performance dashboards to track your organization’s KPIs.",
+    "url": "/#productsandservice"
+  },
+  {
+    "title": "Business Performance - Analytics",
+    "description": "Get actionable insights through OMS analytics and performance metrics.",
+    "url": "/#productsandservice"
+  }
+]

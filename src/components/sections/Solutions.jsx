@@ -1,5 +1,3 @@
-
-
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
@@ -216,7 +214,7 @@ const Solutions = () => {
           <img
             src="/images/Solutions-quality-management-documents.png"
             alt="Solutions-quality-management-documents"
-            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+            className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
           />
 
           <ul className="list-disc ml-5">
@@ -238,12 +236,12 @@ const Solutions = () => {
           <img
             src="/images/Solutions-create.png"
             alt="Solutions-create"
-            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+            className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
           />
           <img
             src="/images/solutions-create-new.png"
             alt="solutions-create-new"
-            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+            className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
           />
 
           <p>
@@ -256,12 +254,12 @@ const Solutions = () => {
           <img
             src="/images/solutions-search.png"
             alt="solutions-search"
-            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+            className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
           />
           <img
             src="/images/solutions-system-procedures.png"
             alt="solutions-system-procedures"
-            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+            className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
           />
         </>
       ),
@@ -297,7 +295,7 @@ const Solutions = () => {
           <img
             src="/images/Solutions-Report-sign.jpg"
             alt="Solutions-Report-sign"
-            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+            className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
           />
           <p>
             This simple process eliminates the entire process of downloading
@@ -538,7 +536,7 @@ const Solutions = () => {
           <img
             src="/images/solutions-Assets.png"
             alt="solutions-Assets"
-            className="rounded-xl shadow-md my-4 mx-auto max-h-72 object-contain"
+            className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
           />
         </>
       ),
@@ -649,32 +647,35 @@ const Solutions = () => {
   };
 
   return (
-    <section id="solutions" className="min-h-screen bg-gray-100 py-12 md:py-20">
-      <div className="container mx-auto max-w-7xl px-4 py-4 px-2">
+    <section
+      id="solutions"
+      className="min-h-screen bg-gray-100 py-10 sm:py-16 md:py-20"
+    >
+      <div className="w-[90%] mx-auto py-4 px-2">
+        {" "}
         {/* Header */}
-        <h2 className="text-3xl font-bold text-center text-gray-800 mb-6">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
           <span className="border-b-4 border-orange-500 pb-1">Solutions</span>
         </h2>
-        <p className="text-center max-w-2xl mx-auto text-gray-600 mb-10">
+        <p className="text-center max-w-2xl mx-auto text-gray-600 mb-8 sm:mb-10 text-sm sm:text-base px-2">
           Explore our powerful modules designed to simplify lab operations and
           ensure compliance.
         </p>
-
         {/* Accordion List */}
-        <div className="space-y-6">
+        <div className="space-y-4 sm:space-y-6">
           {sections.map((section, index) => (
             <div
               key={section.id}
               id={section.id}
-              className="bg-white rounded-xl shadow-md border border-gray-200"
+              className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden"
             >
               {/* Accordion Header */}
               <button
                 onClick={() => toggleSection(index)}
-                className="w-full flex justify-between items-center px-5 py-4 text-left text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors rounded-xl"
+                className="w-full flex justify-between items-center px-4 sm:px-5 py-3 sm:py-4 text-left text-base sm:text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors cursor-pointer"
               >
-                <span>{section.title}</span>
-                <span className="text-orange-500 text-2xl">
+                <span className="pr-3">{section.title}</span>
+                <span className="text-orange-500 text-xl sm:text-2xl">
                   {expandedSection === index ? (
                     <FiChevronUp />
                   ) : (
@@ -685,27 +686,28 @@ const Solutions = () => {
 
               {/* Accordion Content */}
               {expandedSection === index && (
-                <div className="px-6 pb-5 text-gray-700 text-sm sm:text-base leading-relaxed border-t border-gray-200">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-gray-700 text-sm sm:text-base leading-relaxed border-t border-gray-200">
                   {React.Children.map(
                     section.content.props.children,
                     (child) => {
                       if (!React.isValidElement(child)) return null;
 
-                      // Conditional styling based on element type
                       if (child.type === "p") {
                         return <div className="mb-3">{child}</div>;
                       }
                       if (child.type === "ul") {
-                        return <div className="my-4">{child}</div>;
+                        return <div className="my-3 sm:my-4">{child}</div>;
                       }
                       if (child.type === "img") {
                         return (
-                          <div className="my-5 flex justify-center">
-                            {child}
+                          <div className="my-4 sm:my-5 flex justify-center">
+                            <img
+                              {...child.props}
+                              className="max-w-full h-auto rounded-lg"
+                            />
                           </div>
                         );
                       }
-
                       return child;
                     }
                   )}
