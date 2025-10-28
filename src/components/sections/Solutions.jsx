@@ -7,7 +7,7 @@ const Solutions = () => {
   const sections = [
     {
       id: "nabl-lab-verification",
-      title: "Instantly Verify Your NABL Lab Reports — Anytime, Anywhere",
+      title: "NABL ULR + QR Verification — Ensure every report is authentic, traceable, and verifiable online.",
       content: (
         <>
           <p>
@@ -189,7 +189,7 @@ const Solutions = () => {
     },
     {
       id: "quality-management-documents",
-      title: "Quality Management Documents",
+      title: "Quality Management Documents — Version-controlled policies, procedures, and records in one repository.",
       content: (
         <>
           <p>
@@ -266,7 +266,7 @@ const Solutions = () => {
     },
     {
       id: "Job Test Record Management",
-      title: "Job Test Record Management",
+      title: "Job Test Record Management — Full traceability from sample registration to certificate issuance.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -364,7 +364,7 @@ const Solutions = () => {
     },
     {
       id: "client-management",
-      title: "Client Management",
+      title: "Client Management Portal — Clients raise requests, upload data, and download verified reports.",
       content: (
         <>
           <p>
@@ -380,7 +380,7 @@ const Solutions = () => {
     },
     {
       id: "specifications",
-      title: "Specifications",
+      title: "Specifications Database — Keep reference standards and acceptance limits up-to-date.",
       content: (
         <>
           <p>
@@ -470,7 +470,7 @@ const Solutions = () => {
     },
     {
       id: "asset-management",
-      title: "Asset Management",
+      title: "Asset Management — Equipment inventory with calibration and service alerts.",
       content: (
         <>
           <p>
@@ -543,7 +543,7 @@ const Solutions = () => {
     },
     {
       id: "employee-management",
-      title: "Employee Management",
+      title: "Employee Management — Track competencies, approvals, and workload distribution.",
       content: (
         <>
           <p className="mb-3">
@@ -604,7 +604,7 @@ const Solutions = () => {
     },
     {
       id: "accounting",
-      title: "Accounting",
+      title: "Accounting & Finance — Seamless quote-to-cash cycle and project cost tracking.",
       content: (
         <>
           <p>
@@ -672,9 +672,9 @@ const Solutions = () => {
               {/* Accordion Header */}
               <button
                 onClick={() => toggleSection(index)}
-                className="w-full flex justify-between items-center px-4 sm:px-5 py-3 sm:py-4 text-left text-base sm:text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors cursor-pointer"
+                className="w-full flex justify-between items-center px-4 sm:px-5 py-3 sm:py-4 text-left text-base sm:text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors curs"
               >
-                <span className="pr-3">{section.title}</span>
+                <span className="pr-3 text-orange-500">{section.title}</span>
                 <span className="text-orange-500 text-xl sm:text-2xl">
                   {expandedSection === index ? (
                     <FiChevronUp />

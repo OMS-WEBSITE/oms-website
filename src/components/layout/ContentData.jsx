@@ -7,20 +7,71 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Digitalised payroll approval & report",
+            text: "💼 Payroll Report",
           },
           {
             type: "paragraph",
-            text: `In the OMS Platform your staff can enter their timesheet on the go, at a time and place of their choosing, using their smart phone, tablet, computer etc, reducing the amount of double handling from a traditional paper-based system.`,
+            text: "Digitalised Payroll Approval & Reporting",
           },
           {
             type: "paragraph",
-            text: `At the end of the pay cycle, Managers can generate a digital combined payroll report for your business or a specific branch and then review online. This report highlights staff claimed hours, overtime, and leave for the pay period. Once reviewed the manager can approve staff timesheet digitally or revise with additional notes.
-The payroll officer can view or download this approved payroll report to process in any payroll programs approved by the country’s government taxation body. This process does not require the exchange of any emails or telephone discussion or any substantial interaction with your managers or with other staff, saving substantial time for your organisation, leading to productivity gain and less dependency on a trained payroll officer or an additional license for the accounting software.`,
+            text: "Manage timesheets, approvals, and payroll reports entirely online with OMS Software — no spreadsheets, emails, or manual paperwork. Empower your staff to enter hours on the go and your managers to approve with a single click.",
           },
           {
             type: "paragraph",
-            text: `Any changes made in the timesheet or the payroll report, by any employee, is fully traceable and auditable in the OMS platform. The integrated, digitalised & fully remote payroll process in the OMS can save your organisation’s stationary and manual handling cost, resulting in increased productivity. `,
+            text: "🕒 How It Works",
+          },
+          {
+            type: "list",
+            items: [
+              "Employees submit timesheets via mobile, tablet, or desktop.",
+              "Managers review, approve, or comment on claimed hours and overtime.",
+              "OMS automatically generates a digital payroll report for each pay cycle.",
+              "Payroll officers can export the approved report into any government-approved payroll software for final processing.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "📊 Key Highlights",
+          },
+          {
+            type: "list",
+            items: [
+              "✅ Instant Timesheet Access — Employees update records anywhere, anytime",
+              "✅ Digital Approvals — Managers verify and sign off reports online",
+              "✅ Secure Integration — Export data to your existing payroll system",
+              "✅ Full Audit Trail — Every change is logged and traceable",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "🚀 Why It Matters",
+          },
+          {
+            type: "list",
+            items: [
+              "🧾 Reduce Errors: Eliminate manual re-entry and version confusion",
+              "⏱️ Save Time: Automate payroll reviews and cut processing cycles",
+              "💻 Stay Compliant: Align with taxation and audit requirements",
+              "💡 Boost Efficiency: Fewer admin steps, faster decisions, and less dependency on specialists",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "“The integrated digital payroll workflow in OMS saves hours every pay cycle — fewer emails, zero paper, and complete traceability.”",
+          },
+          {
+            type: "paragraph",
+            text: "🔒 The OMS Advantage",
+          },
+          {
+            type: "list",
+            items: [
+              "Secure, cloud-based system accessible from any device",
+              "16 hours of complimentary training after implementation",
+              "Configurable approval hierarchies and branch-wise summaries",
+              "Automatic record backup and change tracking for audits",
+            ],
           },
           {
             type: "images",
@@ -28,6 +79,7 @@ The payroll officer can view or download this approved payroll report to process
           },
         ],
       },
+
       {
         heading: "Statement",
         content: [
@@ -1741,3 +1793,15 @@ The payroll officer can view or download this approved payroll report to process
     ],
   },
 };
+
+
+
+
+// NABL ULR + QR Verification — Ensure every report is authentic, traceable, and verifiable online.
+// Quality Management Documents — Version-controlled policies, procedures, and records in one repository.
+// Job Test Record Management — Full traceability from sample registration to certificate issuance.
+// Client Management Portal — Clients raise requests, upload data, and download verified reports.
+// Specifications Database — Keep reference standards and acceptance limits up-to-date.
+// Asset Management — Equipment inventory with calibration and service alerts.
+// Employee Management — Track competencies, approvals, and workload distribution.
+// Accounting & Finance — Seamless quote-to-cash cycle and project cost tracking.

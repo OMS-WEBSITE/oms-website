@@ -129,15 +129,15 @@ const Header = () => {
           />
         </a>
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex space-x-6">
+        <nav className="hidden md:flex flex-wrap gap-x-6">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className={`relative text-gray-700 font-semibold tracking-wide transition-colors duration-300 cursor-pointer group ${
+              className={`relative font-semibold tracking-wide transition-all duration-300 cursor-pointer group ${
                 activeSection === item.id
                   ? "text-orange-500"
-                  : "hover:text-orange-500"
+                  : "text-gray-700 hover:text-orange-500"
               }`}
             >
               {item.name}

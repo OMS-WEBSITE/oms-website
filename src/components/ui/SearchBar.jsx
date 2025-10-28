@@ -7,6 +7,19 @@ const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.location.pathname === "/" && isOpen) {
+        setIsOpen(false);
+        setResults([]);
+        setQuery("");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [isOpen]);
+
   const toggleSearch = () => {
     setIsOpen(!isOpen);
     setQuery("");
@@ -80,7 +93,7 @@ const SearchBar = () => {
             top: window.innerWidth < 768 ? "60px" : undefined, // fixed below navbar
             left: window.innerWidth < 768 ? "0" : undefined,
             right: window.innerWidth < 768 ? "0" : undefined,
-            zIndex: 9999, 
+            zIndex: 9999,
           }}
         >
           <input

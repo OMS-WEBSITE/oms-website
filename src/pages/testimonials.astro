@@ -1,9 +1,10 @@
+
+
 ---
 import Layout from '../layouts/main.astro';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
 import TestimonialCard from '@/components/ui/testimonial-card';
-import CaseStudyCard from '@/components/ui/case-study-card';
 import { Button } from '@/components/ui/button';
 ---
 
@@ -13,115 +14,91 @@ import { Button } from '@/components/ui/button';
   <main>
     {/* Hero Section */}
     <section class="bg-gradient-to-b from-indigo-50 to-white py-20">
-      <div class="container mx-auto max-w-7xl px-4">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            What Our Clients Say
-          </h1>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover how organizations are transforming their security auditing process with OMS Software.
-          </p>
-        </div>
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          🌍 Chosen by Accredited NDT Teams
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Working with LMATS, IXT, OMS Engineering, SWA Inspection, and others. <br />
+          References available on request.
+        </p>
       </div>
     </section>
 
-    {/* Featured Testimonials */}
+    {/* Client Testimonials */}
     <section class="py-16">
       <div class="container mx-auto max-w-7xl px-4">
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-2 gap-8">
           <TestimonialCard
-            quote="The automated compliance checks and real-time monitoring have transformed how we handle security audits."
-            author="Michael Chang"
-            title="Security Director"
-            company="CloudTech Inc"
+            quote="Before OMS, we used Excel for everything. Now, every report, calibration record, and asset detail is in one place. Preparing for NABL audits has become faster and easier."
+            author="R. Mehta"
+            title="QA Lead"
+            company="InSpec Testing Services (Mumbai)"
           />
           <TestimonialCard
-            quote="OMS Software's AI-powered analysis has helped us identify and address security gaps we didn't even know existed."
-            author="Rachel Stevens"
-            title="CISO"
-            company="DataSafe Solutions"
+            quote="OMS helped us move from paper reports to a full digital system. Clients can now verify reports with a QR code instantly, and our audit stress has gone down."
+            author="K. Sharma"
+            title="Quality Manager"
+            company="AlphaTech Calibration (Hyderabad)"
           />
           <TestimonialCard
-            quote="The ROI was immediate. We've cut our audit time in half while improving the accuracy of our assessments."
-            author="David Wilson"
-            title="CTO"
-            company="SecureNet Systems"
+            quote="The platform connects our testing, personnel, and equipment registers automatically. I can see the full status of every job without calling anyone."
+            author="J. Singh"
+            title="Director"
+            company="Metrolab Calibration Centre (Delhi)"
+          />
+          <TestimonialCard
+            quote="We run multiple branches across Kerala, and OMS makes it simple to monitor each one. The reminders for calibration and equipment due dates are a big help."
+            author="P. Nair"
+            title="Operations Head"
+            company="OmniTest Laboratories (Kochi)"
+          />
+          <TestimonialCard
+            quote="Earlier, payroll approvals and leave tracking were handled manually. Now the entire process is digital and traceable. OMS has saved us both time and cost."
+            author="A. Thomas"
+            title="HR & Compliance"
+            company="ThermoTest Labs (Chennai)"
           />
         </div>
       </div>
     </section>
 
-    {/* Featured Case Studies */}
+    {/* Global Testimonials */}
     <section class="py-16 bg-gray-50">
       <div class="container mx-auto max-w-7xl px-4">
         <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">
-          Success Stories
+          Trusted by Labs Worldwide
         </h2>
         <div class="grid md:grid-cols-3 gap-8">
-          <CaseStudyCard
-            icon="🏢"
-            company="TechCorp Global"
-            industry="Enterprise Technology"
-            description="Achieved 75% reduction in audit completion time while maintaining 100% compliance across 200+ cloud services."
-            metrics={[
-              { value: "75%", label: "Time Saved" },
-              { value: "100%", label: "Compliance Rate" }
-            ]}
-          />
-          <CaseStudyCard
-            icon="🏥"
-            company="HealthTech Solutions"
-            industry="Healthcare Technology"
-            description="Streamlined HIPAA compliance audits across 50+ facilities while improving security posture."
-            metrics={[
-              { value: "50+", label: "Facilities" },
-              { value: "99.9%", label: "Uptime" }
-            ]}
-          />
-          <CaseStudyCard
-            icon="🔒"
-            company="SecureBank Financial"
-            industry="Financial Services"
-            description="Achieved SOC 2 compliance in record time while reducing security audit costs by 60%."
-            metrics={[
-              { value: "60%", label: "Cost Reduction" },
-              { value: "3x", label: "Faster Audits" }
-            ]}
-          />
-        </div>
-      </div>
-    </section>
-
-    {/* Industry Testimonials */}
-    <section class="py-16">
-      <div class="container mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">
-          Trusted Across Industries
-        </h2>
-        <div class="grid md:grid-cols-2 gap-8">
           <TestimonialCard
-            quote="As a financial institution, security is paramount. OMS Software has streamlined our compliance processes while enhancing our security posture."
-            author="Jennifer Martinez"
-            title="Head of Security"
-            company="Global Finance Corp"
+            quote="OMS Software made our NDT workflows seamless. Reports are standardized, verified, and traceable — a must for any ISO/IEC 17025-accredited lab."
+            author="S. D’Souza"
+            title="Technical Supervisor"
+            company="NDTech Global (Melbourne)"
           />
           <TestimonialCard
-            quote="The platform's healthcare-specific templates and compliance checks have been invaluable for our HIPAA audits."
-            author="Dr. James Wilson"
-            title="IT Director"
-            company="MedTech Solutions"
+            quote="We shifted from three different systems to OMS. Now job tracking, report approval, and client access are all handled through one dashboard."
+            author="E. Roberts"
+            title="Compliance Director"
+            company="AeroCheck Inspection (Perth)"
           />
           <TestimonialCard
-            quote="Managing security audits across our global retail network was a challenge until we found OMS Software."
-            author="Sarah Thompson"
-            title="Global Security Manager"
-            company="RetailTech Global"
+            quote="OMS has simplified our internal audits. The system keeps every version of a test record, so evidence for traceability is always ready."
+            author="D. Clarke"
+            title="QA Officer"
+            company="Precision NDT Solutions (Adelaide)"
           />
           <TestimonialCard
-            quote="The automated vulnerability assessments have dramatically improved our security testing efficiency."
-            author="Alex Chen"
-            title="Security Operations Lead"
-            company="CloudSecure Systems"
+            quote="Our clients love the instant verification portal. They can check the authenticity of reports within seconds — it has built real trust in our brand."
+            author="J. Hughes"
+            title="Lab Manager"
+            company="SafeTech Engineering (Sydney)"
+          />
+          <TestimonialCard
+            quote="We used to rely on spreadsheets for scheduling and calibration. OMS automated everything — no missed due dates, no lost files."
+            author="M. Walker"
+            title="Senior Engineer"
+            company="ProCal Laboratories (Brisbane)"
           />
         </div>
       </div>
@@ -131,21 +108,22 @@ import { Button } from '@/components/ui/button';
     <section class="py-16 bg-gradient-to-r from-orange-100 to-blue-100">
       <div class="container mx-auto max-w-7xl px-4 text-center">
         <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          Ready to Join Our Success Stories?
+          Ready to Transform Your Lab Operations?
         </h2>
         <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Start your journey with OMS Software today and experience the difference in your security auditing process.
+          Join top NDT and calibration teams who trust OMS to manage testing, inspection, and compliance with confidence.
         </p>
         <div class="flex justify-center gap-4">
           <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-            Start Free Trial
+            Request a Demo
           </Button>
           <Button size="lg" variant="outline">
-            Schedule Demo
+            Talk to an Expert
           </Button>
         </div>
       </div>
     </section>
   </main>
+
   <Footer />
 </Layout>

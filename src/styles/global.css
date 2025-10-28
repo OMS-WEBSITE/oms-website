@@ -150,10 +150,31 @@ html {
 
 .feature-glow {
   animation: glowIn 1s ease forwards;
-  background: linear-gradient(to right, #ea885e, #ea885e 70%);
+  background: linear-gradient(to right, #ea885e, #fe781f 70%);
 }
-
 
 #header-content-section {
   scroll-margin-top: 0;
+}
+@keyframes smoothFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.animate-smoothFadeUp {
+  animation: smoothFadeUp 6s ease-in-out forwards;
 }

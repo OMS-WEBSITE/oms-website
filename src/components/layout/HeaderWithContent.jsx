@@ -96,12 +96,60 @@ const HeaderWithContent = () => {
   return (
     <div id="header-content-section" className="min-h-screen bg-gray-100">
       {/* Header */}
+      <div className="pt-20">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
+          <span className="border-b-4 border-orange-500 pb-1">
+            Products & Services
+          </span>
+        </h2>
+        <p className="text-center max-w-2xl mx-auto text-gray-600 mb-8 sm:mb-10 text-sm sm:text-base px-2">
+          Explore our Products & Services built to streamline laboratory
+          operations and maintain compliance with ISO/IEC standards.
+        </p>
+      </div>
       <header className="sticky top-0 left-0 w-full bg-white border-t-2 border-b border-orange-500 shadow z-50">
         <div className="w-[90%] mx-auto py-4 px-2">
           {" "}
           {/* Desktop View */}
           <div className="hidden md:flex flex-col">
             <nav className="flex flex-wrap gap-x-2 gap-y-2">
+              {navItems.map((label) => (
+                <button
+                  key={label}
+                  onClick={() => handleMainTabClick(label)}
+                  className={`relative px-1.5 py-2 font-semibold transition-all duration-300 ease-in-out cursor-pointer group ${
+                    activeItem === label
+                      ? "text-orange-600"
+                      : "text-gray-700 hover:text-orange-500"
+                  }`}
+                >
+                  {label}
+                  {/* Orange underline animation */}
+                  <span
+                    className={`absolute left-0 -bottom-1 h-[2px] bg-orange-500 w-full origin-left scale-x-0 transform transition-transform duration-300 group-hover:scale-x-100 ${
+                      activeItem === label ? "scale-x-100" : ""
+                    }`}
+                  />
+                </button>
+              ))}
+            </nav>
+
+            {/* <nav className="flex flex-wrap gap-x-2 gap-y-2">
+              {navItems.map((label) => (
+                <button
+                  key={label}
+                  onClick={() => handleMainTabClick(label)}
+                  className={`px-1.5 py-2 text-center font-semibold rounded-lg transition-all duration-300 ease-in-out border-l-4 cursor-pointer ${
+                    activeItem === label
+                      ? "text-orange-600  underline underline-offset-4"
+                      : "border-transparent text-gray-700 hover:text-orange-500 hover:underline hover:underline-offset-4"
+                  }`}
+                >
+                  {label}
+                </button>
+              ))}
+            </nav> */}
+            {/* <nav className="flex flex-wrap gap-x-2 gap-y-2">
               {navItems.map((label) => (
                 <button
                   key={label}
@@ -115,9 +163,9 @@ const HeaderWithContent = () => {
                   {label}
                 </button>
               ))}
-            </nav>
+            </nav> */}
 
-            {sectionList.length > 0 && (
+            {/* {sectionList.length > 0 && (
               <div className="relative mt-2 z-20">
                 <div className="absolute left-0 w-full h-[2px] bg-orange-400 rounded-full top-[-4px]" />
                 <nav className="flex flex-wrap gap-x-3 gap-y-2 bg-orange-50 p-2 rounded-lg shadow-sm">
@@ -146,7 +194,7 @@ const HeaderWithContent = () => {
                   ))}
                 </nav>
               </div>
-            )}
+            )} */}
           </div>
           {/* Mobile View */}
           <div className="md:hidden relative overflow-hidden mt-2 h-[calc(100vh-10px)]">
@@ -301,6 +349,7 @@ const HeaderWithContent = () => {
                               ))}
                             </ul>
                           );
+
                         if (block.type === "images")
                           return (
                             <div
