@@ -14,7 +14,7 @@ import CTASection from "./sections/CTASection";
 import PricingCallout from "./sections/PricingCallout";
 import VideoSection from "./sections/Video";
 
-import ProductsandService from "./sections/ProductsandService";
+import ProductsAndService from "./sections/ProductsandService"
 import Solutions from "./sections/Solutions";
 import WhyOMSfrom from "./sections/WhyOMS";
 import HowToBuy from "./sections/HowToBuy";
@@ -32,7 +32,7 @@ const AuditProApp = () => {
       <Header />
       <main>
         <VideoSection />
-        <ProductsandService />
+        <ProductsAndService />
         <Solutions />
         <WhyOMSfrom />
         <HowToBuy />

@@ -2,7 +2,7 @@ import React from "react";
 
 const WhyOMS = () => {
   return (
-    <section id="why-oms" className="py-16 sm:py-20 bg-gray-50">
+    <section id="why-oms" className="py-16 sm:py-24 bg-gray-50">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
         {/* Title */}
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6">

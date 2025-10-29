@@ -649,7 +649,7 @@ const Solutions = () => {
   return (
     <section
       id="solutions"
-      className="min-h-screen bg-gray-100 py-10 sm:py-16 md:py-20"
+      className="min-h-screen bg-white py-10 sm:py-16 md:py-20"
     >
       <div className="w-[90%] mx-auto py-4 px-2">
         {" "}
