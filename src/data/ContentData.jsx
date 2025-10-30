@@ -1,6 +1,7 @@
 export const contentMap = {
   "Business Performance": {
-    title: "Business Performance",
+    id: "businessperformance",
+    title: "See your lab’s performance in real time.",
     sections: [
       {
         heading: "Payroll Report",
@@ -11,11 +12,11 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Digitalised Payroll Approval & Reporting",
+            text: "Digitalized Payroll Approval & Reporting",
           },
           {
             type: "paragraph",
-            text: "Manage timesheets, approvals, and payroll reports entirely online with OMS Software — no spreadsheets, emails, or manual paperwork. Empower your staff to enter hours on the go and your managers to approve with a single click.",
+            text: "Manage timesheets, approvals, and payroll reports entirely online with OMS Software — no spreadsheets, emails, or manual paperwork. Empower your staff to enter hours on the go and enable managers to approve with a single click.",
           },
           {
             type: "paragraph",
@@ -1464,17 +1465,8 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "We are currently working on some exciting new features in the OMS platform.",
+            text: "Pressure Equipment",
           },
-          {
-            type: "paragraph",
-            text: "Check back later for further updates or contact us for an obligation free demonstration.",
-          },
-        ],
-      },
-      {
-        heading: "Pressure Equipment",
-        content: [
           {
             type: "paragraph",
             text: "We are currently working on some exciting new features in the OMS platform.",
@@ -1485,6 +1477,19 @@ export const contentMap = {
           },
         ],
       },
+      // {
+      //   heading: "Pressure Equipment",
+      //   content: [
+      //     {
+      //       type: "paragraph",
+      //       text: "We are currently working on some exciting new features in the OMS platform.",
+      //     },
+      //     {
+      //       type: "paragraph",
+      //       text: "Check back later for further updates or contact us for an obligation free demonstration.",
+      //     },
+      //   ],
+      // },
     ],
   },
 
@@ -1793,9 +1798,6 @@ export const contentMap = {
     ],
   },
 };
-
-
-
 
 // NABL ULR + QR Verification — Ensure every report is authentic, traceable, and verifiable online.
 // Quality Management Documents — Version-controlled policies, procedures, and records in one repository.

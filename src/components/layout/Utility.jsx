@@ -51,7 +51,7 @@ const Utility = ({ language, setLanguage }) => {
       <div className="w-[90%] mx-auto h-[50px] flex justify-end items-center space-x-4 px-4">
         {/* Try Free Button */}
         <Button
-          className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300"
+          className="bg-gradient-to-r from-[#ea885e] to-[#fe781f] hover:from-orange-600 hover:to-pink-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300"
           style={{ height: "36px", minHeight: "36px" }}
         >
           Try 14 days free

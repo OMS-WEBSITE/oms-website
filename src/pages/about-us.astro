@@ -1,7 +1,7 @@
 ---
 import Layout from "../layouts/main.astro";
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
+import Header from "@/components/layout/Header";
+import Footer from "@/components/layout/Footer";
 import { buildSEO } from "../utils/seo";
 
 const seo = buildSEO
@@ -17,46 +17,192 @@ const seo = buildSEO
 <Layout {...seo}>
   <Header client:only="react" />
 
-  <main class="max-w-5xl mx-auto px-4 md:px-8 py-12 prose">
-    <h1>About OMS Software</h1>
+  <main
+    class="max-w-5xl mx-auto px-4 md:px-8 py-12 leading-relaxed text-gray-800"
+  >
+    <h1
+      class="text-3xl md:text-5xl font-extrabold mb-8 text-center text-orange-600"
+    >
+      💡 About OMS Software
+    </h1>
 
-    <p>
-OMS software PTY LTD is a cloud-based enterprise LIMS+ERP system, that was designed with direct input from NDT industry specialists right here in Australia!
-    <p> <br>
-      The OMS platform incorporates:
-      <ul class="list-disc pl-6 mt-2">
-        <li>Business Process Automation</li>
-        <li>Laboratory Information Management Systems (LIMS)</li>
-        <li>Enterprise Software (ERP)</li>
-        <li>Quality Management System (QMS) in accordance with ISO 17025, 17020, 9001</li>
-      </ul>
-    </p>
+    <section class="space-y-6 text-justify">
+      <p>
+        OMS software PTY LTD is a cloud-based enterprise LIMS+ERP system, that
+        was designed with direct input from NDT industry specialists right here
+        in Australia!
+      </p>
 
-    <br>
-    <p>
-      Based in Melbourne, OMS Software offers real-time business data and information that can be accessed by owners, managers, technicians, administrative staff, and clients, anytime, anywhere, all at the click of a button.
-    </p>
+      <div class="bg-orange-50 border-l-4 border-orange-400 p-4 rounded-md">
+        <p class="font-semibold text-gray-700">📦 The OMS platform incorporates:</p>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+          <li>Business Process Automation</li>
+          <li>Laboratory Information Management Systems (LIMS)</li>
+          <li>Enterprise Software (ERP)</li>
+          <li>
+            Quality Management System (QMS) in accordance with ISO 17025, 17020,
+            9001
+          </li>
+        </ul>
+      </div>
 
-    <p>
-      Owners and managers have full control over their business with direct insights into:
-      <ul class="list-disc pl-6 mt-2">
-        <li>Job scope</li>
-        <li>HR management</li>
-        <li>Work requests</li>
-        <li>Technician location</li>
-        <li>Accounts and assets</li>
-      </ul>
-      All whilst ensuring compliance with ISO 17020 and 17025 (NATA).
-    </p>
-<br>
+      <p>
+        🏙️ Based in Melbourne, OMS Software offers real-time business data and
+        information that can be accessed by owners, managers, technicians,
+        administrative staff, and clients — anytime, anywhere, all at the click
+        of a button.
+      </p>
 
-    <p><b>
-      OMS Software was registered as a business in 2019. The technology behind it has been in production for 12 years </b>and is supported by a team of professional engineers with expertise in engineering, ERP pre-sales, integration, and e-commerce. Combined with input from NDT speciality groups including Aerospace, Engineering, Heavy Construction, and Oil & Gas, the OMS platform is one of the most advanced in the NDT field. Once implemented, it could save your business thousands of dollars annually.
-   </p>
-<br>
-    <p>
-      If you are looking for an inclusive Laboratory Information Management System (LIMS), Enterprise Software (ERP), Quality Management System (QMS), or Business Process Automation, give us a call. We’d be happy to provide a free demonstration!
-    </p>
+      <div class="bg-gray-50 border-l-4 border-gray-300 p-4 rounded-md">
+        <p class="font-semibold text-gray-700">
+          👨‍💼 Owners and managers have full control over their business with direct
+          insights into:
+        </p>
+        <ul class="list-disc pl-6 mt-2 space-y-1">
+          <li>Job scope</li>
+          <li>HR management</li>
+          <li>Work requests</li>
+          <li>Technician location</li>
+          <li>Accounts and assets</li>
+        </ul>
+        <p class="mt-2">
+          ✅ All whilst ensuring compliance with ISO 17020 and 17025 (NATA).
+        </p>
+      </div>
+
+      <p>
+        <b>
+          🚀 OMS Software was registered as a business in 2019. The technology
+          behind it has been in production for 12 years
+        </b>
+        and is supported by a team of professional engineers with expertise in
+        engineering, ERP pre-sales, integration, and e-commerce.
+      </p>
+
+      <p>
+        Combined with input from NDT speciality groups including Aerospace,
+        Engineering, Heavy Construction, and Oil & Gas, the OMS platform is one
+        of the most advanced in the NDT field. Once implemented, it could save
+        your business thousands of dollars annually.
+      </p>
+
+      <p class="bg-orange-50 p-4 rounded-md border-l-4 border-orange-400">
+        💬 If you are looking for an inclusive Laboratory Information Management
+        System (LIMS), Enterprise Software (ERP), Quality Management System
+        (QMS), or Business Process Automation — give us a call. We’d be happy to
+        provide a free demonstration!
+      </p>
+    </section>
+
+    <hr class="my-12 border-gray-300" />
+
+    <!-- Founder’s Story -->
+    <section
+      class="space-y-4 bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition"
+    >
+      <h2 class="text-2xl md:text-3xl font-bold text-orange-600">
+        Founder’s Story
+      </h2>
+      <p>
+        Pranay Wadyalkar began his career in metallurgy and non-destructive
+        testing, spending decades inside the laboratories that keep industries
+        safe. Through those years, he saw the same struggle repeat — skilled
+        engineers forced to manage audits, paperwork, and manual reporting
+        instead of focusing on real quality work.
+      </p>
+      <p>
+        That real-world challenge led to OMS Software — practical, compliant,
+        and built by people who’ve lived the audit process. Pranay’s vision was
+        simple: if machines can work for you, let them. OMS automates the
+        workflows, approvals, and traceability that once consumed entire teams,
+        allowing laboratories to focus on science, not spreadsheets.
+      </p>
+      <p>
+        Today, OMS stands as a bridge between technical expertise and digital
+        efficiency — empowering labs to learn, teach, and delegate with
+        confidence while remaining fully compliant with ISO/IEC 17025, 17020,
+        and 9001 standards.
+      </p>
+    </section>
+
+    <hr class="my-12 border-gray-300" />
+
+    <!-- CEO’s Message -->
+    <section
+      class="space-y-4 bg-orange-50 p-6 rounded-xl shadow-sm hover:shadow-md transition"
+    >
+      <h2 class="text-2xl md:text-3xl font-bold text-orange-600">
+        CEO’s Message
+      </h2>
+      <p>
+        At OMS Software, our mission is to empower laboratories and inspection
+        agencies to achieve and maintain the highest standards of quality and
+        compliance. We’re building a unified digital platform that simplifies
+        the everyday challenges of managing systems aligned with ISO/IEC 17025,
+        ISO/IEC 17020, and ISO 9001 — the very frameworks that define
+        competence, impartiality, and consistency in the TIC industry.
+      </p>
+      <p>
+        These standards demand more than documentation; they demand
+        traceability, transparency, and accountability. OMS turns those
+        principles into living workflows — automating processes, maintaining
+        10-year data integrity, and ensuring that every action, record, and
+        report remains fully audit-ready.
+      </p>
+      <p>
+        Our vision is to make compliance effortless and accuracy continuous —
+        helping accredited organisations focus on testing, inspection, and
+        calibration, while the system quietly manages the rest.
+      </p>
+      <p>
+        Built by practitioners, refined through experience, and trusted by
+        laboratories across India and Australia, OMS Software is shaping the
+        digital future of conformity assessment.
+      </p>
+      <p class="font-semibold text-right text-gray-700">
+        — Jayant Chandavarkar
+        <br />
+        <span class="text-gray-500">CEO, OMS Software</span>
+      </p>
+    </section>
+
+    <hr class="my-12 border-gray-300" />
+
+    <!-- CDO’s Message -->
+    <section
+      class="space-y-4 bg-gray-50 p-6 rounded-xl shadow-sm hover:shadow-md transition"
+    >
+      <h2 class="text-2xl md:text-3xl font-bold text-orange-600">
+        CDO’s Message
+      </h2>
+      <p>
+        At OMS Software, our goal is to make technology work quietly behind the
+        scenes — so laboratories can focus on precision, not process. As Chief
+        Development Officer, I lead our engineering vision to build a platform
+        that reflects the discipline of ISO/IEC 17025, ISO/IEC 17020, and ISO
+        9001, yet feels effortless to use.
+      </p>
+      <p>
+        We call this approach compliance by design. Every workflow, audit log,
+        and report format is developed to meet accreditation requirements from
+        day one — not as an afterthought. Each release strengthens traceability,
+        data integrity, and cross-module automation, ensuring that OMS grows
+        with every lab it serves.
+      </p>
+      <p>
+        Our development team blends domain knowledge from real-world testing and
+        calibration labs with modern software engineering. The result is a
+        secure, stable, and continually evolving system that helps organisations
+        stay audit-ready, efficient, and future-proof.
+      </p>
+      <p class="font-semibold text-right text-gray-700">
+        — Onkar Naik
+        <br />
+        <span class="text-gray-500"
+          >Chief Development Officer, OMS Software</span
+        >
+      </p>
+    </section>
   </main>
 
   <Footer />

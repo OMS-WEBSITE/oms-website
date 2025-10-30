@@ -1,393 +1,3 @@
-// import React, { useState, useEffect } from "react";
-// import { contentMap } from "./ContentData";
-// import { FiChevronDown } from "react-icons/fi";
-
-// const ProductsandServices = () => {
-//   const navItems = [
-//     "Business Performance",
-//     "Accounting",
-//     "Personnel",
-//     "Supplier Management",
-//     "CRM",
-//     "System Configuration",
-//     "QMS",
-//     "Assets",
-//     "Specification",
-//     "Test Data Management",
-//   ];
-
-//   const [activeItem, setActiveItem] = useState("Business Performance");
-//   const [expandedSection, setExpandedSection] = useState(null);
-//   const [highlightAllSections, setHighlightAllSections] = useState(true);
-//   const [isClient, setIsClient] = useState(false);
-//   const [shouldScrollToSection, setShouldScrollToSection] = useState(null);
-
-//   const sectionList = activeItem ? contentMap[activeItem]?.sections || [] : [];
-
-//   useEffect(() => {
-//     setIsClient(true);
-//   }, []);
-
-//   // ✅ Handle tab activation safely (runs only on client)
-//   useEffect(() => {
-//     if (!isClient) return;
-
-//     const handleActivateTab = (e) => {
-//       setActiveItem(e.detail);
-//       setExpandedSection(null);
-//       setHighlightAllSections(true);
-//       scrollToTop();
-//     };
-
-//     window.addEventListener("activateTab", handleActivateTab);
-//     return () => window.removeEventListener("activateTab", handleActivateTab);
-//   }, [isClient]);
-
-//   useEffect(() => {
-//     if (shouldScrollToSection !== null && isClient) {
-//       const sectionEl = document.getElementById(
-//         `section-${shouldScrollToSection}`
-//       );
-//       if (sectionEl) {
-//         // Dynamically calculate total header height (sticky header)
-//         const totalHeaderHeight =
-//           document.querySelector("#header-content-section > header")
-//             ?.offsetHeight || 0;
-
-//         const rect = sectionEl.getBoundingClientRect();
-//         const scrollTo = rect.top + window.pageYOffset - totalHeaderHeight; // Small buffer for padding
-
-//         window.scrollTo({
-//           top: scrollTo,
-//           behavior: "smooth",
-//         });
-//       }
-//       setShouldScrollToSection(null); // Reset after scrolling
-//     }
-//   }, [shouldScrollToSection, isClient]);
-
-//   const scrollToTop = () => {
-//     if (!isClient) return;
-
-//     const sectionEl = document.getElementById("header-content-section");
-//     if (!sectionEl) return;
-
-//     const topPosition = sectionEl.offsetTop;
-
-//     window.scrollTo({
-//       top: topPosition,
-//       behavior: "smooth",
-//     });
-//   };
-
-//   const handleMainTabClick = (label) => {
-//     setActiveItem(label);
-//     setExpandedSection(null);
-//     setHighlightAllSections(true);
-//     setShouldScrollToTop(true); // Trigger deferred scroll
-//   };
-
-//   const handleMiniTabClick = (index) => {
-//     setExpandedSection(index);
-//     setHighlightAllSections(true);
-//     setShouldScrollToSection(index); // Trigger scroll after state update
-//   };
-
-//   return (
-//     <div id="header-content-section" className="min-h-screen bg-gray-100">
-//       {/* Header */}
-//       <div className="pt-20">
-//         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
-//           <span className="border-b-4 border-orange-500 pb-1">
-//             Products & Services
-//           </span>
-//         </h2>
-//         <p className="text-center max-w-2xl mx-auto text-gray-600 mb-8 sm:mb-10 text-sm sm:text-base px-2">
-//           Explore our Products & Services built to streamline laboratory
-//           operations and maintain compliance with ISO/IEC standards.
-//         </p>
-//       </div>
-//       <header className="sticky top-0 left-0 w-full bg-white border-t-2 border-b border-orange-500 shadow z-50">
-//         <div className="w-[90%] mx-auto py-4 px-2">
-//           {" "}
-//           {/* Desktop View */}
-//           <div className="hidden md:flex flex-col">
-//             <nav className="flex flex-wrap gap-x-2 gap-y-2">
-//               {navItems.map((label) => (
-//                 <button
-//                   key={label}
-//                   onClick={() => handleMainTabClick(label)}
-//                   className={`relative px-1.5 py-2 font-semibold transition-all duration-300 ease-in-out cursor-pointer group ${
-//                     activeItem === label
-//                       ? "text-orange-600"
-//                       : "text-gray-700 hover:text-orange-500"
-//                   }`}
-//                 >
-//                   {label}
-//                   {/* Orange underline animation */}
-//                   <span
-//                     className={`absolute left-0 -bottom-1 h-[2px] bg-orange-500 w-full origin-left scale-x-0 transform transition-transform duration-300 group-hover:scale-x-100 ${
-//                       activeItem === label ? "scale-x-100" : ""
-//                     }`}
-//                   />
-//                 </button>
-//               ))}
-//             </nav>
-
-//             {/* <nav className="flex flex-wrap gap-x-2 gap-y-2">
-//               {navItems.map((label) => (
-//                 <button
-//                   key={label}
-//                   onClick={() => handleMainTabClick(label)}
-//                   className={`px-1.5 py-2 text-center font-semibold rounded-lg transition-all duration-300 ease-in-out border-l-4 cursor-pointer ${
-//                     activeItem === label
-//                       ? "text-orange-600  underline underline-offset-4"
-//                       : "border-transparent text-gray-700 hover:text-orange-500 hover:underline hover:underline-offset-4"
-//                   }`}
-//                 >
-//                   {label}
-//                 </button>
-//               ))}
-//             </nav> */}
-//             {/* <nav className="flex flex-wrap gap-x-2 gap-y-2">
-//               {navItems.map((label) => (
-//                 <button
-//                   key={label}
-//                   onClick={() => handleMainTabClick(label)}
-//                   className={`px-1.5 py-2 text-center font-semibold rounded-lg transition-all duration-300 ease-in-out border-l-4 cursor-pointer ${
-//                     activeItem === label
-//                       ? "bg-orange-100 text-orange-600 border-orange-500 shadow-sm"
-//                       : "border-transparent text-gray-700 hover:text-orange-500 hover:bg-orange-50 hover:shadow-md"
-//                   }`}
-//                 >
-//                   {label}
-//                 </button>
-//               ))}
-//             </nav> */}
-
-//             {/* {sectionList.length > 0 && (
-//               <div className="relative mt-2 z-20">
-//                 <div className="absolute left-0 w-full h-[2px] bg-orange-400 rounded-full top-[-4px]" />
-//                 <nav className="flex flex-wrap gap-x-3 gap-y-2 bg-orange-50 p-2 rounded-lg shadow-sm">
-//                   <p className="text-sm text-orange-600 font-semibold w-full mb-1">
-//                     <span className="text-orange-600 text-lg font-semibold">
-//                       {activeItem}
-//                     </span>
-//                   </p>
-//                   {sectionList.map((section, idx) => (
-//                     <button
-//                       key={idx}
-//                       onClick={() => handleMiniTabClick(idx)}
-//                       className={`px-2 py-1 text-base font-medium rounded-lg transition-colors duration-200 ease-in-out border-l-4 cursor-pointer
-//             ${
-//               expandedSection === idx
-//                 ? "bg-orange-200 text-orange-800 border-orange-500 font-semibold"
-//                 : "bg-transparent text-gray-700 hover:text-orange-600 hover:bg-orange-100 border-transparent"
-//             }`}
-//                       style={{
-//                         minWidth: "fit-content",
-//                         boxSizing: "border-box",
-//                       }}
-//                     >
-//                       {section.heading}
-//                     </button>
-//                   ))}
-//                 </nav>
-//               </div>
-//             )} */}
-//           </div>
-//           {/* Mobile View */}
-//           <div className="md:hidden relative overflow-hidden mt-2 h-[calc(100vh-10px)]">
-//             {/* Step 1: Main Items */}
-//             <div
-//               className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
-//                 activeItem ? "-translate-x-full" : "translate-x-0"
-//               }`}
-//             >
-//               {navItems.map((main, i) => (
-//                 <button
-//                   key={i}
-//                   onClick={() => setActiveItem(main)}
-//                   className="w-full text-left px-4 py-3 mb-2 text-base rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 font-medium"
-//                 >
-//                   {main}
-//                 </button>
-//               ))}
-//             </div>
-
-//             {/* Step 2: Mini Items */}
-//             <div
-//               className={`absolute inset-0 transition-transform duration-500 ease-in-out ${
-//                 activeItem
-//                   ? expandedSection === null
-//                     ? "translate-x-0"
-//                     : "-translate-x-full"
-//                   : "translate-x-full"
-//               } bg-white p-2 rounded-md shadow-lg`}
-//             >
-//               <button
-//                 onClick={() => setActiveItem(null)}
-//                 className="mb-4 text-orange-600 font-medium"
-//               >
-//                 ← Back
-//               </button>
-//               {sectionList.map((mini, idx) => (
-//                 <button
-//                   key={idx}
-//                   onClick={() => setExpandedSection(idx)}
-//                   className="w-full text-left px-2 py-3 mb-3 text-base rounded-lg bg-orange-50 hover:bg-orange-100 text-orange-700 font-medium"
-//                 >
-//                   {mini.heading}
-//                 </button>
-//               ))}
-//             </div>
-
-//             {/* Step 3: Mini Item Content */}
-//             <div
-//               className={`absolute inset-0 transition-transform duration-500 ease-in-out overflow-auto bg-white p-4 rounded-md shadow-lg ${
-//                 expandedSection !== null ? "translate-x-0" : "translate-x-full"
-//               }`}
-//             >
-//               <button
-//                 onClick={() => setExpandedSection(null)}
-//                 className="mb-4 text-orange-600 font-medium"
-//               >
-//                 ← Back
-//               </button>
-
-//               <h2 className="text-xl font-semibold text-gray-800 mb-3">
-//                 {sectionList[expandedSection]?.heading}
-//               </h2>
-
-//               <div className="text-gray-700 space-y-3 leading-relaxed">
-//                 {sectionList[expandedSection]?.content.map((block, idx) => {
-//                   if (block.type === "paragraph")
-//                     return <p key={idx}>{block.text}</p>;
-//                   if (block.type === "list")
-//                     return (
-//                       <ul key={idx} className="list-disc list-inside ml-4">
-//                         {block.items.map((li, i) => (
-//                           <li key={i}>{li}</li>
-//                         ))}
-//                       </ul>
-//                     );
-//                   if (block.type === "images")
-//                     return (
-//                       <div
-//                         key={idx}
-//                         className="my-4 flex flex-col items-center gap-4"
-//                       >
-//                         {block.items.map((img, i) => (
-//                           <img
-//                             key={i}
-//                             src={img}
-//                             alt={`Image ${i + 1}`}
-//                             className="w-full rounded-md shadow-md border border-gray-200"
-//                           />
-//                         ))}
-//                       </div>
-//                     );
-//                   return null;
-//                 })}
-//               </div>
-//             </div>
-//           </div>
-//         </div>
-//       </header>
-
-//       {/* Main Content (Desktop) */}
-//       {/* <main className="container mx-auto max-w-7xl px-4 py-8"> */}
-//       <main className="w-[90%] mx-auto py-4 px-2">
-//         <div className="hidden md:block">
-//           {activeItem && sectionList.length > 0 ? (
-//             <div className="p-6 bg-white rounded-md shadow-md border border-gray-200">
-//               <h1 className="text-3xl font-bold text-orange-600 mb-8">
-//                 {contentMap[activeItem].title}
-//               </h1>
-
-//               {sectionList.map((section, index) => (
-//                 <div
-//                   key={index}
-//                   id={`section-${index}`}
-//                   className="mb-6 border-b border-gray-200 pb-4"
-//                 >
-//                   <button
-//                     onClick={() =>
-//                       setExpandedSection((prev) =>
-//                         prev === index ? null : index
-//                       )
-//                     }
-//                     className="w-full text-left text-lg font-semibold text-gray-800 mb-2 flex justify-between items-center focus:outline-none cursor-pointer"
-//                   >
-//                     {section.heading}
-//                     <span
-//                       className={`text-orange-500 text-xl transition-transform duration-300 ${
-//                         expandedSection === index ? "rotate-180" : ""
-//                       }`}
-//                     >
-//                       <FiChevronDown />
-//                     </span>
-//                   </button>
-
-//                   {expandedSection === index && (
-//                     <div className="mt-3 text-gray-700 pl-4 space-y-3 leading-relaxed">
-//                       {section.content.map((block, idx) => {
-//                         if (block.type === "paragraph")
-//                           return (
-//                             <p key={idx} className="text-justify">
-//                               {block.text}
-//                             </p>
-//                           );
-//                         if (block.type === "list")
-//                           return (
-//                             <ul
-//                               key={idx}
-//                               className="list-disc list-inside space-y-1 ml-4"
-//                             >
-//                               {block.items.map((li, i) => (
-//                                 <li key={i}>{li}</li>
-//                               ))}
-//                             </ul>
-//                           );
-
-//                         if (block.type === "images")
-//                           return (
-//                             <div
-//                               key={idx}
-//                               className="my-4 flex flex-col items-center gap-4"
-//                             >
-//                               {block.items.map((img, i) => (
-//                                 <img
-//                                   key={i}
-//                                   src={img}
-//                                   alt={`Image ${i + 1}`}
-//                                   className="w-full max-w-4xl rounded-md shadow-md border border-gray-200"
-//                                 />
-//                               ))}
-//                             </div>
-//                           );
-//                         return null;
-//                       })}
-//                     </div>
-//                   )}
-//                 </div>
-//               ))}
-//             </div>
-//           ) : (
-//             <p className="text-gray-500 text-center">
-//               Select a section to see content.
-//             </p>
-//           )}
-//         </div>
-//       </main>
-//     </div>
-//   );
-// };
-
-// export default ProductsandServices;
-
-// 29-10 3-15
-
 import React, { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
 import {
@@ -413,16 +23,13 @@ const ProductsandServices = () => {
 
   const [activeItem, setActiveItem] = useState(null);
   const [expandedSection, setExpandedSection] = useState(null);
-  const [highlightAllSections, setHighlightAllSections] = useState(true);
-  const [isClient, setIsClient] = useState(false);
-  const [shouldScrollToSection, setShouldScrollToSection] = useState(null);
+  // const [highlightAllSections, setHighlightAllSections] = useState(true);
+  // const [isClient, setIsClient] = useState(false);
+  // const [shouldScrollToSection, setShouldScrollToSection] = useState(null);
 
   const sectionList = activeItem ? contentMap[activeItem]?.sections || [] : [];
 
-  useEffect(() => {
-    setIsClient(true);
-  }, []);
-
+  // for search function
   useEffect(() => {
     const handleProductSubSection = (e) => {
       const { label, parent } = e.detail; // include parent (main category)
@@ -439,8 +46,12 @@ const ProductsandServices = () => {
       setTimeout(() => {
         const sectionId = label.toLowerCase().replace(/\s+/g, "");
         const target = document.getElementById(sectionId);
+        console.log(target);
         if (target) {
-          target.scrollIntoView({ behavior: "smooth", block: "start" });
+          const yOffset = -80; // Adjust for navbar height
+          const y =
+            target.getBoundingClientRect().top + window.pageYOffset + yOffset;
+          window.scrollTo({ top: y, behavior: "smooth" });
         }
       }, 500);
     };
@@ -456,113 +67,136 @@ const ProductsandServices = () => {
       );
   }, []);
 
-  // for business performance only
+  // for scroll to top heading
   // useEffect(() => {
-  //   const handleProductSubSection = (e) => {
-  //     const { label } = e.detail;
-  //     if (!label) return;
+  //   const handleActivateTab = (e) => {
+  //     const { id } = e.detail;
+  //     console.log("Activated from video:", id);
 
-  //     // Expand the main Products & Services tab
-  //     setActiveItem("Business Performance");
+  //     setActiveItem(id);
 
-  //     // Wait for expand animation, then scroll to subsection
   //     setTimeout(() => {
-  //       const sectionId = label.toLowerCase().replace(/\s+/g, "");
-  //       const target = document.getElementById(sectionId);
-  //       if (target) {
-  //         target.scrollIntoView({ behavior: "smooth", block: "start" });
+  //       const mainIdx = navItems.indexOf(id);
+  //       if (mainIdx !== -1) {
+  //         setExpandedSection(`${mainIdx}`);
   //       }
-  //     }, 500);
+
+  //       // ✅ Find heading by its text content
+  //       const allHeadings = document.querySelectorAll(
+  //         "h2, h3, h4, button, div"
+  //       );
+  //       let targetEl = null;
+
+  //       allHeadings.forEach((el) => {
+  //         if (el.textContent.trim().toLowerCase() === id.toLowerCase()) {
+  //           targetEl = el;
+  //         }
+  //       });
+
+  //       if (targetEl) {
+  //         const navbar = document.querySelector("nav");
+  //         const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+  //         const yOffset =
+  //           targetEl.getBoundingClientRect().top +
+  //           window.scrollY -
+  //           navbarHeight -
+  //           60;
+
+  //         window.scrollTo({ top: yOffset, behavior: "smooth" });
+  //         console.log(`Scrolled to heading: ${id}`);
+  //       } else {
+  //         console.warn(`⚠️ No heading found for label="${id}"`);
+  //       }
+  //     }, 800);
   //   };
 
-  //   window.addEventListener(
-  //     "activateProductSubSection",
-  //     handleProductSubSection
-  //   );
-  //   return () =>
-  //     window.removeEventListener(
-  //       "activateProductSubSection",
-  //       handleProductSubSection
-  //     );
+  //   window.addEventListener("activateTab", handleActivateTab);
+  //   return () => window.removeEventListener("activateTab", handleActivateTab);
   // }, []);
 
-  // ✅ Handle tab activation safely (runs only on client)
+  // useEffect(() => {
+  //   const handleActivateTab = (event) => {
+  //     const { id } = event.detail;
+  //      console.log("Activated from video:", id);
+  //     const matchedLabel = Object.keys(contentMap).find(
+  //       (key) => key.toLowerCase().replace(/\s+/g, "") === id
+  //     );
+  //     console.log("i reached");
+  //     if (matchedLabel) {
+  //       // Expand the main section first
+  //       setActiveItem(matchedLabel);
+
+  //       // Wait for the DOM to render
+  //       setTimeout(() => {
+  //         const sectionEl = document.getElementById(id);
+  //         if (sectionEl) {
+  //           sectionEl.scrollIntoView({ behavior: "smooth", block: "start" });
+  //         } else {
+  //           console.warn(`⚠️ No section found for id="${id}"`);
+  //         }
+  //       }, 300); // wait a bit for re-render
+  //     } else {
+  //       console.warn(`⚠️ No heading found for label="${id}"`);
+  //     }
+  //   };
+
+  //   window.addEventListener("activateTab", handleActivateTab);
+  //   return () => window.removeEventListener("activateTab", handleActivateTab);
+  // }, []);
+
   useEffect(() => {
-    const handleActivateTab = (e) => {
-      const { label, sectionIndex = 0 } = e.detail;
+    const handleActivateTab = (event) => {
+      const { id } = event.detail;
+      console.log("Activated from video:", id);
 
-      // Expand the correct main section
-      setActiveItem(label);
+      // Step 1: Try matching top-level category
+      let matchedLabel = Object.keys(contentMap).find(
+        (key) => key.toLowerCase().replace(/\s+/g, "") === id
+      );
 
-      // Wait briefly before expanding sub-section (so content loads)
-      setTimeout(() => {
-        const mainIdx = navItems.indexOf(label);
-        if (mainIdx !== -1) {
-          setExpandedSection(`${mainIdx}`);
-        }
+      console.log(" matched ", matchedLabel);
 
-        // 👇 Add this part here
-        const sectionEl = document.getElementById("productsandservice");
-        if (sectionEl) {
-          // ✅ Scroll smoothly and center the opened section
-          sectionEl.scrollIntoView({ behavior: "smooth", block: "center" });
-        }
-      }, 300);
+      // Step 2: If not found, search inside sub-sections
+      if (!matchedLabel) {
+        matchedLabel = Object.keys(contentMap).find((key) =>
+          contentMap[key].sections.some(
+            (section) =>
+              section.heading.toLowerCase().replace(/\s+/g, "") === id
+          )
+        );
+      }
+
+      if (matchedLabel) {
+        setActiveItem(matchedLabel);
+        console.log("matcheddddddddddddddddddddddddddddddddddddddddd");
+        // Step 3: Wait for section to expand, then scroll
+        setTimeout(() => {
+          const sectionEl = document.getElementById(id);
+          console.log("this is imp", sectionEl);
+          if (sectionEl) {
+            const navbar = document.querySelector("nav");
+            const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+            const yOffset =
+              sectionEl.getBoundingClientRect().top +
+              window.scrollY -
+              navbarHeight -
+              60;
+
+            window.scrollTo({ top: yOffset, behavior: "smooth" });
+          } else {
+            console.warn(`⚠️ No element found with id="${id}"`);
+          }
+        }, 500);
+      } else {
+        console.warn(`⚠️ No heading found for label="${id}"`);
+      }
     };
 
     window.addEventListener("activateTab", handleActivateTab);
     return () => window.removeEventListener("activateTab", handleActivateTab);
   }, []);
-
-  useEffect(() => {
-    if (shouldScrollToSection !== null && isClient) {
-      const sectionEl = document.getElementById(
-        `section-${shouldScrollToSection}`
-      );
-      if (sectionEl) {
-        // Dynamically calculate total header height (sticky header)
-        const totalHeaderHeight =
-          document.querySelector("#header-content-section > header")
-            ?.offsetHeight || 0;
-
-        const rect = sectionEl.getBoundingClientRect();
-        const scrollTo = rect.top + window.pageYOffset - totalHeaderHeight; // Small buffer for padding
-
-        window.scrollTo({
-          top: scrollTo,
-          behavior: "smooth",
-        });
-      }
-      setShouldScrollToSection(null); // Reset after scrolling
-    }
-  }, [shouldScrollToSection, isClient]);
-
-  const scrollToTop = () => {
-    if (!isClient) return;
-
-    const sectionEl = document.getElementById("header-content-section");
-    if (!sectionEl) return;
-
-    const topPosition = sectionEl.offsetTop;
-
-    window.scrollTo({
-      top: topPosition,
-      behavior: "smooth",
-    });
-  };
-
-  const handleMainTabClick = (label) => {
-    setActiveItem(label);
-    setExpandedSection(null);
-    setHighlightAllSections(true);
-    setShouldScrollToTop(true); // Trigger deferred scroll
-  };
-
-  const handleMiniTabClick = (index) => {
-    setExpandedSection(index);
-    setHighlightAllSections(true);
-    setShouldScrollToSection(index); // Trigger scroll after state update
-  };
 
   useEffect(() => {
     const handleHashChange = () => {
@@ -586,6 +220,34 @@ const ProductsandServices = () => {
     window.addEventListener("hashchange", handleHashChange);
 
     return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
+
+  // 🧭 Handle navigation from other pages
+  useEffect(() => {
+    const pendingSubSection = sessionStorage.getItem("pendingSubSection");
+    if (pendingSubSection) {
+      sessionStorage.removeItem("pendingSubSection");
+
+      // Scroll to the main section first
+      const mainSection = document.getElementById("productsandservice");
+      if (mainSection) {
+        const yOffset = 80; // Adjust for navbar height
+        const y =
+          mainSection.getBoundingClientRect().top +
+          window.pageYOffset +
+          yOffset;
+        window.scrollTo({ top: y, behavior: "smooth" });
+        console.log("PAS");
+      }
+
+      // Trigger after short delay so React content is ready
+      setTimeout(() => {
+        const event = new CustomEvent("activateProductSubSection", {
+          detail: { label: pendingSubSection },
+        });
+        window.dispatchEvent(event);
+      }, 700);
+    }
   }, []);
 
   return (
@@ -668,7 +330,7 @@ const ProductsandServices = () => {
           <div className="text-gray-700 space-y-3 leading-relaxed">
             {sectionList[expandedSection]?.content.map((block, idx) => {
               if (block.type === "paragraph")
-                return <p key={idx}>{block.text}</p>;
+                return <p key={idx}>{block.text} className</p>;
               if (block.type === "list")
                 return (
                   <ul key={idx} className="list-disc list-inside ml-4">
@@ -709,6 +371,7 @@ const ProductsandServices = () => {
             return (
               <div
                 key={mainIdx}
+                id={mainLabel.toLowerCase().replace(/\s+/g, "")}
                 className="mb-6 border border-gray-200 bg-white rounded-lg shadow-md overflow-hidden"
               >
                 {/* === Main Tab === */}
@@ -720,7 +383,12 @@ const ProductsandServices = () => {
                   }
                   className="w-full text-left text-xl font-semibold text-orange-500 px-5 py-4 flex justify-between items-center hover:bg-orange-50 transition"
                 >
-                  <span>{mainLabel}</span>
+                  <span>
+                    {mainLabel} - {mainContent.title}
+                  </span>
+                  {/* <div className=" text-left text-orange-500 text-sm md:text-base font-normal hidden md:inline">
+                    
+                  </div> */}
                   <FiChevronDown
                     className={`text-orange-500 text-2xl transition-transform duration-300 ${
                       activeItem === mainLabel ? "rotate-180" : ""
@@ -739,7 +407,7 @@ const ProductsandServices = () => {
                       >
                         {/* Submini Tab */}
 
-                        <button
+                        {/* <button
                           onClick={() =>
                             setExpandedSection((prev) =>
                               prev === `${mainIdx}-${secIdx}`
@@ -757,6 +425,64 @@ const ProductsandServices = () => {
                                   : ""
                               }`}
                             />{" "}
+                            <span className="animate-slideFadeIn">
+                              {section.heading}
+                            </span>
+                          </div>
+                        </button> */}
+
+                        <button
+                          onClick={() => {
+                            const isExpanded =
+                              expandedSection === `${mainIdx}-${secIdx}`;
+                            const newSection = isExpanded
+                              ? null
+                              : `${mainIdx}-${secIdx}`;
+                            setExpandedSection(newSection);
+
+                            // Only scroll if expanding (not collapsing)
+                            if (!isExpanded) {
+                              setTimeout(() => {
+                                // Match the same id format as in your div below
+                                const id = section.heading
+                                  .toLowerCase()
+                                  .replace(/\s+/g, "");
+                                const sectionEl = document.getElementById(id);
+
+                                if (sectionEl) {
+                                  const navbar = document.querySelector("nav");
+                                  const navbarHeight = navbar
+                                    ? navbar.offsetHeight
+                                    : 0;
+
+                                  const yOffset =
+                                    sectionEl.getBoundingClientRect().top +
+                                    window.scrollY -
+                                    navbarHeight -
+                                    60; // fine-tune this if needed
+
+                                  window.scrollTo({
+                                    top: yOffset,
+                                    behavior: "smooth",
+                                  });
+                                } else {
+                                  console.warn(
+                                    `⚠️ No element found with id="${id}"`
+                                  );
+                                }
+                              }, 200); // small delay for smooth expansion animation
+                            }
+                          }}
+                          className="w-full text-left text-lg font-medium text-gray-700 px-6 py-3 flex justify-between items-center hover:bg-orange-100 transition"
+                        >
+                          <div className="flex items-center space-x-3">
+                            <FiChevronRight
+                              className={`text-orange-400 text-xl transition-transform duration-300 ${
+                                expandedSection === `${mainIdx}-${secIdx}`
+                                  ? "rotate-90"
+                                  : ""
+                              }`}
+                            />
                             <span className="animate-slideFadeIn">
                               {section.heading}
                             </span>
