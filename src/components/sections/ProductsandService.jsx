@@ -423,6 +423,69 @@ const ProductsandServices = () => {
     setIsClient(true);
   }, []);
 
+  useEffect(() => {
+    const handleProductSubSection = (e) => {
+      const { label, parent } = e.detail; // include parent (main category)
+      if (!label) return;
+
+      // Set active tab dynamically instead of hardcoding "Business Performance"
+      if (parent) {
+        setActiveItem(parent);
+      } else {
+        setActiveItem(label);
+      }
+
+      // Wait for expand animation, then scroll to subsection
+      setTimeout(() => {
+        const sectionId = label.toLowerCase().replace(/\s+/g, "");
+        const target = document.getElementById(sectionId);
+        if (target) {
+          target.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      }, 500);
+    };
+
+    window.addEventListener(
+      "activateProductSubSection",
+      handleProductSubSection
+    );
+    return () =>
+      window.removeEventListener(
+        "activateProductSubSection",
+        handleProductSubSection
+      );
+  }, []);
+
+  // for business performance only
+  // useEffect(() => {
+  //   const handleProductSubSection = (e) => {
+  //     const { label } = e.detail;
+  //     if (!label) return;
+
+  //     // Expand the main Products & Services tab
+  //     setActiveItem("Business Performance");
+
+  //     // Wait for expand animation, then scroll to subsection
+  //     setTimeout(() => {
+  //       const sectionId = label.toLowerCase().replace(/\s+/g, "");
+  //       const target = document.getElementById(sectionId);
+  //       if (target) {
+  //         target.scrollIntoView({ behavior: "smooth", block: "start" });
+  //       }
+  //     }, 500);
+  //   };
+
+  //   window.addEventListener(
+  //     "activateProductSubSection",
+  //     handleProductSubSection
+  //   );
+  //   return () =>
+  //     window.removeEventListener(
+  //       "activateProductSubSection",
+  //       handleProductSubSection
+  //     );
+  // }, []);
+
   // ✅ Handle tab activation safely (runs only on client)
   useEffect(() => {
     const handleActivateTab = (e) => {
@@ -500,6 +563,30 @@ const ProductsandServices = () => {
     setHighlightAllSections(true);
     setShouldScrollToSection(index); // Trigger scroll after state update
   };
+
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.substring(1);
+      const parts = hash.split("/");
+      const sectionId = parts[1];
+
+      if (sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          // Optionally expand the correct section
+          setActiveItem("Business Performance");
+          setExpandedSection("0-0"); // optional: based on your map index
+        }
+      }
+    };
+
+    handleHashChange(); // run once on page load
+    window.addEventListener("hashchange", handleHashChange);
+
+    return () => window.removeEventListener("hashchange", handleHashChange);
+  }, []);
 
   return (
     <section id="productsandservice" className="min-h-screen bg-gray-50 pt-5">
@@ -645,7 +732,11 @@ const ProductsandServices = () => {
                 {activeItem === mainLabel && (
                   <div className="bg-orange-50 border-t border-orange-200">
                     {mainContent.sections.map((section, secIdx) => (
-                      <div key={secIdx} className="border-b border-gray-200">
+                      <div
+                        key={secIdx}
+                        id={section.heading.toLowerCase().replace(/\s+/g, "")}
+                        className="border-b border-gray-200"
+                      >
                         {/* Submini Tab */}
 
                         <button
