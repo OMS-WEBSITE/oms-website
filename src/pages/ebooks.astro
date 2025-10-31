@@ -11,24 +11,26 @@ import { Button } from '@/components/ui/button';
 
   <main>
     {/* Hero Section */}
-    <section class="bg-gradient-to-b from-indigo-50 to-white py-20">
+    <section class="bg-gradient-to-b from-indigo-50 to-white py-16 md:py-20">
       <div class="container mx-auto max-w-7xl px-4">
         <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
             Security Audit Resources
           </h1>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p class="text-base sm:text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-2">
             Comprehensive guides and resources to enhance your security auditing knowledge and capabilities.
           </p>
         </div>
       </div>
     </section>
 
-    {/* Featured Ebooks */}
-    <section class="py-16">
+    {/* Featured Resources */}
+    <section class="py-12 md:py-16">
       <div class="container mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12">Featured Resources</h2>
-        <div class="grid md:grid-cols-2 gap-8">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 sm:mb-12 text-center md:text-left">
+          Featured Resources
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
           <ResourceCard
             title="The Complete Guide to IT Security Auditing"
             description="A comprehensive guide covering all aspects of modern IT security auditing, from planning to execution and reporting."
@@ -58,9 +60,9 @@ import { Button } from '@/components/ui/button';
     </section>
 
     {/* Resource Categories */}
-    <section class="py-16 bg-gray-50">
+    <section class="py-12 md:py-16 bg-gray-50">
       <div class="container mx-auto max-w-7xl px-4">
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-8">
           <ResourceCard
             title="Cloud Security Audit Playbook"
             description="Step-by-step guide for conducting thorough security audits in cloud environments."
@@ -102,89 +104,97 @@ import { Button } from '@/components/ui/button';
     </section>
 
     {/* Resource Bundles */}
-    <section class="py-16">
+    <section class="py-12 md:py-16">
       <div class="container mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12">Resource Bundles</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-16 h-16 bg-blue-100 rounded-xl flex items-center justify-center text-3xl">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 sm:mb-12 text-center md:text-left">
+          Resource Bundles
+        </h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
+          <!-- Starter Bundle -->
+          <div class="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-gray-100">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+              <div class="w-14 h-14 sm:w-16 sm:h-16 bg-blue-100 rounded-xl flex items-center justify-center text-2xl sm:text-3xl">
                 📚
               </div>
               <div>
-                <h3 class="text-2xl font-bold text-gray-800">Starter Bundle</h3>
-                <p class="text-gray-600">Essential resources for beginners</p>
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Starter Bundle</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Essential resources for beginners</p>
               </div>
             </div>
-            <ul class="space-y-3 mb-6">
+
+            <ul class="space-y-3 mb-6 text-gray-700 text-sm sm:text-base">
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Security Audit Basics Guide</span>
+                Security Audit Basics Guide
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Compliance Checklist Templates</span>
+                Compliance Checklist Templates
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Risk Assessment Guide</span>
+                Risk Assessment Guide
               </li>
             </ul>
+
             <div class="space-y-4">
               <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">Download Bundle</Button>
-              <p class="text-sm text-gray-600 text-center">
-                Also check our <a href="/best-practices" class="text-blue-600 hover:text-blue-700">Best Practices</a> and 
-                <a href="/help-center" class="text-blue-600 hover:text-blue-700"> Help Center</a> for more resources
+              <p class="text-xs sm:text-sm text-gray-600 text-center">
+                Also check our <a href="/best-practices" class="text-blue-600 hover:text-blue-700">Best Practices</a> and
+                <a href="/help-center" class="text-blue-600 hover:text-blue-700"> Help Center</a>
               </p>
             </div>
           </div>
 
-          <div class="bg-white rounded-xl p-8 shadow-lg border border-gray-100">
-            <div class="flex items-center gap-4 mb-6">
-              <div class="w-16 h-16 bg-purple-100 rounded-xl flex items-center justify-center text-3xl">
+          <!-- Advanced Bundle -->
+          <div class="bg-white rounded-xl p-6 md:p-8 shadow-lg border border-gray-100">
+            <div class="flex flex-col sm:flex-row sm:items-center gap-4 mb-6">
+              <div class="w-14 h-14 sm:w-16 sm:h-16 bg-purple-100 rounded-xl flex items-center justify-center text-2xl sm:text-3xl">
                 🚀
               </div>
               <div>
-                <h3 class="text-2xl font-bold text-gray-800">Advanced Bundle</h3>
-                <p class="text-gray-600">Complete resource collection</p>
+                <h3 class="text-xl sm:text-2xl font-bold text-gray-800">Advanced Bundle</h3>
+                <p class="text-gray-600 text-sm sm:text-base">Complete resource collection</p>
               </div>
             </div>
-            <ul class="space-y-3 mb-6">
+
+            <ul class="space-y-3 mb-6 text-gray-700 text-sm sm:text-base">
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>All Starter Bundle Resources</span>
+                All Starter Bundle Resources
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Advanced Security Testing Guide</span>
+                Advanced Security Testing Guide
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Automation Playbooks</span>
+                Automation Playbooks
               </li>
               <li class="flex items-center gap-2">
                 <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
                 </svg>
-                <span>Enterprise Security Templates</span>
+                Enterprise Security Templates
               </li>
             </ul>
+
             <div class="space-y-4">
               <Button className="w-full bg-purple-600 hover:bg-purple-700 text-white">Download Bundle</Button>
-              <p class="text-sm text-gray-600 text-center">
-                Learn more in our <a href="/explore-industries" class="text-blue-600 hover:text-blue-700">Industry Guides</a> and 
+              <p class="text-xs sm:text-sm text-gray-600 text-center">
+                Learn more in our <a href="/explore-industries" class="text-blue-600 hover:text-blue-700">Industry Guides</a> and
                 <a href="/blog" class="text-blue-600 hover:text-blue-700"> Blog</a>
               </p>
             </div>
@@ -194,26 +204,33 @@ import { Button } from '@/components/ui/button';
     </section>
 
     {/* Newsletter */}
-    <section class="py-16 bg-gradient-to-r from-orange-100 to-blue-100">
+    <section class="py-12 md:py-16 bg-gradient-to-r from-orange-100 to-blue-100">
       <div class="container mx-auto max-w-7xl px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">
           Get New Resources First
         </h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        <p class="text-base sm:text-lg text-gray-600 mb-8 max-w-3xl mx-auto">
           Subscribe to receive notifications when we release new security audit resources and guides.
         </p>
-        <div class="max-w-xl mx-auto flex gap-4">
+
+        <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
           <input
             type="email"
             placeholder="Enter your email"
-            class="flex-1 px-6 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
+            class="flex-1 h-12 px-6 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
           />
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-            <a href="/newsletter" class="text-white">Subscribe to Updates</a>
+          <Button
+            size="lg"
+            className="h-12 bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto flex items-center justify-center rounded-lg"
+          >
+            <a href="/newsletter" class="text-white block w-full sm:w-auto">
+              Subscribe to Updates
+            </a>
           </Button>
         </div>
       </div>
     </section>
   </main>
+
   <Footer />
 </Layout>

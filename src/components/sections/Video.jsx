@@ -15,60 +15,100 @@
 // ];
 
 // const VideoSection = () => {
-//   const [visibleCount, setVisibleCount] = useState(0);
-//   const [showLogo, setShowLogo] = useState(true);
-
-//   useEffect(() => {
-//     const logoTimer = setTimeout(() => {
-//       setShowLogo(false);
-
-//       // Mobile: show features one by one
-//       const featureInterval = setInterval(() => {
-//         setVisibleCount((prev) => {
-//           if (prev < features.length) return prev + 1;
-//           clearInterval(featureInterval);
-//           return prev;
-//         });
-//       }, 1000);
-//     }, 2000);
-
-//     return () => clearTimeout(logoTimer);
-//   }, []);
+//   const [showText, setShowText] = useState(false);
+//   const [showSecondImage, setShowSecondImage] = useState(false);
+//   const [showFeatures, setShowFeatures] = useState(false);
 
 //   const handleClick = (label) => {
-//     const contentSection = document.getElementById("header-content-section");
-//     if (contentSection) {
-//       contentSection.scrollIntoView({ behavior: "smooth", block: "start" });
-//     }
+//     const contentSection = document.getElementById("productsandservice");
+//     // if (contentSection) {
+//     //   const offset = 120;
+//     //   const topPosition = contentSection.offsetTop - offset;
+//     //   window.scrollTo({ top: topPosition, behavior: "smooth" });
+//     //   console.log(" video section");
+//     // }
 
-//     const event = new CustomEvent("activateTab", { detail: label });
+//     // 👇 Dispatch event with label + optional section index
+//     const event = new CustomEvent("activateTab", {
+//       detail: { label, sectionIndex: 0 },
+//     });
 //     window.dispatchEvent(event);
 //   };
 
+//   useEffect(() => {
+//     const textTimer = setTimeout(() => setShowText(true), 0);
+//     const secondImageTimer = setTimeout(() => setShowSecondImage(true), 2500); // 3000
+//     const featureTimer = setTimeout(() => setShowFeatures(true), 6000); // 6500
+
+//     return () => {
+//       clearTimeout(textTimer);
+//       clearTimeout(secondImageTimer);
+//       clearTimeout(featureTimer);
+//     };
+//   }, []);
+
 //   return (
 //     <section className="relative w-full h-screen overflow-hidden bg-black text-white">
-//       <img
-//         src="BlackBrainImage.jpg"
-//         alt="Brain Wallpaper"
-//         className={`absolute inset-0 w-full h-full object-cover z-0 transition-opacity duration-1000 ${
-//           showLogo ? "opacity-0" : "opacity-100"
-//         }`}
-//       />
+//       <div className="absolute inset-0 w-full h-full">
+//         {/* === Second Image (fades in first) === */}
+//         <img
+//           src="BlackBrainImage4webp.webp"
+//           alt="Second Brain Image"
+//           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
+//             showSecondImage ? "opacity-100" : "opacity-0"
+//           }`}
+//         />
 
-//       <div className="hidden md:block">
-//         {!showLogo && (
-//           <div
-//             className="absolute w-full h-full"
-//             style={{
-//               transition: "opacity 0.7s",
-//               opacity: visibleCount > 0 ? 1 : 0,
-//             }}
-//           >
+//         {/* === First Image (fades out AFTER second fully appears) === */}
+//         <img
+//           src="FirstImage.jpeg"
+//           alt="First Brain Image"
+//           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
+//             showSecondImage ? "delay-[2000ms] opacity-0" : "opacity-100"
+//           }`}
+//         />
+//       </div>
+
+//       {/* === Text (fades up and disappears as second image fades in) === */}
+//       {showText && (
+//         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 animate-smoothFadeUp transform -translate-y-10 md:-translate-y-16">
+//           <h2 className="text-2xl md:text-4xl font-semibold leading-relaxed max-w-2xl mb-3">
+//             Run your lab on the cloud — secure, scalable, and compliant.
+//           </h2>
+//           <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+//             Everything you need to streamline your{" "}
+//             <span className="text-orange-500 font-semibold">
+//               testing, inspection, and calibration workflows
+//             </span>{" "}
+//             — all in one secure platform.
+//           </p>
+//           <p className="text-md md:text-lg mt-2 text-gray-300">
+//             Audit-ready from day one — no servers, no stress.
+//           </p>
+
+//           <div className="mt-6 px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/30 flex flex-col items-center space-y-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+//             <h2 className="text-orange-300 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+//               🏆 Recognised as an Established Software Platform
+//             </h2>
+//             <h1 className="text-red-500 text-3xl md:text-5xl font-bold max-w-3xl drop-shadow-2xl text-center">
+//               Red Swan Digital Radar 2025
+//             </h1>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* === Features appear later === */}
+//       {showFeatures && (
+//         <div
+//           className="absolute w-full h-full hidden md:flex flex-col items-center z-30"
+//           style={{ animation: "fadeIn 2s forwards" }}
+//         >
+//           <div className="relative w-full h-full">
 //             {features.map((feature, idx) => (
 //               <div
 //                 key={idx}
 //                 onClick={() => handleClick(feature.label)}
-//                 className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold transition-all duration-500 feature-glow cursor-pointer"
+//                 className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform"
 //                 style={{
 //                   ...feature.style,
 //                   transform: "translate(-50%, -50%)",
@@ -83,152 +123,499 @@
 //               </div>
 //             ))}
 //           </div>
-//         )}
-//       </div>
-
-//       {/* Mobile Features: show one by one */}
-//       <div className="md:hidden flex flex-col items-center justify-center h-full space-y-3 px-4">
-//         {!showLogo &&
-//           features.slice(0, visibleCount).map((feature, idx) => (
-//             <div
-//               key={idx}
-//               onClick={() => handleClick(feature.label)}
-//               className="group w-full text-center px-3 py-2 text-xs border border-white rounded-md text-white font-semibold transition-all duration-500 feature-glow cursor-pointer bg-black/60"
-//             >
-//               {feature.label}
-//             </div>
-//           ))}
-//       </div>
-
-//       {/* Logo */}
-//       {showLogo && (
-//         <div className="absolute inset-0 flex items-center justify-center bg-black z-50 animate-fadeOut">
-//           <img
-//             src="/oms.svg"
-//             alt="Company Logo"
-//             // className="w-48 md:w-64 h-48 md:h-64 object-contain"
-//             style={{
-//               width: "30vw", // 30% of viewport width
-//               height: "auto", // maintains aspect ratio
-//               maxWidth: "400px", // optional limit for very large screens
-//               maxHeight: "400px", // optional limit for very large screens
-//             }}
-//           />
 //         </div>
 //       )}
+
+//       <style>{`
+//         /* Text fade up, visible for 3s, then fades out smoothly */
+//         @keyframes smoothFadeUp {
+//           0% { opacity: 0; transform: translateY(30px); }
+//           20% { opacity: 1; transform: translateY(0); }
+//           60% { opacity: 1; transform: translateY(0); }
+//           100% { opacity: 0; transform: translateY(-20px); }
+//         }
+//         .animate-smoothFadeUp {
+//           animation: smoothFadeUp 6s ease-in-out forwards;
+//         }
+
+//         @keyframes fadeIn {
+//           from { opacity: 0; }
+//           to { opacity: 1; }
+//         }
+//       `}</style>
 //     </section>
 //   );
 // };
 
 // export default VideoSection;
 
-// // working final version without LOGO
+// import { useEffect, useState } from "react";
+// import { motion, AnimatePresence } from "framer-motion";
+// import { FiChevronLeft } from "react-icons/fi";
+// import "aos/dist/aos.css";
 
-import { useEffect, useState } from "react";
+// const features = [
+//   {
+//     label: "Business Performance",
+//     id: "businessperformance",
+//     style: { top: "10%", right: "30%" },
+//   },
+//   {
+//     label: "Accounting",
+//     id: "accounting",
+//     style: { top: "25%", right: "25%" },
+//   },
+//   { label: "Personnel", id: "personnel", style: { top: "40%", right: "20%" } },
+//   {
+//     label: "Supplier Management",
+//     id: "suppliermanagement",
+//     style: { top: "55%", right: "25%" },
+//   },
+//   { label: "CRM", id: "crm", style: { top: "70%", right: "30%" } },
+//   {
+//     label: "System Configuration",
+//     id: "systemconfiguration",
+//     style: { top: "70%", left: "30%" },
+//   },
+//   { label: "QMS", id: "qms", style: { top: "55%", left: "25%" } },
+//   { label: "Assets", id: "assets", style: { top: "40%", left: "20%" } },
+//   {
+//     label: "Specification",
+//     id: "specification",
+//     style: { top: "25%", left: "25%" },
+//   },
+//   { label: "Test Data Management", id:"testdatamanagement", style: { top: "10%", left: "30%" } },
+// ];
+
+// const VideoSection = () => {
+//   const [showText, setShowText] = useState(false);
+//   const [showSecondImage, setShowSecondImage] = useState(false);
+//   const [showFeatures, setShowFeatures] = useState(false);
+//   const [toggleRedSwan, setToggleRedSwan] = useState(false);
+
+//   const handleClick = (id) => {
+//     const event = new CustomEvent("activateTab", {
+//       detail: { id, sectionIndex: 0 },
+//     });
+//     window.dispatchEvent(event);
+//   };
+
+//   useEffect(() => {
+//     const textTimer = setTimeout(() => setShowText(true), 0);
+//     const secondImageTimer = setTimeout(() => setShowSecondImage(true), 2500);
+//     const featureTimer = setTimeout(() => setShowFeatures(true), 6000);
+//     return () => {
+//       clearTimeout(textTimer);
+//       clearTimeout(secondImageTimer);
+//       clearTimeout(featureTimer);
+//     };
+//   }, []);
+
+//   return (
+//     <section className="relative w-full h-screen overflow-hidden bg-black text-white">
+//       {/* === Background Images === */}
+//       <div className="absolute inset-0 w-full h-full">
+//         <img
+//           src="BlackBrainImage4webp.webp"
+//           alt="Second Brain Image"
+//           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
+//             showSecondImage ? "opacity-100" : "opacity-0"
+//           }`}
+//         />
+//         <img
+//           src="FirstImage.jpeg"
+//           alt="First Brain Image"
+//           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
+//             showSecondImage ? "delay-[2000ms] opacity-0" : "opacity-100"
+//           }`}
+//         />
+//       </div>
+
+//       {/* === Intro Text === */}
+//       {showText && (
+//         <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 animate-smoothFadeUp transform -translate-y-10 md:-translate-y-16">
+//           <h2 className="text-2xl md:text-4xl font-semibold leading-relaxed max-w-2xl mb-3">
+//             Run your lab on the cloud — secure, scalable, and compliant.
+//           </h2>
+//           <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+//             Everything you need to streamline your{" "}
+//             <span className="text-orange-500 font-semibold">
+//               testing, inspection, and calibration workflows
+//             </span>{" "}
+//             — all in one secure platform.
+//           </p>
+//           <p className="text-md md:text-lg mt-2 text-gray-300">
+//             Audit-ready from day one — no servers, no stress.
+//           </p>
+
+//           <div className="mt-6 px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/30 flex flex-col items-center space-y-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+//             <h2 className="text-orange-300 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+//               🏆 Recognised as an Established Software Platform
+//             </h2>
+//             <h1 className="text-red-500 text-3xl md:text-5xl font-bold max-w-3xl drop-shadow-2xl text-center">
+//               Red Swan Digital Radar 2025
+//             </h1>
+//           </div>
+//         </div>
+//       )}
+
+//       {/* === Features + Toggle === */}
+//       {showFeatures && (
+//         <div className="absolute w-full h-full hidden md:flex flex-col items-center z-30">
+//           {/* Feature Labels */}
+//           <AnimatePresence>
+//             {!toggleRedSwan && (
+//               <motion.div
+//                 key="features"
+//                 className="relative w-full h-full"
+//                 initial={{ opacity: 0 }}
+//                 animate={{ opacity: 1 }}
+//                 exit={{ opacity: 0 }}
+//                 transition={{ duration: 0.6 }}
+//               >
+//                 {features.map((feature, idx) => (
+//                   <div
+//                     key={idx}
+//                     // onClick={() => handleClick(feature.label)}
+//                     onClick={() => handleClick(feature.id)}
+//                     className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform"
+//                     style={{
+//                       ...feature.style,
+//                       transform: "translate(-50%, -50%)",
+//                       width: "200px",
+//                       textAlign: "center",
+//                       justifyContent: "center",
+//                       height: "35px",
+//                       backgroundColor: "rgba(26, 15, 47, 0.8)",
+//                     }}
+//                   >
+//                     {feature.label}
+//                   </div>
+//                 ))}
+//               </motion.div>
+//             )}
+//           </AnimatePresence>
+
+//           {/* RED SWAN SLIDE */}
+//           <AnimatePresence>
+//             {toggleRedSwan && (
+//               <motion.div
+
+//                 key="redswan"
+//                 initial={{ x: "100%", opacity: 0 }}
+//                 animate={{ x: 0, opacity: 1 }}
+//                 exit={{ x: "100%", opacity: 0 }}
+//                 transition={{ duration: 0.6, ease: "easeInOut" }}
+//               >
+//                 <div className="px-8 py-6 rounded-2xl bg-white/10 backdrop-blur-md border border-white/30 flex flex-col items-center justify-center space-y-3 shadow-[0_0_25px_rgba(255,255,255,0.15)] text-center">
+//                   <h2 className="text-orange-100 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+//                     🏆 Recognised as an Established Software Platform
+//                   </h2>
+//                   <h1 className="text-white text-3xl md:text-5xl font-bold drop-shadow-2xl">
+//                     Red Swan Digital Radar 2025
+//                   </h1>
+//                 </div>
+//               </motion.div>
+//             )}
+//           </AnimatePresence>
+
+//           {/* Toggle Button */}
+//           <motion.button
+//             onClick={() => setToggleRedSwan((prev) => !prev)}
+//             animate={{ rotate: toggleRedSwan ? 180 : 0 }}
+//             transition={{ duration: 0.5 }}
+//             className="absolute right-6 top-1/2 transform -translate-y-1/2 bg-orange-500 hover:bg-orange-600 text-white p-3 rounded-full shadow-lg"
+//           >
+//             <FiChevronLeft size={26} />
+//           </motion.button>
+//         </div>
+//       )}
+
+//       {/* === Animations === */}
+//       <style>{`
+//         @keyframes smoothFadeUp {
+//           0% { opacity: 0; transform: translateY(30px); }
+//           20% { opacity: 1; transform: translateY(0); }
+//           60% { opacity: 1; transform: translateY(0); }
+//           100% { opacity: 0; transform: translateY(-20px); }
+//         }
+//         .animate-smoothFadeUp {
+//           animation: smoothFadeUp 6s ease-in-out forwards;
+//         }
+//         @keyframes fadeIn {
+//           from { opacity: 0; }
+//           to { opacity: 1; }
+//         }
+
+//       `}</style>
+//     </section>
+//   );
+// };
+
+// export default VideoSection;
+
 import "aos/dist/aos.css";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const features = [
-  { label: "Business Performance", style: { top: "10%", right: "30%" } },
-  { label: "Accounting", style: { top: "25%", right: "25%" } },
-  { label: "Personnel", style: { top: "40%", right: "20%" } },
-  { label: "Supplier Management", style: { top: "55%", right: "25%" } },
-  { label: "CRM", style: { top: "70%", right: "30%" } },
-  { label: "System Configuration", style: { top: "70%", left: "30%" } },
-  { label: "QMS", style: { top: "55%", left: "25%" } },
-  { label: "Assets", style: { top: "40%", left: "20%" } },
-  { label: "Specification", style: { top: "25%", left: "25%" } },
-  { label: "Test Data Management", style: { top: "10%", left: "30%" } },
+  {
+    label: "Business Performance",
+    id: "businessperformance",
+    style: { top: "10%", right: "30%" },
+  },
+  {
+    label: "Accounting",
+    id: "accounting",
+    style: { top: "25%", right: "25%" },
+  },
+  { label: "Personnel", id: "personnel", style: { top: "40%", right: "20%" } },
+  {
+    label: "Supplier Management",
+    id: "suppliermanagement",
+    style: { top: "55%", right: "25%" },
+  },
+  { label: "CRM", id: "crm", style: { top: "70%", right: "30%" } },
+  {
+    label: "System Configuration",
+    id: "systemconfiguration",
+    style: { top: "70%", left: "30%" },
+  },
+  { label: "QMS", id: "qms", style: { top: "55%", left: "25%" } },
+  { label: "Assets", id: "assets", style: { top: "40%", left: "20%" } },
+  {
+    label: "Specification",
+    id: "specification",
+    style: { top: "25%", left: "25%" },
+  },
+  {
+    label: "Test Data Management",
+    id: "testdatamanagement",
+    style: { top: "10%", left: "30%" },
+  },
 ];
 
 const VideoSection = () => {
+  const [showText, setShowText] = useState(false);
+  const [showSecondImage, setShowSecondImage] = useState(false);
   const [showFeatures, setShowFeatures] = useState(false);
+  const [toggleRedSwan, setToggleRedSwan] = useState(false);
 
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setShowFeatures(true);
-    }, 1000); // Wait 1 second before starting the fade-in
-
-    return () => clearTimeout(timer);
-  }, []);
-
-  const handleClick = (label) => {
-    const contentSection = document.getElementById("header-content-section");
-    if (contentSection) {
-      contentSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
-    const event = new CustomEvent("activateTab", { detail: label });
+  const handleClick = (id) => {
+    const event = new CustomEvent("activateTab", {
+      detail: { id, sectionIndex: 0 },
+    });
     window.dispatchEvent(event);
   };
 
+  useEffect(() => {
+    const textTimer = setTimeout(() => setShowText(true), 0);
+    const secondImageTimer = setTimeout(() => setShowSecondImage(true), 2500);
+    const featureTimer = setTimeout(() => setShowFeatures(true), 6000);
+    return () => {
+      clearTimeout(textTimer);
+      clearTimeout(secondImageTimer);
+      clearTimeout(featureTimer);
+    };
+  }, []);
+
+  // 🔁 Smooth auto loop between features and Red Swan every 6 seconds
+  useEffect(() => {
+    if (showFeatures) {
+      const loopInterval = setInterval(() => {
+        setToggleRedSwan((prev) => !prev);
+      }, 6000); // slower transition cycle (was 4000)
+      return () => clearInterval(loopInterval);
+    }
+  }, [showFeatures]);
+
   return (
     <section className="relative w-full h-screen overflow-hidden bg-black text-white">
-      {/* Background Image */}
-      <img
-        src="BlackBrainImage2.png"
-        alt="Brain Wallpaper"
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      />
+      {/* === Background Images === */}
+      <div className="absolute inset-0 w-full h-full">
+        <img
+          src="BlackBrainImage4webp.webp"
+          alt="Second Brain Image"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
+            showSecondImage ? "opacity-100" : "opacity-0"
+          }`}
+        />
+        <img
+          src="FirstImage.jpeg"
+          alt="First Brain Image"
+          className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-[2000ms] ${
+            showSecondImage ? "delay-[2000ms] opacity-0" : "opacity-100"
+          }`}
+        />
+      </div>
 
-      {/* <video
-        autoPlay
-        muted
-        loop
-        playsInline
-        className="absolute inset-0 w-full h-full object-cover z-0"
-      >
-        <source src="videos/Slow_Motion_Outer_Circuit_Video.mp4" type="video/mp4" />
-        Your browser does not support the video tag.
-      </video> */}
+      {/* === Intro Text === */}
+      {showText && (
+        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/10 backdrop-blur-md text-center px-6 z-20 animate-smoothFadeUp transform -translate-y-10 md:-translate-y-16">
+          <h2 className="text-2xl md:text-4xl font-semibold leading-relaxed max-w-2xl mb-3">
+            Run your lab on the cloud — secure, scalable, and compliant.
+          </h2>
+          <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+            Everything you need to streamline your{" "}
+            <span className="text-orange-500 font-semibold">
+              testing, inspection, and calibration workflows
+            </span>{" "}
+            — all in one secure platform.
+          </p>
+          <p className="text-md md:text-lg mt-2 text-gray-300">
+            Audit-ready from day one — no servers, no stress.
+          </p>
 
-      {/* Desktop Features */}
-      <div className="hidden md:block">
-        {showFeatures && (
-          <div
-            className="absolute w-full h-full"
-            style={{
-              animation: "fadeIn 2s forwards", // Smooth fade-in over 2 seconds
-            }}
-          >
-            {features.map((feature, idx) => (
-              <div
-                key={idx}
-                onClick={() => handleClick(feature.label)}
-                className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer"
-                style={{
-                  ...feature.style,
-                  transform: "translate(-50%, -50%)",
-                  width: "200px",
-                  textAlign: "center",
-                  justifyContent: "center",
-                  height: "35px",
-                  backgroundColor: "rgba(26, 15, 47, 0.8)",
-                }}
-              >
-                {feature.label}
-              </div>
-            ))}
+          <div className="mt-6 px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/30 flex flex-col items-center space-y-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+            <h2 className="text-orange-300 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+              🏆 Recognised as an Established Software Platform
+            </h2>
+            <h1 className="text-red-500 text-3xl md:text-5xl font-bold max-w-3xl drop-shadow-2xl text-center">
+              Red Swan Digital Radar 2025
+            </h1>
           </div>
-        )}
-      </div>
+        </div>
+      )}
 
-      {/* Mobile Features - hidden */}
-      <div className="md:hidden flex flex-col items-center justify-center h-full space-y-3 px-4">
-        {/* Empty - features hidden on mobile */}
-      </div>
+      {/* === Features + Auto Loop Section === */}
+      {showFeatures && (
+        <div className="absolute w-full h-full hidden md:flex flex-col items-center z-30">
+          {/* Feature Labels */}
+          <AnimatePresence mode="wait">
+            {!toggleRedSwan && (
+              
+              <motion.div
+                key="features"
+                className="relative w-full h-full"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 2, ease: "easeInOut" }} // slower fade
+              >
+                {/* {features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => handleClick(feature.id)}
+                    className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform hover:shadow-[0_0_20px_4px_rgba(138,43,226,0.8)]"
+                    style={{
+                      ...feature.style,
+                      transform: "translate(-50%, -50%)",
+                      width: "200px",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      height: "35px",
+                      backgroundColor: "rgba(26, 15, 47, 0.8)",
+                    }}
+                  >
+                    {feature.label}
+                  </div>
+                ))} */}
+                {features.map((feature, idx) => (
+                  <div
+                    key={idx}
+                    onClick={() => handleClick(feature.id)}
+                    className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 hover:border-blue transition-transform hover:shadow-[0_0_20px_4px_rgba(138,43,226,0.8)] hover:animate-glowPulse"
+                    style={{
+                      ...feature.style,
+                      transform: "translate(-50%, -50%)",
+                      width: "200px",
+                      textAlign: "center",
+                      justifyContent: "center",
+                      height: "35px",
+                      backgroundColor: "rgba(228, 228, 228, 0.8)",
+                    }}
+                  >
+                    {feature.label}
+                  </div>
+                ))}
+              </motion.div>
+            )}
 
-      {/* Fade-in animation */}
+            {/* RED SWAN SLIDE (fades in slowly) */}
+            {toggleRedSwan && (
+              // moves from right side
+              // <motion.div
+              //   key="redswan"
+              //   initial={{ opacity: 0, y: 30 }} // start lower & invisible
+              //   animate={{ opacity: 1, y: -10 }} // move up slightly while fading in
+              //   exit={{ opacity: 0, y: 30 }} // fade out while moving down
+              //   transition={{ duration: 2.5, ease: "easeInOut" }} // slower, smoother transition
+              //   className="flex items-start justify-center w-full h-full"
+              // >
+              //   <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 animate-smoothFadeUp transform -translate-y-10 md:-translate-y-16">
+              //     <h2 className="text-2xl md:text-4xl font-semibold leading-relaxed max-w-2xl mb-3">
+              //       Run your lab on the cloud — secure, scalable, and compliant.
+              //     </h2>
+              //     <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+              //       Everything you need to streamline your{" "}
+              //       <span className="text-orange-500 font-semibold">
+              //         testing, inspection, and calibration workflows
+              //       </span>{" "}
+              //       — all in one secure platform.
+              //     </p>
+              //     <p className="text-md md:text-lg mt-2 text-gray-300">
+              //       Audit-ready from day one — no servers, no stress.
+              //     </p>
+
+              //     <div className="mt-6 px-8 py-4 rounded-2xl bg-white/10 backdrop-blur-md border border-white/30 flex flex-col items-center space-y-2 shadow-[0_0_25px_rgba(255,255,255,0.15)]">
+              //       <h2 className="text-orange-300 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+              //         🏆 Recognised as an Established Software Platform
+              //       </h2>
+              //       <h1 className="text-red-500 text-3xl md:text-5xl font-bold max-w-3xl drop-shadow-2xl text-center">
+              //         Red Swan Digital Radar 2025
+              //       </h1>
+              //     </div>
+              //   </div>
+              // </motion.div>
+              <motion.div
+                key="redswan"
+                initial={{ opacity: 0, y: 30 }} // start lower & invisible
+                animate={{ opacity: 1, y: -10 }} // move up slightly while fading in
+                exit={{ opacity: 0, y: 30 }} // fade out while moving down
+                transition={{ duration: 2.5, ease: "easeInOut" }} // slower, smoother transition
+                className="flex items-start justify-center w-full h-full bg-white/10 backdrop-blur-md"
+              >
+                <div className="absolute inset-0 flex flex-col items-center justify-center text-center px-6 z-20 animate-smoothFadeUp transform -translate-y-10 md:-translate-y-16">
+                  <h2 className="text-2xl md:text-4xl font-semibold leading-relaxed max-w-2xl mb-3">
+                    Run your lab on the cloud — secure, scalable, and compliant.
+                  </h2>
+                  <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+                    Everything you need to streamline your{" "}
+                    <span className="text-orange-500 font-semibold">
+                      testing, inspection, and calibration workflows
+                    </span>{" "}
+                    — all in one secure platform.
+                  </p>
+                  <p className="text-md md:text-lg mt-2 text-gray-300">
+                    Audit-ready from day one — no servers, no stress.
+                  </p>
+
+                  {/* 🔹 Glass Effect Box */}
+                  <div className="mt-6 px-8 py-4 rounded-2xl  border border-white/30 flex flex-col items-center space-y-2 shadow-[0_0_30px_rgba(255,255,255,0.15)] transition-all duration-700">
+                    <h2 className="text-orange-300 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+                      🏆 Recognised as an Established Software Platform
+                    </h2>
+                    <h1 className="text-red-500 text-3xl md:text-5xl font-bold max-w-3xl drop-shadow-2xl text-center">
+                      Red Swan Digital Radar 2025
+                    </h1>
+                  </div>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+      )}
+
+      {/* === Animations === */}
       <style>{`
-        @keyframes fadeIn {
-          0% { opacity: 0; }
-          100% { opacity: 1; }
+        @keyframes smoothFadeUp {
+          0% { opacity: 0; transform: translateY(30px); }
+          20% { opacity: 1; transform: translateY(0); }
+          60% { opacity: 1; transform: translateY(0); }
+          100% { opacity: 0; transform: translateY(-20px); }
         }
-
-         @media (max-width: 768px) {
-          .brain-image {
-            height: 50vh !important; 
-            object-fit: cover !important;
-            top: 0;
-          }
+        .animate-smoothFadeUp {
+          animation: smoothFadeUp 6s ease-in-out forwards;
         }
       `}</style>
     </section>

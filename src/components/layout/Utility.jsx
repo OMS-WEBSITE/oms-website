@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { FaGlobe } from "react-icons/fa";
 
@@ -8,22 +8,50 @@ const Utility = ({ language, setLanguage }) => {
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
   const selectLanguage = (lang) => {
     setLanguage(lang);
+    localStorage.setItem("preferredLanguage", lang); // save preference
     setDropdownOpen(false);
   };
 
   const languages = [
     { code: "EN-IN", label: "India English" },
     { code: "EN-AU", label: "Australia English" },
-    // { code: "EN-US", label: "USA English" },
     // add more languages as needed
   ];
 
+  // Detect language dynamically on first load
+  useEffect(() => {
+    // Only detect location if user has not manually selected language
+    const savedLang = localStorage.getItem("preferredLanguage");
+    if (savedLang) {
+      setLanguage(savedLang);
+      return;
+    }
+
+    const detectLocation = async () => {
+      try {
+        const res = await fetch("https://ipapi.co/json/");
+        const data = await res.json();
+        let detectedLang = "EN-IN"; // default
+        if (data.country_code === "AU") detectedLang = "EN-AU";
+        else if (data.country_code === "IN") detectedLang = "EN-IN";
+        setLanguage(detectedLang);
+      } catch (err) {
+        // fallback to browser language
+        const browserLang = navigator.language || navigator.userLanguage;
+        if (browserLang.includes("en-AU")) setLanguage("EN-AU");
+        else setLanguage("EN-IN");
+      }
+    };
+
+    detectLocation();
+  }, [setLanguage]);
+
   return (
     <div className="hidden md:flex w-full bg-gray-100 border-b border-gray-200 shadow-sm z-40">
-      <div className="container mx-auto max-w-7xl h-[50px] flex justify-end items-center space-x-4 px-4">
+      <div className="w-[90%] mx-auto h-[50px] flex justify-end items-center space-x-4 px-4">
         {/* Try Free Button */}
         <Button
-          className="bg-gradient-to-r from-orange-500 to-pink-500 hover:from-orange-600 hover:to-pink-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300"
+          className="bg-gradient-to-r from-[#ea885e] to-[#fe781f] hover:from-orange-600 hover:to-pink-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300"
           style={{ height: "36px", minHeight: "36px" }}
         >
           Try 14 days free
@@ -46,7 +74,9 @@ const Utility = ({ language, setLanguage }) => {
             onClick={toggleDropdown}
           >
             <FaGlobe className="text-orange-500" size={18} />
-            <span className="truncate text-orange-500">{language}</span>
+            <span className="truncate text-orange-500">
+              {language || "Detecting..."}
+            </span>
           </button>
 
           {dropdownOpen && (

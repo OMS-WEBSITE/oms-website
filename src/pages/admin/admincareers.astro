@@ -1,0 +1,74 @@
+---
+import Layout from "../../layouts/main.astro";
+---
+
+<Layout title="Admin Careers Panel">
+  <main class="max-w-3xl mx-auto py-10">
+    <h1 class="text-3xl font-bold mb-6">Admin Panel — Manage Jobs</h1>
+
+    <form id="jobForm" class="bg-white border p-6 rounded-lg space-y-3 mb-6">
+      <input name="id" placeholder="Job ID" class="border p-2 w-full rounded" required>
+      <input name="title" placeholder="Job Title" class="border p-2 w-full rounded" required>
+      <input name="location" placeholder="Location" class="border p-2 w-full rounded" required>
+      <input name="type" placeholder="Type" class="border p-2 w-full rounded" required>
+      <textarea name="description" placeholder="Description" class="border p-2 w-full rounded"></textarea>
+      <button class="bg-orange-500 text-white px-4 py-2 rounded" type="submit">Save Job</button>
+    </form>
+
+    <div id="jobsList" class="space-y-3"></div>
+  </main>
+
+  <script>
+    const key = localStorage.getItem("oms-admin-key") || prompt("Enter Admin Key:");
+    localStorage.setItem("oms-admin-key", key);
+
+    async function loadJobs() {
+      const res = await fetch("/.netlify/functions/list-jobs-github", {
+        headers: { "x-admin-key": key }
+      });
+      const data = await res.json();
+      const wrap = document.getElementById("jobsList");
+      wrap.innerHTML = "";
+      data.jobs.forEach((job) => {
+        const div = document.createElement("div");
+        div.className = "bg-white border rounded p-4 flex justify-between";
+        div.innerHTML = `
+          <div>
+            <h3 class="font-semibold">${job.title}</h3>
+            <p>${job.location} • ${job.type}</p>
+          </div>
+          <button data-id="${job.id}" class="delete-btn bg-red-500 text-white px-3 py-1 rounded">Delete</button>
+        `;
+        wrap.appendChild(div);
+      });
+
+      document.querySelectorAll(".delete-btn").forEach(btn => {
+        btn.addEventListener("click", async (e) => {
+          const id = e.target.dataset.id;
+          if (confirm("Delete this job?")) {
+            await fetch("/.netlify/functions/delete-job-github", {
+              method: "POST",
+              headers: { "Content-Type": "application/json", "x-admin-key": key },
+              body: JSON.stringify({ id })
+            });
+            loadJobs();
+          }
+        });
+      });
+    }
+
+    document.getElementById("jobForm").addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = Object.fromEntries(new FormData(e.target).entries());
+      await fetch("/.netlify/functions/save-job-github", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "x-admin-key": key },
+        body: JSON.stringify(formData)
+      });
+      e.target.reset();
+      loadJobs();
+    });
+
+    loadJobs();
+  </script>
+</Layout>
