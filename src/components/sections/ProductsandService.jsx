@@ -493,19 +493,39 @@ const ProductsandServices = () => {
                         {expandedSection === `${mainIdx}-${secIdx}` && (
                           <div className="bg-white px-8 py-4 text-gray-700 space-y-3 leading-relaxed">
                             {section.content.map((block, i) => {
+
+                              if (block.type === "subheading") {
+                                return (
+                                  <h4
+                                    key={i}
+                                    className="text-lg font-semibold mt-6 mb-2 text-white"
+                                  >
+                                    {block.text}
+                                  </h4>
+                                );
+                              }
+
                               if (block.type === "paragraph")
                                 return (
-                                  <p key={i} className="text-justify">
+                                  <p key={i} className="text-justify ml-6">
                                     {block.text}
                                   </p>
                                 );
 
+                              // if (item.type === "heading") {
+                              //   return (
+                              //     <h4
+                              //       key={idx}
+                              //       className="text-lg font-semibold mt-4 text-white"
+                              //     >
+                              //       {item.text}
+                              //     </h4>
+                              //   );
+                              // }
+
                               if (block.type === "list")
                                 return (
-                                  <ul
-                                    key={i}
-                                    className="list-disc list-inside space-y-1 ml-4"
-                                  >
+                                  <ul key={i} className="list-disc list-inside">
                                     {block.items.map((li, j) => (
                                       <li key={j}>{li}</li>
                                     ))}

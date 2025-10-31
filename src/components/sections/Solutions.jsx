@@ -7,7 +7,8 @@ const Solutions = () => {
   const sections = [
     {
       id: "nabl-lab-verification",
-      title: "NABL ULR + QR Verification — Ensure every report is authentic, traceable, and verifiable online.",
+      title:
+        "NABL ULR + QR Verification — Ensure every report is authentic, traceable, and verifiable online.",
       content: (
         <>
           <p>
@@ -189,7 +190,8 @@ const Solutions = () => {
     },
     {
       id: "quality-management-documents",
-      title: "Quality Management Documents — Version-controlled policies, procedures, and records in one repository.",
+      title:
+        "Quality Management Documents — Version-controlled policies, procedures, and records in one repository.",
       content: (
         <>
           <p>
@@ -238,12 +240,11 @@ const Solutions = () => {
             alt="Solutions-create"
             className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
           />
-          <img
+          {/* <img
             src="/images/solutions-create-new.png"
             alt="solutions-create-new"
             className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
-          />
-
+          /> */}
           <p>
             OMS displays Edit, View, Hide, View and Download buttons on search
             grid depending on user authorization. Quality Managers are given
@@ -266,7 +267,8 @@ const Solutions = () => {
     },
     {
       id: "Job Test Record Management",
-      title: "Job Test Record Management — Full traceability from sample registration to certificate issuance.",
+      title:
+        "Job Test Record Management — Full traceability from sample registration to certificate issuance.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -364,7 +366,8 @@ const Solutions = () => {
     },
     {
       id: "client-management",
-      title: "Client Management Portal — Clients raise requests, upload data, and download verified reports.",
+      title:
+        "Client Management Portal — Clients raise requests, upload data, and download verified reports.",
       content: (
         <>
           <p>
@@ -380,7 +383,8 @@ const Solutions = () => {
     },
     {
       id: "specifications",
-      title: "Specifications Database — Keep reference standards and acceptance limits up-to-date.",
+      title:
+        "Specifications Database — Keep reference standards and acceptance limits up-to-date.",
       content: (
         <>
           <p>
@@ -470,7 +474,8 @@ const Solutions = () => {
     },
     {
       id: "asset-management",
-      title: "Asset Management — Equipment inventory with calibration and service alerts.",
+      title:
+        "Asset Management — Equipment inventory with calibration and service alerts.",
       content: (
         <>
           <p>
@@ -543,7 +548,8 @@ const Solutions = () => {
     },
     {
       id: "employee-management",
-      title: "Employee Management — Track competencies, approvals, and workload distribution.",
+      title:
+        "Employee Management — Track competencies, approvals, and workload distribution.",
       content: (
         <>
           <p className="mb-3">
@@ -603,8 +609,9 @@ const Solutions = () => {
       ),
     },
     {
-      id: "accounting",
-      title: "Accounting & Finance — Seamless quote-to-cash cycle and project cost tracking.",
+      id: "accounting-finance",
+      title:
+        "Accounting Finance — Seamless quote-to-cash cycle and project cost tracking.",
       content: (
         <>
           <p>

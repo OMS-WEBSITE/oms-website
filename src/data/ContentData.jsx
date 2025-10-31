@@ -110,35 +110,91 @@ export const contentMap = {
         heading: "Sales Report",
         content: [
           {
-            type: "paragraph",
-            text: "A sales report gives an overview of the state of the sales activities within a company. It shows the different trends happening and the sales volume over a specified time, but also analyses the performance of your business, staff, and clients.",
+            type: "list",
+            items: ["Real-Time Insights Into Business Growth"],
           },
           {
             type: "paragraph",
-            text: "The OMS platform can give you a snapshot of your business performance at a specific moment in time ‘real time data’ and can be accessed online at a time and place that suits you.",
+            text: "Gain a complete overview of your company’s sales activity — trends, volumes, and performance across teams, clients, and time periods. OMS transforms raw data into live dashboards so you can act on insights, not instincts.",
+          },
+          {
+            type: "list",
+            items: ["Flexible Reporting"],
           },
           {
             type: "paragraph",
-            text: "Each report can be generated for a period of your choosing i.e., yearly, monthly, weekly, daily, and is available within a matter of seconds, depending on your current internet speed.",
+            text: "Generate sales reports for any period — yearly, monthly, weekly, or daily — and access them anytime, anywhere.",
+          },
+          {
+            type: "list",
+            items: ["Instant Access & Sharing"],
           },
           {
             type: "paragraph",
-            text: "If you are in a hurry to present your sales data at your next meeting, all graphs / charts displayed on the platform can be easily downloaded to a file format that you require.",
+            text: "Download ready-to-present charts and tables in seconds for meetings, reviews, or audits.",
           },
+          // {
+          //   type: "images",
+          //   items: [
+          //     "/images/Sales-REPORT-BY-bRANCH.png",
+          //     ,
+          //     "",
+          //     "",
+          //     "/images/Sales-Report-by-Financial-year.png",
+          //     "",
+          //   ],
+          // },
           {
-            type: "paragraph",
-            text: "Some of the sales reports that can be generated in the OMS platform include:",
+            type: "list",
+            items: ["By Branch: Compare performance across sites or regions"],
           },
           {
             type: "images",
+            items: ["/images/Sales-REPORT-BY-bRANCH.png"],
+          },
+          {
+            type: "list",
+            items: ["By Client: Track key accounts and recurring business"],
+          },
+          {
+            type: "images",
+            items: ["/images/Sales-Report-by-Client.png"],
+          },
+          {
+            type: "list",
             items: [
-              "/images/Sales-REPORT-BY-bRANCH.png",
-              "/images/Sales-Report-by-Client.png",
-              "/images/Sales-Report-by-Personnel-768x499.png",
-              "/images/Sales-Report-by-section.png",
-              "/images/Sales-Report-by-Financial-year.png",
-              "/images/Sales-Report-by-Month.png",
+              "By Personnel: Measure individual or team sales contribution",
             ],
+          },
+          {
+            type: "images",
+            items: ["/images/Sales-Report-by-Personnel-768x499.png"],
+          },
+          {
+            type: "list",
+            items: ["By Section: Visualise growth across Sections"],
+          },
+          {
+            type: "images",
+            items: ["/images/Sales-Report-by-section.png"],
+          },
+          {
+            type: "list",
+            items: ["By Period: Visualise growth across financial years"],
+          },
+          {
+            type: "images",
+            items: ["/images/Sales-Report-by-Financial-year.png"],
+          },
+          {
+            type: "list",
+            items: [
+              "Trend Analysis: Identify peaks, dips, and seasonal patterns",
+            ],
+          },
+          {
+            type: "images",
+            items: ["/images/Sales-Report-by-Month.png"],
           },
         ],
       },
@@ -147,8 +203,29 @@ export const contentMap = {
         heading: "Timesheet Report",
         content: [
           {
+            type: "list",
+            items: ["Track Every Hour, Every Job, Every Client"],
+          },
+          {
             type: "paragraph",
-            text: "The timesheet report enables users to search several criteria to gain valuable insight relating to staff hours, hours spent on a particular job or hours devoted to a particular client.",
+            text: "Gain instant visibility into how time is spent across your organisation. The OMS Timesheet Report helps you analyse productivity, job efficiency, and client-wise effort — all in one digital view.",
+          },
+          {
+            type: "list",
+            items: ["Smart Filters"],
+          },
+          {
+            type: "paragraph",
+            text: "Search by staff member, job number, department, or client to see where hours are going.",
+          },
+          {
+            type: "list",
+            items: [
+              "⏰Staff Utilisation: Identify under- or over-allocated resources",
+              "💼Job Costing: Compare billed hours vs. actual effort",
+              "🧮Client Tracking: Evaluate time investment per client",
+              "📈Productivity Trends: Discover workflow bottlenecks and improve turnaround",
+            ],
           },
         ],
       },
@@ -156,16 +233,21 @@ export const contentMap = {
         heading: "Aged Receivables",
         content: [
           {
-            type: "paragraph",
-            text: "Thank you for visiting,",
+            type: "list",
+            items: ["Stay Ahead of Outstanding Payments"],
           },
           {
             type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
+            text: "Monitor overdue invoices before they impact your cash flow. OMS automatically organises receivables by client, branch, or age bracket — so you can chase what matters first.",
           },
           {
-            type: "paragraph",
-            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "📅 Age Buckets: 0–30, 31–60, 61–90, 90+ days",
+              "💸 Client-wise Totals: Know who owes what, instantly",
+              "📈 Trends: Spot recurring late payers and take action early",
+              "⚡ Follow-Up Tools: Email reminders straight from OMS",
+            ],
           },
         ],
       },
@@ -173,12 +255,25 @@ export const contentMap = {
         heading: "Revenue Summary",
         content: [
           {
+            type: "list",
+            items: ["Turn Numbers Into Strategy"],
+          },
+          {
             type: "paragraph",
             text: "The revenue summary section of the OMS platform is an important tool to gain insight on business revenue generated by your business. The report can be generated on a financial year basis, monthly, quarterly, or any date specified by the user.",
           },
           {
+            type: "list",
+            items: [
+              "💼 By Department: Compare testing, calibration, and inspection streams",
+              "🧾 By Client: See who drives your top-line growth",
+              "📍 By Branch: Evaluate regional performance",
+              "⏱️ By Period: Generate monthly, quarterly, or financial-year summaries",
+            ],
+          },
+          {
             type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
+            text: "Every decision is easier when the numbers are already in front of you.",
           },
         ],
       },
@@ -186,24 +281,25 @@ export const contentMap = {
         heading: "Production Report",
         content: [
           {
-            type: "paragraph",
-            text: "Average number of days to: Report",
+            type: "list",
+            items: ["Measure Efficiency From Quote to Delivery"],
           },
           {
             type: "paragraph",
-            text: "The OMS platform automates the quote to completed job process for companies that perform inspections or tests.",
+            text: "Understand how long each process truly takes — from quotation to completed job. OMS analyses turnaround time to reveal hidden delays and drive continuous improvement.",
+          },
+          {
+            type: "list",
+            items: [
+              "🕒 Average Completion Time: Job creation → testing → report → invoice",
+              "👥 Team Performance: Compare productivity across departments",
+              "🧰 Process Bottlenecks: Identify where work slows down",
+              "📊 Improvement Tracking: Watch lead times shrink over time",
+            ],
           },
           {
             type: "paragraph",
-            text: "The OMS platform can report the average number of days it takes to perform each task in a process, by using client selected criteria i.e., by Branch, Office, State, Department etc.",
-          },
-          {
-            type: "paragraph",
-            text: "The OMS platform will track the average number of days that it takes to perform each task, and will identify where a process is impeded by continuous delays.",
-          },
-          {
-            type: "paragraph",
-            text: "Managers or business owners can use this report to improve staff productivity which will lead to faster turnaround times.",
+            text: "OMS turns operational data into a blueprint for performance.",
           },
         ],
       },
@@ -211,12 +307,34 @@ export const contentMap = {
         heading: "Sales Summary",
         content: [
           {
-            type: "paragraph",
-            text: "A sales report gives an overview of the state of the sales activities within a company. Each report can be generated for a period of your choosing i.e. yearly, monthly, weekly, daily.",
+            type: "list",
+            items: ["Real-Time Sales at a Glance"],
           },
           {
             type: "paragraph",
-            text: "The OMS platform can give you a snapshot of business performance at a specific moment in time ‘real time data’, and can be accessed online at a time and place that suits you.",
+            text: "See how your business is performing — anytime, anywhere. The OMS Sales Report gives you a live view of sales trends, revenue flow, and client performance across branches, teams, and time periods.",
+          },
+          {
+            type: "list",
+            items: ["Flexible Timeframes"],
+          },
+          {
+            type: "paragraph",
+            text: "Generate reports for any period — yearly, monthly, weekly, or daily — and access them instantly online.",
+          },
+
+          {
+            type: "list",
+            items: [
+              "💰 Revenue Overview: Monitor income and growth trends.",
+              "🏢 Branch Performance: Compare sales across locations.",
+              "👥 Client Contribution: Identify top customers and key accounts.",
+              "📊 Staff Metrics: Track individual and team sales efficiency.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "OMS puts real-time sales data in your hands — clear, visual, and ready when you are.",
           },
         ],
       },
@@ -261,12 +379,24 @@ export const contentMap = {
         heading: "Bank Summary",
         content: [
           {
-            type: "paragraph",
-            text: "The bank summary shows the up-to-date position of your business finances represented by cash in the bank, minus any credit notes issued in the OMS platform.",
+            type: "list",
+            items: ["See Your True Financial Position at a Glance"],
           },
           {
             type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
+            text: "Stay on top of your company’s cash position in real time. The OMS Bank Summary instantly displays the balance of funds in the bank after accounting for any credit notes or adjustments recorded in the system.",
+          },
+          {
+            type: "list",
+            items: [
+              "💵 Current Cash Balance: Always know what’s available.",
+              "🧾 Credit Note Adjustments: View accurate, net figures.",
+              "📈 Financial Snapshot: Track liquidity and overall business health.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Know exactly where your money stands — not just what’s on paper",
           },
         ],
       },
@@ -274,7 +404,7 @@ export const contentMap = {
   },
 
   Accounting: {
-    title: "Accounting",
+    title: "Your finances, finally on autopilot",
     sections: [
       {
         heading: "Invoices",
@@ -284,16 +414,24 @@ export const contentMap = {
             items: ["Automatic Bank Feed – Payment Received"],
           },
           {
-            type: "paragraph",
-            text: "OMS is designed to save every possible minute of labor time in an Enterprise.",
+            type: "list",
+            items: ["Turn Hours of Work Into Seconds of Automation"],
           },
           {
             type: "paragraph",
-            text: "Instead of manually entering each bank payment transaction, you can automatically view all records on your screen by simply downloading your bank transactions from the prior period and uploading the CSV file in the OMS.",
+            text: "Upload your bank’s CSV file, and OMS instantly displays all transactions — no manual data entry. Then, simply click Apply to match payments to the right client invoices.",
           },
           {
             type: "paragraph",
-            text: "Then they just have to single click (apply) received payments to appropriate clients in your OMS. Depending on the speed of your accounts receivable staff, this automation can save a minimum of 4 hours per 50 transactions per work-day. At an average Enterprise cost of $2.50/minute, most Enterprises would save approximately $156,000/annum (260 workdays per annum x 4hrs x 60mins x $2.50 per min Enterprise cost).",
+            text: "Time Saved:⏱️ ~4 hours per 50 transactions, every workday",
+          },
+          {
+            type: "paragraph",
+            text: "Cost Saved: ≈ $156,000 per year (based on enterprise averages)",
+          },
+          {
+            type: "paragraph",
+            text: "From manual entry to one-click matching — accounting just became effortless.",
           },
           {
             type: "images",
@@ -304,32 +442,55 @@ export const contentMap = {
             items: ["Payments Received"],
           },
           {
-            type: "paragraph",
-            text: "It is important for any business to be able to apply payments received to the correct customer invoices. The OMS platform makes this step easy with a predefined list of unpaid invoices.",
+            type: "list",
+            items: ["Match Every Payment, Every Time"],
           },
           {
             type: "paragraph",
-            text: "The OMS allows the user to search by client and allocate the payment amount or credit amount to any open invoices in the platform.",
-          },
-          {
-            type: "paragraph",
-            text: "The OMS platform can provide a payment received history to track prior payments for all customers.",
-          },
-          {
-            type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
+            text: "Apply received or credited payments to the correct invoices in seconds.",
           },
           {
             type: "list",
-            items: ["Invoice Search"],
+            items: ["🔍 Search & Allocate"],
+          },
+
+          {
+            type: "list",
+            items: [
+              "By client, job, or invoice number",
+              "Auto-populate all unpaid invoices",
+              "Review complete payment histories anytime",
+            ],
+          },
+          {
+            type: "list",
+            items: ["🧾 Audit-Ready Traceability"],
           },
           {
             type: "paragraph",
-            text: "In this section, a permitted user can search & filter by Paid, Unpaid or both.",
+            text: "Every payment is logged and stored securely for full financial transparency.",
+          },
+          {
+            type: "list",
+            items: ["Invoice Search & Summary"],
+          },
+          {
+            type: "list",
+            items: ["📊 All Your Invoices, One Smart Dashboard"],
+          },
+
+          {
+            type: "paragraph",
+            text: "Filter, sort, and export invoice data in a click. Multi-branch companies can view combined results or split Excel reports by branch — automatically.",
+          },
+
+          {
+            type: "paragraph",
+            text: "Time period Paid Unpaid Credit Invoices Client",
           },
           {
             type: "paragraph",
-            text: "The point of difference in the OMS platform is that a user from a multi-branch company will be able to search, filter and export a report to Excel, as a combined report for the entire business, or as individual tabs for each of the branches/locations.",
+            text: "Export your summary for further analysis or management review.",
           },
           {
             type: "images",
@@ -337,40 +498,51 @@ export const contentMap = {
           },
           {
             type: "list",
-            items: ["Simplified CreditNote"],
+            items: ["Simplified Credit Note"],
+          },
+          {
+            type: "list",
+            items: ["Automated Accuracy With Every Adjustment"],
           },
           {
             type: "paragraph",
-            text: "Issuing a credit note is already an indirect loss-making process.",
+            text: "OMS uses Intelligence Augmentation (IA) to simplify credit note creation and ensure traceability.",
           },
           {
-            type: "paragraph",
-            text: "The OMS platform is equipped with intelligence augmentation (IA) to eliminate most manual labour work and to record important information for traceability and audit purposes.",
+            type: "list",
+            items: [
+              "Records date, time, user, and reason before issue",
+              "One-click full credit note generation (auto-mirrors original invoice)",
+              "Instantly emails the credit note to the client’s accounts contact",
+            ],
           },
+
           {
             type: "paragraph",
-            text: "The OMS Platform will record date, time, username, and the reason for the credit note, before allowing the user to create a credit note.",
+            text: "Even refunds deserve automation.",
           },
-          {
-            type: "paragraph",
-            text: "When staff are required to issue a full credit note, this can be completed with a single click. The OMS platform can automatically create the entire original invoice in a negative invoice (credit note). Once reviewed and generated, this will automatically be emailed to the accounts contact on file.",
-          },
+
           {
             type: "list",
             items: ["Un-Invoiced Jobs"],
           },
           {
-            type: "paragraph",
-            text: "The OMS platform has a fully integrated accounting system; the job and work activities are directly connected with the accounting activities. There is no external accounting or ERP package.",
+            type: "list",
+            items: ["Never Leave Revenue on the Table"],
           },
           {
             type: "paragraph",
-            text: "OMS ensures that the business does not lose any revenue for any chargeable activity. Every job or activity within the business will be tracked, displayed & emailed to the directors, owners, CFO’s inbox automatically.",
+            text: "OMS links every job and work activity directly to accounting — no external ERP required.",
           },
           {
-            type: "paragraph",
-            text: "The OMS platform tracks and maintains a list of un-invoiced jobs or jobs that require additional invoicing for the completion of other activities.",
+            type: "list",
+            items: [
+              "Tracks all un-invoiced or partially billed jobs",
+              "Sends automatic summaries to directors and CFOs",
+              "Ensures every chargeable activity is billed and recorded",
+            ],
           },
+
           {
             type: "list",
             items: ["Invoice Summary"],
@@ -393,6 +565,8 @@ export const contentMap = {
             type: "paragraph",
             text: "This summary can be exported to Excel to search or filter information further.",
           },
+
+          // need to updated later
           {
             type: "list",
             items: ["Unallocated Payment"],
@@ -409,30 +583,35 @@ export const contentMap = {
             type: "paragraph",
             text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
           },
+
+          // need to updated later
+
           {
             type: "list",
-            items: ["Cheque Payments"],
+            items: ["Cheque Payments & Summary"],
+          },
+          {
+            type: "list",
+            items: ["Manage Cheques Without the Chaos"],
           },
           {
             type: "paragraph",
-            text: "Manage your cheque payments with ease! The OMS platform will enable you to view a list of all cheques received, allocated or unallocated.",
+            text: "Track every cheque — received, allocated, or unallocated — from one simple screen.",
           },
           {
-            type: "paragraph",
-            text: "It is important for any business to be able to apply payments received to the correct customer invoices. The OMS platform makes this step easy with a predefined list of unpaid invoices.",
+            type: "list",
+            items: ["🔍Search & Manage:"],
           },
           {
-            type: "paragraph",
-            text: "The OMS allows the user to search by client and allocate the payment amount or credit amount to any open invoices in the platform.",
+            type: "list",
+            items: [
+              "View cheque status across all clients",
+              "Allocate or adjust payments",
+              "Maintain cheque payment history for audits",
+            ],
           },
-          {
-            type: "paragraph",
-            text: "The OMS platform can provide a payment received history to track prior payments for all customers.",
-          },
-          {
-            type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
-          },
+
+          // need to updated later
           {
             type: "list",
             items: ["Cheque Summary"],
@@ -457,19 +636,19 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Thank you for visiting,",
+            text: "We’re building a new automation layer that will take your daily scheduling to the next level.Follow us on LinkedIn or register for updates to be notified when it launches.",
           },
           {
             type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
-          },
-          {
-            type: "paragraph",
-            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            text: "The future of lab automation — right on schedule.",
           },
           {
             type: "list",
             items: ["Settings"],
+          },
+          {
+            type: "list",
+            items: ["Automatic Payment Reminders — No Awkward Calls Required"],
           },
           {
             type: "paragraph",
@@ -485,32 +664,52 @@ export const contentMap = {
           },
           {
             type: "list",
+            items: [
+              "⏱️ Set your own reminder intervals",
+              "🧾 Personalise email templates per client",
+              "📤 Track every reminder sent",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "Let OMS handle the follow-up — so you can focus on growth, not debt collection.",
+          },
+
+          {
+            type: "list",
             items: ["Debt History"],
           },
           {
-            type: "paragraph",
-            text: "As debt recovery in the OMS platform is automatic, the Debt history report provides an overview of when the system has triggered a reminder email for outstanding payments.",
+            type: "list",
+            items: ["Full Traceability for Every Reminder Sent"],
           },
           {
             type: "paragraph",
-            text: "This report will provide:",
+            text: "The Debt History Report gives a complete overview of every automated follow-up triggered by the system.",
+          },
+          {
+            type: "paragraph",
+            text: "What It Shows:",
           },
           {
             type: "list",
             items: [
-              "Client name",
-              "Email",
-              "Job number",
-              "Invoice number",
-              "Date triggered",
-              "And the rule number (reminder) that was sent.",
+              "👤 Client Name",
+              "📧 Email Contact",
+              "🧾 Job & Invoice Number",
+              "📆 Date of Reminder Sent",
+              "🧩 Rule Number (Reminder Stage)",
             ],
           },
-        ],
-      },
-      {
-        heading: "Reports",
-        content: [
+          {
+            type: "paragraph",
+            text: "With OMS, you never lose track of who owes what — or when they were reminded.”",
+          },
+
+          {
+            type: "list",
+            items: ["Reports"],
+          },
           {
             type: "list",
             items: ["Automatic notification of non-invoiced jobs"],
@@ -1292,7 +1491,7 @@ export const contentMap = {
           },
           {
             type: "images",
-            items: ["/images/Policies.jpg"],
+            items: ["/images/Policies.png"],
           },
         ],
       },
@@ -1582,7 +1781,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Adding a new Process standard is easy and can be completed in 6 easy steps.",
+            text: "Adding a new Process standard is easy and can be completed in 8 easy steps.",
           },
           {
             type: "images",
