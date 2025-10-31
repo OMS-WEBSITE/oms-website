@@ -302,6 +302,9 @@ const VideoSection = () => {
           <AnimatePresence>
             {toggleRedSwan && (
               <motion.div
+
+
+              
                 key="redswan"
                 initial={{ x: "100%", opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -347,9 +350,19 @@ const VideoSection = () => {
           from { opacity: 0; }
           to { opacity: 1; }
         }
+
+
+
       `}</style>
     </section>
   );
 };
 
 export default VideoSection;
+
+
+
+
+
+
+
