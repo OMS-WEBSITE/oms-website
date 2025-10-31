@@ -354,9 +354,9 @@
 
 // export default VideoSection;
 
-import { useEffect, useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
 import "aos/dist/aos.css";
+import { AnimatePresence, motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
 const features = [
   {
@@ -483,6 +483,7 @@ const VideoSection = () => {
           {/* Feature Labels */}
           <AnimatePresence mode="wait">
             {!toggleRedSwan && (
+              
               <motion.div
                 key="features"
                 className="relative w-full h-full"
