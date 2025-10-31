@@ -2,8 +2,6 @@ import React, { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
 import {
   FiChevronDown,
-  FiCornerDownRight,
-  FiArrowRight,
   FiChevronRight,
 } from "react-icons/fi";
 

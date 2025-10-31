@@ -8,6 +8,9 @@
 [functions]
   directory = ".netlify/functions"
   node_bundler = "esbuild"
+  included_files = ["src/**"]
+  external_node_modules = ["node-fetch"]
+  format = "esm"
 
 [[redirects]]
   from = "/api/*"
