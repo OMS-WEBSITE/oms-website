@@ -10,7 +10,9 @@
   node_bundler = "esbuild"
   included_files = ["src/**"]
   external_node_modules = ["node-fetch"]
-  format = "esm"
+
+  [functions.format]
+    type = "esm"
 
 [[redirects]]
   from = "/api/*"
