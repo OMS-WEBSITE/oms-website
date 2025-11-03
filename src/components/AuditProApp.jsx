@@ -14,7 +14,7 @@ import Footer from "./layout/Footer";
 // import PricingCallout from "./sections/PricingCallout";
 import VideoSection from "./sections/Video";
 
-import ProductsAndService from "./sections/ProductsAndService";
+import ProductsAndService from "./sections/ProductsAndServices";
 import Solutions from "./sections/Solutions";
 import WhyOMS from "./sections/WhyOMS";
 import HowToBuy from "./sections/HowToBuy";
