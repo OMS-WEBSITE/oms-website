@@ -14,13 +14,13 @@ import Footer from "./layout/Footer";
 // import PricingCallout from "./sections/PricingCallout";
 import VideoSection from "./sections/Video";
 
-import ProductsAndService from "./sections/ProductsandService"
+import ProductsAndServices from "./sections/ProductsAndService";
 import Solutions from "./sections/Solutions";
-import WhyOMSfrom from "./sections/WhyOMS";
+import WhyOMS from "./sections/WhyOMS";
 import HowToBuy from "./sections/HowToBuy";
 import Learn from "./sections/Learn";
 import Support from "./sections/Support";
-import Partners from "./sections/Partners";
+import Partners from "./sections/Clients";
 
 const AuditProApp = () => {
   const [language, setLanguage] = useState("EN-IN"); // <--- added state
@@ -32,9 +32,9 @@ const AuditProApp = () => {
       <Header />
       <main>
         <VideoSection />
-        <ProductsAndService />
+        <ProductsAndServices />
         <Solutions />
-        <WhyOMSfrom />
+        <WhyOMS />
         <HowToBuy />
         <Learn />
         <Support />

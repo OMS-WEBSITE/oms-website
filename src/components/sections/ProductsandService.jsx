@@ -1,11 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
-import {
-  FiChevronDown,
-  FiChevronRight,
-} from "react-icons/fi";
+import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 
-const ProductsandServices = () => {
+const ProductsAndServices = () => {
   const navItems = [
     "Business Performance",
     "Accounting",
@@ -64,84 +61,6 @@ const ProductsandServices = () => {
         handleProductSubSection
       );
   }, []);
-
-  // for scroll to top heading
-  // useEffect(() => {
-  //   const handleActivateTab = (e) => {
-  //     const { id } = e.detail;
-  //     console.log("Activated from video:", id);
-
-  //     setActiveItem(id);
-
-  //     setTimeout(() => {
-  //       const mainIdx = navItems.indexOf(id);
-  //       if (mainIdx !== -1) {
-  //         setExpandedSection(`${mainIdx}`);
-  //       }
-
-  //       // ✅ Find heading by its text content
-  //       const allHeadings = document.querySelectorAll(
-  //         "h2, h3, h4, button, div"
-  //       );
-  //       let targetEl = null;
-
-  //       allHeadings.forEach((el) => {
-  //         if (el.textContent.trim().toLowerCase() === id.toLowerCase()) {
-  //           targetEl = el;
-  //         }
-  //       });
-
-  //       if (targetEl) {
-  //         const navbar = document.querySelector("nav");
-  //         const navbarHeight = navbar ? navbar.offsetHeight : 0;
-
-  //         const yOffset =
-  //           targetEl.getBoundingClientRect().top +
-  //           window.scrollY -
-  //           navbarHeight -
-  //           60;
-
-  //         window.scrollTo({ top: yOffset, behavior: "smooth" });
-  //         console.log(`Scrolled to heading: ${id}`);
-  //       } else {
-  //         console.warn(`⚠️ No heading found for label="${id}"`);
-  //       }
-  //     }, 800);
-  //   };
-
-  //   window.addEventListener("activateTab", handleActivateTab);
-  //   return () => window.removeEventListener("activateTab", handleActivateTab);
-  // }, []);
-
-  // useEffect(() => {
-  //   const handleActivateTab = (event) => {
-  //     const { id } = event.detail;
-  //      console.log("Activated from video:", id);
-  //     const matchedLabel = Object.keys(contentMap).find(
-  //       (key) => key.toLowerCase().replace(/\s+/g, "") === id
-  //     );
-  //     console.log("i reached");
-  //     if (matchedLabel) {
-  //       // Expand the main section first
-  //       setActiveItem(matchedLabel);
-
-  //       // Wait for the DOM to render
-  //       setTimeout(() => {
-  //         const sectionEl = document.getElementById(id);
-  //         if (sectionEl) {
-  //           sectionEl.scrollIntoView({ behavior: "smooth", block: "start" });
-  //         } else {
-  //           console.warn(`⚠️ No section found for id="${id}"`);
-  //         }
-  //       }, 300); // wait a bit for re-render
-  //     } else {
-  //       console.warn(`⚠️ No heading found for label="${id}"`);
-  //     }
-  //   };
-
-  //   window.addEventListener("activateTab", handleActivateTab);
-  //   return () => window.removeEventListener("activateTab", handleActivateTab);
-  // }, []);
 
   useEffect(() => {
     const handleActivateTab = (event) => {
@@ -384,9 +303,7 @@ const ProductsandServices = () => {
                   <span>
                     {mainLabel} - {mainContent.title}
                   </span>
-                  {/* <div className=" text-left text-orange-500 text-sm md:text-base font-normal hidden md:inline">
-                    
-                  </div> */}
+
                   <FiChevronDown
                     className={`text-orange-500 text-2xl transition-transform duration-300 ${
                       activeItem === mainLabel ? "rotate-180" : ""
@@ -404,30 +321,6 @@ const ProductsandServices = () => {
                         className="border-b border-gray-200"
                       >
                         {/* Submini Tab */}
-
-                        {/* <button
-                          onClick={() =>
-                            setExpandedSection((prev) =>
-                              prev === `${mainIdx}-${secIdx}`
-                                ? null
-                                : `${mainIdx}-${secIdx}`
-                            )
-                          }
-                          className="w-full text-left text-lg font-medium text-gray-700 px-6 py-3 flex justify-between items-center hover:bg-orange-100 transition"
-                        >
-                          <div className="flex items-center space-x-3">
-                            <FiChevronRight
-                              className={`text-orange-400 text-xl transition-transform duration-300 ${
-                                expandedSection === `${mainIdx}-${secIdx}`
-                                  ? "rotate-90"
-                                  : ""
-                              }`}
-                            />{" "}
-                            <span className="animate-slideFadeIn">
-                              {section.heading}
-                            </span>
-                          </div>
-                        </button> */}
 
                         <button
                           onClick={() => {
@@ -491,7 +384,6 @@ const ProductsandServices = () => {
                         {expandedSection === `${mainIdx}-${secIdx}` && (
                           <div className="bg-white px-8 py-4 text-gray-700 space-y-3 leading-relaxed">
                             {section.content.map((block, i) => {
-
                               if (block.type === "subheading") {
                                 return (
                                   <h4
@@ -564,4 +456,4 @@ const ProductsandServices = () => {
   );
 };
 
-export default ProductsandServices;
+export default ProductsAndServices;

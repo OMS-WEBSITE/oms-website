@@ -4,14 +4,24 @@ import { Button } from "@/components/ui/button";
 import SearchBar from "@/components/ui/SearchBar";
 
 const Header = () => {
+  // const navItems = [
+  //   { name: "Products and Services", id: "productsandservice" },
+  //   { name: "Solutions", id: "solutions" },
+  //   { name: "Why OMS", id: "why-oms" },
+  //   { name: "How to buy", id: "how-to-buy" },
+  //   { name: "Learn", id: "learn" },
+  //   { name: "Support", id: "support" },
+  //   { name: "Partners", id: "partners" },
+  // ];
+
   const navItems = [
-    { name: "Products and Services", id: "productsandservice" },
-    { name: "Solutions", id: "solutions" },
-    { name: "Why OMS", id: "why-oms" },
-    { name: "How to buy", id: "how-to-buy" },
-    { name: "Learn", id: "learn" },
-    { name: "Support", id: "support" },
-    { name: "Partners", id: "partners" },
+    { name: "PRODUCTS AND SERVICES", id: "productsandservice" },
+    { name: "SOLUTIONS", id: "solutions" },
+    { name: "WHY OMS", id: "why-oms" },
+    { name: "HOW TO BUY", id: "how-to-buy" },
+    { name: "LEARN", id: "learn" },
+    { name: "SUPPORT", id: "support" },
+    { name: "CLIENTS", id: "clients" },
   ];
 
   const languages = [

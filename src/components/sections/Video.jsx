@@ -434,29 +434,66 @@ const VideoSection = () => {
   //   }
   // }, [showFeatures, isPaused]);
 
-  useEffect(() => {
-    if (showFeatures) {
-      const loopInterval = setInterval(() => {
-        if (!isPaused) {
-          console.log("🌀 Toggling Red Swan state...");
-          setToggleRedSwan((prev) => {
-            console.log("🔁 Previous state:", prev, "→ New state:", !prev);
-            return !prev;
-          });
-        } else {
-          console.log("⏸️ Paused - toggle skipped");
-        }
-      }, 6000);
+  // 6 + 6 working fine
+  // useEffect(() => {
+  //   if (showFeatures) {
+  //     const loopInterval = setInterval(() => {
+  //       if (!isPaused) {
+  //         console.log("🌀 Toggling Red Swan state...");
+  //         setToggleRedSwan((prev) => {
+  //           console.log("🔁 Previous state:", prev, "→ New state:", !prev);
+  //           return !prev;
+  //         });
+  //       } else {
+  //         console.log("⏸️ Paused - toggle skipped");
+  //       }
+  //     }, 6000);
 
-      return () => {
-        console.log("🧹 Clearing loop interval");
-        clearInterval(loopInterval);
-      };
-    }
+  //     return () => {
+  //       console.log("🧹 Clearing loop interval");
+  //       clearInterval(loopInterval);
+  //     };
+  //   }
+  // }, [showFeatures, isPaused]);
+
+  useEffect(() => {
+    if (!showFeatures) return;
+
+    let timeoutId;
+    let remaining = 6000; // total duration
+    let startTime;
+
+    const toggle = () => {
+      setToggleRedSwan((prev) => !prev);
+      startTime = Date.now();
+      timeoutId = setTimeout(toggle, 6000);
+    };
+
+    const start = () => {
+      startTime = Date.now();
+      timeoutId = setTimeout(toggle, remaining);
+      console.log("▶️ Started/resumed loop...");
+    };
+
+    const pause = () => {
+      clearTimeout(timeoutId);
+      const elapsed = Date.now() - startTime;
+      remaining -= elapsed;
+      console.log(
+        `⏸️ Paused at ${elapsed / 1000}s, remaining: ${remaining / 1000}s`
+      );
+    };
+
+    if (!isPaused) start();
+    else pause();
+
+    return () => {
+      clearTimeout(timeoutId);
+    };
   }, [showFeatures, isPaused]);
 
   return (
-    <section className="relative w-full h-screen overflow-hidden bg-black text-white">
+    <section className="relative w-full min-h-screen overflow-hidden bg-black text-white">
       {/* === Background Images === */}
       <div className="absolute inset-0 w-full h-full">
         <img
@@ -477,26 +514,32 @@ const VideoSection = () => {
 
       {/* === Intro Text === */}
       {showText && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center bg-white/10 backdrop-blur-md text-center px-6 z-20 animate-smoothFadeUp transform -translate-y-10 md:-translate-y-16">
-          <h2 className="text-2xl md:text-4xl font-semibold leading-relaxed max-w-2xl mb-3">
+        <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full bg-white/10 backdrop-blur-md text-center px-4 sm:px-6 z-20 animate-smoothFadeUp transform -translate-y-4 sm:-translate-y-10 md:-translate-y-16">
+          {/* Heading */}
+          <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold leading-relaxed max-w-md sm:max-w-2xl mb-3">
             Run your lab on the cloud - secure, scalable, and compliant.
           </h2>
-          <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+
+          {/* Paragraph 1 */}
+          <p className="text-base sm:text-lg md:text-xl max-w-md sm:max-w-2xl text-gray-200">
             Everything you need to streamline your{" "}
             <span className="text-orange-500 font-semibold">
               testing, inspection, and calibration workflows
             </span>{" "}
             - all in one secure platform.
           </p>
-          <p className="text-md md:text-lg mt-2 text-gray-300">
+
+          {/* Paragraph 2 */}
+          <p className="text-sm sm:text-md md:text-lg mt-2 text-gray-300">
             Audit-ready from day one - no servers, no stress.
           </p>
 
-          <div className="mt-6 px-8 py-4 rounded-2xl bg-white/10 flex flex-col items-center space-y-2 ">
-            <h2 className="text-orange-300 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+          {/* Recognition Box */}
+          <div className="mt-6 px-6 sm:px-8 py-4 rounded-2xl bg-white/10 flex flex-col items-center text-center space-y-2">
+            <h2 className="text-orange-300 font-semibold text-base sm:text-lg md:text-xl tracking-wider drop-shadow-lg">
               🏆 Recognised as an Established Software Platform
             </h2>
-            <h1 className="text-red-500 text-3xl md:text-5xl font-bold max-w-3xl drop-shadow-2xl text-center">
+            <h1 className="text-red-500 text-2xl sm:text-3xl md:text-5xl font-bold max-w-sm sm:max-w-3xl drop-shadow-2xl">
               Red Swan Digital Radar 2025
             </h1>
           </div>
