@@ -14,7 +14,7 @@ import Footer from "./layout/Footer";
 // import PricingCallout from "./sections/PricingCallout";
 import VideoSection from "./sections/Video";
 
-import ProductsAndServices from "./sections/ProductsAndService";
+import ProductsAndService from "./sections/ProductsAndService";
 import Solutions from "./sections/Solutions";
 import WhyOMS from "./sections/WhyOMS";
 import HowToBuy from "./sections/HowToBuy";
@@ -32,7 +32,7 @@ const AuditProApp = () => {
       <Header />
       <main>
         <VideoSection />
-        <ProductsAndServices />
+        <ProductsAndService />
         <Solutions />
         <WhyOMS />
         <HowToBuy />

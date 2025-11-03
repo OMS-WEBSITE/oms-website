@@ -34,37 +34,37 @@ const Footer = ({ language }) => {
       color: "text-blue-700",
       hoverGlow: "shadow-lg shadow-blue-700/50",
     },
-    // {
-    //   icon: <FaFacebookF size={24} />,
-    //   href: "https://www.facebook.com/",
-    //   color: "text-blue-600",
-    //   hoverGlow: "shadow-lg shadow-blue-600/50",
-    // },
-    // {
-    //   // icon: <FaTwitter size={24} />,
-    //   icon: (
-    //     <img
-    //       src="/images/xicon.webp" // path to your .webp file
-    //       alt="Twitter"
-    //       className="w-6 h-6" // adjust size
-    //     />
-    //   ),
-    //   href: "https://x.com/",
-    //   color: "text-black",
-    //   hoverGlow: "shadow-lg shadow-black/50",
-    // },
-    // {
-    //   icon: <FaInstagram size={24} />,
-    //   href: "https://www.instagram.com/",
-    //   color: "text-pink-500",
-    //   hoverGlow: "shadow-lg shadow-pink-500/50",
-    // },
-    // {
-    //   icon: <FaYoutube size={24} />,
-    //   href: "https://www.youtube.com/",
-    //   color: "text-red-600",
-    //   hoverGlow: "shadow-lg shadow-red-600/50",
-    // },
+    {
+      icon: <FaFacebookF size={24} />,
+      href: "https://www.facebook.com/",
+      color: "text-blue-600",
+      hoverGlow: "shadow-lg shadow-blue-600/50",
+    },
+    {
+      // icon: <FaTwitter size={24} />,
+      icon: (
+        <img
+          src="/images/xicon.webp" // path to your .webp file
+          alt="Twitter"
+          className="w-6 h-6" // adjust size
+        />
+      ),
+      href: "https://x.com/",
+      color: "text-black",
+      hoverGlow: "shadow-lg shadow-black/50",
+    },
+    {
+      icon: <FaInstagram size={24} />,
+      href: "https://www.instagram.com/",
+      color: "text-pink-500",
+      hoverGlow: "shadow-lg shadow-pink-500/50",
+    },
+    {
+      icon: <FaYoutube size={24} />,
+      href: "https://www.youtube.com/",
+      color: "text-red-600",
+      hoverGlow: "shadow-lg shadow-red-600/50",
+    },
   ];
 
   const platformLinks = [
