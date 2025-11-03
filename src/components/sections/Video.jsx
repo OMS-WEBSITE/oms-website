@@ -514,34 +514,36 @@ const VideoSection = () => {
 
       {/* === Intro Text === */}
       {showText && (
-        <div className="absolute inset-0 flex flex-col items-center justify-center w-full h-full bg-white/10 backdrop-blur-md text-center px-4 sm:px-6 z-20 animate-smoothFadeUp transform -translate-y-4 sm:-translate-y-10 md:-translate-y-16">
+        <div className="absolute inset-0 flex flex-col items-center justify-center w-full min-h-[120vh] bg-white/10 backdrop-blur-md text-center px-4 sm:px-6 z-20 animate-smoothFadeUp transform -translate-y-4 sm:-translate-y-10 md:-translate-y-16">
           {/* Heading */}
-          <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold leading-relaxed max-w-md sm:max-w-2xl mb-3">
-            Run your lab on the cloud - secure, scalable, and compliant.
-          </h2>
-
-          {/* Paragraph 1 */}
-          <p className="text-base sm:text-lg md:text-xl max-w-md sm:max-w-2xl text-gray-200">
-            Everything you need to streamline your{" "}
-            <span className="text-orange-500 font-semibold">
-              testing, inspection, and calibration workflows
-            </span>{" "}
-            - all in one secure platform.
-          </p>
-
-          {/* Paragraph 2 */}
-          <p className="text-sm sm:text-md md:text-lg mt-2 text-gray-300">
-            Audit-ready from day one - no servers, no stress.
-          </p>
-
-          {/* Recognition Box */}
-          <div className="mt-6 px-6 sm:px-8 py-4 rounded-2xl bg-white/10 flex flex-col items-center text-center space-y-2">
-            <h2 className="text-orange-300 font-semibold text-base sm:text-lg md:text-xl tracking-wider drop-shadow-lg">
-              🏆 Recognised as an Established Software Platform
+          <div className="transform -translate-y-10 sm:-translate-y-14 md:-translate-y-20 animate-smoothFadeUp">
+            <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold leading-relaxed max-w-md sm:max-w-2xl mb-3">
+              Run your lab on the cloud - secure, scalable, and compliant.
             </h2>
-            <h1 className="text-red-500 text-2xl sm:text-3xl md:text-5xl font-bold max-w-sm sm:max-w-3xl drop-shadow-2xl">
-              Red Swan Digital Radar 2025
-            </h1>
+
+            {/* Paragraph 1 */}
+            <p className="text-base sm:text-lg md:text-xl max-w-md sm:max-w-2xl text-gray-200">
+              Everything you need to streamline your{" "}
+              <span className="text-orange-500 font-semibold">
+                testing, inspection, and calibration workflows
+              </span>{" "}
+              - all in one secure platform.
+            </p>
+
+            {/* Paragraph 2 */}
+            <p className="text-sm sm:text-md md:text-lg mt-2 text-gray-300">
+              Audit-ready from day one - no servers, no stress.
+            </p>
+
+            {/* Recognition Box */}
+            <div className="mt-6 px-6 sm:px-8 py-4 rounded-2xl bg-white/10 flex flex-col items-center text-center space-y-2">
+              <h2 className="text-orange-300 font-semibold text-base sm:text-lg md:text-xl tracking-wider drop-shadow-lg">
+                🏆 Recognised as an Established Software Platform
+              </h2>
+              <h1 className="text-red-500 text-2xl sm:text-3xl md:text-5xl font-bold max-w-sm sm:max-w-3xl drop-shadow-2xl">
+                Red Swan Digital Radar 2025
+              </h1>
+            </div>
           </div>
         </div>
       )}
