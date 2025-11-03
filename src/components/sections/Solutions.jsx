@@ -1,5 +1,11 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
+// import { motion, AnimatePresence } from "framer-motion";
+
+// const fadeInUp = {
+//   hidden: { opacity: 0, y: 40 },
+//   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+// };
 
 const Solutions = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -370,13 +376,78 @@ const Solutions = () => {
         "Client Management Portal - Clients raise requests, upload data, and download verified reports.",
       content: (
         <>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Your clients. Their data. One connected experience.
+          </h4>
+
           <p>
-            Thank you for visiting. This is a new and exciting feature in the
-            OMS platform.
+            The OMS Client Management Portal links accredited laboratories and
+            their clients through a secure, shared cloud network - bringing
+            reports, traceability, and communication together in one place.
           </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Unified Access
+          </h4>
+
           <p>
-            Follow us on LinkedIn for updates, or register for notifications to
-            stay informed about new OMS software features.
+            Clients can log in to a single portal to view and download all their
+            verified reports, certificates, and invoices. The data follows the
+            client, not the file - creating a continuous, 10-year digital
+            archive of every test, calibration, and inspection.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            QR-Verified Reports
+          </h4>
+
+          <p>
+            Every report carries a tamper-proof QR code that connects directly
+            to the original record in OMS Cloud. Scanning it - from a PDF,
+            print, or mobile - instantly reveals the verified report with lab
+            details, accreditation scope, parameters, calibration references,
+            and signatories. No login required. The audit trail remains intact
+            for ten years.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Complete Digital Archive
+          </h4>
+
+          <p>
+            Clients can search by job, project, or date; filter by scope or test
+            type; and compare historical results. All NABL-verified certificates
+            stay accessible and traceable across years and audits.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Controlled Sharing
+          </h4>
+
+          <p>
+            Clients can grant timed or role-based access to auditors,
+            inspectors, or end-customers - maintaining compliance while
+            protecting confidentiality.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Secure, Role-Based Control
+          </h4>
+
+          <p>
+            Built with enterprise-grade encryption and aligned with ISO/IEC
+            17025 | 17020 | 9001, the portal ensures every report is stored,
+            shared, and retrieved securely.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Why it matters:
+          </h4>
+
+          <p>
+            The OMS Client Management Portal eliminates duplicate testing,
+            reduces back-and-forth communication, and builds lasting trust
+            through transparent, verified access to data.
           </p>
         </>
       ),
@@ -387,88 +458,100 @@ const Solutions = () => {
         "Specifications Database - Keep reference standards and acceptance limits up-to-date.",
       content: (
         <>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Centralized reference. Zero re-entry.
+          </h4>
+
           <p>
-            This is the OMS platforms reference library and is the key component
-            to any pre-populated dropdown menus, available throughout the
-            platform. It was designed to limit the amount of manual data entry
-            that a user is required to input into the system.
+            The OMS Specifications Database is the platform’s reference library
+            - powering every pre-populated dropdown menu and reducing repetitive
+            data entry across the system. It ensures consistency, accuracy, and
+            speed in how your lab records technical data.
           </p>
-          <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Specifications include:
-          </h4>
-
-          <p>Specifications in the OMS platform include:</p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Materials specifications
+            Unified Reference Library
           </h4>
-          <ul className="list-disc ml-5">
-            <li>Grade</li>
-            <li>Description</li>
-            <li>Engineering Properties</li>
+
+          <p>
+            All specification data - from material properties to process
+            standards - lives in one centralized, searchable database,
+            automatically linked to relevant test or calibration records.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Materials Specifications
+          </h4>
+
+          <p>Store and standardize critical material information such as:</p>
+
+          <ul className="list-disc pl-6">
+            <li>Material name and grade</li>
+            <li>Description and engineering properties</li>
             <li>Charpy impact strength</li>
-            <li>Chemical composition</li>
-            <li>Other chemical properties</li>
+            <li>
+              Chemical composition and other physical or chemical attributes
+            </li>
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Test specifications
+            Test Specifications
           </h4>
-          <ul className="list-disc ml-5">
-            <li>your client,</li>
-            <li>product or manufacturing standards</li>
-            <li>acceptance criteria given by your client or</li>
-            <li>acceptance criteria specified in the standards. </li>
-          </ul>
-          <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Rail Specifications
-          </h4>
-          <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>Provided by your client</li>
+
+          <p>
+            Capture key test details to align with your client or standard
+            requirements:
+          </p>
+
+          <ul className="list-disc pl-6">
+            <li>Client-specific acceptance criteria</li>
             <li>Product or manufacturing standards</li>
-            <li>Acceptance criteria given by your client</li>
-            <li>Acceptance criteria specified in the standards</li>
+            <li>Acceptance limits from ISO, ASTM, or internal methods</li>
           </ul>
 
-          {/* Process Standards */}
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Rail & Specialized Specifications
+          </h4>
+
+          <p>Define custom rail or sector-specific parameters including:</p>
+
+          <ul className="list-disc pl-6">
+            <li>Client-provided acceptance criteria</li>
+            <li>Product and manufacturing standards</li>
+            <li>Acceptance conditions from governing standards</li>
+          </ul>
+
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
             Process Standards
           </h4>
-          <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>Standard number</li>
-            <li>Technique</li>
-            <li>Description</li>
-            <li>Module name</li>
-            <li>Active status</li>
+
+          <p>Document every process step with:</p>
+
+          <ul className="list-disc pl-6">
+            <li>Standard number and technique</li>
+            <li>Procedure name and description</li>
+            <li>Associated module and active status</li>
           </ul>
 
-          {/* Procedures */}
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Procedures
+            Reference Data Control
           </h4>
-          <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>Test procedures</li>
-            <li>Procedure number</li>
-          </ul>
 
-          <p className="mb-3">
-            Reference Data defines reusable master values used across different
-            modules of OMS. It ensures standardization and consistency.
+          <p>
+            The Reference Data module defines reusable master values (Key, Name,
+            Value, Order) used across OMS - ensuring standardization in dropdown
+            menus and consistency across all modules.
           </p>
 
-          <ul className="list-disc ml-6 mt-2 space-y-1">
-            <li>
-              <strong>Key:</strong> The key information or type.
-            </li>
-            <li>
-              <strong>Name and Value:</strong> Prepopulated dropdown options
-              associated with the Key.
-            </li>
-            <li>
-              <strong>Order:</strong> The sequence in which the values appear in
-              the prepopulated dropdown.
-            </li>
-          </ul>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Why it matters:
+          </h4>
+
+          <p>
+            Manual data entry invites errors. The OMS Specifications Database
+            saves time, enforces uniformity, and ensures that every report,
+            record, and result speaks the same technical language.
+          </p>
         </>
       ),
     },
@@ -478,71 +561,94 @@ const Solutions = () => {
         "Asset Management - Equipment inventory with calibration and service alerts.",
       content: (
         <>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Control, maintain, and trace every asset - digitally.
+          </h4>
+
           <p>
-            Organisations of all sizes can use OMS Software to track and manage
-            equipment. Whether assigning items to users or scheduling asset
-            maintenance. The OMS platform provides comprehensive information on
-            each asset you maintain, it can help businesses streamline
-            maintenance processes, improve asset performances, reduce
-            operational costs, and boost productivity, all in a digitalised
-            format.
+            From calibration equipment to vehicles, the OMS Asset Management
+            Module helps organizations of any size track ownership, maintenance,
+            valuation, and compliance - all within one connected system.
           </p>
-          <p> The OMS platform will assist your business to:</p>
-          <ul className="list-disc ml-5">
-            <li>Assign an asset to a staff member</li>
-            <li>Send reminders for scheduled maintenance</li>
-            <li>Send reminders for registration renewal</li>
-            <li>
-              Deactivate an asset that has not completed the required
-              maintenance schedule
-            </li>
-            <li>Provide a dollar value of all assets for insurance purposes</li>
-            <li>Provide a report of all assets for yearend reporting</li>
-            <li>Link an asset to a job</li>
-            <li>Provide a history of an asset</li>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Assign & Track Assets
+          </h4>
+
+          <p>
+            Easily assign assets to staff, departments, or projects. Each item
+            is logged with complete history - usage, location, value, and linked
+            jobs - ensuring full accountability.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Smart Reminders
+          </h4>
+
+          <p>Automated notifications keep your team on schedule with:</p>
+          <ul className="list-disc pl-6">
+            <li>Maintenance due dates</li>
+            <li>Registration renewals</li>
+            <li>Calibration or inspection intervals</li>
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Preventative measures
+            Preventive Maintenance
           </h4>
 
           <p>
-            Never miss a maintenance procedure again. The OMS platform provides
-            a streamlined scheduling processes to alert technicians and managers
-            of an upcoming maintenance requirment, retaining high levels of
-            safety, compliance, and reliability for your business.
+            Never miss a maintenance cycle again. OMS automatically alerts
+            technicians and managers ahead of due dates, keeping operations
+            compliant and safe.
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Yearend reporting
+            Depreciation & Valuation
           </h4>
 
           <p>
-            The OMS platform improves statutory compliance and accelerates
-            year-end reporting. All assets have a current value, the list of
-            assets can be exported to excel for insurance estimation
-            requirements and yearend financial reporting.
-          </p>
-
-          <p>
-            The OMS platform is your go-to solution to improve not only your
-            maintenance management but also the performance levels of all your
-            assets across the entire organisation.
+            Generate real-time dollar values for all assets to support
+            insurance, audit, and financial reporting requirements.
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Product User Manual{" "}
+            Year-End Reporting
           </h4>
 
           <p>
-            Never lose a user manual again! Upload and store the product user
-            manual, along with asset information all in the one place.
+            Export complete asset registers to Excel for statutory and year-end
+            reporting - including asset values, active/inactive status, and last
+            maintenance date.
           </p>
-          <img
-            src="/images/solutions-Assets.png"
-            alt="solutions-Assets"
-            className="my-4 mx-auto shadow-md object-contain w-auto h-auto max-w-full"
-          />
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Linked Operations
+          </h4>
+
+          <p>
+            Connect assets directly to jobs or work orders, giving teams context
+            for usage, test history, and upcoming maintenance tasks.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Product Manuals & Records
+          </h4>
+
+          <p>
+            Upload and store user manuals, calibration certificates, or
+            compliance documents directly with the asset record - all
+            retrievable in seconds.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Why it matters:
+          </h4>
+
+          <p>
+            OMS brings asset control out of spreadsheets and into a live,
+            traceable system. It saves time, reduces downtime, and helps teams
+            focus on performance instead of paperwork.
+          </p>
         </>
       ),
     },
@@ -614,19 +720,228 @@ const Solutions = () => {
         "Accounting Finance - Seamless quote-to-cash cycle and project cost tracking.",
       content: (
         <>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Accurate. Transparent. Effortless.
+          </h4>
+
           <p>
             OMS Software offers a complete suite of general accounting
-            (bookkeeping) features.
+            (bookkeeping) features - seamlessly integrated with your lab and
+            business workflows.
           </p>
+
           <p>
-            Some of the niche features, are implemented in the OMS platform to
-            save time for your business, while increasing productivity. All of
-            this can be achieved without compromising the auditability and
-            traceability of the accounting data.
+            Beyond standard ledgers and journals, OMS introduces niche features
+            built specifically for technical service organizations, reducing
+            manual effort and improving visibility across departments.
           </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Core Accounting
+          </h4>
+
           <p>
-            Refer to the individual sections for details about niche features
-            and productivity suite.
+            Manage payables, receivables, ledgers, and trial balances with
+            complete audit trails and secure, role-based access control.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Productivity Enhancements
+          </h4>
+
+          <p>
+            Automate routine accounting processes - from bank feed
+            reconciliation to recurring invoices - saving valuable time and
+            minimizing human error.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Traceability & Audit Readiness
+          </h4>
+
+          <p>
+            Every transaction is time-stamped, version-controlled, and
+            cross-linked to operational data, ensuring your financials remain
+            transparent and audit-ready at all times.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Integrated Dashboards
+          </h4>
+
+          <p>
+            Visualize revenue trends, outstanding invoices, and cash flow
+            insights directly alongside project and client data for a complete
+            financial overview.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Why it matters:
+          </h4>
+
+          <p>
+            Accounting isn’t just about numbers - it’s the foundation of trust
+            and sustainability. OMS ensures your financial data stays
+            consistent, compliant, and seamlessly connected across every part of
+            your operation.
+          </p>
+        </>
+      ),
+    },
+    {
+      id: "swms-jsa",
+      title: "Safe Work Method Statement (SWMS) / Job Safety Analysis (JSA)",
+      content: (
+        <>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Plan safer. Work smarter.
+          </h4>
+
+          <p>
+            Our integrated SWMS / JSA module helps teams identify risks, record
+            controls, and maintain compliance-whether the work happens in a lab,
+            workshop, or out in the field.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Digital Templates
+          </h4>
+
+          <p>
+            Create and reuse standardized SWMS or JSA forms for recurring tasks,
+            ensuring consistency across projects and teams.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Risk Matrix Builder
+          </h4>
+
+          <p>
+            Rate each hazard by severity and likelihood, generate automatic risk
+            scores, and visualize results in a clear color-coded grid.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Method + Risk in One View
+          </h4>
+
+          <p>
+            Combine Method Statement and Risk Assessment (MSRA) for full
+            traceability-from planned activity to control measures and residual
+            risk.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Sign-off & Version Control
+          </h4>
+
+          <p>
+            Capture digital approvals from supervisors, technicians, or clients
+            with date and time stamps-ready for any audit.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Attachments & Evidence Upload
+          </h4>
+
+          <p>
+            Add supporting photos, certificates, permits, or training proofs
+            directly to the record for instant reference.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Offline Access (Optional)
+          </h4>
+
+          <p>
+            Teams can complete and sign SWMS/JSA forms even without
+            connectivity, syncing automatically once online.
+          </p>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Why it matters:
+          </h4>
+
+          <p>
+            Safety and compliance can’t live in spreadsheets. The OMS SWMS/JSA
+            module keeps your safety records live, linked, and verifiable-making
+            it easy to prove diligence and protect people.
+          </p>
+        </>
+      ),
+    },
+
+    {
+      id: "wps-registry",
+      title: "Welding Procedure Specification (WPS) Registry",
+      content: (
+        <>
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Centralized. Traceable. Compliant.
+          </h4>
+
+          <p>
+            The WPS Registry provides a unified workspace for managing Welding
+            Procedure Specifications (WPS) and related qualification records -
+            keeping your documentation audit-ready and easily accessible.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Search & Add WPS Data
+          </h4>
+
+          <p>
+            Use the “Search & Add WPS Data” option to view a short walkthrough
+            video and manage all essential welding parameters from one intuitive
+            screen.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Unified Document Package
+          </h4>
+
+          <p>
+            Upload all supporting files - WPS, PQR, material certificates,
+            welding consumable certificates, and inspection reports. With a
+            single click, download the complete package for inclusion in your
+            Manufacturer’s Data Report (MDR).
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Welder Qualification Integration
+          </h4>
+
+          <p>
+            Link qualified welders with their corresponding WPS to automatically
+            maintain Welder Qualification Records (WQR) for full traceability.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Client Portal Access
+          </h4>
+
+          <p>
+            Both WPS and WQR are securely accessible to clients through the OMS
+            Client Portal, ensuring transparency, compliance, and efficient
+            collaboration.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Caution
+          </h4>
+
+          <p>
+            Upload a WPS only if it is prepared by your organization. If a WPS
+            originates from a client or third party, obtain written consent
+            before uploading to maintain data integrity and ownership clarity.
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Assistance
+          </h4>
+
+          <p>
+            For setup, automation, or technical clarification, please contact
+            your OMS development team for support and best-practice guidance.
           </p>
         </>
       ),
@@ -725,6 +1040,108 @@ const Solutions = () => {
         </div>
       </div>
     </section>
+
+
+
+    // <section id="solutions" className="relative overflow-hidden py-20 bg-white">
+    //   {/* Decorative Accent */}
+    //   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,165,0,0.08),transparent_70%)] pointer-events-none" />
+
+    //   {/* <div className="relative w-[90%] max-w-6xl mx-auto py-4 px-2"> */}
+    //   <div className="w-[90%] mx-auto py-4 px-2">
+    //     {/* Header */}
+    //     <motion.h2
+    //       variants={fadeInUp}
+    //       initial="hidden"
+    //       whileInView="show"
+    //       viewport={{ once: true }}
+    //       className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6"
+    //     >
+    //       <span className="border-b-4 border-orange-500 pb-1">
+    //         Solutions
+    //       </span>
+    //     </motion.h2>
+
+    //     <motion.p
+    //       variants={fadeInUp}
+    //       initial="hidden"
+    //       whileInView="show"
+    //       className="text-center max-w-2xl mx-auto text-gray-600 mb-10 text-base sm:text-lg leading-relaxed"
+    //     >
+    //       Explore our powerful modules designed to simplify lab operations and
+    //       ensure compliance.
+    //     </motion.p>
+
+    //     {/* Accordion List */}
+    //     <motion.div
+    //       variants={fadeInUp}
+    //       initial="hidden"
+    //       whileInView="show"
+    //       className="space-y-4 sm:space-y-6"
+    //     >
+    //       {sections.map((section, index) => (
+    //         <motion.div
+    //           key={section.id}
+    //           className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-orange-100 overflow-hidden transition-all duration-300 hover:shadow-md"
+    //         >
+    //           {/* Accordion Header */}
+    //           <button
+    //             onClick={() => toggleSection(index)}
+    //             className="w-full flex justify-between items-center px-5 py-4 text-left text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors"
+    //           >
+    //             <span className="text-orange-600">{section.title}</span>
+    //             <span className="text-orange-500 text-2xl">
+    //               {expandedSection === index ? (
+    //                 <FiChevronUp />
+    //               ) : (
+    //                 <FiChevronDown />
+    //               )}
+    //             </span>
+    //           </button>
+
+    //           {/* Accordion Content with Framer Animation */}
+    //           <AnimatePresence initial={false}>
+    //             {expandedSection === index && (
+    //               <motion.div
+    //                 key="content"
+    //                 initial={{ opacity: 0, height: 0 }}
+    //                 animate={{ opacity: 1, height: "auto" }}
+    //                 exit={{ opacity: 0, height: 0 }}
+    //                 transition={{ duration: 0.4, ease: "easeOut" }}
+    //                 className="px-5 pb-5 text-gray-700 text-sm sm:text-base leading-relaxed border-t border-gray-200"
+    //               >
+    //                 {React.Children.map(
+    //                   section.content.props.children,
+    //                   (child) => {
+    //                     if (!React.isValidElement(child)) return null;
+
+    //                     if (child.type === "p") {
+    //                       return <div className="mb-3">{child}</div>;
+    //                     }
+    //                     if (child.type === "ul") {
+    //                       return <div className="my-3 sm:my-4">{child}</div>;
+    //                     }
+    //                     if (child.type === "img") {
+    //                       return (
+    //                         <div className="my-4 flex justify-center">
+    //                           <img
+    //                             {...child.props}
+    //                             className="max-w-full h-auto rounded-lg"
+    //                           />
+    //                         </div>
+    //                       );
+    //                     }
+    //                     return child;
+    //                   }
+    //                 )}
+    //               </motion.div>
+    //             )}
+    //           </AnimatePresence>
+    //         </motion.div>
+    //       ))}
+    //     </motion.div>
+    //   </div>
+    // </section>
   );
 };
 

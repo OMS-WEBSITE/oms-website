@@ -2,7 +2,7 @@
 import Layout from '../layouts/main.astro';
 import Header from '@/components/layout/Header';
 import Footer from '@/components/layout/Footer';
-import ReactJobList from '@/components/ui/reactjoblist.jsx';
+import JobList from '@/components/ui/reactjoblist.jsx';
 import { Button } from '@/components/ui/button';
 import fs from "fs";
 import Papa from "papaparse";
@@ -17,7 +17,7 @@ const seo = {
 
 const csv = fs.readFileSync("./src/data/jobs.csv", "utf8");
 const { data } = Papa.parse(csv, { header: true });
-const jobs = data.filter((j) => j.title);
+const jobs = data.filter((j: any) => j.title);
 ---
 
 <Layout {...seo}>
@@ -33,7 +33,7 @@ const jobs = data.filter((j) => j.title);
 </div>
 
         <!-- Render React component -->
-        <ReactJobList client:load jobs={jobs} />
+        <JobList client:load jobs={jobs} />
       </div>
     </section>
 

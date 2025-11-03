@@ -1,4 +1,3 @@
-import React from 'react';
 
 const TestimonialCard = ({ quote, author, title, company, image = undefined }) => {
   return (

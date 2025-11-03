@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import searchData from "@/data/searchData.json";
 import { FaSearch, FaTimes } from "react-icons/fa";
 

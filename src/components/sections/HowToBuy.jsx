@@ -1,4 +1,3 @@
-import React from "react";
 import {
   FaLaptopCode,
   FaClipboardList,
@@ -84,3 +83,120 @@ const HowToBuy = () => {
 };
 
 export default HowToBuy;
+
+
+
+// // animation on scroll
+// import { motion } from "framer-motion";
+// import {
+//   FaLaptopCode,
+//   FaClipboardList,
+//   FaFileContract,
+//   FaDatabase,
+//   FaRocket,
+// } from "react-icons/fa";
+
+// const fadeInUp = {
+//   hidden: { opacity: 0, y: 40 },
+//   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+// };
+
+// const steps = [
+//   {
+//     icon: <FaLaptopCode className="text-orange-500 text-4xl mb-4" />,
+//     title: "Request a Live Demo",
+//     desc: "Experience OMS firsthand and see how it fits your workflow.",
+//   },
+//   {
+//     icon: <FaClipboardList className="text-orange-500 text-4xl mb-4" />,
+//     title: "Define Modules & Reporting Scope",
+//     desc: "Choose the specific features and reports your lab requires.",
+//   },
+//   {
+//     icon: <FaFileContract className="text-orange-500 text-4xl mb-4" />,
+//     title: "Receive Proposal & Subscription Plan",
+//     desc: "Get a tailored plan and quotation based on your requirements.",
+//   },
+//   {
+//     icon: <FaDatabase className="text-orange-500 text-4xl mb-4" />,
+//     title: "Onboard Your Lab Data",
+//     desc: "Migrate and configure your existing lab data securely.",
+//   },
+// ];
+
+// const HowToBuy = () => {
+//   return (
+//     <section
+//       id="how-to-buy"
+//       className="relative overflow-hidden py-20 bg-gradient-to-b from-white via-orange-50/30 to-white"
+//     >
+//       {/* Decorative Gradient Blob */}
+//       <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(255,165,0,0.08),transparent_60%)] pointer-events-none" />
+
+//       <div className="relative w-[90%] max-w-6xl mx-auto text-center">
+//         {/* Heading */}
+//         <motion.h2
+//           variants={fadeInUp}
+//           initial="hidden"
+//           whileInView="show"
+//           viewport={{ once: true }}
+//           className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-gray-900 mb-6"
+//         >
+//           <span className="border-b-4 border-orange-500 pb-1">How to Buy</span>
+//         </motion.h2>
+
+//         {/* Subheading */}
+//         <motion.p
+//           variants={fadeInUp}
+//           initial="hidden"
+//           whileInView="show"
+//           className="max-w-2xl mx-auto text-gray-600 text-base sm:text-lg leading-relaxed mb-12"
+//         >
+//           Follow these simple steps to purchase and implement OMS solutions for
+//           your business.
+//         </motion.p>
+
+//         {/* Steps Grid */}
+//         <motion.div
+//           variants={fadeInUp}
+//           initial="hidden"
+//           whileInView="show"
+//           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8"
+//         >
+//           {steps.map((step, i) => (
+//             <motion.div
+//               key={i}
+//               whileHover={{ scale: 1.04 }}
+//               className="flex flex-col items-center text-center bg-white/70 backdrop-blur-sm rounded-2xl p-8 shadow-sm hover:shadow-md border border-orange-100 transition-all duration-300"
+//             >
+//               {step.icon}
+//               <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+//                 {step.title}
+//               </h3>
+//               <p className="text-gray-600 text-sm sm:text-base">{step.desc}</p>
+//             </motion.div>
+//           ))}
+//         </motion.div>
+
+//         {/* Final Step */}
+//         <motion.div
+//           variants={fadeInUp}
+//           initial="hidden"
+//           whileInView="show"
+//           className="mt-14 sm:mt-16 max-w-xl mx-auto bg-gradient-to-br from-orange-100 to-orange-50 border border-orange-200 p-8 rounded-2xl shadow-md hover:shadow-lg transition-all duration-300"
+//         >
+//           <FaRocket className="text-orange-500 text-5xl mb-4 mx-auto" />
+//           <h3 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+//             Go Live in 2–3 Weeks with Training & Support
+//           </h3>
+//           <p className="text-gray-600 text-sm sm:text-base">
+//             Our experts ensure a smooth launch, detailed training, and ongoing
+//             support — helping your team get productive from day one.
+//           </p>
+//         </motion.div>
+//       </div>
+//     </section>
+//   );
+// };
+
+// export default HowToBuy;

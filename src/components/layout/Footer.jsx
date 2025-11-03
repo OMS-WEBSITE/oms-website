@@ -1,5 +1,3 @@
-import { useState } from "react";
-import React from "react";
 import {
   FaLinkedin,
   FaFacebookF,
@@ -10,7 +8,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 
-const Footer = ({ language }) => {
+const Footer = ({ language = "EN-IN" })  => {
   const contactInfo = {
     "EN-IN": {
       address:

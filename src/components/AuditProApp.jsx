@@ -1,4 +1,4 @@
-import React, { useState } from "react"; // ✅ make sure to import useState
+import { useState } from "react"; // ✅ make sure to import useState
 import Utility from "./layout/Utility";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";

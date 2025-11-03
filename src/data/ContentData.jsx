@@ -46,7 +46,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "🚀 Why It Matters",
+            text: "Why It Matters",
           },
           {
             type: "list",
@@ -221,7 +221,7 @@ export const contentMap = {
           {
             type: "list",
             items: [
-              "⏰Staff Utilisation: Identify under- or over-allocated resources",
+              "⏰Staff Utilisation: Identify under or over-allocated resources",
               "💼Job Costing: Compare billed hours vs. actual effort",
               "🧮Client Tracking: Evaluate time investment per client",
               "📈Productivity Trends: Discover workflow bottlenecks and improve turnaround",
@@ -243,7 +243,7 @@ export const contentMap = {
           {
             type: "list",
             items: [
-              "📅 Age Buckets: 0–30, 31–60, 61–90, 90+ days",
+              "📅 Age Buckets: 0-30, 31-60, 61-90, 90+ days",
               "💸 Client-wise Totals: Know who owes what, instantly",
               "📈 Trends: Spot recurring late payers and take action early",
               "⚡ Follow-Up Tools: Email reminders straight from OMS",

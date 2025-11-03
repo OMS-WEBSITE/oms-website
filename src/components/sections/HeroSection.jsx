@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Dialog, DialogContent, DialogClose } from '@/components/ui/dialog';
-import { X, Play } from 'lucide-react';
+import { X } from 'lucide-react';
 
 const HeroSection = () => {
   const [videoOpen, setVideoOpen] = useState(false);

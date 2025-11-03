@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import JobCard from "./job-card";
 import ApplyModal from "./apply-modal";
 

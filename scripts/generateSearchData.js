@@ -1,7 +1,7 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import { createRequire } from "module";
+// import { createRequire } from "module";
 import * as babel from "@babel/core";
 
 const __filename = fileURLToPath(import.meta.url);

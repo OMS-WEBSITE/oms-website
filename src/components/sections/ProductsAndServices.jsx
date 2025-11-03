@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import  { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 
@@ -18,9 +18,6 @@ const ProductsAndService = () => {
 
   const [activeItem, setActiveItem] = useState(null);
   const [expandedSection, setExpandedSection] = useState(null);
-  // const [highlightAllSections, setHighlightAllSections] = useState(true);
-  // const [isClient, setIsClient] = useState(false);
-  // const [shouldScrollToSection, setShouldScrollToSection] = useState(null);
 
   const sectionList = activeItem ? contentMap[activeItem]?.sections || [] : [];
 
@@ -175,6 +172,7 @@ const ProductsAndService = () => {
           <span className="border-b-4 border-orange-500 pb-1">
             Products & Services
           </span>
+          
         </h2>
         <p className="text-center max-w-2xl mx-auto text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base px-2">
           Explore our Products & Services built to streamline laboratory
