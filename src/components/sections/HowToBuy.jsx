@@ -75,7 +75,7 @@ const HowToBuy = () => {
           </h3>
           <p className="text-gray-600 text-sm sm:text-base max-w-md">
             Our experts ensure a smooth launch, training, and ongoing support
-            for your team 🚀.
+            for your team.
           </p>
         </div>
       </div>

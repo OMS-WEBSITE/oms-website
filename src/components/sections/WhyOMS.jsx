@@ -16,7 +16,7 @@ const WhyOMS = () => {
 
         {/* Headline */}
         <h3 className="text-xl sm:text-2xl font-semibold text-gray-800 mb-4">
-          Designed with auditors — trusted by labs.
+          Designed with auditors - trusted by labs.
         </h3>
 
         {/* Body */}

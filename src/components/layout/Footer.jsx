@@ -206,7 +206,7 @@ const Footer = ({ language }) => {
         <div className="mt-10 border-t border-gray-200 pt-6 text-center text-gray-700 text-sm sm:text-base leading-relaxed">
           <p className="font-medium mb-1 text-gray-800">Affiliations:</p>
           <p>
-            Member —{" "}
+            Member{" "}
             <span className="font-semibold">
               Indian Society for Non-Destructive Testing (ISNT)
             </span>{" "}

@@ -8,7 +8,7 @@ const Solutions = () => {
     {
       id: "nabl-lab-verification",
       title:
-        "NABL ULR + QR Verification — Ensure every report is authentic, traceable, and verifiable online.",
+        "NABL ULR + QR Verification - Ensure every report is authentic, traceable, and verifiable online.",
       content: (
         <>
           <p>
@@ -73,8 +73,8 @@ const Solutions = () => {
             Built for Labs that Lead
           </h4>
           <p>
-            OMS Software consolidates all lab data — jobs, assets, personnel,
-            and certifications — into one secure platform with:
+            OMS Software consolidates all lab data - jobs, assets, personnel,
+            and certifications - into one secure platform with:
           </p>
           <ul className="list-disc ml-5">
             <li>
@@ -191,7 +191,7 @@ const Solutions = () => {
     {
       id: "quality-management-documents",
       title:
-        "Quality Management Documents — Version-controlled policies, procedures, and records in one repository.",
+        "Quality Management Documents - Version-controlled policies, procedures, and records in one repository.",
       content: (
         <>
           <p>
@@ -268,7 +268,7 @@ const Solutions = () => {
     {
       id: "Job Test Record Management",
       title:
-        "Job Test Record Management — Full traceability from sample registration to certificate issuance.",
+        "Job Test Record Management - Full traceability from sample registration to certificate issuance.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -367,7 +367,7 @@ const Solutions = () => {
     {
       id: "client-management",
       title:
-        "Client Management Portal — Clients raise requests, upload data, and download verified reports.",
+        "Client Management Portal - Clients raise requests, upload data, and download verified reports.",
       content: (
         <>
           <p>
@@ -384,7 +384,7 @@ const Solutions = () => {
     {
       id: "specifications",
       title:
-        "Specifications Database — Keep reference standards and acceptance limits up-to-date.",
+        "Specifications Database - Keep reference standards and acceptance limits up-to-date.",
       content: (
         <>
           <p>
@@ -475,7 +475,7 @@ const Solutions = () => {
     {
       id: "asset-management",
       title:
-        "Asset Management — Equipment inventory with calibration and service alerts.",
+        "Asset Management - Equipment inventory with calibration and service alerts.",
       content: (
         <>
           <p>
@@ -549,7 +549,7 @@ const Solutions = () => {
     {
       id: "employee-management",
       title:
-        "Employee Management — Track competencies, approvals, and workload distribution.",
+        "Employee Management - Track competencies, approvals, and workload distribution.",
       content: (
         <>
           <p className="mb-3">
@@ -611,7 +611,7 @@ const Solutions = () => {
     {
       id: "accounting-finance",
       title:
-        "Accounting Finance — Seamless quote-to-cash cycle and project cost tracking.",
+        "Accounting Finance - Seamless quote-to-cash cycle and project cost tracking.",
       content: (
         <>
           <p>

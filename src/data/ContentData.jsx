@@ -16,7 +16,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Manage timesheets, approvals, and payroll reports entirely online with OMS Software — no spreadsheets, emails, or manual paperwork. Empower your staff to enter hours on the go and enable managers to approve with a single click.",
+            text: "Manage timesheets, approvals, and payroll reports entirely online with OMS Software - no spreadsheets, emails, or manual paperwork. Empower your staff to enter hours on the go and enable managers to approve with a single click.",
           },
           {
             type: "paragraph",
@@ -38,10 +38,10 @@ export const contentMap = {
           {
             type: "list",
             items: [
-              "✅ Instant Timesheet Access — Employees update records anywhere, anytime",
-              "✅ Digital Approvals — Managers verify and sign off reports online",
-              "✅ Secure Integration — Export data to your existing payroll system",
-              "✅ Full Audit Trail — Every change is logged and traceable",
+              "✅ Instant Timesheet Access - Employees update records anywhere, anytime",
+              "✅ Digital Approvals - Managers verify and sign off reports online",
+              "✅ Secure Integration - Export data to your existing payroll system",
+              "✅ Full Audit Trail - Every change is logged and traceable",
             ],
           },
           {
@@ -59,7 +59,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "“The integrated digital payroll workflow in OMS saves hours every pay cycle — fewer emails, zero paper, and complete traceability.”",
+            text: "“The integrated digital payroll workflow in OMS saves hours every pay cycle - fewer emails, zero paper, and complete traceability.”",
           },
           {
             type: "paragraph",
@@ -115,7 +115,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Gain a complete overview of your company’s sales activity — trends, volumes, and performance across teams, clients, and time periods. OMS transforms raw data into live dashboards so you can act on insights, not instincts.",
+            text: "Gain a complete overview of your company’s sales activity - trends, volumes, and performance across teams, clients, and time periods. OMS transforms raw data into live dashboards so you can act on insights, not instincts.",
           },
           {
             type: "list",
@@ -123,7 +123,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Generate sales reports for any period — yearly, monthly, weekly, or daily — and access them anytime, anywhere.",
+            text: "Generate sales reports for any period - yearly, monthly, weekly, or daily - and access them anytime, anywhere.",
           },
           {
             type: "list",
@@ -208,7 +208,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Gain instant visibility into how time is spent across your organisation. The OMS Timesheet Report helps you analyse productivity, job efficiency, and client-wise effort — all in one digital view.",
+            text: "Gain instant visibility into how time is spent across your organisation. The OMS Timesheet Report helps you analyse productivity, job efficiency, and client-wise effort - all in one digital view.",
           },
           {
             type: "list",
@@ -238,7 +238,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Monitor overdue invoices before they impact your cash flow. OMS automatically organises receivables by client, branch, or age bracket — so you can chase what matters first.",
+            text: "Monitor overdue invoices before they impact your cash flow. OMS automatically organises receivables by client, branch, or age bracket - so you can chase what matters first.",
           },
           {
             type: "list",
@@ -286,7 +286,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Understand how long each process truly takes — from quotation to completed job. OMS analyses turnaround time to reveal hidden delays and drive continuous improvement.",
+            text: "Understand how long each process truly takes - from quotation to completed job. OMS analyses turnaround time to reveal hidden delays and drive continuous improvement.",
           },
           {
             type: "list",
@@ -312,7 +312,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "See how your business is performing — anytime, anywhere. The OMS Sales Report gives you a live view of sales trends, revenue flow, and client performance across branches, teams, and time periods.",
+            text: "See how your business is performing - anytime, anywhere. The OMS Sales Report gives you a live view of sales trends, revenue flow, and client performance across branches, teams, and time periods.",
           },
           {
             type: "list",
@@ -320,7 +320,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Generate reports for any period — yearly, monthly, weekly, or daily — and access them instantly online.",
+            text: "Generate reports for any period - yearly, monthly, weekly, or daily - and access them instantly online.",
           },
 
           {
@@ -334,7 +334,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "OMS puts real-time sales data in your hands — clear, visual, and ready when you are.",
+            text: "OMS puts real-time sales data in your hands - clear, visual, and ready when you are.",
           },
         ],
       },
@@ -396,7 +396,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Know exactly where your money stands — not just what’s on paper",
+            text: "Know exactly where your money stands - not just what’s on paper",
           },
         ],
       },
@@ -419,7 +419,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Upload your bank’s CSV file, and OMS instantly displays all transactions — no manual data entry. Then, simply click Apply to match payments to the right client invoices.",
+            text: "Upload your bank’s CSV file, and OMS instantly displays all transactions - no manual data entry. Then, simply click Apply to match payments to the right client invoices.",
           },
           {
             type: "paragraph",
@@ -431,7 +431,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "From manual entry to one-click matching — accounting just became effortless.",
+            text: "From manual entry to one-click matching - accounting just became effortless.",
           },
           {
             type: "images",
@@ -481,7 +481,7 @@ export const contentMap = {
 
           {
             type: "paragraph",
-            text: "Filter, sort, and export invoice data in a click. Multi-branch companies can view combined results or split Excel reports by branch — automatically.",
+            text: "Filter, sort, and export invoice data in a click. Multi-branch companies can view combined results or split Excel reports by branch - automatically.",
           },
 
           {
@@ -532,7 +532,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "OMS links every job and work activity directly to accounting — no external ERP required.",
+            text: "OMS links every job and work activity directly to accounting - no external ERP required.",
           },
           {
             type: "list",
@@ -596,7 +596,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Track every cheque — received, allocated, or unallocated — from one simple screen.",
+            text: "Track every cheque - received, allocated, or unallocated - from one simple screen.",
           },
           {
             type: "list",
@@ -640,7 +640,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "The future of lab automation — right on schedule.",
+            text: "The future of lab automation - right on schedule.",
           },
           {
             type: "list",
@@ -648,7 +648,7 @@ export const contentMap = {
           },
           {
             type: "list",
-            items: ["Automatic Payment Reminders — No Awkward Calls Required"],
+            items: ["Automatic Payment Reminders - No Awkward Calls Required"],
           },
           {
             type: "paragraph",
@@ -672,7 +672,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Let OMS handle the follow-up — so you can focus on growth, not debt collection.",
+            text: "Let OMS handle the follow-up - so you can focus on growth, not debt collection.",
           },
 
           {
@@ -703,7 +703,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "With OMS, you never lose track of who owes what — or when they were reminded.”",
+            text: "With OMS, you never lose track of who owes what - or when they were reminded.”",
           },
 
           {
@@ -1427,7 +1427,7 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "It is important to know the activity your staff member was undertaking during their time working — is this something that should be billed to a client, or is the staff member using their time on unbillable tasks?",
+            text: "It is important to know the activity your staff member was undertaking during their time working - is this something that should be billed to a client, or is the staff member using their time on unbillable tasks?",
           },
           {
             type: "paragraph",
@@ -1998,11 +1998,11 @@ export const contentMap = {
   },
 };
 
-// NABL ULR + QR Verification — Ensure every report is authentic, traceable, and verifiable online.
-// Quality Management Documents — Version-controlled policies, procedures, and records in one repository.
-// Job Test Record Management — Full traceability from sample registration to certificate issuance.
-// Client Management Portal — Clients raise requests, upload data, and download verified reports.
-// Specifications Database — Keep reference standards and acceptance limits up-to-date.
-// Asset Management — Equipment inventory with calibration and service alerts.
-// Employee Management — Track competencies, approvals, and workload distribution.
-// Accounting & Finance — Seamless quote-to-cash cycle and project cost tracking.
+// NABL ULR + QR Verification - Ensure every report is authentic, traceable, and verifiable online.
+// Quality Management Documents - Version-controlled policies, procedures, and records in one repository.
+// Job Test Record Management - Full traceability from sample registration to certificate issuance.
+// Client Management Portal - Clients raise requests, upload data, and download verified reports.
+// Specifications Database - Keep reference standards and acceptance limits up-to-date.
+// Asset Management - Equipment inventory with calibration and service alerts.
+// Employee Management - Track competencies, approvals, and workload distribution.
+// Accounting & Finance - Seamless quote-to-cash cycle and project cost tracking.

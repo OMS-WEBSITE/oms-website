@@ -15,7 +15,7 @@ const ReactJobList = ({ jobs }) => {
 
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-8 w-full">
+      <div className="flex flex-wrap justify-center gap-8 w-[80%] mx-auto">
         {jobs.map((job, index) => (
           <JobCard
             key={index}
@@ -30,7 +30,10 @@ const ReactJobList = ({ jobs }) => {
               job.requirements?.split(";").map((r) => r.trim()) || []
             }
             benefits={job.benefits?.split(";").map((b) => b.trim()) || []}
-            rolesandresponsibilities={job.rolesandresponsibilities?.split(";").map((a) => a.trim()) || []}
+            rolesandresponsibilities={
+              job.rolesandresponsibilities?.split(";").map((a) => a.trim()) ||
+              []
+            }
             onApply={() => setSelectedJob(job)}
           />
         ))}

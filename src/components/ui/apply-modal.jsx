@@ -37,7 +37,7 @@ export default function ApplyModal({ job, onClose }) {
         </button>
 
         <h2 className="text-2xl font-bold mb-4 text-center">
-          Apply for {job.title} 🚀
+          Apply for {job.title}
         </h2>
 
         {status === "success" ? (
