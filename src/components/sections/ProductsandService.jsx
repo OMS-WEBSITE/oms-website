@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 
-const ProductsAndServices = () => {
+const ProductsAndService = () => {
   const navItems = [
     "Business Performance",
     "Accounting",
@@ -456,4 +456,4 @@ const ProductsAndServices = () => {
   );
 };
 
-export default ProductsAndServices;
+export default ProductsAndService;
