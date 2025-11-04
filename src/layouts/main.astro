@@ -1,6 +1,8 @@
 ---
 import '../styles/global.css';
 import partytown from '@astrojs/partytown';
+import QuickConnect from "../components/ui/QuickConnect.jsx";
+
 
 
 // Default SEO values
@@ -66,5 +68,6 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 	</head>
 	<body>
 		<slot />
+		<QuickConnect client:load /> <!-- Floating Button (stays across all pages) -->
 	</body>
 </html>

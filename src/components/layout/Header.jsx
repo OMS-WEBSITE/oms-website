@@ -5,9 +5,9 @@ import SearchBar from "@/components/ui/SearchBar";
 
 const Header = () => {
   const navItems = [
-    { name: "WHY OMS", id: "why-oms" },
     { name: "PRODUCTS AND SERVICES", id: "productsandservice" },
     { name: "SOLUTIONS", id: "solutions" },
+    { name: "WHY OMS", id: "why-oms" },
     { name: "HOW TO BUY", id: "how-to-buy" },
     { name: "LEARN", id: "learn" },
     { name: "SUPPORT", id: "support" },

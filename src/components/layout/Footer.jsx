@@ -235,11 +235,12 @@ import {
   FaLinkedin,
   FaFacebookF,
   FaYoutube,
-  FaMapMarkerAlt,
   FaPhone,
   FaInstagram,
   FaEnvelope,
+  FaMapMarkerAlt,
 } from "react-icons/fa";
+import { SiGooglemaps } from "react-icons/si";
 
 const Footer = ({ language = "EN-IN" }) => {
   const [showMap, setShowMap] = useState(false);
@@ -301,6 +302,13 @@ const Footer = ({ language = "EN-IN" }) => {
       color: "text-red-600",
       glow: "shadow-red-600/40",
     },
+    // {
+    //   // icon: <SiGooglemaps size={22} />,
+    //   icon:<img src="/images/map1.png" alt="googlemap" className="w-8 h-8" />,
+    //   href: "https://maps.google.com/",
+    //   // color: "text-green-600",
+    //   glow: "shadow-green-600/40",
+    // },
   ];
 
   const sections = [
@@ -332,7 +340,7 @@ const Footer = ({ language = "EN-IN" }) => {
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2 "
         >
           {/* Logo & Socials */}
           <motion.div
@@ -343,7 +351,7 @@ const Footer = ({ language = "EN-IN" }) => {
             <h3 className="text-orange-500 text-2xl font-bold mb-4">
               OMS Software
             </h3>
-            <div className="flex gap-3 justify-center md:justify-start flex-wrap">
+            <div className="flex gap-3 justify-center md:justify-start flex-wrap ">
               {socials.map((social, i) => (
                 <motion.a
                   key={i}
@@ -417,54 +425,78 @@ const Footer = ({ language = "EN-IN" }) => {
               Contact
             </h3>
 
-            <div className="flex items-start gap-2 text-gray-700 text-sm">
-              <FaMapMarkerAlt className="text-orange-500 mt-1" />
-              <span>{info.address}</span>
+            {/* Address */}
+            <div className="flex items-center text-gray-600 text-sm md:text-base space-x-2">
+              <FaMapMarkerAlt size={18} className="text-orange-500" />
+              <span className="flex-1">{info.address}</span>
             </div>
 
-            <div className="flex items-center gap-2 text-gray-700 text-sm">
-              <FaPhone className="text-orange-500" />
-              <span>{info.phone}</span>
+            {/* Phone */}
+            <div className="flex items-center text-gray-600 text-sm md:text-base space-x-2">
+              <FaPhone size={18} className="text-orange-500" />
+              <span className="flex-1">{info.phone}</span>
             </div>
 
-            <div className="flex items-center gap-2 text-gray-700 text-sm">
-              <FaEnvelope className="text-orange-500" />
-              <span>{info.email}</span>
+            {/* Email */}
+            <div className="flex items-center text-gray-600 text-sm md:text-base space-x-2">
+              <FaEnvelope size={18} className="text-orange-500" />
+              <span className="flex-1 break-all">{info.email}</span>
             </div>
 
-            {/* Toggle Map Button */}
-            <button
+            {/* <button
               onClick={() => setShowMap(!showMap)}
-              className="mt-3 px-4 py-2 bg-orange-500 text-white rounded-lg text-sm hover:bg-orange-600 transition"
+              className="mt-3 px-4 py-2 bg-orange-500 text-white rounded-lg text-sm hover:bg-orange-600 transition cursor-pointer"
             >
               {showMap ? "Hide Map" : "View Map"}
-            </button>
+            </button> */}
+            {/* <button
+              onClick={() => setShowMap(!showMap)}
+              className="mt-3 p-3 bg-white text-red-500 rounded-full hover:bg-gray-100 transition cursor-pointer flex items-center justify-center shadow-md"
+              aria-label={showMap ? "Hide Map" : "View Map"}
+            >
+              <SiGooglemaps className="text-2xl" />
+            </button> */}
 
-            {/* Collapsible Google Map */}
+            {/* Map Overlay */}
             {showMap && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.4 }}
-                className="mt-4 rounded-lg overflow-hidden shadow-md"
+              <div
+                className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4"
+                onClick={() => setShowMap(false)} // closes when clicking outside
               >
-                <iframe
-                  title={`Google Map - ${language}`}
-                  src={
-                    language === "EN-IN"
-                      ? // India Map
-                        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8463906383313!2d77.57476527484036!3d12.9175925873928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15006211cc43%3A0xd8fd6177f4784417!2sOMS-Business%20Digitalisation%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1762237270659!5m2!1sen!2sin"
-                      : // Australia Map
-                        "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.16979247206!2d144.89934057569684!3d-37.85631737196497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad666e5ececf245%3A0x39e16b362de827ed!2s19%20The%20Strand%2C%20Williamstown%20VIC%203016%2C%20Australia!5e0!3m2!1sen!2sin!4v1762237050143!5m2!1sen!2sin"
-                  }
-                  width="100%"
-                  height="250"
-                  style={{ border: 0 }}
-                  allowFullScreen=""
-                  loading="lazy"
-                  referrerPolicy="no-referrer-when-downgrade"
-                ></iframe>
-              </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: -20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4 }}
+                  className="relative bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-md"
+                  onClick={(e) => e.stopPropagation()} // prevents closing on map click
+                >
+                  {/* Close Button */}
+                  <button
+                    onClick={() => setShowMap(false)}
+                    className="absolute top-2 right-3 text-gray-500 hover:text-gray-700 text-xl z-50 cursor-pointer"
+                  >
+                    ✕
+                  </button>
+
+                  {/* Google Map */}
+                  <iframe
+                    title={`Google Map - ${language}`}
+                    src={
+                      language === "EN-IN"
+                        ? // India Map
+                          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8463906383313!2d77.57476527484036!3d12.9175925873928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15006211cc43%3A0xd8fd6177f4784417!2sOMS-Business%20Digitalisation%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1762237270659!5m2!1sen!2sin"
+                        : // Australia Map
+                          "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3150.16979247206!2d144.89934057569684!3d-37.85631737196497!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x6ad666e5ececf245%3A0x39e16b362de827ed!2s19%20The%20Strand%2C%20Williamstown%20VIC%203016%2C%20Australia!5e0!3m2!1sen!2sin!4v1762237050143!5m2!1sen!2sin"
+                    }
+                    width="100%"
+                    height="300"
+                    style={{ border: 0 }}
+                    allowFullScreen=""
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                  ></iframe>
+                </motion.div>
+              </div>
             )}
           </motion.div>
         </motion.div>

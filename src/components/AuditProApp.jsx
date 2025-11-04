@@ -32,10 +32,9 @@ const AuditProApp = () => {
       <Header />
       <main>
         <VideoSection />
-        <WhyOMS />
         <ProductsAndService />
         <Solutions />
-
+        <WhyOMS />
         <HowToBuy />
         <Learn />
         <Support />

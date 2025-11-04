@@ -1,4 +1,4 @@
-import  { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 
@@ -124,6 +124,7 @@ const ProductsAndService = () => {
           section.scrollIntoView({ behavior: "smooth", block: "start" });
 
           // Optionally expand the correct section
+          console.log(section)
           setActiveItem("Business Performance");
           setExpandedSection("0-0"); // optional: based on your map index
         }
@@ -164,6 +165,45 @@ const ProductsAndService = () => {
     }
   }, []);
 
+  // useEffect(() => {
+  //   const pendingSubSection = sessionStorage.getItem("pendingSubSection");
+  //   if (!pendingSubSection) return;
+
+  //   sessionStorage.removeItem("pendingSubSection");
+
+  //   const scrollToMain = () => {
+  //     const mainSection = document.getElementById("productsandservice");
+  //     if (mainSection) {
+  //       const yOffset = -80;
+  //       const y =
+  //         mainSection.getBoundingClientRect().top +
+  //         window.pageYOffset +
+  //         yOffset;
+  //       window.scrollTo({ top: y, behavior: "smooth" });
+  //       console.log("🟢 Products & Services section found, scrolling...");
+  //       return true;
+  //     }
+  //     return false;
+  //   };
+
+  //   // Wait for the section to appear
+  //   if (!scrollToMain()) {
+  //     const observer = new MutationObserver(() => {
+  //       if (scrollToMain()) observer.disconnect();
+  //     });
+  //     observer.observe(document.body, { childList: true, subtree: true });
+  //   }
+
+  //   // Fire the custom event slightly after scroll
+  //   setTimeout(() => {
+  //     const event = new CustomEvent("activateProductSubSection", {
+  //       detail: { label: pendingSubSection },
+  //     });
+  //     window.dispatchEvent(event);
+  //     console.log("🟢 Fired activateProductSubSection for:", pendingSubSection);
+  //   }, 1000);
+  // }, []);
+
   return (
     <section id="productsandservice" className="min-h-screen bg-gray-50 pt-5">
       {/* Header */}
@@ -172,7 +212,6 @@ const ProductsAndService = () => {
           <span className="border-b-4 border-orange-500 pb-1">
             Products & Services
           </span>
-          
         </h2>
         <p className="text-center max-w-2xl mx-auto text-gray-600 mb-4 sm:mb-6 text-sm sm:text-base px-2">
           Explore our Products & Services built to streamline laboratory
