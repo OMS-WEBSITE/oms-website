@@ -1,5 +1,7 @@
 ---
 import '../styles/global.css';
+import partytown from '@astrojs/partytown';
+
 
 // Default SEO values
 const {
@@ -48,6 +50,19 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 		<!-- Preconnect to common domains -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- 🧠 Partytown for Google Analytics -->
+		<script
+			type="text/partytown"
+			src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+		></script>
+
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', 'G-XXXXXXXXXX');
+		</script>
 	</head>
 	<body>
 		<slot />

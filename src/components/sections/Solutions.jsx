@@ -387,7 +387,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Unified Access
+           🔍 Unified Access
           </h4>
 
           <p>
@@ -398,7 +398,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            QR-Verified Reports
+            🧾 QR-Verified Reports
           </h4>
 
           <p>
@@ -411,7 +411,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Complete Digital Archive
+            🗂️ Complete Digital Archive
           </h4>
 
           <p>
@@ -421,7 +421,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Controlled Sharing
+            👥 Controlled Sharing
           </h4>
 
           <p>
@@ -431,7 +431,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Secure, Role-Based Control
+            🔒 Secure, Role-Based Control
           </h4>
 
           <p>
@@ -470,7 +470,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Unified Reference Library
+            🧾 Unified Reference Library
           </h4>
 
           <p>
@@ -480,7 +480,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Materials Specifications
+           ⚙️ Materials Specifications
           </h4>
 
           <p>Store and standardize critical material information such as:</p>
@@ -495,7 +495,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Test Specifications
+           🧪 Test Specifications
           </h4>
 
           <p>
@@ -510,7 +510,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Rail & Specialized Specifications
+            🚆 Rail & Specialized Specifications
           </h4>
 
           <p>Define custom rail or sector-specific parameters including:</p>
@@ -522,7 +522,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Process Standards
+           🔧 Process Standards
           </h4>
 
           <p>Document every process step with:</p>
@@ -534,7 +534,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Reference Data Control
+           📑 Reference Data Control
           </h4>
 
           <p>
@@ -572,7 +572,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Assign & Track Assets
+            🧾 Assign & Track Assets
           </h4>
 
           <p>
@@ -582,7 +582,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Smart Reminders
+            🔔 Smart Reminders
           </h4>
 
           <p>Automated notifications keep your team on schedule with:</p>
@@ -593,7 +593,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Preventive Maintenance
+           ⚙️ Preventive Maintenance
           </h4>
 
           <p>
@@ -603,7 +603,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Depreciation & Valuation
+            📉 Depreciation & Valuation
           </h4>
 
           <p>
@@ -612,7 +612,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Year-End Reporting
+            📊 Year-End Reporting
           </h4>
 
           <p>
@@ -622,7 +622,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Linked Operations
+            🧩 Linked Operations
           </h4>
 
           <p>
@@ -631,7 +631,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Product Manuals & Records
+            📚 Product Manuals & Records
           </h4>
 
           <p>
@@ -737,7 +737,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Core Accounting
+            ⚙️ Core Accounting
           </h4>
 
           <p>
@@ -746,7 +746,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Productivity Enhancements
+            ⏱️ Productivity Enhancements
           </h4>
 
           <p>
@@ -756,7 +756,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Traceability & Audit Readiness
+            🧾 Traceability & Audit Readiness
           </h4>
 
           <p>
@@ -766,7 +766,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Integrated Dashboards
+            📊 Integrated Dashboards
           </h4>
 
           <p>
@@ -804,7 +804,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Digital Templates
+            ⚙️ Digital Templates
           </h4>
 
           <p>
@@ -813,7 +813,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Risk Matrix Builder
+            📊 Risk Matrix Builder
           </h4>
 
           <p>
@@ -822,7 +822,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Method + Risk in One View
+            🧾 Method + Risk in One View
           </h4>
 
           <p>
@@ -832,7 +832,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Sign-off & Version Control
+            ✍️ Sign-off & Version Control
           </h4>
 
           <p>
@@ -841,7 +841,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Attachments & Evidence Upload
+            🧾 Attachments & Evidence Upload
           </h4>
 
           <p>
@@ -850,7 +850,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Offline Access (Optional)
+            🌐 Offline Access (Optional)
           </h4>
 
           <p>
@@ -886,7 +886,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Search & Add WPS Data
+            🔍 Search & Add WPS Data
           </h4>
 
           <p>
@@ -896,7 +896,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Unified Document Package
+            📂 Unified Document Package
           </h4>
 
           <p>
@@ -907,7 +907,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Welder Qualification Integration
+            👷 Welder Qualification Integration
           </h4>
 
           <p>
@@ -916,7 +916,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Client Portal Access
+            🌐 Client Portal Access
           </h4>
 
           <p>
@@ -926,7 +926,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Caution
+            ⚠️ Caution
           </h4>
 
           <p>
@@ -936,7 +936,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-            Assistance
+            💡 Assistance
           </h4>
 
           <p>

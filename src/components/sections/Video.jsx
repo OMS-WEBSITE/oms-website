@@ -172,27 +172,79 @@ const VideoSection = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 2, ease: "easeInOut" }}
               >
-                {features.map((feature, idx) => (
-                  <div
-                    key={idx}
-                    onClick={() => handleClick(feature.id)}
-                    onMouseEnter={() => setIsPaused(true)} // 🟠 pause when hovering feature
-                    onMouseLeave={() => setIsPaused(false)} // resume when leaving
-                    className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform hover:shadow-[0_0_20px_4px_rgba(138,43,226,0.8)] hover:animate-glowPulse"
-                    style={{
-                      ...feature.style,
-                      transform: "translate(-50%, -50%)",
-                      width: "200px",
-                      textAlign: "center",
-                      justifyContent: "center",
-                      height: "35px",
-                      backgroundColor: "rgba(228, 228, 228, 0.8)",
-                    }}
-                  >
-                    {feature.label}
-                  </div>
-                ))}
+                {/* 🟢 Desktop Layout */}
+                <div className="hidden md:block">
+                  {features.map((feature, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => handleClick(feature.id)}
+                      onMouseEnter={() => setIsPaused(true)}
+                      onMouseLeave={() => setIsPaused(false)}
+                      className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform hover:shadow-[0_0_20px_4px_rgba(138,43,226,0.8)] hover:animate-glowPulse"
+                      style={{
+                        ...feature.style,
+                        transform: "translate(-50%, -50%)",
+                        width: "200px",
+                        textAlign: "center",
+                        justifyContent: "center",
+                        height: "35px",
+                        backgroundColor: "rgba(228, 228, 228, 0.8)",
+                      }}
+                    >
+                      {feature.label}
+                    </div>
+                  ))}
+                </div>
+
+                {/* 🟠 Mobile Layout (stack vertically) */}
+                <div className="flex flex-col items-center gap-3 md:hidden mt-6">
+                  {features.map((feature, idx) => (
+                    <div
+                      key={idx}
+                      onClick={() => handleClick(feature.id)}
+                      className="px-4 py-2 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform hover:shadow-[0_0_20px_4px_rgba(138,43,226,0.8)]"
+                      style={{
+                        width: "80%",
+                        backgroundColor: "rgba(228, 228, 228, 0.8)",
+                        textAlign: "center",
+                      }}
+                    >
+                      {feature.label}
+                    </div>
+                  ))}
+                </div>
               </motion.div>
+
+              // without a mobile friendly
+              // <motion.div
+              //   key="features"
+              //   className="relative w-full h-full"
+              //   initial={{ opacity: 0 }}
+              //   animate={{ opacity: 1 }}
+              //   exit={{ opacity: 0 }}
+              //   transition={{ duration: 2, ease: "easeInOut" }}
+              // >
+              //   {features.map((feature, idx) => (
+              //     <div
+              //       key={idx}
+              //       onClick={() => handleClick(feature.id)}
+              //       onMouseEnter={() => setIsPaused(true)} // 🟠 pause when hovering feature
+              //       onMouseLeave={() => setIsPaused(false)} // resume when leaving
+              //       className="group absolute px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform hover:shadow-[0_0_20px_4px_rgba(138,43,226,0.8)] hover:animate-glowPulse"
+              //       style={{
+              //         ...feature.style,
+              //         transform: "translate(-50%, -50%)",
+              //         width: "200px",
+              //         textAlign: "center",
+              //         justifyContent: "center",
+              //         height: "35px",
+              //         backgroundColor: "rgba(228, 228, 228, 0.8)",
+              //       }}
+              //     >
+              //       {feature.label}
+              //     </div>
+              //   ))}
+              // </motion.div>
             )}
 
             {/* === RED SWAN SLIDE === */}
@@ -203,37 +255,94 @@ const VideoSection = () => {
                 animate={{ opacity: 1, y: -10 }}
                 exit={{ opacity: 0, y: 30 }}
                 transition={{ duration: 2.5, ease: "easeInOut" }}
-                className="flex items-center justify-center w-full h-full bg-white/10 backdrop-blur-md"
+                className="flex items-center justify-center w-full h-full bg-white/10 backdrop-blur-md px-4 sm:px-6 md:px-10 text-center"
               >
                 <div
-                  className="mt-6 px-8 py-4 rounded-2xl  flex flex-col items-center text-center space-y-2 -translate-y-10 md:-translate-y-16  hover:shadow-[0_0_40px_rgba(255,165,0,0.4)] transition-all duration-700"
-                  onMouseEnter={() => setIsPaused(true)} // 🟢 pause on hover
-                  onMouseLeave={() => setIsPaused(false)} // 🔵 resume when leaving
+                  className="mt-4 sm:mt-6 px-4 sm:px-6 py-4 rounded-2xl flex flex-col items-center text-center space-y-3 -translate-y-10 md:-translate-y-16 sm:space-y-4 hover:shadow-[0_0_40px_rgba(255,165,0,0.4)] transition-all duration-700"
+                  onMouseEnter={() => setIsPaused(true)}
+                  onMouseLeave={() => setIsPaused(false)}
                 >
-                  <h2 className="text-2xl md:text-4xl font-semibold leading-relaxed max-w-2xl mb-3">
-                    Run your lab on the cloud - secure, scalable, and compliant.
+                  {/* Heading */}
+                  <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold leading-relaxed max-w-[95%] sm:max-w-2xl mb-2 sm:mb-3 text-gray-100">
+                    Run your lab on the cloud — secure, scalable, and compliant.
                   </h2>
-                  <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+
+                  {/* Subtext */}
+                  <p className="text-sm sm:text-base md:text-lg max-w-[95%] sm:max-w-2xl text-gray-200">
                     Everything you need to streamline your{" "}
                     <span className="text-orange-500 font-semibold">
                       testing, inspection, and calibration workflows
                     </span>{" "}
-                    - all in one secure platform.
+                    — all in one secure platform.
                   </p>
-                  <p className="text-md md:text-lg mt-2 text-gray-300">
-                    Audit-ready from day one - no servers, no stress.
+
+                  <p className="text-xs sm:text-sm md:text-lg mt-2 text-gray-300">
+                    Audit-ready from day one — no servers, no stress.
                   </p>
-                  {/* <div className="mt-2 px-8 py-4 rounded-2xl flex flex-col items-center space-y-2  transition-all duration-700"> */}
-                  <div className="mt-6 px-8 py-4 rounded-2xl bg-white/10 flex flex-col items-center space-y-2 ">
-                    <h2 className="text-orange-300 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+
+                  {/* Highlight Box */}
+                  {/* <div className="mt-6 sm:mt-8 px-4 sm:px-8 py-4 rounded-2xl bg-white/10 flex flex-col items-center space-y-2 sm:space-y-3 w-full sm:w-auto">
+                    <h2 className="text-orange-300 font-semibold text-base sm:text-lg md:text-xl tracking-wide drop-shadow-lg">
                       🏆 Recognised as an Established Software Platform
                     </h2>
-                    <h1 className="text-red-500 text-3xl md:text-5xl font-bold max-w-3xl drop-shadow-2xl text-center">
+                    <h1 className="text-red-500 text-2xl sm:text-3xl md:text-5xl font-bold max-w-[95%] sm:max-w-3xl drop-shadow-2xl text-center leading-snug">
                       Red Swan Digital Radar 2025
                     </h1>
+                  </div> */}
+                  <div className="mt-6 sm:mt-8 px-4 sm:px-8 py-4 rounded-2xl bg-white/10 flex flex-col items-center space-y-2 sm:space-y-3 w-full sm:w-auto">
+                    <h2 className="text-orange-300 font-semibold text-base sm:text-lg md:text-xl tracking-wide drop-shadow-lg">
+                      🏆 Recognised as an Established Software Platform
+                    </h2>
+                    <a
+                      href="https://www.redswan-digital.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-red-500 text-2xl sm:text-3xl md:text-5xl font-bold max-w-[95%] sm:max-w-3xl drop-shadow-2xl text-center leading-snug hover:underline hover:text-blue-500"
+                    >
+                      Red Swan Digital Radar 2025
+                    </a>
                   </div>
                 </div>
               </motion.div>
+
+              // not mobile friendly
+              // <motion.div
+              //   key="redswan"
+              //   initial={{ opacity: 0, y: 30 }}
+              //   animate={{ opacity: 1, y: -10 }}
+              //   exit={{ opacity: 0, y: 30 }}
+              //   transition={{ duration: 2.5, ease: "easeInOut" }}
+              //   className="flex items-center justify-center w-full h-full bg-white/10 backdrop-blur-md"
+              // >
+              //   <div
+              //     className="mt-6 px-8 py-4 rounded-2xl  flex flex-col items-center text-center space-y-2 -translate-y-10 md:-translate-y-16  hover:shadow-[0_0_40px_rgba(255,165,0,0.4)] transition-all duration-700"
+              //     onMouseEnter={() => setIsPaused(true)} // 🟢 pause on hover
+              //     onMouseLeave={() => setIsPaused(false)} // 🔵 resume when leaving
+              //   >
+              //     <h2 className="text-2xl md:text-4xl font-semibold leading-relaxed max-w-2xl mb-3">
+              //       Run your lab on the cloud - secure, scalable, and compliant.
+              //     </h2>
+              //     <p className="text-lg md:text-xl max-w-2xl text-gray-200">
+              //       Everything you need to streamline your{" "}
+              //       <span className="text-orange-500 font-semibold">
+              //         testing, inspection, and calibration workflows
+              //       </span>{" "}
+              //       - all in one secure platform.
+              //     </p>
+              //     <p className="text-md md:text-lg mt-2 text-gray-300">
+              //       Audit-ready from day one - no servers, no stress.
+              //     </p>
+              //     {/* <div className="mt-2 px-8 py-4 rounded-2xl flex flex-col items-center space-y-2  transition-all duration-700"> */}
+              //     <div className="mt-6 px-8 py-4 rounded-2xl bg-white/10 flex flex-col items-center space-y-2 ">
+              //       <h2 className="text-orange-300 font-semibold text-lg md:text-xl tracking-wider drop-shadow-lg">
+              //         🏆 Recognised as an Established Software Platform
+              //       </h2>
+              //       <h1 className="text-red-500 text-3xl md:text-5xl font-bold max-w-3xl drop-shadow-2xl text-center">
+              //         Red Swan Digital Radar 2025
+              //       </h1>
+              //     </div>
+              //   </div>
+              // </motion.div>
             )}
           </AnimatePresence>
         </div>
@@ -351,8 +460,7 @@ export default VideoSection;
 //             </div>
 //           </motion.div>
 
-
-// takes 6+6 time to animates  
+// takes 6+6 time to animates
 // 🔁 Smooth auto loop (pauses on hover)
 // useEffect(() => {
 //   if (showFeatures) {

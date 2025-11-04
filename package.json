@@ -13,7 +13,9 @@
     "22": "^0.0.0",
     "@astrojs/check": "^0.9.5",
     "@astrojs/mdx": "^4.2.1",
+    "@astrojs/partytown": "^2.1.4",
     "@astrojs/react": "^4.2.1",
+    "@astrojs/sitemap": "^3.6.0",
     "@emailjs/browser": "^4.4.1",
     "@radix-ui/react-dialog": "^1.1.6",
     "@radix-ui/react-slot": "^1.1.2",
@@ -42,6 +44,7 @@
   "devDependencies": {
     "@babel/core": "^7.28.5",
     "@babel/preset-react": "^7.28.5",
-    "@types/papaparse": "^5.3.16"
+    "@types/papaparse": "^5.3.16",
+    "astro-robots-txt": "^1.0.0"
   }
 }
