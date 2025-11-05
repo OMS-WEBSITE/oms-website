@@ -18,6 +18,7 @@ const ProductsAndService = () => {
 
   const [activeItem, setActiveItem] = useState(null);
   const [expandedSection, setExpandedSection] = useState(null);
+  const [ignoreAutoClose, setIgnoreAutoClose] = useState(false);
 
   const sectionList = activeItem ? contentMap[activeItem]?.sections || [] : [];
 
@@ -59,6 +60,7 @@ const ProductsAndService = () => {
       );
   }, []);
 
+  // event from landing page
   useEffect(() => {
     const handleActivateTab = (event) => {
       const { id } = event.detail;
@@ -82,12 +84,17 @@ const ProductsAndService = () => {
       }
 
       if (matchedLabel) {
+        setIgnoreAutoClose(true);
+
+        // Reset flag after short delay so auto-close works again
+        setTimeout(() => {
+          setIgnoreAutoClose(false);
+        }, 1000); // 1 second delay
         setActiveItem(matchedLabel);
         console.log("matcheddddddddddddddddddddddddddddddddddddddddd");
         // Step 3: Wait for section to expand, then scroll
         setTimeout(() => {
           const sectionEl = document.getElementById(id);
-          console.log("this is imp", sectionEl);
           if (sectionEl) {
             const navbar = document.querySelector("nav");
             const navbarHeight = navbar ? navbar.offsetHeight : 0;
@@ -98,6 +105,7 @@ const ProductsAndService = () => {
               navbarHeight -
               60;
 
+            console.log("yahhhhhhhhhhhhhhhhhh");
             window.scrollTo({ top: yOffset, behavior: "smooth" });
           } else {
             console.warn(`⚠️ No element found with id="${id}"`);
@@ -124,7 +132,7 @@ const ProductsAndService = () => {
           section.scrollIntoView({ behavior: "smooth", block: "start" });
 
           // Optionally expand the correct section
-          console.log(section)
+          console.log(section);
           setActiveItem("Business Performance");
           setExpandedSection("0-0"); // optional: based on your map index
         }
@@ -165,6 +173,30 @@ const ProductsAndService = () => {
     }
   }, []);
 
+  // automatic close when the user closes
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.innerWidth < 768 || ignoreAutoClose) return;
+      const section = document.getElementById("productsandservice");
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const completelyOutOfView =
+        rect.bottom < 0 || rect.top > window.innerHeight;
+
+      if (completelyOutOfView) {
+        setActiveItem(null);
+        setExpandedSection(null);
+        console.log("closed");
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [ignoreAutoClose]);
+
+  // not using
   // useEffect(() => {
   //   const pendingSubSection = sessionStorage.getItem("pendingSubSection");
   //   if (!pendingSubSection) return;
@@ -218,6 +250,7 @@ const ProductsAndService = () => {
           operations and maintain compliance with ISO/IEC standards.
         </p>
       </div>
+
       {/* mobile view */}
       <div className="md:hidden relative overflow-hidden mt-2 h-[calc(100vh-10px)]">
         {/* Step 1: Main Items */}
@@ -284,7 +317,7 @@ const ProductsAndService = () => {
           <div className="text-gray-700 space-y-3 leading-relaxed">
             {sectionList[expandedSection]?.content.map((block, idx) => {
               if (block.type === "paragraph")
-                return <p key={idx}>{block.text} className</p>;
+                return <p key={idx}>{block.text}</p>;
               if (block.type === "list")
                 return (
                   <ul key={idx} className="list-disc list-inside ml-4">

@@ -46,31 +46,91 @@ const SearchBar = () => {
     setResults(filtered);
   };
 
+  // const handleNavigation = (url) => {
+  //   console.log("handleNavigation");
+  //   setIsOpen(false);
+  //   setResults([]);
+
+  //   // Check for "Products & Services" links
+  //   if (url.includes("#productsandservice/")) {
+  //     const [base, hashPath] = url.split("#");
+  //     const [, subSection] = hashPath.split("/"); // e.g. "business-performance"
+  //     window.history.pushState(null, "", `/#${hashPath}`);
+  //     // Convert to readable label (Business Performance)
+  //     const subLabel = subSection
+  //       ? decodeURIComponent(subSection)
+  //           .replace(/-/g, " ")
+  //           .replace(/\b\w/g, (c) => c.toUpperCase())
+  //       : null;
+
+  //     // Case 1: Already on same page
+  //     if (window.location.pathname === "/" || base === "") {
+  //       const mainSection = document.getElementById("productsandservice");
+  //       if (mainSection) {
+  //         mainSection.scrollIntoView({ behavior: "smooth", block: "start" });
+  //       }
+
+  //       // Wait for smooth scroll, then trigger subsection activation
+  //       if (subLabel) {
+  //         setTimeout(() => {
+  //           const event = new CustomEvent("activateProductSubSection", {
+  //             detail: { label: subLabel },
+  //           });
+  //           window.dispatchEvent(event);
+  //         }, 600);
+  //       }
+  //     } else {
+  //       // Case 2: Navigate to home first, then event runs on load
+  //       sessionStorage.setItem("pendingSubSection", subLabel);
+  //       window.location.href = "/";
+  //     }
+  //     return;
+  //   }
+
+  //   // ✅ Handle regular sections like #about, #contact
+  //   if (url.includes("#")) {
+  //     console.log("reached in loop");
+  //     const [base, hash] = url.split("#");
+  //     if (window.location.pathname === base || base === "") {
+  //       console.log("reached");
+  //       window.history.pushState(null, "", `/#${hash}`);
+  //       const section = document.getElementById(hash);
+  //       if (section) {
+  //         section.scrollIntoView({ behavior: "smooth", block: "start" });
+  //       } else {
+  //         window.location.href = url;
+  //       }
+  //     } else {
+  //       window.location.href = url;
+  //     }
+  //     return;
+  //   }
+  //   console.log("loop outside");
+  //   // Default navigation
+  //   window.location.href = url;
+  // };
+
   const handleNavigation = (url) => {
-    console.log("handleNavigation");
     setIsOpen(false);
     setResults([]);
 
-    // Check for "Products & Services" links
+    // 🧭 Handle "Products & Services" subsections
     if (url.includes("#productsandservice/")) {
       const [base, hashPath] = url.split("#");
       const [, subSection] = hashPath.split("/"); // e.g. "business-performance"
-      window.history.pushState(null, "", `/#${hashPath}`);
-      // Convert to readable label (Business Performance)
       const subLabel = subSection
         ? decodeURIComponent(subSection)
             .replace(/-/g, " ")
             .replace(/\b\w/g, (c) => c.toUpperCase())
         : null;
 
-      // Case 1: Already on same page
+      // If already on home page
       if (window.location.pathname === "/" || base === "") {
         const mainSection = document.getElementById("productsandservice");
         if (mainSection) {
           mainSection.scrollIntoView({ behavior: "smooth", block: "start" });
         }
 
-        // Wait for smooth scroll, then trigger subsection activation
         if (subLabel) {
           setTimeout(() => {
             const event = new CustomEvent("activateProductSubSection", {
@@ -79,24 +139,41 @@ const SearchBar = () => {
             window.dispatchEvent(event);
           }, 600);
         }
+
+        // ✅ Add hash temporarily for SEO/UX
+        setTimeout(() => {
+          window.history.replaceState(null, "", `/#${hashPath}`);
+        }, 700);
+
+        // ✅ Then restore URL back to normal
+        setTimeout(() => {
+          window.history.replaceState(null, "", `/`);
+        }, 2500);
       } else {
-        // Case 2: Navigate to home first, then event runs on load
         sessionStorage.setItem("pendingSubSection", subLabel);
         window.location.href = "/";
       }
       return;
     }
 
-    // ✅ Handle regular sections like #about, #contact
+    // 🧭 Handle regular internal sections (like #about, #contact)
     if (url.includes("#")) {
-      console.log("reached in loop");
       const [base, hash] = url.split("#");
+
       if (window.location.pathname === base || base === "") {
-        console.log("reached");
-        window.history.pushState(null, "", `/#${hash}`);
         const section = document.getElementById(hash);
         if (section) {
           section.scrollIntoView({ behavior: "smooth", block: "start" });
+
+          // ✅ Add hash temporarily
+          setTimeout(() => {
+            window.history.replaceState(null, "", `/#${hash}`);
+          }, 500);
+
+          // ✅ Then restore URL back to normal after scroll
+          setTimeout(() => {
+            window.history.replaceState(null, "", `/`);
+          }, 2000);
         } else {
           window.location.href = url;
         }
@@ -105,8 +182,8 @@ const SearchBar = () => {
       }
       return;
     }
-    console.log("loop outside");
-    // Default navigation
+
+    // 🌍 Default external navigation
     window.location.href = url;
   };
 

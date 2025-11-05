@@ -1942,7 +1942,7 @@ export const contentMap = {
               "Survey modules – Rail alignment*, Pipe ovality measurement and …",
               "Process modules – Welding supervision and …",
               "Chemical testing – O.E.S Spectroscopy* (Beta) and …",
-              "* IAACE – Intelligence Augmented Automatic Compliance Evaluator modules",
+              "IAACE – Intelligence Augmented Automatic Compliance Evaluator modules",
             ],
           },
           {

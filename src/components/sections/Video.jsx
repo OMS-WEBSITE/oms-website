@@ -66,42 +66,6 @@ const VideoSection = () => {
     };
   }, []);
 
-  // useEffect(() => {
-  //   if (!showFeatures) return;
-
-  //   let timeoutId;
-  //   let remaining = 6000; // total duration
-  //   let startTime;
-
-  //   const toggle = () => {
-  //     setToggleRedSwan((prev) => !prev);
-  //     startTime = Date.now();
-  //     timeoutId = setTimeout(toggle, 6000);
-  //   };
-
-  //   const start = () => {
-  //     startTime = Date.now();
-  //     timeoutId = setTimeout(toggle, remaining);
-  //     console.log("▶️ Started/resumed loop...");
-  //   };
-
-  //   const pause = () => {
-  //     clearTimeout(timeoutId);
-  //     const elapsed = Date.now() - startTime;
-  //     remaining -= elapsed;
-  //     console.log(
-  //       `⏸️ Paused at ${elapsed / 1000}s, remaining: ${remaining / 1000}s`
-  //     );
-  //   };
-
-  //   if (!isPaused) start();
-  //   else pause();
-
-  //   return () => {
-  //     clearTimeout(timeoutId);
-  //   };
-  // }, [showFeatures, isPaused]);
-
   // 4/11 5:00
   useEffect(() => {
     if (!showFeatures) return;
@@ -126,12 +90,12 @@ const VideoSection = () => {
 
     const start = () => {
       startLoop();
-      console.log("▶️ Started loop...");
+      console.log("Started loop...");
     };
 
     const pause = () => {
       clearTimeout(timeoutId);
-      console.log("⏸️ Paused");
+      console.log("Paused");
     };
 
     if (!isPaused) start();
@@ -210,8 +174,8 @@ const VideoSection = () => {
                 exit={{ opacity: 0 }}
                 transition={{ duration: 1, ease: "easeInOut" }}
               >
-                {/* 🟢 Desktop Layout */}
-                <div className="hidden md:block">
+                {/* Desktop Layout */}
+                <div className="hidden lg:block">
                   {features.map((feature, idx) => (
                     <div
                       key={idx}
@@ -233,8 +197,28 @@ const VideoSection = () => {
                     </div>
                   ))}
                 </div>
-
-                {/* 🟠 Mobile Layout (stack vertically) */}
+                {/* Tablet / small desktop: 2 columns layout, centered */}-
+                <div className="hidden md:flex lg:hidden items-center justify-center mt-30">
+                  <div className="grid grid-cols-2 gap-6">
+                    {features.map((feature, idx) => (
+                      <div
+                        key={idx}
+                        onClick={() => handleClick(feature.id)}
+                        onMouseEnter={() => setIsPaused(true)}
+                        onMouseLeave={() => setIsPaused(false)}
+                        className="group px-3 py-1 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer transition-transform hover:scale-105 hover:shadow-[0_0_20px_4px_rgba(138,43,226,0.8)] hover:animate-glowPulse flex items-center justify-center text-center"
+                        style={{
+                          backgroundColor: "rgba(228, 228, 228, 0.8)",
+                          width: "200px",
+                          height: "35px",
+                        }}
+                      >
+                        {feature.label}
+                      </div>
+                    ))}
+                  </div>
+                </div>
+                {/*  Mobile Layout (stack vertically) */}
                 <div className="flex flex-col items-center gap-3 md:hidden mt-6">
                   {features.map((feature, idx) => (
                     <div

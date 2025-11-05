@@ -22,24 +22,12 @@ const QuickConnect = () => {
           <span className="absolute left-1/2 -bottom-1 w-2 h-2 bg-gray-800 rotate-45 transform -translate-x-1/2"></span>
         </span>
 
-        {/* Floating button */}
-        {/* <button
-          onClick={togglePopup}
-          className="bg-orange-500 text-white p-3 sm:p-4 rounded-full shadow-lg 
-             hover:bg-orange-600 cursor-pointer transition-all duration-300 
-             focus:outline-none focus:ring-2 focus:ring-orange-400 
-             hover:ring-2 hover:ring-white hover:ring-offset-2 hover:ring-offset-orange-500 
-             animate-glow-pulse"
-          title="Quick Connect"
-        >
-          <FaLink size={25} />
-        </button> */}
         <button
           onClick={togglePopup}
-          className="relative flex items-center justify-center w-11 h-16 sm:w-18 sm:h-18 md:h-20 md:w-20 
-             rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-600 
-             transition-all duration-300 cursor-pointer focus:outline-none 
-             focus:ring-2 focus:ring-orange-400 animate-glow-pulse"
+          className="relative flex items-center justify-center w-11 h-11 sm:w-16 sm:h-16 md:h-18 md:w-18 
+     rounded-full bg-orange-500 text-white shadow-lg hover:bg-orange-600 
+     transition-all duration-300 cursor-pointer focus:outline-none 
+     focus:ring-2 focus:ring-orange-400 animate-glow-pulse"
           title="Quick Connect"
         >
           {/* Chain Icon (Center) */}
@@ -51,10 +39,10 @@ const QuickConnect = () => {
             className="absolute inset-0 w-full h-full text-[8px] sm:text-[12px] pointer-events-none"
           >
             <defs>
-              {/* ↓ reduce radius from 35 → 30 for tighter circle */}
+              {/* Increase radius from 30 → 35 (or higher if needed) */}
               <path
                 id="circlePath"
-                d="M50,50 m-30,0 a30,30 0 1,1 60,0 a30,30 0 1,1 -60,0"
+                d="M50,50 m-35,0 a35,35 0 1,1 70,0 a35,35 0 1,1 -70,0"
               />
             </defs>
             <text
@@ -62,7 +50,12 @@ const QuickConnect = () => {
               fontSize="9"
               className="uppercase tracking-widest"
             >
-              <textPath href="#circlePath" startOffset="0%">
+              <textPath
+                href="#circlePath"
+                startOffset="0%"
+                method="align"
+                spacing="auto"
+              >
                 CONNECT • WITH • US • CONNECT • WITH • US •
               </textPath>
             </text>

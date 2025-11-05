@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import partytown from '@astrojs/partytown';
 import QuickConnect from "../components/ui/QuickConnect.jsx";
+import StructuredData from "../components/StructuredData.astro";
 
 
 
@@ -65,6 +66,9 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 			gtag('js', new Date());
 			gtag('config', 'G-XXXXXXXXXX');
 		</script>
+
+		<!-- Structured Data -->
+		<StructuredData />
 	</head>
 	<body>
 		<slot />

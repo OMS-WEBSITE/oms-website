@@ -387,7 +387,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-           🔍 Unified Access
+            🔍 Unified Access
           </h4>
 
           <p>
@@ -480,7 +480,7 @@ const Solutions = () => {
           </p>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-           ⚙️ Materials Specifications
+            ⚙️ Materials Specifications
           </h4>
 
           <p>Store and standardize critical material information such as:</p>
@@ -495,7 +495,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-           🧪 Test Specifications
+            🧪 Test Specifications
           </h4>
 
           <p>
@@ -522,7 +522,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-           🔧 Process Standards
+            🔧 Process Standards
           </h4>
 
           <p>Document every process step with:</p>
@@ -534,7 +534,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-           📑 Reference Data Control
+            📑 Reference Data Control
           </h4>
 
           <p>
@@ -593,7 +593,7 @@ const Solutions = () => {
           </ul>
 
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
-           ⚙️ Preventive Maintenance
+            ⚙️ Preventive Maintenance
           </h4>
 
           <p>
@@ -1044,103 +1044,3 @@ const Solutions = () => {
 };
 
 export default Solutions;
-
-// <section id="solutions" className="relative overflow-hidden py-20 bg-white">
-//   {/* Decorative Accent */}
-//   <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,165,0,0.08),transparent_70%)] pointer-events-none" />
-
-//   {/* <div className="relative w-[90%] max-w-6xl mx-auto py-4 px-2"> */}
-//   <div className="w-[90%] mx-auto py-4 px-2">
-//     {/* Header */}
-//     <motion.h2
-//       variants={fadeInUp}
-//       initial="hidden"
-//       whileInView="show"
-//       viewport={{ once: true }}
-//       className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-center text-gray-900 mb-6"
-//     >
-//       <span className="border-b-4 border-orange-500 pb-1">
-//         Solutions
-//       </span>
-//     </motion.h2>
-
-//     <motion.p
-//       variants={fadeInUp}
-//       initial="hidden"
-//       whileInView="show"
-//       className="text-center max-w-2xl mx-auto text-gray-600 mb-10 text-base sm:text-lg leading-relaxed"
-//     >
-//       Explore our powerful modules designed to simplify lab operations and
-//       ensure compliance.
-//     </motion.p>
-
-//     {/* Accordion List */}
-//     <motion.div
-//       variants={fadeInUp}
-//       initial="hidden"
-//       whileInView="show"
-//       className="space-y-4 sm:space-y-6"
-//     >
-//       {sections.map((section, index) => (
-//         <motion.div
-//           key={section.id}
-//           className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-sm border border-orange-100 overflow-hidden transition-all duration-300 hover:shadow-md"
-//         >
-//           {/* Accordion Header */}
-//           <button
-//             onClick={() => toggleSection(index)}
-//             className="w-full flex justify-between items-center px-5 py-4 text-left text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors"
-//           >
-//             <span className="text-orange-600">{section.title}</span>
-//             <span className="text-orange-500 text-2xl">
-//               {expandedSection === index ? (
-//                 <FiChevronUp />
-//               ) : (
-//                 <FiChevronDown />
-//               )}
-//             </span>
-//           </button>
-
-//           {/* Accordion Content with Framer Animation */}
-//           <AnimatePresence initial={false}>
-//             {expandedSection === index && (
-//               <motion.div
-//                 key="content"
-//                 initial={{ opacity: 0, height: 0 }}
-//                 animate={{ opacity: 1, height: "auto" }}
-//                 exit={{ opacity: 0, height: 0 }}
-//                 transition={{ duration: 0.4, ease: "easeOut" }}
-//                 className="px-5 pb-5 text-gray-700 text-sm sm:text-base leading-relaxed border-t border-gray-200"
-//               >
-//                 {React.Children.map(
-//                   section.content.props.children,
-//                   (child) => {
-//                     if (!React.isValidElement(child)) return null;
-
-//                     if (child.type === "p") {
-//                       return <div className="mb-3">{child}</div>;
-//                     }
-//                     if (child.type === "ul") {
-//                       return <div className="my-3 sm:my-4">{child}</div>;
-//                     }
-//                     if (child.type === "img") {
-//                       return (
-//                         <div className="my-4 flex justify-center">
-//                           <img
-//                             {...child.props}
-//                             className="max-w-full h-auto rounded-lg"
-//                           />
-//                         </div>
-//                       );
-//                     }
-//                     return child;
-//                   }
-//                 )}
-//               </motion.div>
-//             )}
-//           </AnimatePresence>
-//         </motion.div>
-//       ))}
-//     </motion.div>
-//   </div>
-// </section>

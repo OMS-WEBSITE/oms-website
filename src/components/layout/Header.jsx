@@ -52,31 +52,69 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScrollEvent);
   }, []);
 
+  // const handleScroll = (id) => {
+  //   if (typeof window === "undefined") return;
+
+  //   if (window.location.pathname === "/") {
+  //     // Already on landing page
+  //     const section = document.getElementById(id);
+  //     if (section) {
+  //       section.scrollIntoView({ behavior: "smooth" });
+  //       setActiveSection(id);
+  //       setMobileMenuOpen(false);
+
+  //       // After scroll, reset URL to `/`
+  //       setTimeout(() => {
+  //         window.history.replaceState(null, "", "/");
+  //       }, 800); // delay slightly to allow smooth scroll to finish
+  //     }
+  //   } else {
+  //     // Navigate to landing page and scroll
+  //     window.location.href = `/#${id}`;
+
+  //     // After navigation completes, reset URL to `/`
+  //     setTimeout(() => {
+  //       window.history.replaceState(null, "", "/");
+  //     }, 1200);
+  //   }
+  // };
+
   const handleScroll = (id) => {
     if (typeof window === "undefined") return;
 
-    if (window.location.pathname === "/") {
-      // Already on landing page
-      const section = document.getElementById(id);
-      if (section) {
-        section.scrollIntoView({ behavior: "smooth" });
-        setActiveSection(id);
-        setMobileMenuOpen(false);
+    const section = document.getElementById(id);
+    if (!section) return;
 
-        // After scroll, reset URL to `/`
-        setTimeout(() => {
-          window.history.replaceState(null, "", "/");
-        }, 800); // delay slightly to allow smooth scroll to finish
-      }
+    const navbar = document.querySelector("header"); // or your sticky header
+    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+
+    // Scroll position minus navbar height
+    const yOffset = section.getBoundingClientRect().top + window.scrollY; // extra 10px for spacing
+
+    if (window.innerWidth >= 768) {
+      // Desktop / Tablet: scroll to top minus navbar
+      const yOffset = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: yOffset, behavior: "smooth" });
     } else {
-      // Navigate to landing page and scroll
-      window.location.href = `/#${id}`;
+      // Mobile: scrollIntoView but leave some space for sticky header
 
-      // After navigation completes, reset URL to `/`
-      setTimeout(() => {
-        window.history.replaceState(null, "", "/");
-      }, 1200);
+      const yOffset =
+        section.getBoundingClientRect().top +
+        window.scrollY -
+        navbarHeight +
+        40;
+      window.scrollTo({ top: yOffset, behavior: "smooth" });
+      // Or use scrollIntoView if you want natural positioning
+      // section.scrollIntoView({ top: yOffset, behavior: "smooth" });
     }
+
+    setActiveSection(id);
+    setMobileMenuOpen(false);
+
+    // Reset URL
+    setTimeout(() => {
+      window.history.replaceState(null, "", "/");
+    }, 800);
   };
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
@@ -121,7 +159,10 @@ const Header = () => {
       <div className="w-[90%] mx-auto py-4 flex items-center justify-between">
         {" "}
         {/* Logo */}
-        <a href="/" className="flex items-center h-8 md:h-10 pl-3">
+        <a
+          href="/"
+          className="flex items-center h-8 md:h-10 pl-3 md-pr-5 sm-pr-4"
+        >
           <img
             src="/OMS Logo.jpg"
             alt="OMS logo"
@@ -129,12 +170,12 @@ const Header = () => {
           />
         </a>
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex flex-wrap gap-x-6">
+        <nav className="hidden md:flex flex-wrap pl-3 gap-x-6 md:gap-x-5 sm:gap-x-4 gap-x-3 text-base md:text-[16px] sm:text-[15px] text-sm transition-all duration-300">
           {navItems.map((item) => (
             <button
               key={item.id}
               onClick={() => handleScroll(item.id)}
-              className={`relative font-semibold tracking-wide transition-all duration-300 cursor-pointer group ${
+              className={`relative font-semibold sm:font-medium tracking-wide transition-all duration-300 cursor-pointer group ${
                 activeSection === item.id
                   ? "text-orange-500"
                   : "text-gray-700 hover:text-orange-500"
