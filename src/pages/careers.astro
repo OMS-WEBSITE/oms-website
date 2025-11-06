@@ -21,36 +21,41 @@ const jobs = data.filter((j: any) => j.title);
 ---
 
 <Layout {...seo}>
-  <Header client:only="react" />
+  <!-- Header -->
+  <Header client:load />
 
-  <main>
-    <section class="py-16 bg-gray-50">
+  <!-- Main Content -->
+  <main class="bg-gray-50">
+    <!-- Open Positions Section -->
+    <section class="py-12 sm:py-16 md:py-20">
       <div class="container mx-auto max-w-7xl px-4">
-       <div class="flex justify-center items-center mb-12">
-  <h2 class="text-3xl font-bold text-gray-800 border-b-4 border-orange-500 pb-2">
-    Open Positions
-  </h2>
-</div>
+        <div class="flex justify-center mb-8 sm:mb-12">
+          <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 border-b-4 border-orange-500 pb-2">
+            Open Positions
+          </h2>
+        </div>
 
-        <!-- Render React component -->
+        <!-- React Job List Component -->
         <JobList client:load jobs={jobs} />
       </div>
     </section>
 
-    <section class="py-16 bg-gradient-to-r from-orange-100 to-blue-100">
-      <div class="container mx-auto max-w-7xl px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+    <!-- Submit Resume Section -->
+    <section class="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-orange-100 to-blue-100">
+      <div class="container mx-auto max-w-4xl px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">
           Don't See the Right Role?
         </h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
           We're always looking for talented individuals to join our team. Send us your resume and we'll keep you in mind for future opportunities.
         </p>
-        <Button className="bg-orange-500 hover:bg-orange-600 text-white">
+        <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
           Submit Your Resume
         </Button>
       </div>
     </section>
   </main>
 
-  <Footer />
+  <!-- Footer -->
+  <Footer client:load />
 </Layout>

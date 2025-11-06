@@ -1,11 +1,5 @@
 import React, { useState } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
-// import { motion, AnimatePresence } from "framer-motion";
-
-// const fadeInUp = {
-//   hidden: { opacity: 0, y: 40 },
-//   show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
-// };
 
 const Solutions = () => {
   const [expandedSection, setExpandedSection] = useState(null);
@@ -967,6 +961,29 @@ const Solutions = () => {
       }, 100);
     }
   };
+
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     if (expandedSection === null) return;
+
+  //     const solutionsSection = document.getElementById("solutions");
+  //     if (!solutionsSection) return;
+
+  //     const rect = solutionsSection.getBoundingClientRect();
+  //     const navbarHeight = 80;
+
+  //     // If the entire solutions section is out of view
+  //     if (rect.bottom < navbarHeight || rect.top > window.innerHeight) {
+  //       setExpandedSection(null);
+  //     }
+  //   };
+
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+
+  //   return () => {
+  //     window.removeEventListener("scroll", handleScroll);
+  //   };
+  // }, [expandedSection]);
 
   return (
     <section

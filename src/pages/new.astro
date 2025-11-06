@@ -1,6 +1,8 @@
 ---
 import Layout from '../layouts/main.astro';
+import { LanguageProvider } from '../components/context/LanguageContext';
 import AuditProApp from '../components/AuditProApp';
+import Footer from '../components/layout/Footer.jsx';
 import '../styles/global.css';
 ---
 
@@ -15,7 +17,10 @@ import '../styles/global.css';
 
 	<body>
     <Layout title="OMS Software - IT Security Auditing Platform">
-      <AuditProApp client:load />
+       <LanguageProvider client:load>
+    <AuditProApp client:load />
+    <Footer client:load />
+  </LanguageProvider>
     </Layout>
 	</body>
 </html>

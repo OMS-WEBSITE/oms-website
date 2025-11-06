@@ -12,9 +12,11 @@ import {
   FaMapMarkerAlt,
 } from "react-icons/fa";
 import { SiGooglemaps } from "react-icons/si";
+import { useLanguage } from "@/context/LanguageContext"; // using context
 
-const Footer = ({ language = "EN-IN" }) => {
+const Footer = () => {
   const [showMap, setShowMap] = useState(false);
+  const { language } = useLanguage();
 
   const fadeUp = {
     hidden: { opacity: 0, y: 30 },
@@ -75,13 +77,6 @@ const Footer = ({ language = "EN-IN" }) => {
       color: "text-red-600",
       glow: "shadow-red-600/40",
     },
-    // {
-    //   // icon: <SiGooglemaps size={22} />,
-    //   icon: <img src="/images/map.png" alt="googlemap" className="w-8 h-8" />,
-    //   href: info.href,
-    //   // color: "text-green-600",
-    //   glow: "shadow-green-600/40",
-    // },
   ];
 
   const sections = [
@@ -148,7 +143,7 @@ const Footer = ({ language = "EN-IN" }) => {
               variants={fadeUp}
               transition={{ delay: idx * 0.1 + 0.2, duration: 0.6 }}
             >
-              <h3 className="text-lg font-semibold text-gray-800 mb-3 border-l-4 border-orange-500 pl-3">
+              <h3 className="text-lg font-semibold text-gray-800 mb-3 border-l-0 sm:border-l-4 border-orange-500 pl-3">
                 {section.title}
               </h3>
               <ul className="space-y-2">
@@ -172,7 +167,7 @@ const Footer = ({ language = "EN-IN" }) => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="space-y-3"
           >
-            <h3 className="text-lg font-semibold text-gray-800 mb-3 border-l-4 border-orange-500 pl-3">
+            <h3 className="text-lg font-semibold text-gray-800 mb-3 border-l-0 sm:border-l-4 border-orange-500 pl-3">
               Contact
             </h3>
 
@@ -180,16 +175,15 @@ const Footer = ({ language = "EN-IN" }) => {
             <div className="flex items-center text-gray-600 text-sm md:text-base space-x-2">
               <button
                 onClick={() => setShowMap(!showMap)}
-                className="mt-1 p-1 bg-white text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center 
-               hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
+                className="mt-1 p-1 text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center 
+       hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
                 aria-label={showMap ? "Hide Map" : "View Map"}
                 title="View on Google Maps"
               >
-                {/* <SiGooglemaps size={22} className="text-orange-500" /> */}
                 <img
-                  src="/images/map1.png"
+                  src="/images/map2.png"
                   alt="googlemap"
-                  className="w-7 h-7" 
+                  className="w-5 h-5 sm:w-7 sm:h-7 md:w-7 md:h-7"
                 />
               </button>
               <span className="flex-1">{info.address}</span>
@@ -199,46 +193,29 @@ const Footer = ({ language = "EN-IN" }) => {
             <div className="flex items-center text-gray-600 text-sm md:text-base space-x-2">
               <a
                 href={`tel:${info.phone}`}
-                className="mt-1 p-1 bg-white text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center
-             hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
+                className="mt-1 p-1 text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center
+       hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
                 title="Call Us"
               >
-                <FaPhone size={25} className="text-orange-500 " />
+                <FaPhone className="text-orange-500 w-4 h-4 sm:w-6 sm:h-6" />{" "}
               </a>
-
               <span className="flex-1">{info.phone}</span>
             </div>
 
             {/* Email */}
-
             <div className="flex items-center text-gray-600 text-sm md:text-base space-x-2">
               <a
                 href={`https://mail.google.com/mail/?view=cm&fs=1&to=${info.email}&su=Quick%20Connect%20Inquiry&body=Hi%20OMS,`}
-                className="mt-1 p-1 bg-white text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center
-               hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
+                className="mt-1 p-1 text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center
+       hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
                 title="Send Email"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                <FaEnvelope size={25} className="text-orange-500" />
+                <FaEnvelope className="text-orange-500 w-4 h-4 sm:w-6 sm:h-6" />{" "}
               </a>
               <span className="flex-1 break-all">{info.email}</span>
             </div>
-
-            {/* <button
-              onClick={() => setShowMap(!showMap)}
-              className="mt-3 px-4 py-2 bg-orange-500 text-white rounded-lg text-sm hover:bg-orange-600 transition cursor-pointer"
-            >
-              {showMap ? "Hide Map" : "View Map"}
-            </button> */}
-            {/* <button
-              onClick={() => setShowMap(!showMap)}
-              className="mt-3 p-3 bg-white text-red-500 rounded-lg transition cursor-pointer flex items-center justify-center shadow-md"
-              aria-label={showMap ? "Hide Map" : "View Map"}
-            >
-              {/* <SiGooglemaps className="text-2xl" /> 
-              <img src="/images/map.png" alt="googlemap" className="w-9 h-9" />
-            </button> */}
 
             {/* Map Overlay */}
             {showMap && (
@@ -250,7 +227,7 @@ const Footer = ({ language = "EN-IN" }) => {
                   initial={{ opacity: 0, y: -20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.4 }}
-                  className="relative bg-white rounded-xl shadow-lg overflow-hidden w-full max-w-md"
+                  className="relative rounded-xl shadow-lg overflow-hidden w-full max-w-md"
                   onClick={(e) => e.stopPropagation()} // prevents closing on map click
                 >
                   {/* Close Button */}

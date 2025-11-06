@@ -1,4 +1,3 @@
-
 const ScrollingLogos = () => {
   const logos = [
     "Microsoft", "Amazon", "Google", "IBM", "Oracle", 
@@ -7,20 +6,20 @@ const ScrollingLogos = () => {
   
   return (
     <div className="py-12 bg-white">
-      <div className="container mx-auto max-w-7xl">
-        <h2 className="text-2xl font-semibold text-center text-gray-800 mb-10">
+      <div className="container mx-auto max-w-7xl px-4">
+        <h2 className="text-2xl sm:text-3xl font-semibold text-center text-gray-800 mb-8 sm:mb-10">
           Trusted by over 4,000 organizations
         </h2>
         
         <div className="relative overflow-hidden">
           <div className="animate-marquee whitespace-nowrap flex">
             {logos.map((logo, index) => (
-              <div key={index} className="mx-8 w-40 h-16 bg-gray-100 rounded flex items-center justify-center text-gray-600">
+              <div key={index} className="mx-4 sm:mx-8 w-24 sm:w-40 h-12 sm:h-16 bg-gray-100 rounded flex items-center justify-center text-gray-600 text-sm sm:text-base">
                 {logo}
               </div>
             ))}
             {logos.map((logo, index) => (
-              <div key={`repeat-${index}`} className="mx-8 w-40 h-16 bg-gray-100 rounded flex items-center justify-center text-gray-600">
+              <div key={`repeat-${index}`} className="mx-4 sm:mx-8 w-24 sm:w-40 h-12 sm:h-16 bg-gray-100 rounded flex items-center justify-center text-gray-600 text-sm sm:text-base">
                 {logo}
               </div>
             ))}
@@ -31,7 +30,7 @@ const ScrollingLogos = () => {
       <style jsx>{`
         @keyframes marquee {
           0% { transform: translateX(0); }
-          100% { transform: translateX(-100%); }
+          100% { transform: translateX(-50%); }
         }
         .animate-marquee {
           animation: marquee 30s linear infinite;

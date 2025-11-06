@@ -7,7 +7,7 @@ const ReactJobList = ({ jobs }) => {
 
   if (!jobs || jobs.length === 0) {
     return (
-      <p className="text-gray-600 text-center">
+      <p className="text-gray-600 text-center py-8">
         No open positions at the moment.
       </p>
     );
@@ -15,7 +15,7 @@ const ReactJobList = ({ jobs }) => {
 
   return (
     <>
-      <div className="flex flex-wrap justify-center gap-8 w-[80%] mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-1 gap-6 w-full sm:w-[90%] md:w-[85%] mx-auto">
         {jobs.map((job, index) => (
           <JobCard
             key={index}

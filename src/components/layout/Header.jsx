@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { FaBars, FaTimes, FaGlobe } from "react-icons/fa";
 import { Button } from "@/components/ui/button";
 import SearchBar from "@/components/ui/SearchBar";
+import { useLanguage } from "@/context/LanguageContext"; // use context
 
 const Header = () => {
   const navItems = [
@@ -21,8 +22,11 @@ const Header = () => {
 
   const [activeSection, setActiveSection] = useState(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [language, setLanguage] = useState("");
+  const { language, updateLanguage } = useLanguage();
   const [dropdownOpen, setDropdownOpen] = useState(false);
+
+  // const menuRef = useRef(null);
+  // const dropdownRef = useRef(null);
 
   // Scroll spy effect
   useEffect(() => {
@@ -52,107 +56,55 @@ const Header = () => {
     return () => window.removeEventListener("scroll", handleScrollEvent);
   }, []);
 
-  // const handleScroll = (id) => {
-  //   if (typeof window === "undefined") return;
-
-  //   if (window.location.pathname === "/") {
-  //     // Already on landing page
-  //     const section = document.getElementById(id);
-  //     if (section) {
-  //       section.scrollIntoView({ behavior: "smooth" });
-  //       setActiveSection(id);
-  //       setMobileMenuOpen(false);
-
-  //       // After scroll, reset URL to `/`
-  //       setTimeout(() => {
-  //         window.history.replaceState(null, "", "/");
-  //       }, 800); // delay slightly to allow smooth scroll to finish
-  //     }
-  //   } else {
-  //     // Navigate to landing page and scroll
-  //     window.location.href = `/#${id}`;
-
-  //     // After navigation completes, reset URL to `/`
-  //     setTimeout(() => {
-  //       window.history.replaceState(null, "", "/");
-  //     }, 1200);
-  //   }
-  // };
-
   const handleScroll = (id) => {
     if (typeof window === "undefined") return;
 
     const section = document.getElementById(id);
-    if (!section) return;
+    if (section) {
+      // Section exists on current page: keep your original logic
 
-    const navbar = document.querySelector("header"); // or your sticky header
-    const navbarHeight = navbar ? navbar.offsetHeight : 0;
+      const navbar = document.querySelector("header"); // or your sticky header
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
 
-    // Scroll position minus navbar height
-    const yOffset = section.getBoundingClientRect().top + window.scrollY; // extra 10px for spacing
+      // Scroll position minus navbar height
 
-    if (window.innerWidth >= 768) {
-      // Desktop / Tablet: scroll to top minus navbar
-      const yOffset = section.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: yOffset, behavior: "smooth" });
+      if (window.innerWidth >= 768) {
+        // Desktop / Tablet: scroll to top minus navbar
+        const yOffset = section.getBoundingClientRect().top + window.scrollY;
+        window.scrollTo({ top: yOffset, behavior: "smooth" });
+      } else {
+        // Mobile: scrollIntoView but leave some space for sticky header
+
+        const yOffset =
+          section.getBoundingClientRect().top +
+          window.scrollY -
+          navbarHeight +
+          40;
+        window.scrollTo({ top: yOffset, behavior: "smooth" });
+        // Or use scrollIntoView if you want natural positioning
+        // section.scrollIntoView({ top: yOffset, behavior: "smooth" });
+      }
+
+      setActiveSection(id);
+      setMobileMenuOpen(false);
+
+      // Reset URL
+      setTimeout(() => {
+        window.history.replaceState(null, "", "/");
+      }, 800);
     } else {
-      // Mobile: scrollIntoView but leave some space for sticky header
-
-      const yOffset =
-        section.getBoundingClientRect().top +
-        window.scrollY -
-        navbarHeight +
-        40;
-      window.scrollTo({ top: yOffset, behavior: "smooth" });
-      // Or use scrollIntoView if you want natural positioning
-      // section.scrollIntoView({ top: yOffset, behavior: "smooth" });
+      window.location.href = `/#${id}`;
     }
-
-    setActiveSection(id);
-    setMobileMenuOpen(false);
-
-    // Reset URL
-    setTimeout(() => {
-      window.history.replaceState(null, "", "/");
-    }, 800);
   };
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
+
+  // updates context + localStorage automatically
   const selectLanguage = (lang) => {
-    setLanguage(lang);
-    localStorage.setItem("preferredLanguage", lang);
+    updateLanguage(lang);
     setDropdownOpen(false);
     setMobileMenuOpen(false);
   };
-
-  // Detect language dynamically
-  useEffect(() => {
-    const detectLanguage = async () => {
-      // 1️⃣ Check localStorage first
-      const savedLang = localStorage.getItem("preferredLanguage");
-      if (savedLang) {
-        setLanguage(savedLang);
-        return;
-      }
-
-      try {
-        // 2️⃣ GeoIP API
-        const res = await fetch("https://ipapi.co/json/");
-        const data = await res.json();
-        let lang = "EN-IN";
-        if (data.country_code === "AU") lang = "EN-AU";
-        else if (data.country_code === "IN") lang = "EN-IN";
-        setLanguage(lang);
-      } catch (error) {
-        // 3️⃣ Fallback to browser language
-        const browserLang = navigator.language || navigator.userLanguage;
-        if (browserLang.includes("en-AU")) setLanguage("EN-AU");
-        else setLanguage("EN-IN");
-      }
-    };
-
-    detectLanguage();
-  }, []);
 
   return (
     <header className="sticky top-0 left-0 w-full bg-white backdrop-blur-md border-b border-orange-500 shadow-sm z-50">
@@ -245,7 +197,10 @@ const Header = () => {
                   onClick={toggleDropdown}
                 >
                   <FaGlobe className="text-orange-500" size={18} />
-                  <span className="truncate text-orange-500">{language}</span>
+                  <span className="truncate text-orange-500">
+                    {" "}
+                    {language || "Detecting..."}
+                  </span>
                 </button>
                 {dropdownOpen && (
                   <div className="absolute right-0 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">

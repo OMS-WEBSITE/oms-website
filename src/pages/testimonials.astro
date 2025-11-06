@@ -1,5 +1,3 @@
-
-
 ---
 import Layout from '../layouts/main.astro';
 import Header from '@/components/layout/Header';
@@ -13,12 +11,12 @@ import { Button } from '@/components/ui/button';
 
   <main>
     {/* Hero Section */}
-    <section class="bg-gradient-to-b from-indigo-50 to-white py-20">
+    <section class="bg-gradient-to-b from-indigo-50 to-white py-16 sm:py-20">
       <div class="container mx-auto max-w-7xl px-4 text-center">
-        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
           🌍 Chosen by Accredited NDT Teams
         </h1>
-        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+        <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
           Working with LMATS, IXT, OMS Engineering, SWA Inspection, and others. <br />
           References available on request.
         </p>
@@ -26,9 +24,9 @@ import { Button } from '@/components/ui/button';
     </section>
 
     {/* Client Testimonials */}
-    <section class="py-16">
+    <section class="py-12 sm:py-16">
       <div class="container mx-auto max-w-7xl px-4">
-        <div class="grid md:grid-cols-2 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8">
           <TestimonialCard
             quote="Before OMS, we used Excel for everything. Now, every report, calibration record, and asset detail is in one place. Preparing for NABL audits has become faster and easier."
             author="R. Mehta"
@@ -64,12 +62,12 @@ import { Button } from '@/components/ui/button';
     </section>
 
     {/* Global Testimonials */}
-    <section class="py-16 bg-gray-50">
+    <section class="py-12 sm:py-16 bg-gray-50">
       <div class="container mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-8 sm:mb-12 text-center">
           Trusted by Labs Worldwide
         </h2>
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           <TestimonialCard
             quote="OMS Software made our NDT workflows seamless. Reports are standardized, verified, and traceable - a must for any ISO/IEC 17025-accredited lab."
             author="S. D’Souza"
@@ -105,19 +103,19 @@ import { Button } from '@/components/ui/button';
     </section>
 
     {/* CTA Section */}
-    <section class="py-16 bg-gradient-to-r from-orange-100 to-blue-100">
+    <section class="py-12 sm:py-16 bg-gradient-to-r from-orange-100 to-blue-100">
       <div class="container mx-auto max-w-7xl px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">
           Ready to Transform Your Lab Operations?
         </h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+        <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto">
           Join top NDT and calibration teams who trust OMS to manage testing, inspection, and compliance with confidence.
         </p>
-        <div class="flex justify-center gap-4">
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+        <div class="flex flex-col sm:flex-row justify-center gap-4">
+          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white w-full sm:w-auto">
             Request a Demo
           </Button>
-          <Button size="lg" variant="outline">
+          <Button size="lg" variant="outline" class="w-full sm:w-auto">
             Talk to an Expert
           </Button>
         </div>
@@ -125,5 +123,5 @@ import { Button } from '@/components/ui/button';
     </section>
   </main>
 
-  <Footer />
+  <Footer client:load />
 </Layout>

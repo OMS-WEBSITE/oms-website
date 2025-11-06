@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from "react";
-import { FaComments, FaWhatsapp, FaEnvelope, FaLink } from "react-icons/fa";
+import { FaWhatsapp, FaEnvelope, FaLink } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext";
+
 
 const QuickConnect = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [animate, setAnimate] = useState(true); // controls bounce on first load
+  const { language } = useLanguage(); // get detected language
+  
 
   const togglePopup = () => setIsOpen(!isOpen);
 
@@ -11,6 +15,18 @@ const QuickConnect = () => {
     const timer = setTimeout(() => setAnimate(false), 2000); // slightly longer
     return () => clearTimeout(timer);
   }, []);
+
+  // if (!language || language === "Detecting...") return null;
+
+  console.log("before normalize", language);
+  const lang = language?.toLowerCase() || "";
+
+  console.log("after normalize", lang);
+
+  const isIndia = lang === "en-in";
+  console.log("is india",isIndia);
+  const isAustralia = lang === "en-au";
+  console.log("is aus",isAustralia);
 
   return (
     <>
@@ -81,25 +97,83 @@ const QuickConnect = () => {
             </p>
 
             <div className="flex flex-col gap-3">
+              {/* <div className="flex flex-col items-center bg-gray-50 p-3 rounded-xl shadow-inner">
+                <p className="text-gray-700 mb-2 text-sm sm:text-base">
+                  Scan QR to WhatsApp
+                </p>
+
+                <img
+                  src="/whatsappQR1.jpg" // replace with your QR code image
+                  alt="WhatsApp QR Code"
+                  className="w-24 h-24 sm:w-32 sm:h-32 rounded"
+                />
+              </div> */}
+
               {/* WhatsApp Button */}
-              <a
+              {/* <a
                 href="https://wa.me/917829810381"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-green-600 transition text-sm sm:text-base"
               >
                 <FaWhatsapp size={20} /> WhatsApp
-              </a>
+              </a> */}
 
               {/* Email Button */}
-              <a
+              {/* <a
                 href="https://mail.google.com/mail/?view=cm&fs=1&to=jayant@omssoftware.com.au&su=Quick%20Connect%20Inquiry&body=Hi%20Jayant,"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
               >
                 <FaEnvelope size={20} /> Email
-              </a>
+              </a> */}
+
+              {isIndia && (
+                <>
+                  {/* WhatsApp QR */}
+                  <div className="flex flex-col items-center bg-gray-50 p-3 rounded-xl shadow-inner">
+                    <p className="text-gray-700 mb-2 text-sm sm:text-base">
+                      Scan QR to WhatsApp
+                    </p>
+                    <img
+                      src="/whatsappQR1.jpg"
+                      alt="WhatsApp QR Code"
+                      className="w-24 h-24 sm:w-32 sm:h-32 rounded"
+                    />
+                  </div>
+
+                  {/* WhatsApp Button */}
+                  <a
+                    href="https://wa.me/917829810381"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-green-600 transition text-sm sm:text-base"
+                  >
+                    <FaWhatsapp size={20} /> WhatsApp
+                  </a>
+
+                  {/* Email Button */}
+                  <a
+                    href="mailto:jayant@omssoftware.com.au?subject=Quick Connect Inquiry&body=Hi Jayant,"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
+                  >
+                    <FaEnvelope size={20} /> Email
+                  </a>
+                </>
+              )}
+              {isAustralia && (
+                <a
+                  href="mailto:systems@omssoftware.com.au?subject=Quick Connect Inquiry&body=Hi OMS,"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
+                >
+                  <FaEnvelope size={20} /> Email
+                </a>
+              )}
             </div>
 
             {/* Close Button */}

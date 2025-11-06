@@ -1,10 +1,10 @@
 ---
 import '../styles/global.css';
 import partytown from '@astrojs/partytown';
-import QuickConnect from "../components/ui/QuickConnect.jsx";
 import StructuredData from "../components/StructuredData.astro";
-
-
+import { useLanguage } from "@/context/LanguageContext";
+import { LanguageProvider } from "@/context/LanguageContext";
+import QuickConnect from "../components/ui/QuickConnect.jsx";
 
 // Default SEO values
 const {
@@ -71,7 +71,9 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 		<StructuredData />
 	</head>
 	<body>
-		<slot />
-		<QuickConnect client:load /> <!-- Floating Button (stays across all pages) -->
-	</body>
+	    <LanguageProvider>
+			<slot />
+			<QuickConnect client:load />
+		</LanguageProvider>
+</body>
 </html>

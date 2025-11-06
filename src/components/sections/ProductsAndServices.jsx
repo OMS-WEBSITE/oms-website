@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
+import { FaArrowLeft } from "react-icons/fa";
 
 const ProductsAndService = () => {
   const navItems = [
@@ -196,46 +197,6 @@ const ProductsAndService = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [ignoreAutoClose]);
 
-  // not using
-  // useEffect(() => {
-  //   const pendingSubSection = sessionStorage.getItem("pendingSubSection");
-  //   if (!pendingSubSection) return;
-
-  //   sessionStorage.removeItem("pendingSubSection");
-
-  //   const scrollToMain = () => {
-  //     const mainSection = document.getElementById("productsandservice");
-  //     if (mainSection) {
-  //       const yOffset = -80;
-  //       const y =
-  //         mainSection.getBoundingClientRect().top +
-  //         window.pageYOffset +
-  //         yOffset;
-  //       window.scrollTo({ top: y, behavior: "smooth" });
-  //       console.log("🟢 Products & Services section found, scrolling...");
-  //       return true;
-  //     }
-  //     return false;
-  //   };
-
-  //   // Wait for the section to appear
-  //   if (!scrollToMain()) {
-  //     const observer = new MutationObserver(() => {
-  //       if (scrollToMain()) observer.disconnect();
-  //     });
-  //     observer.observe(document.body, { childList: true, subtree: true });
-  //   }
-
-  //   // Fire the custom event slightly after scroll
-  //   setTimeout(() => {
-  //     const event = new CustomEvent("activateProductSubSection", {
-  //       detail: { label: pendingSubSection },
-  //     });
-  //     window.dispatchEvent(event);
-  //     console.log("🟢 Fired activateProductSubSection for:", pendingSubSection);
-  //   }, 1000);
-  // }, []);
-
   return (
     <section id="productsandservice" className="min-h-screen bg-gray-50 pt-5">
       {/* Header */}
@@ -282,10 +243,18 @@ const ProductsAndService = () => {
         >
           <button
             onClick={() => setActiveItem(null)}
-            className="mb-4 text-orange-600 font-medium"
+            className="flex items-center mb-4 text-orange-600 font-medium space-x-2"
           >
-            ← Back
+            <FaArrowLeft className="w-4 h-4" /> {/* Icon */}
+            <span>Back</span> {/* Optional text */}
+            {activeItem && (
+              <span className="text-orange-600 font-bold pl-2">
+                {" "}
+                {activeItem}
+              </span>
+            )}
           </button>
+
           {sectionList.map((mini, idx) => (
             <button
               key={idx}
@@ -305,14 +274,16 @@ const ProductsAndService = () => {
         >
           <button
             onClick={() => setExpandedSection(null)}
-            className="mb-4 text-orange-600 font-medium"
+            className="flex items-center mb-4 text-orange-600 font-medium space-x-2"
           >
-            ← Back
+            <FaArrowLeft className="w-4 h-4" /> {/* Icon */}
+            <span>Back</span>
+            {expandedSection !== null && (
+              <span className="text-orange-600 font-bold pl-2">
+                {sectionList[expandedSection]?.heading}
+              </span>
+            )}
           </button>
-
-          <h2 className="text-xl font-semibold text-gray-800 mb-3">
-            {sectionList[expandedSection]?.heading}
-          </h2>
 
           <div className="text-gray-700 space-y-3 leading-relaxed">
             {sectionList[expandedSection]?.content.map((block, idx) => {

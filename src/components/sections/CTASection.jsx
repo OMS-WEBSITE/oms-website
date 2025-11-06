@@ -1,25 +1,31 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 
 const CTASection = () => {
   return (
-    <div className="py-16 bg-gradient-to-r from-orange-100 to-blue-100">
-      <div className="container mx-auto max-w-7xl text-center">
-        <h2 className="text-3xl font-bold text-gray-800 mb-6">
-          The only{' '}
+    <div className="py-12 sm:py-16 bg-gradient-to-r from-orange-100 to-blue-100">
+      <div className="container mx-auto max-w-3xl text-center px-4">
+        {/* Heading */}
+        <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">
+          The only{" "}
           <span className="marker-underline">complete audit solution</span>
         </h2>
-        
-        <p className="text-lg text-gray-700 mb-8 max-w-3xl mx-auto">
-          Since 2015, over 4,000 organizations have used OMS Software to find and win more audit opportunities, empowering them to expand their impact on critical missions such as evaluating cybersecurity measures, ensuring data protection, and improving IT security standards.
+
+        {/* Description */}
+        <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8">
+          Since 2015, over 4,000 organizations have used OMS Software to find
+          and win more audit opportunities, empowering them to expand their
+          impact on critical missions such as evaluating cybersecurity measures,
+          ensuring data protection, and improving IT security standards.
         </p>
-        
-        <div className="flex flex-col sm:flex-row justify-center gap-4 max-w-xl mx-auto">
-          <input 
-            type="email" 
-            placeholder="Enter your work email address" 
-            className="px-4 py-3 rounded-md border border-gray-300 flex-grow"
+
+        {/* Input + Button */}
+        <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-xl mx-auto">
+          <input
+            type="email"
+            placeholder="Enter your work email address"
+            className="px-4 py-3 rounded-md border border-gray-300 flex-grow w-full sm:w-auto h-12 sm:h-12 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
           />
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3">
+          <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 w-full sm:w-auto h-12 sm:h-12">
             Start your free trial
           </Button>
         </div>
