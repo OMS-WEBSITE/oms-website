@@ -9,9 +9,7 @@ import {
   FaPhone,
   FaInstagram,
   FaEnvelope,
-  FaMapMarkerAlt,
 } from "react-icons/fa";
-import { SiGooglemaps } from "react-icons/si";
 import { useLanguage } from "@/context/LanguageContext"; // using context
 
 const Footer = () => {
