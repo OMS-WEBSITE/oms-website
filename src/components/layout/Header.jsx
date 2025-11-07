@@ -93,6 +93,7 @@ const Header = () => {
         window.history.replaceState(null, "", "/");
       }, 800);
     } else {
+      // window.location.href = `/#${id}`;
       window.location.href = `/#${id}`;
     }
   };

@@ -3,8 +3,7 @@ import '../styles/global.css';
 import partytown from '@astrojs/partytown';
 import StructuredData from "../components/StructuredData.astro";
 import { useLanguage } from "@/context/LanguageContext";
-import { LanguageProvider } from "@/context/LanguageContext";
-import QuickConnect from "../components/ui/QuickConnect.jsx";
+import LanguageWrapper from "../context/LanguageWrapper.jsx";
 
 // Default SEO values
 const {
@@ -71,9 +70,7 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 		<StructuredData />
 	</head>
 	<body>
-	    <LanguageProvider>
 			<slot />
-			<QuickConnect client:load />
-		</LanguageProvider>
+ <LanguageWrapper client:load />		
 </body>
 </html>

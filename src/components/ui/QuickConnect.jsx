@@ -2,12 +2,10 @@ import React, { useState, useEffect } from "react";
 import { FaWhatsapp, FaEnvelope, FaLink } from "react-icons/fa";
 import { useLanguage } from "@/context/LanguageContext";
 
-
 const QuickConnect = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [animate, setAnimate] = useState(true); // controls bounce on first load
   const { language } = useLanguage(); // get detected language
-  
 
   const togglePopup = () => setIsOpen(!isOpen);
 
@@ -24,20 +22,14 @@ const QuickConnect = () => {
   console.log("after normalize", lang);
 
   const isIndia = lang === "en-in";
-  console.log("is india",isIndia);
+  console.log("is india", isIndia);
   const isAustralia = lang === "en-au";
-  console.log("is aus",isAustralia);
+  console.log("is aus", isAustralia);
 
   return (
     <>
       {/* Floating Quick Connect Button */}
       <div className="fixed bottom-5 right-4 sm:bottom-6 sm:right-2 z-50 group flex flex-col items-center">
-        {/* Tooltip */}
-        <span className="hidden sm:block relative mb-2 bg-gray-800 text-white text-sm px-3 py-1 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-          Connect with us
-          <span className="absolute left-1/2 -bottom-1 w-2 h-2 bg-gray-800 rotate-45 transform -translate-x-1/2"></span>
-        </span>
-
         <button
           onClick={togglePopup}
           className="relative flex items-center justify-center w-11 h-11 sm:w-16 sm:h-16 md:h-18 md:w-18 
