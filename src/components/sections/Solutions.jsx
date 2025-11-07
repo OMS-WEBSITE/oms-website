@@ -992,7 +992,7 @@ const Solutions = () => {
               className="bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden"
             >
               {/* Accordion Header */}
-              <button
+              {/* <button
                 onClick={() => toggleSection(index)}
                 className="w-full flex justify-between items-center px-4 sm:px-5 py-3 sm:py-4 text-left text-base sm:text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors curs"
               >
@@ -1002,6 +1002,28 @@ const Solutions = () => {
                     - {section.tagline}
                   </span>
                 </span>
+                <span className="text-orange-500 text-xl sm:text-2xl">
+                  {expandedSection === index ? (
+                    <FiChevronUp />
+                  ) : (
+                    <FiChevronDown />
+                  )}
+                </span>
+              </button> */}
+
+              <button
+                onClick={() => toggleSection(index)}
+                className="w-full flex justify-between items-center px-4 sm:px-5 py-3 sm:py-4 text-left text-base sm:text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors"
+              >
+                {/* Title + Tagline */}
+                <span className="flex items-center space-x-1 text-orange-500">
+                  <span className="font-semibold">{section.title}</span>
+                  <span className="font-normal hidden sm:inline">
+                    - {section.tagline}
+                  </span>
+                </span>
+
+                {/* Icon */}
                 <span className="text-orange-500 text-xl sm:text-2xl">
                   {expandedSection === index ? (
                     <FiChevronUp />
