@@ -81,8 +81,6 @@ const Header = () => {
           navbarHeight +
           40;
         window.scrollTo({ top: yOffset, behavior: "smooth" });
-        // Or use scrollIntoView if you want natural positioning
-        // section.scrollIntoView({ top: yOffset, behavior: "smooth" });
       }
 
       setActiveSection(id);

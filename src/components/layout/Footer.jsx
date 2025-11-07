@@ -165,7 +165,7 @@ const Footer = () => {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="space-y-3"
           >
-            <h3 className="text-lg font-semibold text-gray-800 mb-3 border-l-0 sm:border-l-4 border-orange-500 pl-3">
+            <h3 className="text-lg font-semibold text-gray-800 mb-3 border-l-0 sm:border-l-4 border-orange-500 md:pl-3 sm:pl-3">
               Contact
             </h3>
 

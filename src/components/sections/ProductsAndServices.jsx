@@ -92,7 +92,7 @@ const ProductsAndService = () => {
           setIgnoreAutoClose(false);
         }, 1000); // 1 second delay
         setActiveItem(matchedLabel);
-        console.log("matcheddddddddddddddddddddddddddddddddddddddddd");
+        console.log("matched");
         // Step 3: Wait for section to expand, then scroll
         setTimeout(() => {
           const sectionEl = document.getElementById(id);
@@ -106,7 +106,6 @@ const ProductsAndService = () => {
               navbarHeight -
               60;
 
-            console.log("yahhhhhhhhhhhhhhhhhh");
             window.scrollTo({ top: yOffset, behavior: "smooth" });
           } else {
             console.warn(`⚠️ No element found with id="${id}"`);
@@ -333,16 +332,41 @@ const ProductsAndService = () => {
                 className="mb-6 border border-gray-200 bg-white rounded-lg shadow-md overflow-hidden"
               >
                 {/* === Main Tab === */}
+
                 <button
-                  onClick={() =>
-                    setActiveItem((prev) =>
-                      prev === mainLabel ? null : mainLabel
-                    )
-                  }
-                  className="w-full text-left text-xl font-semibold text-orange-500 px-5 py-4 flex justify-between items-center hover:bg-orange-50 transition"
+                  onClick={() => {
+                    const isActive = activeItem === mainLabel;
+                    const newActive = isActive ? null : mainLabel;
+                    setActiveItem(newActive);
+
+                    // Only scroll if opening (not collapsing)
+                    if (!isActive) {
+                      setTimeout(() => {
+                        const sectionEl = document.getElementById(
+                          mainLabel.toLowerCase().replace(/\s+/g, "")
+                        );
+                        if (sectionEl) {
+                          const navbar = document.querySelector("nav");
+                          const navbarHeight = navbar ? navbar.offsetHeight : 0;
+                          const yOffset =
+                            sectionEl.getBoundingClientRect().top +
+                            window.scrollY -
+                            navbarHeight -
+                            60; // adjust for extra spacing if needed
+                          window.scrollTo({ top: yOffset, behavior: "smooth" });
+                        } else {
+                          console.warn(
+                            `⚠️ No element found with id="${mainLabel}"`
+                          );
+                        }
+                      }, 200); // small delay to match expansion animation
+                    }
+                  }}
+                  className="w-full text-left text-xl px-5 py-4 flex justify-between items-center hover:bg-orange-50 transition"
                 >
-                  <span>
-                    {mainLabel} - {mainContent.title}
+                  <span className="flex items-center space-x-1 text-orange-500">
+                    <span className="font-semibold">{mainLabel}</span>
+                    <span className="font-normal">- {mainContent.title}</span>
                   </span>
 
                   <FiChevronDown

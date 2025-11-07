@@ -12,12 +12,6 @@ const Utility = () => {
 
   const toggleDropdown = () => setDropdownOpen(!dropdownOpen);
 
-  // const selectLanguage = (lang) => {
-  //   localStorage.setItem("preferredLanguage", lang);
-  //   window.location.reload(); // ✅ reload to reflect new language globally
-  //   setDropdownOpen(false);
-  // };
-
   const selectLanguage = (lang) => {
     updateLanguage(lang); // updates context + localStorage automatically
   };

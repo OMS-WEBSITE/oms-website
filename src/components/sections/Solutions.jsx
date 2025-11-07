@@ -7,8 +7,9 @@ const Solutions = () => {
   const sections = [
     {
       id: "nabl-lab-verification",
-      title:
-        "NABL ULR + QR Verification - Ensure every report is authentic, traceable, and verifiable online.",
+      title: "NABL ULR + QR Verification",
+      tagline:
+        "Ensure every report is authentic, traceable, and verifiable online.",
       content: (
         <>
           <p>
@@ -190,8 +191,9 @@ const Solutions = () => {
     },
     {
       id: "quality-management-documents",
-      title:
-        "Quality Management Documents - Version-controlled policies, procedures, and records in one repository.",
+      title: "Quality Management Documents",
+      tagline:
+        "Version-controlled policies, procedures, and records in one repository.",
       content: (
         <>
           <p>
@@ -267,8 +269,9 @@ const Solutions = () => {
     },
     {
       id: "Job Test Record Management",
-      title:
-        "Job Test Record Management - Full traceability from sample registration to certificate issuance.",
+      title: "Job Test Record Management",
+      tagline:
+        "Full traceability from sample registration to certificate issuance.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -366,8 +369,9 @@ const Solutions = () => {
     },
     {
       id: "client-management",
-      title:
-        "Client Management Portal - Clients raise requests, upload data, and download verified reports.",
+      title: "Client Management Portal",
+      tagline:
+        "Clients raise requests, upload data, and download verified reports.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -448,8 +452,8 @@ const Solutions = () => {
     },
     {
       id: "specifications",
-      title:
-        "Specifications Database - Keep reference standards and acceptance limits up-to-date.",
+      title: "Specifications Database",
+      tagline: "Keep reference standards and acceptance limits up-to-date.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -551,8 +555,8 @@ const Solutions = () => {
     },
     {
       id: "asset-management",
-      title:
-        "Asset Management - Equipment inventory with calibration and service alerts.",
+      title: "Asset Management",
+      tagline: "Equipment inventory with calibration and service alerts.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -648,8 +652,8 @@ const Solutions = () => {
     },
     {
       id: "employee-management",
-      title:
-        "Employee Management - Track competencies, approvals, and workload distribution.",
+      title: "Employee Management",
+      tagline: "Track competencies, approvals, and workload distribution.",
       content: (
         <>
           <p className="mb-3">
@@ -710,8 +714,8 @@ const Solutions = () => {
     },
     {
       id: "accounting-finance",
-      title:
-        "Accounting Finance - Seamless quote-to-cash cycle and project cost tracking.",
+      title: "Accounting Finance",
+      tagline: "Seamless quote-to-cash cycle and project cost tracking.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -785,6 +789,7 @@ const Solutions = () => {
     {
       id: "swms-jsa",
       title: "Safe Work Method Statement (SWMS) / Job Safety Analysis (JSA)",
+      tagline: "Digitize and track SWMS/JSA with risk scoring and sign-offs.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -867,6 +872,7 @@ const Solutions = () => {
     {
       id: "wps-registry",
       title: "Welding Procedure Specification (WPS) Registry",
+      tagline: "Manage and track WPS, PQR, and WQR in one place.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -962,29 +968,6 @@ const Solutions = () => {
     }
   };
 
-  // useEffect(() => {
-  //   const handleScroll = () => {
-  //     if (expandedSection === null) return;
-
-  //     const solutionsSection = document.getElementById("solutions");
-  //     if (!solutionsSection) return;
-
-  //     const rect = solutionsSection.getBoundingClientRect();
-  //     const navbarHeight = 80;
-
-  //     // If the entire solutions section is out of view
-  //     if (rect.bottom < navbarHeight || rect.top > window.innerHeight) {
-  //       setExpandedSection(null);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll, { passive: true });
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, [expandedSection]);
-
   return (
     <section
       id="solutions"
@@ -1013,7 +996,12 @@ const Solutions = () => {
                 onClick={() => toggleSection(index)}
                 className="w-full flex justify-between items-center px-4 sm:px-5 py-3 sm:py-4 text-left text-base sm:text-lg font-semibold text-gray-800 hover:bg-orange-50 transition-colors curs"
               >
-                <span className="pr-3 text-orange-500">{section.title}</span>
+                <span className="flex items-center space-x-1 text-orange-500">
+                  <span className="font-semibold">{section.title}</span>
+                  <span className="font-normal hidden ">
+                    - {section.tagline}
+                  </span>
+                </span>
                 <span className="text-orange-500 text-xl sm:text-2xl">
                   {expandedSection === index ? (
                     <FiChevronUp />

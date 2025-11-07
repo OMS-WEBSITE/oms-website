@@ -133,17 +133,6 @@ export const contentMap = {
             type: "paragraph",
             text: "Download ready-to-present charts and tables in seconds for meetings, reviews, or audits.",
           },
-          // {
-          //   type: "images",
-          //   items: [
-          //     "/images/Sales-REPORT-BY-bRANCH.png",
-          //     ,
-          //     "",
-          //     "",
-          //     "/images/Sales-Report-by-Financial-year.png",
-          //     "",
-          //   ],
-          // },
           {
             type: "list",
             items: ["By Branch: Compare performance across sites or regions"],
@@ -573,19 +562,8 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Thank you for visiting,",
+            text: "Keep your books clean and your cashflow clear. The Unallocated Payments feature helps your team quickly identify and resolve customer payments that haven’t yet been matched to an invoice.",
           },
-          {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
-          },
-          {
-            type: "paragraph",
-            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
-          },
-
-          // need to updated later
-
           {
             type: "list",
             items: ["Cheque Payments & Summary"],
@@ -1023,11 +1001,7 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting. This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
-          },
-          {
-            type: "paragraph",
-            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            text: " Maintain accurate profiles for each supplier, including contacts, terms, and compliance details.",
           },
         ],
       },
@@ -1036,11 +1010,7 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting. This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
-          },
-          {
-            type: "paragraph",
-            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            text: "Create, approve, and track POs against jobs, projects, or cost centres.",
           },
         ],
       },
@@ -1049,11 +1019,7 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting. This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
-          },
-          {
-            type: "paragraph",
-            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            text: "Upload supplier bills, attach them to POs, and reconcile quantities and values.",
           },
         ],
       },
@@ -1129,12 +1095,17 @@ export const contentMap = {
         heading: "Quotation Management",
         content: [
           {
-            type: "list",
-            items: ["Thank you for visiting"],
+            type: "paragraph",
+            text: "Turn enquiries into revenue with a structured quotation process. Quotation Management helps you standardise pricing, respond faster, and maintain a clear history of every proposal.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "Centralised quotes – Store all quotations in one place, linked to clients, contacts, and jobs.",
+              "Template-based pricing – Use predefined templates for common tests, services, and packages.",
+              "Status tracking – Monitor quotes as Draft, Sent, Accepted, or Rejected to keep your pipeline visible.",
+              "Seamless handover – Convert accepted quotes into jobs or work orders with minimal re-entry.",
+            ],
           },
         ],
       },
@@ -1270,15 +1241,14 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting",
+            text: "Configure the platform to match the way your business operates. System Configuration gives administrators control over key codes and visual assets used throughout the system.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
-          },
-          {
-            type: "paragraph",
-            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "System code management – Define and maintain codes for departments, test types, cost centres, and more.",
+              "Consistent naming – Enforce naming standards to keep reporting and navigation clean and intuitive.",
+            ],
           },
         ],
       },
@@ -1286,16 +1256,11 @@ export const contentMap = {
         heading: "System Images",
         content: [
           {
-            type: "paragraph",
-            text: "Thank you for visiting",
-          },
-          {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible.",
-          },
-          {
-            type: "paragraph",
-            text: "In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "System images – Manage logos, document headers, and other visual elements used in reports and portals.",
+              "Controlled access – Restrict configuration changes to authorised users to protect data integrity.",
+            ],
           },
         ],
       },
@@ -1521,11 +1486,14 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting",
+            text: "Set up and maintain the structure of your quality management environment.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "Define roles, permissions, and approval flows.",
+              "Control access to sensitive quality documentation.",
+            ],
           },
         ],
       },
@@ -1534,11 +1502,14 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting",
+            text: "Standardise how test data is captured and reported.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "Configure test record templates by method or standard.",
+              "Ensure consistent fields, units, and result structures across the lab.",
+            ],
           },
         ],
       },
@@ -1547,11 +1518,14 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting",
+            text: "Centralise your Occupational Health, Safety & Environment documentation.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "Store and manage safety procedures, risk assessments, and guidelines.",
+              "Track revisions and approvals for audit-ready compliance.",
+            ],
           },
         ],
       },
@@ -1560,11 +1534,14 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting",
+            text: "Maintain a single source of truth for operational procedures.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "Publish controlled versions of SOPs to relevant teams.",
+              "Track changes over time with full revision history.",
+            ],
           },
         ],
       },
@@ -1573,11 +1550,14 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting",
+            text: "Manage the full library of controlled formats used in your organisation.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "Catalogue all official forms, templates, and controlled documents.",
+              "Group formats by department, function, or standard.",
+            ],
           },
         ],
       },
@@ -1586,11 +1566,14 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting",
+            text: "Give administrators tools to manage and govern all formats.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "Create, update, and retire formats under proper approval.",
+              "Assign owners and reviewers for each controlled document.",
+            ],
           },
         ],
       },
@@ -1599,11 +1582,14 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Thank you for visiting",
+            text: "Support day-to-day usage of approved formats.",
           },
           {
-            type: "paragraph",
-            text: "This is a new and exciting feature in the OMS platform, and we’re busy making this webpage available for you as soon as possible. In the meantime, follow us on LinkedIn for further updates on the exciting OMS software updates, or register for notifications and we’ll update you once information is available.",
+            type: "list",
+            items: [
+              "Allow users to access the latest approved versions only.",
+              "Reduce the risk of outdated or unofficial documents being used.",
+            ],
           },
         ],
       },
@@ -1664,31 +1650,22 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "Pressure Equipment",
+            text: "Provide your clients with full transparency of their assets and equipment history. The Client Asset Register keeps all asset information in one structured, searchable place.",
           },
           {
-            type: "paragraph",
-            text: "We are currently working on some exciting new features in the OMS platform.",
-          },
-          {
-            type: "paragraph",
-            text: "Check back later for further updates or contact us for an obligation free demonstration.",
+            type: "list",
+            items: [
+              "Assign an asset to a staff member",
+              "Send reminders for scheduled maintenance",
+              "Send reminders for registration renewal",
+              "Centralised asset records – Store key details such as ID, description, location, owner, and status.",
+              "Service & calibration history – View complete test, inspection, and calibration records for each asset.",
+              "Link to jobs & reports – Connect assets directly to work orders, and reports.",
+              "Client self-service – Enable clients to view and download asset information through a portal.",
+            ],
           },
         ],
       },
-      // {
-      //   heading: "Pressure Equipment",
-      //   content: [
-      //     {
-      //       type: "paragraph",
-      //       text: "We are currently working on some exciting new features in the OMS platform.",
-      //     },
-      //     {
-      //       type: "paragraph",
-      //       text: "Check back later for further updates or contact us for an obligation free demonstration.",
-      //     },
-      //   ],
-      // },
     ],
   },
 

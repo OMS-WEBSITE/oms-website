@@ -219,28 +219,12 @@ const VideoSection = () => {
                   </div>
                 </div>
                 {/*  Mobile Layout (stack vertically) */}
-                {/* <div className="flex flex-col items-center gap-3 md:hidden mt-6">
+                <div className="grid grid-cols-1 gap-4 md:hidden mt-25 px-10">
                   {features.map((feature, idx) => (
                     <div
                       key={idx}
                       onClick={() => handleClick(feature.id)}
-                      className="px-4 py-2 text-sm border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform hover:shadow-[0_0_20px_4px_rgba(138,43,226,0.8)]"
-                      style={{
-                        width: "80%",
-                        backgroundColor: "rgba(228, 228, 228, 0.8)",
-                        textAlign: "center",
-                      }}
-                    >
-                      {feature.label}
-                    </div>
-                  ))}
-                </div> */}
-                <div className="grid grid-cols-2 gap-2 md:hidden mt-2">
-                  {features.map((feature, idx) => (
-                    <div
-                      key={idx}
-                      onClick={() => handleClick(feature.id)}
-                      className="px-2 text-xs border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform hover:shadow-[0_0_10px_2px_rgba(138,43,226,0.6)]"
+                      className="px-2 pd-2 text-xs border border-white rounded-full text-white font-semibold feature-glow cursor-pointer hover:scale-105 transition-transform hover:shadow-[0_0_10px_2px_rgba(138,43,226,0.6)]"
                       style={{
                         backgroundColor: "rgba(228, 228, 228, 0.8)",
                         textAlign: "center",
@@ -258,7 +242,7 @@ const VideoSection = () => {
               <motion.div
                 key="redswan"
                 initial={{ opacity: 0, y: 30 }}
-                animate={{ opacity: 1, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: 30 }}
                 transition={{ duration: 1, ease: "easeInOut" }}
                 className="flex items-center justify-center w-full h-full bg-white/10 backdrop-blur-md px-4 sm:px-6 md:px-10 text-center"

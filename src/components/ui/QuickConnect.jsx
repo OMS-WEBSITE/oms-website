@@ -89,38 +89,6 @@ const QuickConnect = () => {
             </p>
 
             <div className="flex flex-col gap-3">
-              {/* <div className="flex flex-col items-center bg-gray-50 p-3 rounded-xl shadow-inner">
-                <p className="text-gray-700 mb-2 text-sm sm:text-base">
-                  Scan QR to WhatsApp
-                </p>
-
-                <img
-                  src="/whatsappQR1.jpg" // replace with your QR code image
-                  alt="WhatsApp QR Code"
-                  className="w-24 h-24 sm:w-32 sm:h-32 rounded"
-                />
-              </div> */}
-
-              {/* WhatsApp Button */}
-              {/* <a
-                href="https://wa.me/917829810381"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-green-600 transition text-sm sm:text-base"
-              >
-                <FaWhatsapp size={20} /> WhatsApp
-              </a> */}
-
-              {/* Email Button */}
-              {/* <a
-                href="https://mail.google.com/mail/?view=cm&fs=1&to=jayant@omssoftware.com.au&su=Quick%20Connect%20Inquiry&body=Hi%20Jayant,"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
-              >
-                <FaEnvelope size={20} /> Email
-              </a> */}
-
               {isIndia && (
                 <>
                   {/* WhatsApp QR */}
