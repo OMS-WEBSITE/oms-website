@@ -147,6 +147,7 @@ const Header = () => {
             src="/OMS Logo.jpg"
             alt="OMS logo"
             className="h-full w-auto transform scale-110 md:scale-125 transition-transform duration-300 hover:scale-125 md:hover:scale-135"
+            loading="lazy"
           />
         </a>
         {/* Desktop Navigation */}
@@ -213,12 +214,12 @@ const Header = () => {
               <Button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
                 Try 14 days free
               </Button>
-              <Button
+              {/* <Button
                 variant="outline"
                 className="border border-orange-500 text-orange-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 hover:text-white py-2 px-4 rounded-md shadow-sm hover:shadow-md transition-all duration-300"
               >
                 Login
-              </Button>
+              </Button> */}
               <div className="relative">
                 <button
                   className="flex items-center justify-center gap-2 p-2 rounded-full border border-gray-200 hover:bg-orange-50 transition-all duration-300 w-full"

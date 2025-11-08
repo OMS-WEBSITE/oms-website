@@ -23,8 +23,8 @@ const AuditProApp = () => {
     <LanguageProvider>
       <div className="min-h-screen bg-white">
         {/* Pass language state to Utility */}
-        <Utility />
-        <Header />
+        {/* <Utility /> */}
+        {/* <Header /> */}
         <main>
           <VideoSection />
           <ProductsAndService />
@@ -35,7 +35,7 @@ const AuditProApp = () => {
           <Support />
           <Partners />
         </main>
-        <Footer />
+        {/* <Footer /> */}
         {/* <QuickConnect client:load /> */}
       </div>
     </LanguageProvider>

@@ -79,7 +79,7 @@ const ResourceCard = ({
             )}
           </div>
 
-          {type === "blog" ? (
+          {/* {type === "blog" ? (
             <Button
               variant="outline"
               className="w-full sm:w-auto text-sm sm:text-base"
@@ -93,7 +93,7 @@ const ResourceCard = ({
             >
               Download PDF
             </Button>
-          )}
+          )} */}
         </div>
       </div>
     </div>

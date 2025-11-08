@@ -4,6 +4,7 @@ import partytown from '@astrojs/partytown';
 import StructuredData from "../components/StructuredData.astro";
 import { useLanguage } from "@/context/LanguageContext";
 import LanguageWrapper from "../context/LanguageWrapper.jsx";
+import ReactLayout from "../components/ReactLayout.jsx";
 
 // Default SEO values
 const {
@@ -73,7 +74,9 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 		<StructuredData />
 	</head>
 	<body>
-			<slot />
- <LanguageWrapper client:load />		
+		<ReactLayout client:load>
+		<slot />  <!-- Astro page content will go here -->
+		</ReactLayout>
+	</body>
 </body>
 </html>

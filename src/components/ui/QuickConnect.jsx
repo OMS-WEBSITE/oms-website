@@ -55,16 +55,15 @@ const QuickConnect = () => {
             </defs>
             <text
               fill="white"
-              fontSize="9"
+              fontSize="8"
               className="uppercase tracking-widest"
             >
               <textPath
                 href="#circlePath"
                 startOffset="0%"
                 method="align"
-                spacing="auto"
-              >
-                CONNECT • WITH • US • CONNECT • WITH • US •
+                // spacing="auto"
+              >— ONE CLICK, INSTANT REPLY  —  OMS SOFTWARE —
               </textPath>
             </text>
           </svg>
@@ -84,13 +83,22 @@ const QuickConnect = () => {
             <h2 className="text-lg sm:text-xl font-semibold mb-3 text-orange-500">
               Quick Connect
             </h2>
-            <p className="text-gray-500 mb-5 text-sm sm:text-base">
-              Choose how you’d like to connect with us:
-            </p>
+            {/* <p className="text-gray-500 mb-5 text-sm sm:text-base whitespace-pre-line">
+              We’d love to hear from you. Whether you want to schedule a product
+              demo, discuss your requirements, or ask a quick question — reach
+              out in the way that’s most convenient for you.
+            </p> */}
 
             <div className="flex flex-col gap-3">
-              {isIndia && (
+              {/* {isIndia && ( */}
+              {(isIndia || (!isIndia && !isAustralia)) && (
                 <>
+                  <p className="text-gray-500 mb-5 text-sm sm:text-base whitespace-pre-line">
+                    We’d love to hear from you. Whether you want to schedule a
+                    product demo, discuss your requirements, or ask a quick
+                    question — reach out in the way that’s most convenient for
+                    you.
+                  </p>
                   {/* WhatsApp QR */}
                   <div className="flex flex-col items-center bg-gray-50 p-3 rounded-xl shadow-inner">
                     <p className="text-gray-700 mb-2 text-sm sm:text-base">
@@ -103,9 +111,18 @@ const QuickConnect = () => {
                     />
                   </div>
 
-                  {/* WhatsApp Button */}
+                  {/* WhatsApp Button with Prefilled Message */}
                   <a
-                    href="https://wa.me/917829810381"
+                    href={`https://wa.me/917829810381?text=${encodeURIComponent(
+                      `Hi OMS Software team,
+    I would like to know more about OMS Software and request a demo.
+    Name:
+    Company:
+    City / Country:
+    Type of business: (NDT Lab / Calibration Lab / Fabrication / Inspection / Other)
+    Main interest: (Testing reports / Welding WPS–WQR / Calibration & assets / ERP & billing)
+    Preferred time for a call / demo:`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-green-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-green-600 transition text-sm sm:text-base"
@@ -115,7 +132,7 @@ const QuickConnect = () => {
 
                   {/* Email Button */}
                   <a
-                    href="mailto:jayant@omssoftware.com.au?subject=Quick Connect Inquiry&body=Hi Jayant,"
+                    href="mailto:jayant@omssoftware.com.au?subject=Quick%20Connect%20Inquiry&body=Hi%20OMS%20Software%20team,%0AI%20would%20like%20to%20know%20more%20about%20OMS%20Software%20and%20request%20a%20demo.%0A%0AName:%0ACompany:%0ACity%20/%20Country:%0AType%20of%20business:%20(NDT%20Lab%20/%20Calibration%20Lab%20/%20Fabrication%20/%20Inspection%20/%20Other)%0AMain%20interest:%20(Testing%20reports%20/%20Welding%20WPS–WQR%20/%20Calibration%20&%20assets%20/%20ERP%20&%20billing)%0APreferred%20time%20for%20a%20call%20/%20demo:"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
@@ -125,14 +142,21 @@ const QuickConnect = () => {
                 </>
               )}
               {isAustralia && (
-                <a
-                  href="mailto:systems@omssoftware.com.au?subject=Quick Connect Inquiry&body=Hi OMS,"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
-                >
-                  <FaEnvelope size={20} /> Email
-                </a>
+                <>
+                  <p className="text-gray-500 mb-5 text-sm sm:text-base whitespace-pre-line">
+                    We’d love to hear from you. Whether you want to schedule a
+                    product demo, discuss your requirements, or ask a quick
+                    question — please reach out via email.
+                  </p>
+                  <a
+                    href="mailto:systems@omssoftware.com.au?subject=Quick%20Connect%20Inquiry&body=Hi%20OMS%20Software%20team,%0AI%20would%20like%20to%20know%20more%20about%20OMS%20Software%20and%20request%20a%20demo.%0A%0AName:%0ACompany:%0ACity%20/%20Country:%0AType%20of%20business:%20(NDT%20Lab%20/%20Calibration%20Lab%20/%20Fabrication%20/%20Inspection%20/%20Other)%0AMain%20interest:%20(Testing%20reports%20/%20Welding%20WPS–WQR%20/%20Calibration%20&%20assets%20/%20ERP%20&%20billing)%0APreferred%20time%20for%20a%20call%20/%20demo:"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
+                  >
+                    <FaEnvelope size={20} /> Email
+                  </a>
+                </>
               )}
             </div>
 

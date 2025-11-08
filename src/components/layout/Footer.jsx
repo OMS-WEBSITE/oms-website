@@ -30,7 +30,7 @@ const Footer = () => {
     "EN-IN": {
       href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8463906383313!2d77.57476527484036!3d12.9175925873928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15006211cc43%3A0xd8fd6177f4784417!2sOMS-Business%20Digitalisation%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1762237270659!5m2!1sen!2sin",
       address:
-        "OMS Business Solutions, #32, 45th Cross, 8th Block, Jayanagar, Bengaluru - 560041.",
+        "#32 YEDLA, 4th Floor, 45th cross, 8th block, Jayanagar, Near Sangam Circle, Bengaluru – 560041",
       phone: "+91 7829810381",
       email: "jayant@omssoftware.com.au",
     },
@@ -42,7 +42,35 @@ const Footer = () => {
     },
   };
 
+  const affiliations = {
+    "EN-IN": {
+      title: "India – Affiliations",
+      description:
+        "OMS Software is proud to be associated with leading professional and accreditation bodies in India that uphold the highest standards of testing and inspection.",
+      items: [
+        "Member – Indian Society for Non-Destructive Testing (ISNT)",
+        "Aligned with – National Accreditation Board for Testing and Calibration Laboratories (NABL)",
+        "Supporting – ISO/IEC 17025 Accredited Laboratories",
+        "Industry Collaboration – QA/QC and Welding Associations across India",
+      ],
+      note: "These affiliations reinforce our commitment to digital transformation, compliance, and excellence in quality management for Indian laboratories and inspection companies.",
+    },
+    "EN-AU": {
+      title: "Australia – Affiliations",
+      description:
+        "In Australia, OMS Software aligns with nationally recognised organisations supporting testing, inspection, and welding industries.",
+      items: [
+        "Member – Australian Institute for Non-Destructive Testing (AINDT)",
+        "Member – Weld Australia",
+        "Compliant with ISO/IEC 17025 standards recognised by NATA (National Association of Testing Authorities)",
+        "Supporting – Accredited Testing, Calibration, and Inspection Laboratories across Australia",
+      ],
+      note: "These partnerships reflect our focus on advancing digital systems for laboratories, fabrication workshops, and inspection agencies operating under Australian standards.",
+    },
+  };
+
   const info = contactInfo[language] || contactInfo["EN-IN"];
+  const affiliation = affiliations[language] || affiliations["EN-IN"];
 
   const socials = [
     {
@@ -85,7 +113,7 @@ const Footer = () => {
         "Explore Organizations",
         "Explore Industries",
         "Best Practices",
-        "Help Center",
+        // "Help Center",
       ],
     },
     {
@@ -181,7 +209,7 @@ const Footer = () => {
               >
                 <img
                   src="/images/map2.png"
-                  alt="googlemap"
+                  alt="Map Icon"
                   className="w-5 h-5 sm:w-7 sm:h-7 md:w-7 md:h-7"
                 />
               </button>
@@ -194,7 +222,8 @@ const Footer = () => {
                 href={`tel:${info.phone}`}
                 className="mt-1 p-1 text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center
        hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
-                title="Call Us"
+                aria-label={`Call ${info.phone}`}
+                title={`Call ${info.phone}`}
               >
                 <FaPhone className="text-orange-500 w-4 h-4 sm:w-6 sm:h-6" />{" "}
               </a>
@@ -207,6 +236,7 @@ const Footer = () => {
                 href={`https://mail.google.com/mail/?view=cm&fs=1&to=${info.email}&su=Quick%20Connect%20Inquiry&body=Hi%20OMS,`}
                 className="mt-1 p-1 text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center
        hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
+                aria-label={`Send email to ${info.email}`}
                 title="Send Email"
                 target="_blank"
                 rel="noopener noreferrer"
@@ -270,23 +300,49 @@ const Footer = () => {
         />
 
         {/* Affiliations */}
+
+        {/* <motion.div key={language} initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }} className="text-left bg-white p-8 rounded-xl shadow-md">
+          <h2 className="text-2xl font-semibold mb-4">{affiliation.title}</h2>
+          <p className="text-gray-600 mb-4">{affiliation.description}</p>
+          <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
+            {affiliation.items.map((item, idx) => (
+              <li key={idx}>{item}</li>
+            ))}
+          </ul>
+          <p className="text-gray-600 italic">{affiliation.note}</p>
+        </motion.div> */}
         <motion.div
-          variants={fadeUp}
+          key={language}
           initial="hidden"
-          whileInView="visible"
-          transition={{ duration: 0.6 }}
-          className="text-center text-gray-700 text-sm leading-relaxed"
+          animate="visible"
+          variants={fadeUp}
+          transition={{ duration: 0.5 }}
+          // className="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto my-12 text-center"
+          className="text-center  p-8 rounded-xl "
         >
-          <p className="font-medium mb-1 text-gray-800">Affiliations:</p>
-          <p>
-            Member{" "}
-            <span className="font-semibold">
-              Indian Society for Non-Destructive Testing (ISNT)
-            </span>{" "}
-            |{" "}
-            <span className="font-semibold">
-              American Society for Nondestructive Testing (ASNT)
-            </span>
+          {/* Title */}
+          <h2 className="text-2xl font-semibold mb-6 text-gray-900 inline-block">
+            {affiliation.title}
+          </h2>
+
+          {/* Description */}
+          <p className="text-gray-600 mb-6 leading-relaxed">
+            {affiliation.description}
+          </p>
+
+          {/* List */}
+          <ul className="list-none flex flex-col items-center space-y-3 mb-6">
+            {affiliation.items.map((item, idx) => (
+              <li key={idx} className="flex items-center space-x-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span className="text-gray-700 font-semibold">{item}</span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Note */}
+          <p className="text-gray-600 italic leading-relaxed">
+            {affiliation.note}
           </p>
         </motion.div>
 
