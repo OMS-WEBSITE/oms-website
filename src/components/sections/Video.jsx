@@ -66,7 +66,6 @@ const VideoSection = () => {
     };
   }, []);
 
-  // 4/11 5:00
   useEffect(() => {
     if (!showFeatures) return;
 

@@ -105,6 +105,35 @@ const Header = () => {
     setMobileMenuOpen(false);
   };
 
+  useEffect(() => {
+    // If landing on page with #hash (e.g. #solutions)
+    if (window.location.hash) {
+      const hash = window.location.hash.substring(1);
+      const section = document.getElementById(hash);
+
+      // Wait a bit for React DOM to render
+      setTimeout(() => {
+        const target = document.getElementById(hash);
+        if (target) {
+          const navbar = document.querySelector("header");
+          const navbarHeight = navbar ? navbar.offsetHeight : 0;
+          const yOffset =
+            target.getBoundingClientRect().top +
+            window.scrollY -
+            navbarHeight +
+            40;
+
+          window.scrollTo({ top: yOffset, behavior: "smooth" });
+
+          // Remove hash from URL after 1.5s
+          setTimeout(() => {
+            window.history.replaceState(null, "", "/");
+          }, 1500);
+        }
+      }, 300); // small delay to ensure DOM is ready
+    }
+  }, []);
+
   return (
     <header className="sticky top-0 left-0 w-full bg-white backdrop-blur-md border-b border-orange-500 shadow-sm z-50">
       <div className="w-[90%] mx-auto py-4 flex items-center justify-between">

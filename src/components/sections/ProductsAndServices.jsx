@@ -197,7 +197,7 @@ const ProductsAndService = () => {
   }, [ignoreAutoClose]);
 
   return (
-    <section id="productsandservice" className="min-h-screen bg-gray-50 pt-5">
+    <section id="productsandservice" className="min-h-screen bg-gray-50">
       {/* Header */}
       <div className="pt-20">
         <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-center text-gray-800 mb-4 sm:mb-6">
@@ -466,17 +466,6 @@ const ProductsAndService = () => {
                                     {block.text}
                                   </p>
                                 );
-
-                              // if (item.type === "heading") {
-                              //   return (
-                              //     <h4
-                              //       key={idx}
-                              //       className="text-lg font-semibold mt-4 text-white"
-                              //     >
-                              //       {item.text}
-                              //     </h4>
-                              //   );
-                              // }
 
                               if (block.type === "list")
                                 return (

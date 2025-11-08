@@ -45,14 +45,14 @@ const Utility = () => {
     <div className="hidden md:flex w-full bg-gray-100 border-b border-gray-200 shadow-sm z-40">
       <div className="w-[90%] mx-auto h-[50px] flex justify-end items-center space-x-4 px-4">
         {/* Try Free Button */}
-        <Button className="bg-gradient-to-r from-[#ea885e] to-[#fe781f] hover:from-orange-600 hover:to-orange-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
+        <Button className="hover:cursor-pointer bg-gradient-to-r from-[#ea885e] to-[#fe781f] hover:from-orange-600 hover:to-orange-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
           Try 14 days free
         </Button>
 
         {/* Login Button */}
         <Button
           variant="outline"
-          className="border border-orange-500 text-orange-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white py-2 px-4 rounded-md shadow-sm hover:shadow-md transition-all duration-300"
+          className="hover:cursor-pointer border border-orange-500 text-orange-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-orange-600 hover:text-white py-2 px-4 rounded-md shadow-sm hover:shadow-md transition-all duration-300"
         >
           Login
         </Button>
@@ -60,7 +60,7 @@ const Utility = () => {
         {/* Language Selector */}
         <div className="relative" ref={dropdownRef}>
           <button
-            className="flex items-center justify-center gap-2 p-2 rounded-full border border-gray-200 hover:bg-orange-50 transition-all duration-300 w-28 z-50 relative"
+            className="hover:cursor-pointer flex items-center justify-center gap-2 p-2 rounded-full border border-gray-200 hover:bg-orange-50 transition-all duration-300 w-28 z-50 relative"
             onClick={toggleDropdown}
           >
             <FaGlobe className="text-orange-500" size={18} />

@@ -120,7 +120,7 @@ const WhyOMS = () => {
         />
 
         {/* Highlights Grid */}
-        <div className="text-center max-w-90% mx-auto grid sm:grid-cols-3 gap-8 text-gray-700 text-sm sm:text-base">
+        <div className="text-center max-w-[90%] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 text-gray-700 text-sm sm:text-base">
           {highlights.map((item, index) => (
             <motion.div
               key={index}

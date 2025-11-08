@@ -106,7 +106,8 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2 "
+          // className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2 "
+          className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2"
         >
           {/* Logo & Socials */}
           <motion.div

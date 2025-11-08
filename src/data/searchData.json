@@ -235,6 +235,21 @@
     "url": "/#productsandservice/supplier-management"
   },
   {
+    "title": "Supplier",
+    "description": "Maintain accurate profiles for each supplier, including contacts, terms, and compliance details.",
+    "url": "/#productsandservice/supplier-management"
+  },
+  {
+    "title": "Purchase Orders",
+    "description": "Create, approve, and track POs against jobs, projects, or cost centres.",
+    "url": "/#productsandservice/supplier-management"
+  },
+  {
+    "title": "Upload Bills",
+    "description": "Upload supplier bills, attach them to POs, and reconcile quantities and values.",
+    "url": "/#productsandservice/supplier-management"
+  },
+  {
     "title": "CRM",
     "description": "long combined text with all paragraphs and lists preserved as text>",
     "url": "/#productsandservice/crm"
@@ -275,8 +290,23 @@
     "url": "/#productsandservice/crm"
   },
   {
+    "title": "Quotation Management",
+    "description": "turn enquiries into revenue with a structured quotation process. Quotation Management helps you standardise pricing, respond faster, and maintain a clear history of every proposal. Centralised quotes Store all quotations in one place, linked to clients, contacts, and jobs. Template-based pricing Use predefined templates for common tests, services, and packages. Status tracking Monitor quotes as Draft, Sent, Accepted, or Rejected to keep your pipeline visible. Seamless handover Convert accepted quotes into jobs or work orders with minimal re-entry.",
+    "url": "/#productsandservice/crm"
+  },
+  {
     "title": "System Configuration",
     "description": "All combined content from every section (paragraphs + lists) written in full, without shortening.",
+    "url": "/#productsandservice/system-configuration"
+  },
+  {
+    "title": "System Code",
+    "description": "Configure the platform to match the way your business operates. System Configuration gives administrators control over key codes and visual assets used throughout the system. System code management – Define and maintain codes for departments, test types, cost centres, and more. Consistent naming – Enforce naming standards to keep reporting and navigation clean and intuitive.",
+    "url": "/#productsandservice/system-configuration"
+  },
+  {
+    "title": "System images",
+    "description": "System images – Manage logos, document headers, and other visual elements used in reports and portals. Controlled access – Restrict configuration changes to authorised users to protect data integrity.",
     "url": "/#productsandservice/system-configuration"
   },
   {
@@ -330,6 +360,41 @@
     "url": "/#productsandservice/qms"
   },
   {
+    "title": "System Administration",
+    "description": "Set up and maintain the structure of your quality management environment. Define roles, permissions, and approval flows. Control access to sensitive quality documentation.",
+    "url": "/#productsandservice/qms"
+  },
+  {
+    "title": "Test Record Format",
+    "description": "Standardise how test data is captured and reported. Configure test record templates by method or standard. Ensure consistent fields, units, and result structures across the lab.",
+    "url": "/#productsandservice/qms"
+  },
+  {
+    "title": "OHS & E Documen",
+    "description": "Centralise your Occupational Health, Safety & Environment documentation. Store and manage safety procedures, risk assessments, and guidelines. Track revisions and approvals for audit-ready compliance.",
+    "url": "/#productsandservice/qms"
+  },
+  {
+    "title": "Operation Procedure",
+    "description": "Maintain a single source of truth for operational procedures. Publish controlled versions of SOPs to relevant teams. Track changes over time with full revision history.",
+    "url": "/#productsandservice/qms"
+  },
+  {
+    "title": "Format System Management",
+    "description": "Manage the full library of controlled formats used in your organisation. Catalogue all official forms, templates, and controlled documents. Group formats by department, function, or standard.",
+    "url": "/#productsandservice/qms"
+  },
+  {
+    "title": "Format Admin",
+    "description": "Give administrators tools to manage and govern all formats. Create, update, and retire formats under proper approval. Assign owners and reviewers for each controlled document.",
+    "url": "/#productsandservice/qms"
+  },
+  {
+    "title": "Format Operations",
+    "description": "Support day-to-day usage of approved formats. Allow users to access the latest approved versions only. Reduce the risk of outdated or unofficial documents being used.",
+    "url": "/#productsandservice/qms"
+  },
+  {
     "title": "Policies",
     "description": "The OMS platform is designed to ensure business compliance, whether it is to comply with the quality standards such as ISO 17025, ISO 17020, ISO 9001 or any safety or human resources related local regulatory requirements.\n\nWhen a new policy is published by your organisation, staff will receive a notification on their OMS platform login. The notification will request your staff to read the policy. Like an event reminder in MS Outlook, your staff can choose to read or snooze this reminder (up to maximum 5 times). If snoozed, then the OMS platform will display the notification again after 1 hour. If staff do not read after 5 attempts, the OMS platform removes access to the OMS platform menu until the user has read the published company policy.\n\nThe OMS platform keeps traceable audit records of the date and time your staff read the published policy. This compliance system ensures that all your staff are aware of your current company policies and adhere to company protocols.\n\nAuthorised users from your company can upload all company policies. An existing policy can be revised with a single click and updated with the newest version.",
     "url": "/#productsandservice/qms"
@@ -347,6 +412,11 @@
   {
     "title": "Asset Management",
     "description": "Organisations of all sizes can use OMS Software to track and manage equipment. Whether assigning items to users or scheduling asset maintenance. The OMS platform provides comprehensive information on each asset you maintain, it can help businesses streamline maintenance processes, improve asset performances, reduce operational costs, and boost productivity, all in a digitalised format.\n\nThe OMS platform will assist your business to:\n\n- Assign an asset to a staff member\n- Send reminders for scheduled maintenance\n- Send reminders for registration renewal\n- Deactivate an asset that has not completed the required maintenance schedule\n- Provide a dollar value of all assets for insurance purposes\n- Provide a report of all assets for yearend reporting\n- Link an asset to a job\n- Provide a history of an asset\n\nPreventative measures: Never miss a maintenance procedure again. The OMS platform provides a streamlined scheduling processes to alert technicians and managers of an upcoming maintenance requirement, retaining high levels of safety, compliance, and reliability for your business.\n\nYearend reporting: The OMS platform improves statutory compliance and accelerates year-end reporting. All assets have a current value, the list of assets can be exported to excel for insurance estimation requirements and yearend financial reporting.\n\nThe OMS platform is your go-to solution to improve not only your maintenance management but also the performance levels of all your assets across the entire organisation.\n\nProduct User Manual: Never lose a user manual again! Upload and store the product user manual, along with asset information all in the one place.",
+    "url": "/#productsandservice/assets"
+  },
+  {
+    "title": "Client Asset Register",
+    "description": "Provide your clients with full transparency of their assets and equipment history. The Client Asset Register keeps all asset information in one structured, searchable place. Assign an asset to a staff member Send reminders for scheduled maintenance Send reminders for registration renewal Centralised asset records – Store key details such as ID, description, location, owner, and status. Service & calibration history – View complete test, inspection, and calibration records for each asset. Link to jobs & reports – Connect assets directly to work orders, and reports. Client self-service – Enable clients to view and download asset information through a portal.",
     "url": "/#productsandservice/assets"
   },
   {
@@ -455,11 +525,6 @@
     "url": "/#solutions"
   },
   {
-    "title": "Client Management Portal",
-    "description": "Clients raise requests, upload data, and download verified reports through a secure, shared cloud portal. The OMS Client Management Portal connects accredited laboratories and their clients, enabling traceability, communication, and seamless access to reports.\n\n🔍 Unified Access: View and download all verified reports, certificates, and invoices from a single login. A 10-year continuous digital archive follows the client, not the file.\n🧾 QR-Verified Reports: Every report has a tamper-proof QR code linking directly to the original OMS Cloud record. Audit trail remains intact for ten years.\n🗂️ Complete Digital Archive: Search by job, project, or date; filter by scope or test type; compare historical results. NABL-verified certificates remain accessible across years.\n👥 Controlled Sharing: Grant timed or role-based access to auditors, inspectors, or end-customers while maintaining compliance.\n🔒 Secure, Role-Based Control: Enterprise-grade encryption ensures secure storage, sharing, and retrieval, aligned with ISO/IEC 17025 | 17020 | 9001.\n\nThe portal reduces duplicate testing, minimizes communication overhead, and builds trust with verified, transparent access to data.",
-    "url": "/#solutions"
-  },
-  {
     "title": "Specifications Database",
     "description": "Keep reference standards and acceptance limits up-to-date with the OMS Specifications Database. This centralized reference library powers pre-populated dropdown menus, reducing repetitive data entry and ensuring consistency across the system.\n\n🧾 Unified Reference Library: All specification data—from material properties to process standards—lives in one searchable database, automatically linked to relevant test or calibration records.\n⚙️ Materials Specifications: Store material name and grade, description, engineering properties, Charpy impact strength, chemical composition, and other attributes.\n🧪 Test Specifications: Capture client-specific acceptance criteria, product/manufacturing standards, and ISO/ASTM or internal limits.\n🚆 Rail & Specialized Specifications: Define custom rail or sector-specific parameters including client-provided acceptance criteria and governing standards.\n🔧 Process Standards: Document every process step with standard number, technique, procedure name/description, module, and active status.\n📑 Reference Data Control: Master values (Key, Name, Value, Order) ensure standardization in dropdown menus and consistency across all modules.\n\nWhy it matters: Reduces errors, saves time, enforces uniformity, and ensures every report and record speaks the same technical language.",
     "url": "/#solutions"
@@ -497,6 +562,6 @@
   {
     "title": "WPS",
     "description": "Centralized. Traceable. Compliant.\n\nThe WPS Registry provides a unified workspace for managing Welding Procedure Specifications (WPS) and related qualification records—keeping your documentation audit-ready and easily accessible.\n\nSearch & Add WPS Data: Use the “Search & Add WPS Data” option to view a short walkthrough video and manage all essential welding parameters from one intuitive screen.\n\nUnified Document Package: Upload all supporting files—WPS, PQR, material certificates, welding consumable certificates, and inspection reports. With a single click, download the complete package for inclusion in your Manufacturer’s Data Report (MDR).\n\nWelder Qualification Integration: Link qualified welders with their corresponding WPS to automatically maintain Welder Qualification Records (WQR) for full traceability.\n\nClient Portal Access: Both WPS and WQR are securely accessible to clients through the OMS Client Portal, ensuring transparency, compliance, and efficient collaboration.\n\nCaution: Upload a WPS only if it is prepared by your organization. If a WPS originates from a client or third party, obtain written consent before uploading to maintain data integrity and ownership clarity.\n\nAssistance: For setup, automation, or technical clarification, please contact your OMS development team for support and best-practice guidance.",
-    "url": "/#productsandservice/welding-procedure-specification-wps-registry"
+    "url": "/#solutions"
   }
 ]
