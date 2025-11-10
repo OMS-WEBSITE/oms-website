@@ -86,7 +86,7 @@ const Header = () => {
       setActiveSection(id);
       setMobileMenuOpen(false);
 
-      // Reset URL
+      // Reset URL 
       setTimeout(() => {
         window.history.replaceState(null, "", "/");
       }, 800);

@@ -39,16 +39,19 @@ const jobs = data.filter((j: any) => j.title);
 
     <!-- Submit Resume Section -->
     <section class="py-12 sm:py-16 md:py-20 bg-gradient-to-r from-orange-100 to-blue-100">
-      <div class="container mx-auto max-w-4xl px-4 text-center">
+      <div class="container mx-auto max-w-4xl px-4 text-center ">
         <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">
           Don't See the Right Role?
         </h2>
         <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8">
           We're always looking for talented individuals to join our team. Send us your resume and we'll keep you in mind for future opportunities.
         </p>
-        <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
+        <button
+          onclick="window.dispatchEvent(new CustomEvent('openQuickConnect'))"
+          class="h-10 bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center rounded-lg px-4 font-medium transition cursor-pointer mx-auto"
+        >
           Submit Your Resume
-        </Button>
+        </button>
       </div>
     </section>
   </main>

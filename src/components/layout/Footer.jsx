@@ -1,5 +1,3 @@
-// with animation
-
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import {
@@ -134,7 +132,6 @@ const Footer = () => {
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 0.5 }}
-          // className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-2 "
           className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2"
         >
           {/* Logo & Socials */}
@@ -233,7 +230,35 @@ const Footer = () => {
             {/* Email */}
             <div className="flex items-center text-gray-600 text-sm md:text-base space-x-2">
               <a
-                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${info.email}&su=Quick%20Connect%20Inquiry&body=Hi%20OMS,`}
+                href={`https://mail.google.com/mail/?view=cm&fs=1&to=${info.email}&su=Request%20Demo%20-%20OMS%20Software&body=${encodeURIComponent(
+                  `Dear OMS Software Team,
+
+I would like to request a demo of OMS Software for our organisation.
+
+Name:
+Designation:
+Company:
+City / Country:
+
+About our organisation:
+(NDT / Testing Lab / Calibration / Welding & Fabrication / Inspection / Other)
+
+Main areas of interest:
+· Testing / NDT workflows
+· Welding documentation (WPS / PQR / WQR)
+· Calibration & asset tracking
+· Reporting & client portal
+· ERP / jobs / invoicing
+
+Approx. number of jobs / reports per month:
+Preferred date & time for demo:
+Phone / WhatsApp number:
+
+Kindly suggest a suitable slot and share the meeting link.
+
+Regards,
+[Client Name]`
+                )}`}
                 className="mt-1 p-1 text-orange-500 rounded-lg transition-all duration-200 cursor-pointer flex items-center justify-center
        hover:outline hover:outline-orange-400 hover:outline-2 focus:outline focus:outline-orange-500 focus:outline-2"
                 aria-label={`Send email to ${info.email}`}
@@ -300,17 +325,6 @@ const Footer = () => {
         />
 
         {/* Affiliations */}
-
-        {/* <motion.div key={language} initial="hidden" animate="visible" variants={fadeUp} transition={{ duration: 0.5 }} className="text-left bg-white p-8 rounded-xl shadow-md">
-          <h2 className="text-2xl font-semibold mb-4">{affiliation.title}</h2>
-          <p className="text-gray-600 mb-4">{affiliation.description}</p>
-          <ul className="list-disc list-inside text-gray-700 space-y-2 mb-4">
-            {affiliation.items.map((item, idx) => (
-              <li key={idx}>{item}</li>
-            ))}
-          </ul>
-          <p className="text-gray-600 italic">{affiliation.note}</p>
-        </motion.div> */}
         <motion.div
           key={language}
           initial="hidden"

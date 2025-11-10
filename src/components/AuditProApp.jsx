@@ -2,7 +2,6 @@ import { useState } from "react"; // ✅ make sure to import useState
 import { LanguageProvider } from "@/context/LanguageContext";
 // import QuickConnect from "../components/ui/QuickConnect.jsx";
 
-
 import Utility from "./layout/Utility";
 import Header from "./layout/Header";
 import Footer from "./layout/Footer";
@@ -17,14 +16,11 @@ import Learn from "./sections/Learn";
 import Support from "./sections/Support";
 import Partners from "./sections/Clients";
 
-
 const AuditProApp = () => {
   return (
     <LanguageProvider>
       <div className="min-h-screen bg-white">
         {/* Pass language state to Utility */}
-        {/* <Utility /> */}
-        {/* <Header /> */}
         <main>
           <VideoSection />
           <ProductsAndService />
@@ -35,8 +31,6 @@ const AuditProApp = () => {
           <Support />
           <Partners />
         </main>
-        {/* <Footer /> */}
-        {/* <QuickConnect client:load /> */}
       </div>
     </LanguageProvider>
   );

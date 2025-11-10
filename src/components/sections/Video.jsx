@@ -1,5 +1,3 @@
-// working on
-
 import "aos/dist/aos.css";
 import { AnimatePresence, motion } from "framer-motion";
 import { useEffect, useState } from "react";

@@ -69,9 +69,6 @@ const PracticeCard = ({
           </div>
         )}
 
-        <Button variant="outline" className="w-full">
-          Learn More →
-        </Button>
       </div>
     </div>
   );

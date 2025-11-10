@@ -51,10 +51,6 @@ const OrganizationCard = ({
             </div>
           </div>
         )}
-
-        <Button variant="outline" className="w-full">
-          View Details →
-        </Button>
       </div>
     </div>
   );

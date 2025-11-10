@@ -7,6 +7,12 @@ const QuickConnect = () => {
   const [animate, setAnimate] = useState(true); // controls bounce on first load
   const { language } = useLanguage(); // get detected language
 
+  useEffect(() => {
+    const openHandler = () => setIsOpen(true);
+    window.addEventListener("openQuickConnect", openHandler);
+    return () => window.removeEventListener("openQuickConnect", openHandler);
+  }, []);
+
   const togglePopup = () => setIsOpen(!isOpen);
 
   useEffect(() => {
@@ -63,7 +69,8 @@ const QuickConnect = () => {
                 startOffset="0%"
                 method="align"
                 // spacing="auto"
-              >— ONE CLICK, INSTANT REPLY  —  OMS SOFTWARE —
+              >
+                — ONE CLICK, INSTANT REPLY — OMS SOFTWARE —
               </textPath>
             </text>
           </svg>
@@ -83,11 +90,6 @@ const QuickConnect = () => {
             <h2 className="text-lg sm:text-xl font-semibold mb-3 text-orange-500">
               Quick Connect
             </h2>
-            {/* <p className="text-gray-500 mb-5 text-sm sm:text-base whitespace-pre-line">
-              We’d love to hear from you. Whether you want to schedule a product
-              demo, discuss your requirements, or ask a quick question — reach
-              out in the way that’s most convenient for you.
-            </p> */}
 
             <div className="flex flex-col gap-3">
               {/* {isIndia && ( */}
@@ -132,7 +134,36 @@ const QuickConnect = () => {
 
                   {/* Email Button */}
                   <a
-                    href="mailto:jayant@omssoftware.com.au?subject=Quick%20Connect%20Inquiry&body=Hi%20OMS%20Software%20team,%0AI%20would%20like%20to%20know%20more%20about%20OMS%20Software%20and%20request%20a%20demo.%0A%0AName:%0ACompany:%0ACity%20/%20Country:%0AType%20of%20business:%20(NDT%20Lab%20/%20Calibration%20Lab%20/%20Fabrication%20/%20Inspection%20/%20Other)%0AMain%20interest:%20(Testing%20reports%20/%20Welding%20WPS–WQR%20/%20Calibration%20&%20assets%20/%20ERP%20&%20billing)%0APreferred%20time%20for%20a%20call%20/%20demo:"
+                    // href="mailto:jayant@omssoftware.com.au?subject=Request%20for%20OMS%20Software%20Demo&body=Dear%20OMS%20Software%20Team,%0A%0AI%20would%20like%20to%20request%20a%20demo%20of%20OMS%20Software%20for%20our%20organisation.%0A%0AName:%0ADesignation:%0ACompany:%0ACity%20/%20Country:%0A%0AAbout%20our%20organisation:%0A(NDT%20/%20Testing%20Lab%20/%20Calibration%20/%20Welding%20&%20Fabrication%20/%20Inspection%20/%20Other)%0A%0AMain%20areas%20of%20interest:%0A%C2%B7%20Testing%20/%20NDT%20workflows%0A%C2%B7%20Welding%20documentation%20(WPS%20/%20PQR%20/%20WQR)%0A%C2%B7%20Calibration%20&%20asset%20tracking%0A%C2%B7%20Reporting%20&%20client%20portal%0A%C2%B7%20ERP%20/%20jobs%20/%20invoicing%0A%0AApprox.%20number%20of%20jobs%20/%20reports%20per%20month:%0A%0APreferred%20date%20&%20time%20for%20demo:%0A%0APhone%20/%20WhatsApp%20number:%0A%0AKindly%20suggest%20a%20suitable%20slot%20and%20share%20the%20meeting%20link.%0A%0ARegards,%0A[Client%20Name]"
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=jayant@omssoftware.com.au&su=Request%20Demo%20-%20OMS%20Software&body=${encodeURIComponent(
+                      `Dear OMS Software Team,
+
+I would like to request a demo of OMS Software for our organisation.
+
+Name:
+Designation:
+Company:
+City / Country:
+
+About our organisation:
+(NDT / Testing Lab / Calibration / Welding & Fabrication / Inspection / Other)
+
+Main areas of interest:
+· Testing / NDT workflows
+· Welding documentation (WPS / PQR / WQR)
+· Calibration & asset tracking
+· Reporting & client portal
+· ERP / jobs / invoicing
+
+Approx. number of jobs / reports per month:
+Preferred date & time for demo:
+Phone / WhatsApp number:
+
+Kindly suggest a suitable slot and share the meeting link.
+
+Regards,
+[Client Name]`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
@@ -149,7 +180,36 @@ const QuickConnect = () => {
                     question — please reach out via email.
                   </p>
                   <a
-                    href="mailto:systems@omssoftware.com.au?subject=Quick%20Connect%20Inquiry&body=Hi%20OMS%20Software%20team,%0AI%20would%20like%20to%20know%20more%20about%20OMS%20Software%20and%20request%20a%20demo.%0A%0AName:%0ACompany:%0ACity%20/%20Country:%0AType%20of%20business:%20(NDT%20Lab%20/%20Calibration%20Lab%20/%20Fabrication%20/%20Inspection%20/%20Other)%0AMain%20interest:%20(Testing%20reports%20/%20Welding%20WPS–WQR%20/%20Calibration%20&%20assets%20/%20ERP%20&%20billing)%0APreferred%20time%20for%20a%20call%20/%20demo:"
+                    // href="mailto:systems@omssoftware.com.au?subject=Request%20for%20OMS%20Software%20Demo&body=Dear%20OMS%20Software%20Team,%0A%0AI%20would%20like%20to%20request%20a%20demo%20of%20OMS%20Software%20for%20our%20organisation.%0A%0AName:%0ADesignation:%0ACompany:%0ACity%20/%20Country:%0A%0AAbout%20our%20organisation:%0A(NDT%20/%20Testing%20Lab%20/%20Calibration%20/%20Welding%20&%20Fabrication%20/%20Inspection%20/%20Other)%0A%0AMain%20areas%20of%20interest:%0A%C2%B7%20Testing%20/%20NDT%20workflows%0A%C2%B7%20Welding%20documentation%20(WPS%20/%20PQR%20/%20WQR)%0A%C2%B7%20Calibration%20&%20asset%20tracking%0A%C2%B7%20Reporting%20&%20client%20portal%0A%C2%B7%20ERP%20/%20jobs%20/%20invoicing%0A%0AApprox.%20number%20of%20jobs%20/%20reports%20per%20month:%0A%0APreferred%20date%20&%20time%20for%20demo:%0A%0APhone%20/%20WhatsApp%20number:%0A%0AKindly%20suggest%20a%20suitable%20slot%20and%20share%20the%20meeting%20link.%0A%0ARegards,%0A[Client%20Name]"
+                    href={`https://mail.google.com/mail/?view=cm&fs=1&to=systems@omssoftware.com.au&su=Request%20Demo%20-%20OMS%20Software&body=${encodeURIComponent(
+                      `Dear OMS Software Team,
+
+I would like to request a demo of OMS Software for our organisation.
+
+Name:
+Designation:
+Company:
+City / Country:
+
+About our organisation:
+(NDT / Testing Lab / Calibration / Welding & Fabrication / Inspection / Other)
+
+Main areas of interest:
+· Testing / NDT workflows
+· Welding documentation (WPS / PQR / WQR)
+· Calibration & asset tracking
+· Reporting & client portal
+· ERP / jobs / invoicing
+
+Approx. number of jobs / reports per month:
+Preferred date & time for demo:
+Phone / WhatsApp number:
+
+Kindly suggest a suitable slot and share the meeting link.
+
+Regards,
+[Client Name]`
+                    )}`}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center justify-center gap-2 bg-blue-500 text-white py-2.5 sm:py-3 rounded-full hover:bg-blue-600 transition text-sm sm:text-base"
