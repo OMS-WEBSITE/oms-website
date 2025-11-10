@@ -7,10 +7,10 @@ const SearchBar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState([]);
 
-  // Close search on scroll (when on home page)
+  // Close search on scroll when on any page
   useEffect(() => {
     const handleScroll = () => {
-      if (window.location.pathname === "/" && isOpen) {
+      if (isOpen) {
         setIsOpen(false);
         setResults([]);
         setQuery("");

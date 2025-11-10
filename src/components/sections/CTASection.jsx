@@ -14,7 +14,8 @@ const CTASection = () => {
         <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8">
           Since 2015, over 4,000 organizations have used OMS Software to find
           and win more audit opportunities, empowering them to expand their
-          impact on critical missions such as evaluating cybersecurity measures,
+          impact on critical missions such as evaluating Quality & Compliance
+	 measures,
           ensuring data protection, and improving IT security standards.
         </p>
 
