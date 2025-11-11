@@ -268,6 +268,79 @@ const Solutions = () => {
       ),
     },
     {
+      id: "list-of-modules",
+      title: "List of Modules",
+      tagline: "Explore OMS’s testing, inspection, and process modules.",
+      content: (
+        <>
+          <p className="mt-4">
+            Currently, there are several test, inspection, and process modules
+            available in the OMS. Some of them are{" "}
+            <strong>
+              Intelligence Augmented Automatic Compliance Evaluator (IAACE)
+            </strong>{" "}
+            modules which use Standards and material properties to evaluate test
+            results - eliminating human errors in interpreting Standards
+            requirements. These modules have been used by laboratories for
+            years, witnessing over{" "}
+            <span className="text-orange-500 font-semibold">
+              a million hours of production testing
+            </span>{" "}
+            by real users (150+).
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            ⚙️ Available Modules
+          </h4>
+          <ul className="list-disc list-inside space-y-2 mt-2">
+            <li>
+              <strong>NDT modules:</strong> VT, MT, PT, ET, UT, UTT, RT, and
+              more.
+            </li>
+            <li>
+              <strong>Mechanical testing:</strong> Tensile, Impact, and others.
+            </li>
+            <li>
+              <strong>Weld mechanical testing:</strong> VT, Macro, Bend,
+              Fracture, Transverse tension, Web-flange tension, Impact, Hardness
+              survey.
+            </li>
+            <li>
+              <strong>Inspection modules:</strong> VI, PVI, and more.
+            </li>
+            <li>
+              <strong>Pressure testing:</strong> Hydrostatic test.
+            </li>
+            <li>
+              <strong>Survey modules:</strong> Rail alignment, Pipe ovality
+              measurement, and more.
+            </li>
+            <li>
+              <strong>Process modules:</strong> Welding supervision and more.
+            </li>
+            <li>
+              <strong>Chemical testing:</strong> O.E.S Spectroscopy (Beta) and
+              others.
+            </li>
+            <li>
+              <strong>IAACE:</strong> Intelligence Augmented Automatic
+              Compliance Evaluator modules.
+            </li>
+          </ul>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            🧱 Structure of Modules
+          </h4>
+          <p>
+            The most common excuses for data losses in the industry are - tablet
+            broke down, battery drained, internet lost, or user forgot to save.
+            OMS modules are designed to handle such situations gracefully,
+            ensuring data integrity and uninterrupted operations.
+          </p>
+        </>
+      ),
+    },
+    {
       id: "Job Test Record Management",
       title: "Job Test Record Management",
       tagline:

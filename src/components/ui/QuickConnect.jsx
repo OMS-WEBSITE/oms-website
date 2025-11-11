@@ -22,10 +22,7 @@ const QuickConnect = () => {
 
   // if (!language || language === "Detecting...") return null;
 
-  console.log("before normalize", language);
   const lang = language?.toLowerCase() || "";
-
-  console.log("after normalize", lang);
 
   const isIndia = lang === "en-in";
   console.log("is india", isIndia);
@@ -98,7 +95,7 @@ const QuickConnect = () => {
                   <p className="text-gray-500 mb-5 text-sm sm:text-base whitespace-pre-line">
                     We’d love to hear from you. Whether you want to schedule a
                     product demo, discuss your requirements, or ask a quick
-                    question — reach out in the way that’s most convenient for
+                    question - reach out in the way that’s most convenient for
                     you.
                   </p>
                   {/* WhatsApp QR */}
@@ -177,7 +174,7 @@ Regards,
                   <p className="text-gray-500 mb-5 text-sm sm:text-base whitespace-pre-line">
                     We’d love to hear from you. Whether you want to schedule a
                     product demo, discuss your requirements, or ask a quick
-                    question — please reach out via email.
+                    question - please reach out via email.
                   </p>
                   <a
                     // href="mailto:systems@omssoftware.com.au?subject=Request%20for%20OMS%20Software%20Demo&body=Dear%20OMS%20Software%20Team,%0A%0AI%20would%20like%20to%20request%20a%20demo%20of%20OMS%20Software%20for%20our%20organisation.%0A%0AName:%0ADesignation:%0ACompany:%0ACity%20/%20Country:%0A%0AAbout%20our%20organisation:%0A(NDT%20/%20Testing%20Lab%20/%20Calibration%20/%20Welding%20&%20Fabrication%20/%20Inspection%20/%20Other)%0A%0AMain%20areas%20of%20interest:%0A%C2%B7%20Testing%20/%20NDT%20workflows%0A%C2%B7%20Welding%20documentation%20(WPS%20/%20PQR%20/%20WQR)%0A%C2%B7%20Calibration%20&%20asset%20tracking%0A%C2%B7%20Reporting%20&%20client%20portal%0A%C2%B7%20ERP%20/%20jobs%20/%20invoicing%0A%0AApprox.%20number%20of%20jobs%20/%20reports%20per%20month:%0A%0APreferred%20date%20&%20time%20for%20demo:%0A%0APhone%20/%20WhatsApp%20number:%0A%0AKindly%20suggest%20a%20suitable%20slot%20and%20share%20the%20meeting%20link.%0A%0ARegards,%0A[Client%20Name]"

@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import { FaArrowLeft } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext"; // 1️⃣ import hook
 
 const ProductsAndService = () => {
   const navItems = [
     "Business Performance",
     "Accounting",
-    "Personnel",
+    "Personnel Management",
     "Supplier Management",
     "CRM",
     "System Configuration",
@@ -20,8 +21,10 @@ const ProductsAndService = () => {
   const [activeItem, setActiveItem] = useState(null);
   const [expandedSection, setExpandedSection] = useState(null);
   const [ignoreAutoClose, setIgnoreAutoClose] = useState(false);
-
+  const { language } = useLanguage();
   const sectionList = activeItem ? contentMap[activeItem]?.sections || [] : [];
+
+  console.log("Current Language in ProductsAndService:", language);
 
   // for search function
   useEffect(() => {
@@ -196,6 +199,22 @@ const ProductsAndService = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [ignoreAutoClose]);
 
+  const formatCurrency = (amount, locale) => {
+    const normalizedLocale = (locale || "en-US").toLowerCase();
+
+    let currency = "USD";
+    if (normalizedLocale.includes("in")) currency = "INR";
+    else if (normalizedLocale.includes("au")) currency = "AUD";
+
+    console.log("🟦 Locale:", locale, "→ Currency:", currency);
+
+    return new Intl.NumberFormat(locale || "en-US", {
+      style: "currency",
+      currency,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
   return (
     <section id="productsandservice" className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -286,8 +305,28 @@ const ProductsAndService = () => {
 
           <div className="text-gray-700 space-y-3 leading-relaxed">
             {sectionList[expandedSection]?.content.map((block, idx) => {
-              if (block.type === "paragraph")
-                return <p key={idx}>{block.text}</p>;
+              if (block.type === "paragraph") {
+                let formattedText = block.text;
+
+                // Regex catches all variations like:
+                // "$156,000", "≈ $156,000", "$64,000/annum", "$2.50", etc.
+                const currencyRegex = /\$([\d,.]+)/g;
+
+                formattedText = formattedText.replace(
+                  currencyRegex,
+                  (_, amountStr) => {
+                    const amount = parseFloat(amountStr.replace(/,/g, "")); // Handles decimals too
+                    return formatCurrency(amount, language || "en-US");
+                  }
+                );
+
+                return (
+                  <p key={idx} className="text-justify ml-6">
+                    {formattedText}
+                  </p>
+                );
+              }
+
               if (block.type === "list")
                 return (
                   <ul key={idx} className="list-disc list-inside ml-4">
@@ -449,6 +488,7 @@ const ProductsAndService = () => {
                         {expandedSection === `${mainIdx}-${secIdx}` && (
                           <div className="bg-white px-8 py-4 text-gray-700 space-y-3 leading-relaxed">
                             {section.content.map((block, i) => {
+                              
                               if (block.type === "subheading") {
                                 return (
                                   <h4
@@ -460,12 +500,32 @@ const ProductsAndService = () => {
                                 );
                               }
 
-                              if (block.type === "paragraph")
+                              if (block.type === "paragraph") {
+                                let formattedText = block.text;
+
+                                // Regex catches all variations like:
+                                // "$156,000", "≈ $156,000", "$64,000/annum", "$2.50", etc.
+                                const currencyRegex = /\$([\d,.]+)/g;
+
+                                formattedText = formattedText.replace(
+                                  currencyRegex,
+                                  (_, amountStr) => {
+                                    const amount = parseFloat(
+                                      amountStr.replace(/,/g, "")
+                                    ); // Handles decimals too
+                                    return formatCurrency(
+                                      amount,
+                                      language || "en-US"
+                                    );
+                                  }
+                                );
+
                                 return (
                                   <p key={i} className="text-justify ml-6">
-                                    {block.text}
+                                    {formattedText}
                                   </p>
                                 );
+                              }
 
                               if (block.type === "list")
                                 return (

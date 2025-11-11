@@ -89,10 +89,10 @@ const WhyOMS = () => {
           transition={{ delay: 0.2, duration: 0.6 }}
           className="max-w-4xl mx-auto text-gray-700 text-sm sm:text-base leading-relaxed mb-6"
         >
-          It began with a familiar frustration — labs buried under spreadsheets,
+          It began with a familiar frustration - labs buried under spreadsheets,
           versioned PDFs, and last-minute audit prep. Each tool solved a
           fragment of the problem, but none spoke to the whole workflow. So OMS
-          was built — a single, secure system that unites <strong>LIMS</strong>,{" "}
+          was built - a single, secure system that unites <strong>LIMS</strong>,{" "}
           <strong>ERP</strong>, and <strong>QMS</strong>, the way laboratories
           actually operate.
         </motion.p>
@@ -105,7 +105,7 @@ const WhyOMS = () => {
           className="max-w-4xl mx-auto text-gray-700 text-sm sm:text-base leading-relaxed mb-6"
         >
           Over the years, OMS has grown into more than software. It’s become a
-          bridge between compliance and convenience — trusted by auditors,
+          bridge between compliance and convenience - trusted by auditors,
           valued by managers, and relied on by teams who want their systems to
           stay out of the way and just work.
         </motion.p>

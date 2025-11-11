@@ -1,3 +1,17 @@
+/**
+ * NOTE:
+ * When adding a new section:
+ *  - Ensure the heading name in ContentData matches the corresponding name
+ *    in ProductsAndServices navItems.
+ *  - In VideoSection.jsx, make sure the related feature label uses the same
+ *    name and ID (no spaces, all lowercase).
+ *
+ * Reason:
+ *  When a user clicks a feature in VideoSection, it redirects to the
+ *  Products & Services section, expands the clicked section, and displays
+ *  data based on the matching name.
+ */
+
 export const contentMap = {
   "Business Performance": {
     id: "businessperformance",
@@ -713,51 +727,60 @@ export const contentMap = {
     ],
   },
 
-  Personnel: {
-    title: "Personnel",
+  "Personnel Management": {
+    title:
+      "Centralize your workforce data, roles, and approvals in one secure hub.",
     sections: [
       {
         heading: "Personnel Records",
         content: [
           {
             type: "list",
-            items: ["Master Records Group"],
-          },
-          {
-            type: "paragraph",
-            text: "Stop tracking employee credentials manually, with millions of different certifications, qualifications, competencies, skillsets, it is hard to keep track of renewal dates. The OMS platform is one step ahead.",
-          },
-          {
-            type: "paragraph",
-            text: "Adding a new record (Competency)",
-          },
-          {
-            type: "paragraph",
-            text: "Any certification, qualification, skillset can be added to the master records list which will include adding the normal life period, when the reminder for renewal will be issued to the user and the frequency that reminder will be distributed.",
-          },
-          {
-            type: "paragraph",
-            text: "Once these details are complete anytime a user selects this record as a competency these rules will apply.",
-          },
-          {
-            type: "list",
             items: ["Master Records List"],
           },
           {
             type: "paragraph",
-            text: "Stop tracking employee credentials manually, with millions of different certifications, qualifications, competencies, skillsets, it is hard to keep track of renewal dates. The OMS platform is one step ahead.",
+            text: "The Master Records List serves as a central repository for frequently used qualification, certification, and competency documents. Each record is preconfigured with key parameters such as Certificate Category, Nominal Life Period, Reminder Days, Reminder Frequency, and other associated rules.",
           },
           {
             type: "paragraph",
-            text: "Adding a new record (Competency)",
+            text: "Once defined, these master entries can be reused across the platform without the need to redefine details repeatedly. This ensures consistency, accuracy, and efficiency when assigning competencies or uploading new qualification records — allowing OMS to automatically apply predefined validation and reminder logic.",
           },
           {
             type: "paragraph",
-            text: "Any certification, qualification, skillset can be added to the master records list which will include adding the normal life period, when the reminder for renewal will be issued to the user and the frequency that reminder will be distributed.",
+            text: "Benefit:",
           },
           {
             type: "paragraph",
-            text: "Once these details are complete anytime a user selects this record as a competency these rules will apply.",
+            text: "Reduces repetitive configuration, improves data consistency, and ensures that every competency or qualification record follows standardized validation and renewal rules across the platform.",
+          },
+          {
+            type: "list",
+            items: ["Master Records Group"],
+          },
+          {
+            type: "paragraph",
+            text: "The Master Records Group feature allows multiple master records to be organized under a single category, streamlining the process of assigning and managing related qualifications.",
+          },
+          {
+            type: "paragraph",
+            text: "Instead of adding each master record individually, users can select a predefined group to automatically include all associated records — greatly reducing repetitive data entry and setup time.",
+          },
+          {
+            type: "paragraph",
+            text: "Example:",
+          },
+          {
+            type: "paragraph",
+            text: "A PAUT Tester Certification group can include multiple related records, such as PAUT Level 1, PAUT Level 2, PAUT Level 3, and corresponding ISO Certificates — allowing all of them to be applied together in a single action.",
+          },
+          {
+            type: "paragraph",
+            text: "Benefit:",
+          },
+          {
+            type: "paragraph",
+            text: "This feature enhances efficiency, accuracy, and consistency across the platform by minimizing manual input and ensuring that related competencies are managed together as a unified set.",
           },
           {
             type: "list",
@@ -861,19 +884,31 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "OMS Software Pty Ltd is all about auditability, traceability, and reproducibility.",
+            text: "Auditability, Traceability, and Reproducibility – OMS Software is built around these core principles.",
           },
           {
             type: "paragraph",
-            text: "In addition to the typical user management available in most programmes, your Business can be reassured that the OMS platform can trace any updates or changes made by any or all users.",
+            text: "In addition to standard user management capabilities found in most platforms, OMS tracks and records every update or modification made by any user, providing complete visibility and control over business operations.",
           },
           {
             type: "paragraph",
-            text: "The point of difference in the OMS Platform is the authorised user 'SuperUser' can obtain a list of all staff access levels, permissions and most importantly the audit trail revealing any changes or updates made by a particular user and the date and time the change was made.",
+            text: "The key differentiator of the OMS Platform is its powerful SuperUser feature, which enables authorized personnel to:",
+          },
+          {
+            type: "paragraph",
+            text: "   View all user access levels and permissions in a single consolidated view.",
+          },
+          {
+            type: "paragraph",
+            text: "	  Access comprehensive audit trails showing exactly who made what change, along with timestamps for every modification.",
           },
           {
             type: "images",
             items: ["/images/User.png"],
+          },
+          {
+            type: "paragraph",
+            text: "This guarantees accountability, compliance, and absolute transparency across all user activities within your organization.",
           },
           {
             type: "list",
@@ -882,19 +917,35 @@ export const contentMap = {
 
           {
             type: "paragraph",
-            text: "OMS is all about data integrity, traceability, security and protection from unwanted users, threats, or intruders.",
+            text: "OMS prioritizes data integrity, traceability, security, and protection from unauthorized access, including potential risks from former employees.",
           },
           {
             type: "paragraph",
-            text: "On many occasions, businesses have experienced internal sabotage due to a disgruntled ex-employee. When an employee is separated from a company, there is a process of revoking all IT access. Occasionally, there is a lag in completing this task, leaving your business vulnerable to such threats.",
+            text: "Delays in revoking IT access after an employee leaves can create internal vulnerabilities. OMS eliminates this risk through an AI-driven monitoring mechanism that automatically suspends a user’s login if no active time records are detected within a period defined by your organization.",
           },
           {
             type: "paragraph",
-            text: "To manage data breaches or any threats from ex-employees, the OMS platform has been designed with augmented intelligence (AI). The OMS Platform will automatically SUSPEND the login for the ex-employee due to the absence of time records for the period specified by your organisation.",
+            text: "Once a user is automatically suspended, only an authorized SuperUser or Enterprise Administrator can reinstate access via the User Manager section, ensuring strict control over reactivation.",
+          },
+          {
+            type: "list",
+            items: ["Extended User Visibility and Access Control"],
           },
           {
             type: "paragraph",
-            text: "When a user is suspended automatically by the OMS, only the authorised user at your Enterprise can grant access (if required) to the suspended employees by accessing the user manager section.",
+            text: "But it doesn’t stop there — OMS provides real-time visibility into the current status of every employee, whether LOGIN-SUSPENDED, CURRENT ACTIVE, or otherwise.",
+          },
+          {
+            type: "paragraph",
+            text: "A SuperUser can assign or modify roles for any user, with appropriate comments and justifications, ensuring full traceability and accountability for every change in access or authorization.",
+          },
+          {
+            type: "list",
+            items: ["Unsure which users hold what permissions?"],
+          },
+          {
+            type: "paragraph",
+            text: "With OMS, view the entire user authorization matrix on a single consolidated page — accessible with just one click, simplifying oversight, improving governance, and enhancing system security.",
           },
         ],
       },
@@ -922,7 +973,6 @@ export const contentMap = {
           },
         ],
       },
-
       {
         heading: "Activity Approval",
         content: [
@@ -932,26 +982,48 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Staff records can be easily managed through the OMS platform. The OMS platform will list the access levels that a particular user has, to a test method or technique.",
+            text: "Staff records can be efficiently managed through the OMS Platform, providing complete visibility into the access levels assigned to each user for every test method or technique.",
+          },
+          {
+            type: "paragraph",
+            text: "Access Level Definitions",
           },
           {
             type: "list",
             items: [
-              "Not Authorised – Can only enter test data for other approved testers. Cannot sign a report",
-              "Trainee – Can perform testing under supervision of approved testers, enter test data, but cannot sign a report",
-              "Tester/Inspector/Process – Supervise trainees, perform testing independently, enter test data but cannot sign a report",
-              "Signatory – Supervise trainees, perform testing independently, enter test data and sign a report",
-              "Technical Auditor – Supervise trainees, perform testing, inspection processes independently, enter data, sign a report, and conduct technical audits on other staff",
-              "Authorised Approver – Authority to supervise other staff, perform testing independently, sign reports, conduct technical audits, approve or revoke approval for trainees, testers, signatories, technical auditors",
+              "Not Authorised – Can only enter test data for other approved testers; cannot sign reports.",
+              "Trainee – Can perform testing under supervision, enter test data, but cannot sign reports.",
+              "Tester / Inspector / Process – Can supervise trainees, perform testing independently, and enter test data; cannot sign reports.",
+              "Signatory – Can supervise trainees, perform testing independently, enter test data, and sign reports.",
+              "Technical Auditor – Can supervise trainees, perform testing and inspections independently, enter data, sign reports, and conduct technical audits on other staff.",
+              "Authorised Approver – Has full authority to supervise staff, perform testing independently, sign reports, conduct technical audits, and approve or revoke access for trainees, testers, signatories, and technical auditors.",
             ],
           },
           {
             type: "paragraph",
-            text: "From this section of the platform an authorised approver can edit the test method, view a history of the test method for the selected user or approve or revoke access. For further information on this feature, contact us for an obligation free demonstration.",
+            text: "From this section of the platform, an Authorised Approver can:",
+          },
+          {
+            type: "list",
+            items: [
+              "Edit access levels for test methods.",
+              "View the history of approvals and changes for a selected user.",
+              "Approve or revoke access as needed.",
+              "For more information on this feature, contact us for a free, no-obligation demonstration.",
+              "Ensure security for approved testers.",
+            ],
           },
           {
             type: "paragraph",
-            text: "Security for approved testers: In the OMS platform any user can select another user as the approved tester. The selected user will receive a notification email: '[Logged in person name] has used your name in test-inspection-process record no. [Record No] on [date + time]. Ignore this notification if you are aware or investigate further.'",
+            text: "The OMS Platform includes built-in safeguards to ensure accountability and traceability among approved testers.",
+          },
+          {
+            type: "paragraph",
+            text: "Any user can designate another user as the approved tester. When this occurs, the selected user automatically receives a notification email, for example:'[Logged-in user’s name] has used your name in test-inspection-process record no. [Record No] on [Date + Time]. Ignore this notification if you are aware, or investigate further.'",
+          },
+          {
+            type: "paragraph",
+            text: "This ensures transparency and provides immediate awareness of all testing-related activities involving an individual’s credentials.",
           },
           {
             type: "list",
@@ -959,26 +1031,28 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Similar to the staff approval status, module and test methods can be easily managed through the OMS platform.",
+            text: "Similar to staff approval status, access levels for each module or test method can be easily managed within the OMS Platform.",
           },
           {
             type: "images",
             items: ["/images/Approval-Report-Per-Activity.png"],
           },
           {
+            type: "paragraph",
+            text: "An Authorised Approver can:",
+          },
+          {
             type: "list",
             items: [
-              "Not Authorised – Can only enter test data for other approved testers. Cannot sign a report",
-              "Trainee – Can perform testing under supervision of approved testers, enter test data, but cannot sign a report",
-              "Tester/Inspector/Process – Supervise trainees, perform testing independently, enter test data but cannot sign a report",
-              "Signatory – Supervise trainees, perform testing independently, enter test data and sign a report",
-              "Technical Auditor – Supervise trainees, perform testing, inspection processes independently, enter data, sign a report, and conduct technical audits on other staff",
-              "Authorised Approver – Authority to supervise other staff, perform testing independently, sign reports, conduct technical audits, approve or revoke approval for trainees, testers, signatories, technical auditors",
+              ,
+              "Edit access levels for specific test methods.",
+              "View the complete history of changes for a selected user.",
+              "Approve or revoke access with comments to ensure traceability.",
             ],
           },
           {
             type: "paragraph",
-            text: "From this section of the platform an authorised approver can edit access levels for a test method, view a history of the test method for the selected user or approve or revoke access. For further information on this feature, contact us for an obligation free demonstration.",
+            text: "For more information on this feature, contact us for an obligation-free demonstration.",
           },
           {
             type: "list",
@@ -986,7 +1060,19 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "The activities–Staff matrix report will give you a full history of access levels for a particular staff member, who approved access and any comments related to this change. For further information on this feature, contact us for an obligation free demonstration.",
+            text: "The Activities–Staff Matrix Report provides a comprehensive record of staff access levels over time, including:",
+          },
+          {
+            type: "list",
+            items: [
+              "The complete history of role or access level changes.",
+              "Details of who approved each change.",
+              "Comments or notes associated with each modification.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "This feature enhances auditability, transparency, and accountability, enabling management to maintain a clear record of authorization decisions within the organization.",
           },
         ],
       },
@@ -1234,7 +1320,7 @@ export const contentMap = {
   },
 
   "System Configuration": {
-    title: "System Configuration",
+    title: "Configure once, control everything.",
     sections: [
       {
         heading: "System Code",
@@ -1291,15 +1377,34 @@ export const contentMap = {
         ],
       },
       {
-        heading: "Timesheet Location",
+        heading: "Timesheet Management",
         content: [
           {
             type: "paragraph",
-            text: "It is important to know the location of your staff at any given point, especially in the current world we live in with COVID-19. You can configure the OMS platform to list the locations specific to your business, i.e. client site, home, office etc. When a staff member enters their timesheet, they can select their location at the time of completing that work.",
+            text: "It is important to know what your staff members are working on, where they are working, and how their time contributes to billable or non-billable tasks.",
           },
           {
             type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
+            text: "The OMS platform enables you to configure both activities and locations relevant to your business operations — for example, activities like Administration, Chemical Testing, NDT, Report Writing, Training, and Meetings, and locations such as Client Site, Home, or Office.",
+          },
+          {
+            type: "paragraph",
+            text: "When a staff member enters their timesheet, they can easily select:",
+          },
+          {
+            type: "list",
+            items: [
+              "Activity: The task or process they were undertaking at that time.",
+              "Location: Where the work was performed.",
+            ],
+          },
+          {
+            type: "paragraph",
+            text: "This ensures accurate tracking of productivity, billing, and operational efficiency, while maintaining complete transparency and traceability.",
+          },
+          {
+            type: "paragraph",
+            text: "For further information on this feature, contact us for an obligation-free demonstration.",
           },
         ],
       },
@@ -1333,40 +1438,6 @@ export const contentMap = {
           {
             type: "paragraph",
             text: "This productivity suite eliminates the entire manual process of recurring emails. Depending on the speed of your staff and the nature of recurring emails, this automation can save a minimum of $64,000/annum (260 workdays/annum x 20 emails/day x 5 mins/email x $2.50 per min business cost).",
-          },
-        ],
-      },
-      {
-        heading: "Reference Data",
-        content: [
-          {
-            type: "paragraph",
-            text: "One of our main focuses is to save our clients time and money and to free staff up to do more important tasks rather than spending hours on data entry.",
-          },
-          {
-            type: "paragraph",
-            text: "OMS Software stores reference data in the system to ensure staff are not spending time entering the same data repeatedly.",
-          },
-          {
-            type: "paragraph",
-            text: "Reference data allows a user to select content from a pre-defined list minimising spelling errors and enhancing reporting capability.",
-          },
-          {
-            type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
-          },
-        ],
-      },
-      {
-        heading: "Result Table Configuration",
-        content: [
-          {
-            type: "paragraph",
-            text: "The Result table can be configured to your requirements. The information entered into the result table configuration section of the platform will be the prepopulated data accessed when entering a job in the platform.",
-          },
-          {
-            type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
           },
         ],
       },
@@ -1703,11 +1774,15 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "In this section you can list all specifications this information could be provided by: your client, product or manufacturing standards, acceptance criteria given by your client, or acceptance criteria specified in the standards.",
+            text: "In this section, you can list all specifications — information that may be provided by your client, derived from product or manufacturing standards, defined acceptance criteria, or criteria specified within the relevant standards.",
           },
           {
             type: "paragraph",
-            text: "Within the rail specifications section, you can also upload documents and store for future use. Documents that can be stored include, client specification or an extract or a commentary on various product or manufacturing standards.",
+            text: "Within the Rail Specifications section, users can upload and store supporting documents for future reference. These may include client specifications, extracts, or commentaries from various product or manufacturing standards.",
+          },
+          {
+            type: "paragraph",
+            text: "This page provides users with full visibility into the test methods or process standards linked to each specification, and allows quick navigation to the associated records with a single click.",
           },
           {
             type: "images",
@@ -1728,11 +1803,19 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "The OMS platform groups all standards in the one safe, convenient place for a user to access at a time and place that is convenient to them.",
+            text: "IN “Adding a new Process Standard”",
           },
           {
             type: "paragraph",
-            text: "The OMS platform will list: ",
+            text: "Adding a new Process Standard in the OMS Platform is simple and can be completed in just eight easy steps.",
+          },
+          {
+            type: "paragraph",
+            text: "During setup, users can enter all essential details, such as Standard Number, Test Technique, Associated Module / Testing Method / Test Name, Accreditation Standard, and more.",
+          },
+          {
+            type: "paragraph",
+            text: "This structured approach ensures that every process standard is accurately linked, fully traceable, and compliant with both client and accreditation requirements.",
           },
           {
             type: "list",
@@ -1805,19 +1888,6 @@ export const contentMap = {
         ],
       },
       {
-        heading: "Rail Specification",
-        content: [
-          {
-            type: "paragraph",
-            text: "In this section you can list all rail specifications, this information could be provided by: your client, product or manufacturing standards, acceptance criteria given by your client or acceptance criteria specified in the standards.",
-          },
-          {
-            type: "paragraph",
-            text: "Within the rail specifications section, you can also upload documents and store for future use. Documents that can be stored include, client specification or an extract or a commentary on various product or manufacturing standards.",
-          },
-        ],
-      },
-      {
         heading: "Result Table Configurations",
         content: [
           {
@@ -1851,7 +1921,7 @@ export const contentMap = {
   },
 
   "Test Data Management": {
-    title: "Test Data Management",
+    title: "The engine behind your testing revenue.",
     sections: [
       {
         heading: "Create a Job",
@@ -1869,6 +1939,8 @@ export const contentMap = {
               "Automatic pre-filling of client contact details such as email ID, contact number, any special instructions",
               "Active Specifications such as Product Standards, test-inspection or process Standards, Materials Standards",
               "Prompting user to complete several other mandatory data selection to create a self-explanatory Job sheet.",
+              "Fetch materials directly from a vast and dynamic materials list.",
+              "Attach acceptance criteria, assign job schedules, and more — all within a few clicks.",
             ],
           },
           {
@@ -1901,31 +1973,34 @@ export const contentMap = {
           },
         ],
       },
+
       {
-        heading: "List of Modules",
+        heading: "Search Jobs",
         content: [
           {
             type: "paragraph",
-            text: "Currently, there are several test, inspection and process modules available in the OMS. Some of them are *Intelligence Augmented Automatic Compliance Evaluator (IAACE) modules which use Standards and material properties to evaluate test results to eliminate human errors in interpreting Standards requirements. These modules have been used by laboratories for years witnessing Million+ hours of production testing on actual data by real people (150+ users).",
+            text: "The Search Jobs feature in the OMS platform empowers users to take full control of their workflow. It allows them to easily locate, review, and manage any job in the system — whether it’s ongoing, in process, invoiced, closed, in draft, or yet to begin.",
           },
           {
             type: "list",
             items: [
-              "NDT modules – VT, MT, PT, ET, UT, UTT, RT and ….",
-              "Mechanical testing – Tensile*, Impact* and …",
-              "Weld mechanical testing – VT, Macro, Bend, fracture, transverse tension*, web-flange tension*, impact*, hardness survey*",
-              "Inspection modules – VI, PVI and …",
-              "Pressure testing – Hydrostatic test",
-              "Survey modules – Rail alignment*, Pipe ovality measurement and …",
-              "Process modules – Welding supervision and …",
-              "Chemical testing – O.E.S Spectroscopy* (Beta) and …",
-              "IAACE – Intelligence Augmented Automatic Compliance Evaluator modules",
+              "Instantly view the status and progress of every job.",
+              "Download a consolidated CSV containing complete Job vs. Specification details.",
+              "Generate invoices with a single click.",
+              "Effortlessly access and download job information or completed reports.",
+              "Duplicate or transfer jobs to save time and ensure accuracy.",
+              "Quickly open related specifications and standards linked to each job.",
             ],
           },
           {
             type: "paragraph",
-            text: "Structure of modules: The most common excuses for data losses in the industry are tablet broke down, battery drained, internet lost, user forgot to save, and so on.",
+            text: "Everything you need to manage, track, and optimize your job operations - all in one place.",
           },
+        ],
+      },
+      {
+        heading: "Job Management Workflow",
+        content: [
           {
             type: "paragraph",
             text: "OMS is designed to ensure almost nothing is lost or at the most previous 3 minutes of data loss, in case of a major outage. All modules for test, inspection or process are divided into 8 sections to eliminate or minimise entire data loss. All sections are designed to reduce data entry (typing) by human data and reduce fatigue on the user.",
@@ -1945,19 +2020,7 @@ export const contentMap = {
           },
         ],
       },
-      {
-        heading: "Search Jobs",
-        content: [
-          {
-            type: "paragraph",
-            text: "In this section of the OMS platform, a user can easily search and modify any job that is in the system.",
-          },
-          {
-            type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
-          },
-        ],
-      },
+
       {
         heading: "Job Statistics",
         content: [
@@ -1974,12 +2037,3 @@ export const contentMap = {
     ],
   },
 };
-
-// NABL ULR + QR Verification - Ensure every report is authentic, traceable, and verifiable online.
-// Quality Management Documents - Version-controlled policies, procedures, and records in one repository.
-// Job Test Record Management - Full traceability from sample registration to certificate issuance.
-// Client Management Portal - Clients raise requests, upload data, and download verified reports.
-// Specifications Database - Keep reference standards and acceptance limits up-to-date.
-// Asset Management - Equipment inventory with calibration and service alerts.
-// Employee Management - Track competencies, approvals, and workload distribution.
-// Accounting & Finance - Seamless quote-to-cash cycle and project cost tracking.

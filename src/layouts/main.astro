@@ -77,5 +77,27 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 		<ReactLayout client:load>
 		<slot />  <!-- Astro page content will go here -->
 		</ReactLayout>
+
+		<script>
+			// 🌍 Helper to sync Astro <-> React language
+			function changeLanguage(lang) {
+				// Save in localStorage
+				localStorage.setItem("preferredLanguage", lang);
+
+				// Dispatch a browser event so React can listen & update
+				window.dispatchEvent(new CustomEvent("languageChanged", { detail: { lang } }));
+
+				// Optional: update <html> lang attribute
+				document.documentElement.lang = lang;
+			}
+
+			// 🧠 Detect manual changes from localStorage (e.g., other tabs)
+			window.addEventListener("storage", (event) => {
+				if (event.key === "preferredLanguage" && event.newValue) {
+				window.dispatchEvent(new CustomEvent("languageChanged", { detail: { lang: event.newValue } }));
+				}
+			});
+		</script>
+
 	</body>
 </html>
