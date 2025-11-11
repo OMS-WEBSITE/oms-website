@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
 
 const OrganizationCard = ({
@@ -52,10 +51,6 @@ const OrganizationCard = ({
             </div>
           </div>
         )}
-
-        <Button variant="outline" className="w-full">
-          View Details →
-        </Button>
       </div>
     </div>
   );

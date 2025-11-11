@@ -1,14 +1,125 @@
 import React from "react";
+import { motion } from "framer-motion";
+import {
+  FaBookOpen,
+  FaChalkboardTeacher,
+  FaVideo,
+  FaFileAlt,
+} from "react-icons/fa";
 
 const Learn = () => {
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0 },
+  };
+
+  const cards = [
+    {
+      icon: <FaBookOpen className="text-orange-500 text-4xl mb-3" />,
+      title: "Tutorials",
+    },
+    {
+      icon: <FaChalkboardTeacher className="text-orange-500 text-4xl mb-3" />,
+      title: "Walk-throughs",
+    },
+    {
+      icon: <FaVideo className="text-orange-500 text-4xl mb-3" />,
+      title: "Video Sessions",
+    },
+    {
+      icon: <FaFileAlt className="text-orange-500 text-4xl mb-3" />,
+      title: "Case Studies",
+    },
+  ];
+
   return (
-    <section id="learn" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
-        <h2 className="text-3xl font-bold mb-6 text-center">Learn</h2>
-        <p className="text-center max-w-2xl mx-auto text-gray-600">
-          Access tutorials, documentation, and resources to get the most out of OMS.
-        </p>
-        {/* Add resources, tutorials here */}
+    <section id="learn" className="py-16 sm:py-20 bg-gray-50">
+      <div className="w-[90%] mx-auto py-4 px-2 text-center">
+        {/* Heading */}
+        <motion.h2
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ duration: 0.6 }}
+          className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-800 mb-4 sm:mb-6"
+        >
+          <span className="border-b-4 border-orange-500 pb-1">Learn</span>
+        </motion.h2>
+
+        {/* Intro Text */}
+        <motion.p
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.1, duration: 0.6 }}
+          className="text-center max-w-2xl mx-auto text-gray-600 text-sm sm:text-base leading-relaxed mb-10"
+        >
+          Access tutorials, documentation, and resources to get the most out of
+          OMS.
+        </motion.p>
+
+        {/* Description Paragraphs */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.2, duration: 0.6 }}
+          className="max-w-3xl mx-auto space-y-6 sm:space-y-8"
+        >
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed px-2 sm:px-0">
+            Access tutorials, feature walk-throughs, and{" "}
+            <strong>ISO 17025 compliance guides</strong>.
+          </p>
+          <p className="text-gray-700 text-sm sm:text-base leading-relaxed px-2 sm:px-0">
+            Includes video sessions, help articles, and case studies from
+            accredited labs.
+          </p>
+        </motion.div>
+
+        {/* Divider */}
+        <motion.div
+          variants={fadeUp}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="h-0.5 w-24 bg-orange-500 mx-auto my-10 rounded-full"
+        />
+
+        {/* Cards */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-6">
+          {cards.map((card, index) => (
+            <motion.div
+              key={index}
+              variants={fadeUp}
+              initial="hidden"
+              whileInView="visible"
+              transition={{
+                delay: index * 0.1,
+                duration: 0.6,
+                ease: "easeOut",
+              }}
+              whileHover={{
+                scale: 1.05,
+                y: -4,
+                transition: { duration: 0.25, ease: "easeOut" }, // smooth lift
+              }}
+              whileTap={{ scale: 1.03 }} // subtle click feedback
+              className="relative flex flex-col items-center bg-white rounded-2xl shadow-md hover:shadow-lg transition-transform duration-200 ease-out p-6 border border-orange-100"
+            >
+              <motion.div
+                variants={fadeUp}
+                transition={{ delay: index * 0.1 + 0.2, duration: 0.5 }}
+                className="flex justify-center items-center mb-3"
+              >
+                {card.icon}
+              </motion.div>
+
+              <h3 className="text-lg font-semibold text-gray-800 mt-2">
+                {card.title}
+              </h3>
+            </motion.div>
+          ))}
+        </div>
       </div>
     </section>
   );

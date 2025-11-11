@@ -1,242 +1,96 @@
 ---
 import Layout from '../layouts/main.astro';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
 import { Button } from '@/components/ui/button';
 
 // SEO metadata specific to success stories page
 const seo = {
-	title: "Customer Success Stories | OMS Software Security Platform",
-	description: "See how organizations achieve 75% faster audits, 100% compliance rates, and $2M+ annual savings with OMS Software. Real success stories from TechCorp, SecureBank, HealthTech, and more.",
-	image: "/og-image.png",
-	canonicalURL: Astro.site + Astro.url.pathname,
+  title: "Customer Success Stories | OMS Software Security Platform",
+  description: "See how organizations achieve 75% faster audits, 100% compliance rates, and $2M+ annual savings with OMS Software. Real success stories from TechCorp, SecureBank, HealthTech, and more.",
+  image: "/og-image.png",
+  canonicalURL: Astro.site + Astro.url.pathname,
+  keywords: "Welding Documentation Software | LIMS for Testing Labs | NDT Reporting System | ISO 17025 Compliance Software | ERP for Inspection and Calibration | Quality Management Software India"
 };
 ---
 
 <Layout {...seo}>
- <Header client:only="react" />
 
   <main>
-    {/* Hero Section */}
-    <section class="bg-gradient-to-b from-indigo-50 to-white py-20">
+
+    {/* Proven Results Section */}
+    <section class="py-16 bg-gray-50">
       <div class="container mx-auto max-w-7xl px-4">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Success Stories
-          </h1>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Discover how organizations are transforming their security auditing process and achieving remarkable results with OMS Software.
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">
+            ✅ Proven Results – OMS Software for Testing, Inspection & Compliance Management
+          </h2>
+          <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
+            Thousands of professionals in NDT, Mechanical and Chemical Labs, Fabrication Workshops, and Quality Inspection Companies trust OMS Software to simplify operations, improve traceability, and maintain full regulatory compliance.
           </p>
         </div>
-      </div>
-    </section>
 
-    {/* Featured Case Study */}
-    <section class="py-16">
-      <div class="container mx-auto max-w-7xl px-4">
-        <div class="bg-white rounded-2xl shadow-xl overflow-hidden">
-          <div class="grid md:grid-cols-2 gap-8">
-            <div class="p-8 md:p-12">
-              <div class="flex items-center mb-6">
-                <div class="w-16 h-16 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                  🏢
-                </div>
-                <div>
-                  <h3 class="text-2xl font-bold text-gray-800">TechCorp Global</h3>
-                  <p class="text-gray-600">Enterprise Technology Solutions</p>
-                </div>
-              </div>
-              <div class="space-y-6">
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-800 mb-2">Challenge</h4>
-                  <p class="text-gray-600">
-                    Managing security audits across 200+ cloud services and applications while maintaining compliance with multiple international standards.
-                  </p>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-800 mb-2">Solution</h4>
-                  <p class="text-gray-600">
-                    Implemented OMS Software's automated security assessment platform with custom compliance templates and real-time monitoring.
-                  </p>
-                </div>
-                <div>
-                  <h4 class="text-lg font-semibold text-gray-800 mb-2">Results</h4>
-                  <ul class="space-y-2">
-                    <li class="flex items-center">
-                      <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span class="text-gray-600">75% reduction in audit completion time</span>
-                    </li>
-                    <li class="flex items-center">
-                      <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span class="text-gray-600">100% compliance achievement rate</span>
-                    </li>
-                    <li class="flex items-center">
-                      <svg class="w-5 h-5 text-green-500 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7" />
-                      </svg>
-                      <span class="text-gray-600">$2M annual cost savings</span>
-                    </li>
-                  </ul>
-                </div>
-                <Button className="bg-blue-600 hover:bg-blue-700 text-white">
-                  Read Full Case Study →
-                </Button>
-              </div>
-            </div>
-            <div class="bg-gradient-to-br from-blue-50 to-indigo-50 p-8 md:p-12 flex items-center">
-              <blockquote class="text-xl text-gray-800 italic">
-                "OMS Software has revolutionized our security OMS Softwarecess. What used to take months now takes weeks, and the quality of our assessments has improved dramatically."
-                <footer class="mt-4 text-gray-600 not-italic">
-                  <div class="font-semibold">Sarah Martinez</div>
-                  <div class="text-sm">Chief Information Security Officer</div>
-                </footer>
-              </blockquote>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Success Metrics */}
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto max-w-7xl px-4">
-        <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-          <div class="text-center">
-            <div class="text-4xl font-bold text-blue-600 mb-2">75%</div>
-            <p class="text-gray-600">Average Time Saved</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-blue-600 mb-2">100%</div>
-            <p class="text-gray-600">Compliance Rate</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-blue-600 mb-2">$2M+</div>
-            <p class="text-gray-600">Average Savings</p>
-          </div>
-          <div class="text-center">
-            <div class="text-4xl font-bold text-blue-600 mb-2">98%</div>
-            <p class="text-gray-600">Client Satisfaction</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* More Success Stories */}
-    <section class="py-16">
-      <div class="container mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">More Success Stories</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          {/* FinTech Success Story */}
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="p-6">
-              <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center mr-4">
-                  💰
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-800">SecureBank Financial</h3>
-                  <p class="text-sm text-gray-600">Financial Services</p>
-                </div>
-              </div>
-              <p class="text-gray-600 mb-4">
-                Achieved SOC 2 compliance in record time while reducing security audit costs by 60%.
-              </p>
-              <Button variant="outline" className="w-full">Read Story →</Button>
-            </div>
-          </div>
-
-          {/* Healthcare Success Story */}
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="p-6">
-              <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
-                  🏥
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-800">HealthTech Solutions</h3>
-                  <p class="text-sm text-gray-600">Healthcare Technology</p>
-                </div>
-              </div>
-              <p class="text-gray-600 mb-4">
-                Streamlined HIPAA compliance audits across 50+ facilities while improving security posture.
-              </p>
-              <Button variant="outline" className="w-full">Read Story →</Button>
-            </div>
-          </div>
-
-          {/* E-commerce Success Story */}
-          <div class="bg-white rounded-xl shadow-md overflow-hidden">
-            <div class="p-6">
-              <div class="flex items-center mb-4">
-                <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mr-4">
-                  🛍️
-                </div>
-                <div>
-                  <h3 class="font-semibold text-gray-800">ShopSmart Global</h3>
-                  <p class="text-sm text-gray-600">E-commerce Platform</p>
-                </div>
-              </div>
-              <p class="text-gray-600 mb-4">
-                Automated PCI DSS compliance monitoring while scaling operations across 15 countries.
-              </p>
-              <Button variant="outline" className="w-full">Read Story →</Button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    {/* Testimonial Grid */}
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">What Our Clients Say</h2>
-        <div class="grid md:grid-cols-3 gap-8">
-          <div class="bg-white p-6 rounded-xl shadow-sm">
-            <div class="text-3xl text-blue-300 mb-4">❝</div>
-            <p class="text-gray-600 mb-6">
-              "The automated compliance checks and real-time monitoring have transformed how we handle security audits."
+        <div class="grid md:grid-cols-2 gap-12">
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <div class="flex items-center mb-4 text-blue-600 text-2xl">📄</div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Streamlined Documentation</h3>
+            <p class="text-gray-600">
+              OMS Software centralizes all your WPS, PQR, and WQR in a single secure system. Smart filters and one-click access allow instant retrieval of welding procedures, test certificates, and inspection reports anytime.
             </p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
-              <div class="ml-4">
-                <p class="font-medium">Michael Chang</p>
-                <p class="text-sm text-gray-600">Security Director, CloudTech Inc</p>
-              </div>
-            </div>
           </div>
-
-          <div class="bg-white p-6 rounded-xl shadow-sm">
-            <div class="text-3xl text-blue-300 mb-4">❝</div>
-            <p class="text-gray-600 mb-6">
-              "OMS Software's AI-powered analysis has helped us identify and address security gaps we didn't even know existed."
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <div class="flex items-center mb-4 text-green-500 text-2xl">⏱️</div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Faster Audits & Reporting</h3>
+            <p class="text-gray-600">
+              Reduce audit completion time by up to 70%. ISO/IEC 17025-ready templates, digital approvals, and automatic validation ensure compliance. Generate NABL-compliant reports in minutes.
             </p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
-              <div class="ml-4">
-                <p class="font-medium">Rachel Stevens</p>
-                <p class="text-sm text-gray-600">CISO, DataSafe Solutions</p>
-              </div>
-            </div>
           </div>
-
-          <div class="bg-white p-6 rounded-xl shadow-sm">
-            <div class="text-3xl text-blue-300 mb-4">❝</div>
-            <p class="text-gray-600 mb-6">
-              "The ROI was immediate. We've cut our audit time in half while improving the accuracy of our assessments."
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <div class="flex items-center mb-4 text-orange-500 text-2xl">📊</div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Real-Time Tracking & Workflow Automation</h3>
+            <p class="text-gray-600">
+              OMS Software provides real-time visibility from sample registration to test result release. Supervisors receive instant notifications; integrated dashboards simplify compliance and traceability.
             </p>
-            <div class="flex items-center">
-              <div class="w-12 h-12 bg-gray-200 rounded-full"></div>
-              <div class="ml-4">
-                <p class="font-medium">David Wilson</p>
-                <p class="text-sm text-gray-600">CTO, SecureNet Systems</p>
-              </div>
+          </div>
+          <div class="bg-white p-8 rounded-xl shadow-md">
+            <div class="flex items-center mb-4 text-purple-500 text-2xl">🏭</div>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Designed for Fabricators, Testing Labs & Inspection Agencies</h3>
+            <p class="text-gray-600">
+              OMS Software scales with your business, replacing fragmented apps with ERP + LIMS + QMS in one cloud-based solution.
+            </p>
+          </div>
+        </div>
+
+        {/* Measurable Impact */}
+        <div class="mt-16 text-center">
+          <h3 class="text-2xl font-bold text-gray-800 mb-6">📈 Measurable Impact</h3>
+          <div class="grid md:grid-cols-4 gap-8">
+            <div class="text-center">
+              <div class="text-3xl font-bold text-blue-600 mb-2">70%</div>
+              <p class="text-gray-600">Faster Documentation & Reporting</p>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-green-600 mb-2">100%</div>
+              <p class="text-gray-600">Audit Compliance & Traceability</p>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-orange-500 mb-2">60%</div>
+              <p class="text-gray-600">Lower Operational Costs</p>
+            </div>
+            <div class="text-center">
+              <div class="text-3xl font-bold text-purple-600 mb-2">98%</div>
+              <p class="text-gray-600">Customer Satisfaction Rate</p>
             </div>
           </div>
         </div>
+
+        {/* Testimonial */}
+        <div class="mt-16 max-w-3xl mx-auto text-center">
+          <blockquote class="text-xl text-gray-800 italic mb-4">
+            "OMS Software has transformed the way we manage test reports and welder qualifications. Our audits are faster, and our teams are more productive."
+          </blockquote>
+        </div>
+
+        {/* SEO Keywords */}
+       
       </div>
     </section>
 
@@ -249,16 +103,21 @@ const seo = {
         <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
           Join these successful organizations and transform your security auditing process with OMS Software.
         </p>
-        <div class="flex justify-center gap-4">
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+        <div class="max-w-xl mx-auto flex flex-col sm:flex-row justify-center gap-4">
+          <button
+            onclick="window.dispatchEvent(new CustomEvent('openQuickConnect'))"
+            class="h-10 bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center rounded-lg px-4 font-medium transition cursor-pointer"
+          >
             Start Free Trial
-          </Button>
-          <Button size="lg" variant="outline">
+          </button>
+          <button
+            onclick="window.dispatchEvent(new CustomEvent('openQuickConnect'))"
+            class="h-10 border border-black text-black hover:border-orange-500 hover:text-orange-500 flex items-center justify-center rounded-lg px-4 font-medium transition cursor-pointer"
+          >
             Schedule Demo
-          </Button>
+          </button>
         </div>
       </div>
     </section>
   </main>
-  <Footer />
 </Layout>

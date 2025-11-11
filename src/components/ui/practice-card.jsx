@@ -1,4 +1,3 @@
-import React from 'react';
 import { Button } from '@/components/ui/button';
 
 const PracticeCard = ({
@@ -70,9 +69,6 @@ const PracticeCard = ({
           </div>
         )}
 
-        <Button variant="outline" className="w-full">
-          Learn More →
-        </Button>
       </div>
     </div>
   );

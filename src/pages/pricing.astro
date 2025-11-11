@@ -1,13 +1,10 @@
 ---
 import Layout from '../layouts/main.astro';
 import Header from '@/components/layout/Header';
-import PricingSection from '../components/sections/PricingSection';
-import ScrollingLogos from '../components/sections/ScrollingLogos';
 import TestimonialsSection from '../components/sections/TestimonialsSection';
 import CTASection from '../components/sections/CTASection';
 import Footer from '@/components/layout/Footer';
 
-// SEO metadata specific to pricing page
 const seo = {
 	title: "Pricing - OMS Software | Transparent Security Auditing Plans",
 	description: "Choose from our flexible, transparent pricing plans for IT security auditing. From startups to enterprises, get AI-powered assessment tools, automated compliance checks, and expert support.",
@@ -17,34 +14,308 @@ const seo = {
 ---
 
 <Layout {...seo}>
- <Header client:only="react" />
-
-  {/* Hero section specific to pricing */}
+  
   <div class="min-h-screen">
-    {/* Hero section specific to pricing */}
-    <div class="bg-gradient-to-b from-indigo-50 to-white py-16 px-4">
-      <div class="container mx-auto max-w-7xl text-center">
+    <!-- Hero -->
+    <section class="bg-gradient-to-b from-indigo-50 to-white py-16 px-4 text-center">
+      <div class="container mx-auto max-w-7xl">
         <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-4">
-          Simple, transparent pricing
+          Simple, Transparent Pricing
         </h1>
         <p class="text-xl text-gray-600 max-w-2xl mx-auto">
-          Everything you need to streamline your IT security auditing workflow, all in one place.
-          No hidden fees or surprises.
-        </p>
+  Everything you need to streamline your 
+  <span class="font-semibold text-orange-500">
+    testing, inspection, and calibration workflows
+  </span> 
+  - all in one secure platform.<br />
+  No setup fees. No surprises. Just clear, scalable pricing that grows with your lab.
+</p>
       </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto max-w-6xl px-4">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-10">
+          Why Choose OMS Software Over Spreadsheets?
+        </h2>
+
+        <div class="overflow-x-auto rounded-lg shadow-lg border border-gray-200">
+          <table class="w-full text-left border-collapse">
+            <thead class="bg-indigo-100 text-gray-800">
+              <tr>
+                <th class="p-4 font-semibold text-base">Feature</th>
+                <th class="p-4 font-semibold text-base">Spreadsheets</th>
+                <th class="p-4 font-semibold text-base">OMS Software</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-t hover:bg-gray-50">
+                <td class="p-4 font-medium">Workflow Management</td>
+                <td class="p-4">Manual data entry, prone to version errors</td>
+                <td class="p-4">Centralized job tracking and approval workflows</td>
+              </tr>
+              <tr class="border-t hover:bg-gray-50">
+                <td class="p-4 font-medium">Test Reports</td>
+                <td class="p-4">Inconsistent formatting</td>
+                <td class="p-4">NABL-ready, QR-verified, standardized templates</td>
+              </tr>
+              <tr class="border-t hover:bg-gray-50">
+                <td class="p-4 font-medium">Collaboration</td>
+                <td class="p-4">No real-time updates</td>
+                <td class="p-4">Live dashboards and role-based access</td>
+              </tr>
+              <tr class="border-t hover:bg-gray-50">
+                <td class="p-4 font-medium">Compliance</td>
+                <td class="p-4">Manual audits</td>
+                <td class="p-4">Automated traceability & ISO/IEC 17025 mapping</td>
+              </tr>
+              <tr class="border-t hover:bg-gray-50">
+                <td class="p-4 font-medium">Asset & Calibration</td>
+                <td class="p-4">Managed separately</td>
+                <td class="p-4">Integrated asset register & due-date alerts</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- Detailed Pricing Section -->
+    <section class="py-20 bg-white">
+      <div class="container mx-auto max-w-6xl px-4">
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+          🇮🇳 OMS Software Pricing - India (INR, Excl. GST)
+        </h2>
+
+        <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-10">
+          Our SaaS plans include cloud hosting, automatic updates, and full access to all OMS modules.
+          You can switch plans anytime as your lab grows.
+        </p>
+
+        <!-- Plan A -->
+        <div class="bg-gray-50 p-8 rounded-2xl shadow-md mb-10">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Plan A - For Medium to Large Labs</h3>
+          <p class="text-gray-700 mb-2"><strong>₹10,950</strong> / user / month (≈ AUD $199)</p>
+          <p class="text-gray-700 mb-4">
+            Minimum subscription: <strong>₹5,50,000 / year</strong> (≈ ₹55,000 / month)
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2">
+            <li>Full OMS LIMS + ERP + QMS suite</li>
+            <li>Cloud hosting & maintenance</li>
+            <li>Continuous upgrades and compliance updates</li>
+            <li>All current OMS modules</li>
+            <li>16 hours (2 days) complimentary training</li>
+          </ul>
+        </div>
+
+        <!-- Plan B -->
+        <div class="bg-gray-50 p-8 rounded-2xl shadow-md mb-10">
+          <h3 class="text-2xl font-semibold text-gray-800 mb-2">Plan B - For Small Labs & Startups</h3>
+          <p class="text-gray-700 mb-2"><strong>₹13,700</strong> / user / month (≈ AUD $249)</p>
+          <p class="text-gray-700 mb-4">
+            Minimum subscription: <strong>₹38,500 / month</strong> (≈ AUD $699)
+          </p>
+          <ul class="list-disc list-inside text-gray-600 space-y-2">
+            <li>All essential modules for testing & calibration</li>
+            <li>Continuous software upgrades</li>
+            <li>Remote support & online training</li>
+            <li>50 hours complimentary customization time</li>
+          </ul>
+        </div>
+
+        <!-- Volume Discounts -->
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Volume Discounts</h3>
+        <div class="overflow-x-auto mb-10">
+          <table class="w-full border border-gray-200 text-left rounded-lg">
+            <thead class="bg-indigo-100">
+              <tr>
+                <th class="p-3 font-semibold">Active Users</th>
+                <th class="p-3 font-semibold">Discount</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-t"><td class="p-3">> 100 – ≤ 200</td><td class="p-3">10% off</td></tr>
+              <tr class="border-t"><td class="p-3">> 200 – ≤ 300</td><td class="p-3">20% off</td></tr>
+              <tr class="border-t"><td class="p-3">> 300</td><td class="p-3">25% off</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Additional Services -->
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Additional Services</h3>
+        <div class="overflow-x-auto mb-10">
+          <table class="w-full border border-gray-200 text-left rounded-lg">
+            <thead class="bg-indigo-100">
+              <tr>
+                <th class="p-3 font-semibold">Service</th>
+                <th class="p-3 font-semibold">Fee (INR Excl. GST)</th>
+                <th class="p-3 font-semibold">Notes</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-t"><td class="p-3">Online Training / Minor Changes</td><td class="p-3">₹8,200 / hour (≈ AUD $149)</td><td class="p-3">Beyond complimentary hours</td></tr>
+              <tr class="border-t"><td class="p-3">Major Changes / Custom Modules</td><td class="p-3">₹11,000 / hour (≈ AUD $199)</td><td class="p-3">For new workflows or client pages</td></tr>
+              <tr class="border-t"><td class="p-3">Integration / IT Liaison (Self-hosted)</td><td class="p-3">₹11,000 / hour</td><td class="p-3">Coordination with client IT team</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Included in Every Plan -->
+        <h3 class="text-2xl font-bold text-gray-800 mb-4">Included in Every Plan</h3>
+        <ul class="list-disc list-inside text-gray-600 space-y-2 mb-10">
+          <li>Cloud hosting on OMS infrastructure</li>
+          <li>Continuous upgrades aligned with ISO/IEC 17025 & NABL guidelines</li>
+          <li>Secure data backups and uptime monitoring</li>
+        </ul>
+
+        <!-- Summary Table -->
+        <div class="overflow-x-auto mb-16">
+          <table class="w-full border border-gray-200 text-left rounded-lg">
+            <thead class="bg-indigo-100">
+              <tr>
+                <th class="p-3 font-semibold">Plan</th>
+                <th class="p-3 font-semibold">Description</th>
+                <th class="p-3 font-semibold">Fee (per user / month)</th>
+                <th class="p-3 font-semibold">Minimum Monthly</th>
+                <th class="p-3 font-semibold">Notes</th>
+              </tr>
+            </thead>
+            <tbody class="text-gray-700">
+              <tr class="border-t"><td class="p-3">Plan A</td><td class="p-3">Medium–Large Labs</td><td class="p-3">AUD $199</td><td class="p-3">AUD $999</td><td class="p-3">Full suite + 16 hrs training</td></tr>
+              <tr class="border-t"><td class="p-3">Plan B</td><td class="p-3">Small Labs & Startups</td><td class="p-3">AUD $249</td><td class="p-3">AUD $699</td><td class="p-3">Includes 50 hrs customization</td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Australia Pricing 
+        <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-8">
+          🇦🇺 OMS Software Pricing - Australia (AUD, Excl. GST)
+        </h2>
+        <p class="text-gray-700 text-center mb-4">
+          Volume Discounts: > 100 users – 10% off | > 200 – 20% off | > 300 – 25% off
+        </p>
+        <p class="text-gray-700 text-center">
+          <strong>Extras:</strong> Online training or minor changes – AUD $149 / hour | 
+          Major changes or custom modules – AUD $199 / hour | Integration support – AUD $199 / hour
+        </p>
+      </div>  -->
+
+      <!-- Australia Pricing -->
+      <!-- Australia Pricing -->
+<section class="py-20 bg-white">
+  <div class="container mx-auto max-w-6xl px-4">
+    <h2 class="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-12">
+      🇦🇺 OMS Software Pricing - Australia (AUD, Excl. GST)
+    </h2>
+
+    <p class="text-lg text-gray-700 text-center max-w-3xl mx-auto mb-10">
+      Transparent pricing designed for Australian testing and inspection teams.
+      Flexible subscriptions with cloud hosting, automatic updates, and full access to all OMS modules.
+    </p>
+
+    <!-- Plan A -->
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md mb-10">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-2">Plan A - For Medium to Large Labs</h3>
+      <p class="text-gray-700 mb-2"><strong>AUD $199</strong> / user / month</p>
+      <p class="text-gray-700 mb-4">
+        Minimum subscription: <strong>AUD $999 / month</strong>
+      </p>
+      <ul class="list-disc list-inside text-gray-600 space-y-2">
+        <li>Full OMS LIMS + ERP + QMS suite</li>
+        <li>Cloud hosting & maintenance</li>
+        <li>Continuous upgrades and compliance updates</li>
+        <li>All current OMS modules</li>
+        <li>16 hours (2 days) complimentary training</li>
+      </ul>
     </div>
 
-    {/* Main pricing section */}
-    <PricingSection client:load />
+    <!-- Plan B -->
+    <div class="bg-gray-50 p-8 rounded-2xl shadow-md mb-10">
+      <h3 class="text-2xl font-semibold text-gray-800 mb-2">Plan B - For Small Labs & Startups</h3>
+      <p class="text-gray-700 mb-2"><strong>AUD $249</strong> / user / month</p>
+      <p class="text-gray-700 mb-4">
+        Minimum subscription: <strong>AUD $699 / month</strong>
+      </p>
+      <ul class="list-disc list-inside text-gray-600 space-y-2">
+        <li>All essential modules for testing & calibration</li>
+        <li>Continuous software upgrades</li>
+        <li>Remote support & online training</li>
+        <li>50 hours complimentary customization time</li>
+      </ul>
+    </div>
 
-    {/* Social proof */}
-    <ScrollingLogos />
+    <!-- Volume Discounts -->
+    <h3 class="text-2xl font-bold text-gray-800 mb-4">Volume Discounts</h3>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full border border-gray-200 text-left rounded-lg">
+        <thead class="bg-indigo-100">
+          <tr>
+            <th class="p-3 font-semibold">Active Users</th>
+            <th class="p-3 font-semibold">Discount</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr class="border-t"><td class="p-3">> 100 – ≤ 200</td><td class="p-3">10% off</td></tr>
+          <tr class="border-t"><td class="p-3">> 200 – ≤ 300</td><td class="p-3">20% off</td></tr>
+          <tr class="border-t"><td class="p-3">> 300</td><td class="p-3">25% off</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    {/* Testimonials */}
-    <TestimonialsSection />
+    <!-- Additional Services -->
+    <h3 class="text-2xl font-bold text-gray-800 mb-4">Additional Services</h3>
+    <div class="overflow-x-auto mb-10">
+      <table class="w-full border border-gray-200 text-left rounded-lg">
+        <thead class="bg-indigo-100">
+          <tr>
+            <th class="p-3 font-semibold">Service</th>
+            <th class="p-3 font-semibold">Fee (AUD, Excl. GST)</th>
+            <th class="p-3 font-semibold">Notes</th>
+          </tr>
+        </thead>
+        <tbody class="text-gray-700">
+          <tr class="border-t"><td class="p-3">Online Training / Minor Changes</td><td class="p-3">AUD $149 / hour</td><td class="p-3">Beyond complimentary hours</td></tr>
+          <tr class="border-t"><td class="p-3">Major Changes / Custom Modules</td><td class="p-3">AUD $199 / hour</td><td class="p-3">For new workflows or client pages</td></tr>
+          <tr class="border-t"><td class="p-3">Integration / IT Liaison (Self-hosted)</td><td class="p-3">AUD $199 / hour</td><td class="p-3">Coordination with client IT team</td></tr>
+        </tbody>
+      </table>
+    </div>
 
-    {/* Call to action */}
-    <CTASection />
+    <!-- Included in Every Plan -->
+    <h3 class="text-2xl font-bold text-gray-800 mb-4">Included in Every Plan</h3>
+    <ul class="list-disc list-inside text-gray-600 space-y-2 mb-10">
+      <li>Cloud hosting on OMS infrastructure</li>
+      <li>Continuous upgrades aligned with ISO/IEC 17025 guidelines</li>
+      <li>Secure data backups and uptime monitoring</li>
+    </ul>
   </div>
-<Footer />
+</section>
+
+
+    </section>
+
+        <!--  <section class="py-12 bg-indigo-50">
+        <div class="container mx-auto max-w-4xl text-center px-4">
+          <h3 class="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+            🌍 Chosen by Accredited NDT Teams
+          </h3>
+          <p class="text-gray-700 text-lg">
+            Working with <strong>LMATS</strong>, <strong>IXT</strong>, <strong>OMS Engineering</strong>,
+            <strong>SWA Inspection</strong>, and others.  
+            References available on request.
+          </p>
+        </div>
+      </section> -->
+
+
+        <!-- Social proof -->
+        <!-- <ScrollingLogos /> -->
+
+        <!-- Testimonials -->
+        <!-- <TestimonialsSection /> -->
+
+        <!-- Call to action -->
+        <CTASection />
+  </div>
 </Layout>

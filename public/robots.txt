@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://omsnxt.netlify.app/sitemap-index.xml
+Host: https://omsnxt.netlify.app

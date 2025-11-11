@@ -1,6 +1,10 @@
 ---
 import '../styles/global.css';
-const { content } = Astro.props;
+import partytown from '@astrojs/partytown';
+import StructuredData from "../components/StructuredData.astro";
+import { useLanguage } from "@/context/LanguageContext";
+import LanguageWrapper from "../context/LanguageWrapper.jsx";
+import ReactLayout from "../components/ReactLayout.jsx";
 
 // Default SEO values
 const {
@@ -19,7 +23,10 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		
+
+		 <!-- ✅ Google Search Console verification -->
+		<meta name="google-site-verification" content="219MuIXHlTCRjVHwf0lnWUQFhA8nRkLOBXBdTDzPwZY" />	
+			
 		<!-- Primary Meta Tags -->
 		<title>{title}</title>
 		<meta name="title" content={title} />
@@ -49,8 +56,26 @@ const keywords = "security auditing, compliance management, AI assessment tools,
 		<!-- Preconnect to common domains -->
 		<link rel="preconnect" href="https://fonts.googleapis.com" />
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+		<!-- 🧠 Partytown for Google Analytics -->
+		<script
+			type="text/partytown"
+			src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
+		></script>
+
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag() { dataLayer.push(arguments); }
+			gtag('js', new Date());
+			gtag('config', 'G-XXXXXXXXXX');
+		</script>
+
+		<!-- Structured Data -->
+		<StructuredData />
 	</head>
 	<body>
-		<slot />
+		<ReactLayout client:load>
+		<slot />  <!-- Astro page content will go here -->
+		</ReactLayout>
 	</body>
 </html>

@@ -5,31 +5,28 @@ import Footer from '@/components/layout/Footer';
 import PracticeCard from '@/components/ui/practice-card';
 import { Button } from '@/components/ui/button';
 
-// SEO metadata specific to best practices page
+// SEO metadata
 const seo = {
-	title: "Security Audit Best Practices & Implementation Guide",
-	description: "Learn essential security audit practices, from basic planning to advanced penetration testing. Industry-specific guides for healthcare, finance, and cloud security compliance.",
-	image: "/og-image.png",
-	canonicalURL: Astro.site + Astro.url.pathname,
+  title: "Laboratory Audit Best Practices & Implementation Guide",
+  description: "Learn industry-proven methods for maintaining compliance, improving traceability, and ensuring readiness for NABL and ISO/IEC 17025 audits.",
+  image: "/og-image.png",
+  canonicalURL: Astro.site + Astro.url.pathname,
 };
 ---
 
 <Layout {...seo}>
-
-   <Header client:only="react" />
-
+  
   <main>
     {/* Hero Section */}
     <section class="bg-gradient-to-b from-indigo-50 to-white py-20">
-      <div class="container mx-auto max-w-7xl px-4">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Security Audit Best Practices
-          </h1>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Learn industry-leading practices for conducting effective IT security audits and maintaining compliance.
-          </p>
-        </div>
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          Laboratory Audit Best Practices
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Learn industry-proven methods for maintaining compliance, improving traceability,
+          and ensuring readiness for NABL and ISO/IEC 17025 audits.
+        </p>
       </div>
     </section>
 
@@ -39,56 +36,58 @@ const seo = {
         <h2 class="text-3xl font-bold text-gray-800 mb-12">Getting Started</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <PracticeCard
-            title="Audit Planning Essentials"
-            description="Learn how to plan and scope your security audit effectively."
+            title="Internal Audit Planning Essentials"
+            description="Learn how to structure and scope your internal audit effectively for testing or calibration labs."
             icon="📋"
             category="Planning"
             difficulty="Beginner"
             timeEstimate="15 min read"
             steps={[
-              "Define audit objectives and scope",
-              "Identify key stakeholders",
-              "Create audit timeline",
-              "Prepare necessary resources"
+              "Define audit objectives and scope (Clause 8.8.1)",
+              "Identify key process owners",
+              "Schedule audits across departments",
+              "Prepare checklist and evidence templates"
             ]}
             resources={[
-              { title: "Audit Planning Template", url: "#" },
-              { title: "Stakeholder Communication Guide", url: "#" }
+              { title: "Internal Audit Plan Template", url: "#" },
+              { title: "ISO/IEC 17025 Audit Checklist", url: "#" }
             ]}
           />
+
           <PracticeCard
-            title="Risk Assessment Basics"
-            description="Understand how to identify and assess security risks in your organization."
+            title="Risk & Opportunity Assessment"
+            description="Understand how to identify risks and improvement opportunities as required under ISO/IEC 17025:2017 Clause 8.5."
             icon="⚠️"
             category="Assessment"
             difficulty="Beginner"
             timeEstimate="20 min read"
             steps={[
-              "Identify potential threats",
-              "Assess vulnerabilities",
-              "Evaluate impact",
-              "Determine risk levels"
+              "Identify potential risks and nonconformities",
+              "Assess likelihood and impact",
+              "Define mitigation or improvement actions",
+              "Record and monitor outcomes"
             ]}
             resources={[
-              { title: "Risk Assessment Matrix", url: "#" },
-              { title: "Threat Modeling Guide", url: "#" }
+              { title: "Risk Register Template", url: "#" },
+              { title: "Corrective Action Log", url: "#" }
             ]}
           />
+
           <PracticeCard
             title="Compliance Fundamentals"
-            description="Get started with basic compliance requirements and standards."
+            description="Learn how to align your lab’s daily operations with ISO/IEC 17025 and NABL requirements."
             icon="✓"
             category="Compliance"
             difficulty="Beginner"
             timeEstimate="25 min read"
             steps={[
-              "Understand regulatory requirements",
-              "Map controls to requirements",
-              "Document compliance evidence",
-              "Review and validate"
+              "Review applicable standards and scope of accreditation",
+              "Map processes to clauses (management & technical)",
+              "Maintain calibration and traceability records",
+              "Review documentation during management review"
             ]}
             resources={[
-              { title: "Compliance Checklist", url: "#" },
+              { title: "Compliance Mapping Sheet", url: "#" },
               { title: "Documentation Templates", url: "#" }
             ]}
           />
@@ -102,57 +101,59 @@ const seo = {
         <h2 class="text-3xl font-bold text-gray-800 mb-12">Advanced Techniques</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <PracticeCard
-            title="Automated Security Testing"
-            description="Implement automated security testing in your OMS Softwarecess."
+            title="Automated Calibration & Record Control"
+            description="Discover how automation in OMS Software reduces manual errors and ensures traceable records."
             icon="🤖"
             category="Automation"
             difficulty="Advanced"
             timeEstimate="30 min read"
             steps={[
-              "Select testing tools",
-              "Configure test environments",
-              "Develop test scripts",
-              "Analyze results"
+              "Configure calibration schedules and alerts",
+              "Map instruments to measurement standards",
+              "Automate certificate generation with ULR + QR",
+              "Maintain 10-year traceability logs"
             ]}
             resources={[
-              { title: "Automation Tool Comparison", url: "#" },
-              { title: "Test Script Examples", url: "#" }
+              { title: "Calibration Control Setup Guide", url: "#" },
+              { title: "ULR/QR Implementation Manual", url: "#" }
             ]}
           />
+
           <PracticeCard
-            title="Penetration Testing"
-            description="Learn advanced penetration testing techniques for thorough security assessment."
-            icon="🔓"
+            title="Proficiency Testing & Interlaboratory Comparisons"
+            description="Ensure confidence in measurement results through PT/ILC participation and evaluation."
+            icon="🔍"
             category="Testing"
             difficulty="Advanced"
             timeEstimate="45 min read"
             steps={[
-              "Plan test scope",
-              "Perform reconnaissance",
-              "Execute test cases",
-              "Document findings"
+              "Select suitable PT providers",
+              "Review test samples and parameters",
+              "Analyze deviation reports",
+              "Implement corrective actions"
             ]}
             resources={[
-              { title: "Pen Testing Methodology", url: "#" },
-              { title: "Reporting Templates", url: "#" }
+              { title: "PT Participation Plan", url: "#" },
+              { title: "ILAC G13 & ISO 17043 Summary Sheet", url: "#" }
             ]}
           />
+
           <PracticeCard
-            title="Incident Response"
-            description="Develop and test incident response procedures."
+            title="Nonconformance & Corrective Action Management"
+            description="Develop a robust NC/CAPA system to identify, record, and close findings effectively."
             icon="🚨"
             category="Response"
             difficulty="Advanced"
             timeEstimate="35 min read"
             steps={[
-              "Create response plan",
-              "Assign team roles",
-              "Conduct drills",
-              "Review and improve"
+              "Log nonconformities with reference to clauses",
+              "Assign responsibility and due dates",
+              "Verify implementation effectiveness",
+              "Review during internal audits"
             ]}
             resources={[
-              { title: "Response Plan Template", url: "#" },
-              { title: "Drill Scenarios", url: "#" }
+              { title: "NC Register Template", url: "#" },
+              { title: "CAPA Report Format", url: "#" }
             ]}
           />
         </div>
@@ -165,57 +166,56 @@ const seo = {
         <h2 class="text-3xl font-bold text-gray-800 mb-12">Industry-Specific Practices</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <PracticeCard
-            title="Healthcare Security"
-            description="Best practices for HIPAA compliance and healthcare data protection."
-            icon="🏥"
-            category="Healthcare"
+            title="Manufacturing & NDT Labs"
+            description="Best practices for mechanical, NDT, and dimensional testing environments."
+            icon="🏭"
+            category="Manufacturing"
             difficulty="Intermediate"
             timeEstimate="40 min read"
             steps={[
-              "Assess HIPAA requirements",
-              "Implement controls",
-              "Monitor compliance",
-              "Conduct regular audits"
+              "Define calibration intervals for gauges and fixtures",
+              "Maintain job traceability from request to report",
+              "Validate test results using control samples"
             ]}
             resources={[
-              { title: "HIPAA Audit Checklist", url: "#" },
-              { title: "Healthcare Security Guide", url: "#" }
+              { title: "NDT Process Checklist", url: "#" },
+              { title: "Traceability Matrix", url: "#" }
             ]}
           />
+
           <PracticeCard
-            title="Financial Services"
-            description="Security practices for financial institutions and FinTech companies."
-            icon="🏦"
-            category="Finance"
+            title="Thermal & Electrical Calibration Labs"
+            description="Practical guidance on calibration accuracy, uncertainty budgets, and record validation."
+            icon="🌡️"
+            category="Calibration"
             difficulty="Intermediate"
             timeEstimate="35 min read"
             steps={[
-              "Review regulatory requirements",
-              "Implement controls",
-              "Test security measures",
-              "Document compliance"
+              "Control measurement environments",
+              "Manage master instruments and calibration records",
+              "Document traceability to national standards"
             ]}
             resources={[
-              { title: "Financial Security Checklist", url: "#" },
-              { title: "Compliance Documentation", url: "#" }
+              { title: "Uncertainty Calculation Sheet", url: "#" },
+              { title: "Reference Equipment Log", url: "#" }
             ]}
           />
+
           <PracticeCard
-            title="Cloud Security"
-            description="Best practices for auditing cloud infrastructure and services."
-            icon="☁️"
-            category="Technology"
+            title="Environmental & Chemical Testing Labs"
+            description="Guidelines for maintaining test integrity and compliance with regulatory norms."
+            icon="💧"
+            category="Testing"
             difficulty="Intermediate"
             timeEstimate="30 min read"
             steps={[
-              "Assess cloud architecture",
-              "Review security controls",
-              "Test configurations",
-              "Monitor compliance"
+              "Define sampling and preservation methods",
+              "Record equipment calibration and reagent traceability",
+              "Review test reports for compliance and completeness"
             ]}
             resources={[
-              { title: "Cloud Security Framework", url: "#" },
-              { title: "Configuration Guidelines", url: "#" }
+              { title: "Sampling SOP Template", url: "#" },
+              { title: "Test Report Review Checklist", url: "#" }
             ]}
           />
         </div>
@@ -229,18 +229,25 @@ const seo = {
           Ready to Implement These Practices?
         </h2>
         <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Start using OMS Software today to implement these best practices and improve your security auditing process.
+          Start using OMS Software to automate audits, manage documentation, and stay audit-ready year-round.
         </p>
-        <div class="flex justify-center gap-4">
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
+        
+        <div class="max-w-xl mx-auto flex flex-col sm:flex-row justify-center gap-4">
+          <button
+            onclick="window.dispatchEvent(new CustomEvent('openQuickConnect'))"
+            class="h-10 bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center rounded-lg px-4 font-medium transition cursor-pointer"
+          >
             Start Free Trial
-          </Button>
-          <Button size="lg" variant="outline">
+          </button>
+          <button
+            onclick="window.dispatchEvent(new CustomEvent('openQuickConnect'))"
+            class="h-10 border border-black text-black hover:border-orange-500 hover:text-orange-500 flex items-center justify-center rounded-lg px-4 font-medium transition cursor-pointer"
+          >
             Contact Support
-          </Button>
+          </button>
         </div>
       </div>
     </section>
   </main>
-  <Footer />
-</Layout>
+
+  </Layout>

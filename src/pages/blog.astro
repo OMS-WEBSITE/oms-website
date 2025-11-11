@@ -1,180 +1,153 @@
 ---
 import Layout from '../layouts/main.astro';
-import Header from '@/components/layout/Header';
-import Footer from '@/components/layout/Footer';
-import ResourceCard from '@/components/ui/resource-card';
 import { Button } from '@/components/ui/button';
 
-// SEO metadata specific to blog page
+// SEO metadata for this blog page
 const seo = {
-	title: "Security Audit Blog | Expert Insights & Best Practices",
-	description: "Stay updated with expert articles on AI in security auditing, GDPR compliance, cloud security, and zero trust architecture. Practical guides and insights from industry leaders.",
-	image: "/og-image.png",
-	canonicalURL: Astro.site + Astro.url.pathname,
+  title: "Why Testing & Inspection Companies Are Turning to Software | OMS Software Blog",
+  description: "Discover how testing and inspection companies use OMS Software for efficiency, compliance, and traceability in NDT, labs, and fabrication workshops.",
+  image: "/og-image.png",
+  canonicalURL: Astro.site + Astro.url.pathname,
 };
 ---
 
 <Layout {...seo}>
-  <Header client:only="react" />
 
-  <main>
+  <main class="bg-white">
+
     {/* Hero Section */}
     <section class="bg-gradient-to-b from-indigo-50 to-white py-20">
-      <div class="container mx-auto max-w-7xl px-4">
-        <div class="text-center">
-          <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
-            Security Audit Insights
-          </h1>
-          <p class="text-xl text-gray-600 max-w-3xl mx-auto">
-            Expert articles, guides, and insights on IT security auditing and compliance.
-          </p>
-        </div>
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          🧪 Why Testing & Inspection Companies Are Turning to Software
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Explore how digital inspection and LIMS software transforms efficiency, compliance, and reporting in labs and inspection companies.
+        </p>
       </div>
     </section>
 
-    {/* Featured Posts */}
+    {/* Introduction */}
+    <section class="py-16">
+      <div class="container mx-auto max-w-4xl px-4 prose prose-lg mx-auto">
+        <p>
+          Across industries — from fabrication to chemical analysis — the way testing and inspection companies manage data is changing fast. Paper reports and Excel trackers once ruled the lab floor. Today, that manual approach struggles to keep up with growing workloads, accreditation demands, and client expectations for instant access.
+        </p>
+        <p>
+          That’s where digital inspection and LIMS software steps in.
+        </p>
+      </div>
+    </section>
+
+    {/* Challenge Section */}
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">⚠️ The Challenge of Manual Workflows</h2>
+        <ul class="list-disc list-inside text-gray-700 space-y-2">
+          <li>Lost or duplicated records</li>
+          <li>Delayed test reports</li>
+          <li>Difficult audits due to missing traceability</li>
+          <li>High risk of non-compliance with ISO 17025 or client standards</li>
+        </ul>
+        <p class="mt-4 text-gray-700">
+          Even the most disciplined QA/QC team ends up spending more time chasing files than focusing on analysis or inspection quality.
+        </p>
+      </div>
+    </section>
+
+    {/* How Software Helps */}
     <section class="py-16">
       <div class="container mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12">Featured Posts</h2>
-        <div class="grid md:grid-cols-2 gap-8">
-          <ResourceCard
-            title="The Future of AI in Security Auditing"
-            description="Explore how artificial intelligence is transforming the security audit landscape and what it means for your organization."
-            image="/placeholder-1.jpg"
-            author="Dr. Sarah Chen"
-            date="Apr 1, 2025"
-            readTime="8 min"
-            category="Trends"
-            tags={["AI", "Machine Learning", "Security"]}
-            type="blog"
-          />
-          <ResourceCard
-            title="Implementing Zero Trust Security"
-            description="A comprehensive guide to implementing zero trust architecture in your security audit framework."
-            image="/placeholder-2.jpg"
-            author="Michael Rodriguez"
-            date="Mar 28, 2025"
-            readTime="12 min"
-            category="Best Practices"
-            tags={["Zero Trust", "Security Architecture", "Implementation"]}
-            type="blog"
-          />
-        </div>
-      </div>
-    </section>
-
-    {/* Latest Posts */}
-    <section class="py-16 bg-gray-50">
-      <div class="container mx-auto max-w-7xl px-4">
-        <div class="flex justify-between items-center mb-12">
-          <h2 class="text-3xl font-bold text-gray-800">Latest Posts</h2>
-          <div class="flex gap-4">
-            <Button variant="outline">
-              Filter
-            </Button>
-            <select class="px-4 py-2 rounded-lg border border-gray-200 bg-white">
-              <option>Most Recent</option>
-              <option>Most Popular</option>
-              <option>Trending</option>
-            </select>
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">💡 What Software Changes</h2>
+        <div class="grid md:grid-cols-2 gap-12 items-start">
+          <div class="space-y-4 text-gray-700">
+            <p>A modern Testing and Inspection Management System or LIMS centralizes every workflow — from job creation to report delivery — inside one platform.</p>
+            <ul class="list-disc list-inside space-y-2">
+              <li>Register new jobs and link samples, instruments, and technicians</li>
+              <li>Capture NDT results (UT, RT, MPI, PT, etc.) directly into the system</li>
+              <li>Automatically generate test reports and certificates</li>
+              <li>Store WPS, PQR, and WQR records securely in the cloud</li>
+              <li>Track calibration and maintenance schedules for all instruments</li>
+              <li>Provide clients with a secure online portal for report download</li>
+            </ul>
+            <p>Integration cuts reporting time by up to <strong>60%</strong> and reduces audit prep work dramatically.</p>
+          </div>
+          <div class="bg-indigo-50 rounded-xl p-8 shadow-lg text-gray-700">
+            <h3 class="text-2xl font-bold mb-4">✅ Compliance Without the Chaos</h3>
+            <ul class="list-disc list-inside space-y-2">
+              <li>Every report version is traceable</li>
+              <li>Sign-offs are time-stamped and role-based</li>
+              <li>Calibration, procedure, and personnel records are audit-ready</li>
+              <li>Non-conformances are logged and closed digitally</li>
+            </ul>
+            <p class="mt-4">What used to be weeks of paperwork becomes a few clicks.</p>
           </div>
         </div>
-        <div class="grid md:grid-cols-3 gap-8">
-          <ResourceCard
-            title="GDPR Compliance Checklist 2025"
-            description="Updated guidelines and checklist for maintaining GDPR compliance in your security audits."
-            image="/placeholder-3.jpg"
-            author="Emma Thompson"
-            date="Mar 25, 2025"
-            readTime="10 min"
-            category="Compliance"
-            tags={["GDPR", "Privacy", "Compliance"]}
-            type="blog"
-          />
-          <ResourceCard
-            title="Cloud Security Audit Best Practices"
-            description="Essential practices for conducting thorough security audits in cloud environments."
-            image="/placeholder-4.jpg"
-            author="David Park"
-            date="Mar 22, 2025"
-            readTime="15 min"
-            category="Cloud Security"
-            tags={["Cloud", "AWS", "Azure", "Security"]}
-            type="blog"
-          />
-          <ResourceCard
-            title="Automated Security Testing Tools"
-            description="A comparison of leading automated security testing tools for modern OMS Softwarecesses."
-            image="/placeholder-5.jpg"
-            author="Alex Chen"
-            date="Mar 20, 2025"
-            readTime="7 min"
-            category="Tools"
-            tags={["Automation", "Testing", "Tools"]}
-            type="blog"
-          />
-        </div>
       </div>
     </section>
 
-    {/* Categories */}
-    <section class="py-16">
+    {/* Sections 1-5 as cards */}
+    <section class="py-16 bg-gray-50">
       <div class="container mx-auto max-w-7xl px-4">
-        <h2 class="text-3xl font-bold text-gray-800 mb-12">Browse by Category</h2>
-        <div class="grid md:grid-cols-4 gap-6">
-          <a href="/best-practices" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center text-2xl mb-4">
-              🔒
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Security</h3>
-            <p class="text-gray-600">125 articles</p>
-          </a>
-          <a href="/explore-industries" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-12 h-12 bg-green-100 rounded-lg flex items-center justify-center text-2xl mb-4">
-              📋
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Compliance</h3>
-            <p class="text-gray-600">98 articles</p>
-          </a>
-          <a href="/explore-organizations" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center text-2xl mb-4">
-              ☁️
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Cloud</h3>
-            <p class="text-gray-600">84 articles</p>
-          </a>
-          <a href="/help-center" class="bg-white rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow">
-            <div class="w-12 h-12 bg-orange-100 rounded-lg flex items-center justify-center text-2xl mb-4">
-              🤖
-            </div>
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Automation</h3>
-            <p class="text-gray-600">67 articles</p>
-          </a>
+        <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">🚀 Key Advantages of Digital Testing</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          
+          {/* Card 1 */}
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">📱 1. How Digital Reporting Transforms NDT Operations</h3>
+            <p class="text-gray-700 mb-2">
+              Capture inspection results directly on mobile or tablet, auto-generate standardized reports, and attach photos, videos, and calibration certificates.
+            </p>
+            <p class="text-gray-700 font-medium">Outcome: Report preparation drops from hours to minutes, improving traceability across every inspection.</p>
+          </div>
+
+          {/* Card 2 */}
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">🔧 2. Why Welding Documentation Needs Centralised Control</h3>
+            <p class="text-gray-700 mb-2">
+              Centralized cloud-based systems track WPS, PQR, WQR, and welder qualifications with real-time updates, one-click retrieval, and revision history.
+            </p>
+            <p class="text-gray-700 font-medium">Impact: Less admin, fewer errors, faster project handovers.</p>
+          </div>
+
+          {/* Card 3 */}
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">🧪 3. ISO/IEC 17025 — Common Pitfalls and How Software Prevents Them</h3>
+            <p class="text-gray-700 mb-2">
+              Keep equipment calibration logs, test methods, and training records controlled in one verified system to avoid audit failures.
+            </p>
+          </div>
+
+          {/* Card 4 */}
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">⚙️ 4. Integrating ERP and LIMS for Total Visibility</h3>
+            <p class="text-gray-700 mb-2">
+              Link work orders, samples, and results with finance and scheduling to reduce manual entry and gain instant dashboards for productivity.
+            </p>
+          </div>
+
+          {/* Card 5 */}
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">🧠 5. The Rise of NDT 4.0: Digital Transformation in Testing</h3>
+            <p class="text-gray-700 mb-2">
+              Connect instruments and inspectors, capture results instantly, and support predictive maintenance with a digital backbone.
+            </p>
+            <p class="text-gray-700 font-medium">Payoff: Reduced downtime, higher reliability, and consistent quality.</p>
+          </div>
+
         </div>
       </div>
     </section>
 
-    {/* Newsletter */}
-    <section class="py-16 bg-gradient-to-r from-orange-100 to-blue-100">
-      <div class="container mx-auto max-w-7xl px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          Stay Updated
-        </h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Subscribe to our newsletter for the latest security audit insights and best practices.
+    {/* Conclusion */}
+    <section class="py-16">
+      <div class="container mx-auto max-w-4xl px-4 prose prose-lg mx-auto text-center">
+        <p>
+          Software doesn’t replace the expertise of inspectors or technicians — it amplifies it. With the right digital system in place, testing and inspection teams deliver faster, more accurate, and more compliant results — while staying future-ready.
         </p>
-        <div class="max-w-xl mx-auto flex gap-4">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            class="flex-1 px-6 py-3 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <Button size="lg" className="bg-orange-500 hover:bg-orange-600 text-white">
-            <a href="/newsletter" class="text-white">Subscribe to Newsletter</a>
-          </Button>
-        </div>
       </div>
     </section>
+
   </main>
-  <Footer />
+
 </Layout>

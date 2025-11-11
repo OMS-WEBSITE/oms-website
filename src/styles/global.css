@@ -1,4 +1,4 @@
-@import 'tailwindcss';
+@import "tailwindcss";
 @import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
@@ -59,8 +59,12 @@ html {
 
 /* Custom animation classes */
 @keyframes marquee {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-100%); }
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 .animate-marquee {
@@ -113,18 +117,17 @@ html {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background-color: #D1D5DB;
+  background-color: #d1d5db;
   margin: 0 0.25rem;
   cursor: pointer;
   transition: background-color 0.3s ease;
 }
 
 .slider-dot.active {
-  background-color: #F97316;
+  background-color: #f97316;
   width: 10px;
   height: 10px;
 }
-
 
 @keyframes glowIn {
   0% {
@@ -132,12 +135,7 @@ html {
     transform: scale(0.8);
     box-shadow: 0 0 0px rgba(163, 103, 231, 0);
   }
-  50% {
-    opacity: 1;
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(163, 103, 231, 0.8),
-      0 0 30px rgba(163, 103, 231, 0.6);
-  }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -147,5 +145,78 @@ html {
 
 .feature-glow {
   animation: glowIn 1s ease forwards;
-  background: linear-gradient(to right, #ff7a18, #f0013d 70%);
+  background: linear-gradient(to right, #ea885e, #fe781f 70%);
+}
+
+#header-content-section {
+  scroll-margin-top: 0;
+}
+@keyframes smoothFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  20% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  70% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+}
+
+.animate-smoothFadeUp {
+  animation: smoothFadeUp 6s ease-in-out forwards;
+}
+
+@keyframes glowPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 15px 3px rgba(138, 43, 226, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 25px 6px rgba(138, 43, 226, 0.9);
+  }
+}
+
+.hover\\:animate-glowpulse:hover {
+  animation: glowPulse 1.5s ease-in-out infinite;
+}
+
+@keyframes slow-bounce-once {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-10px);
+  }
+  60% {
+    transform: translateY(-5px);
+  }
+}
+
+.animate-slow-bounce-once {
+  animation: slow-bounce-once 1.8s ease-in-out;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    transform: scale(0.9);
+    box-shadow: 0 0 6px rgba(255, 166, 0, 0.711);
+  }
+  50% {
+    transform: scale(1.1);
+    box-shadow: 0 0 14px rgba(255, 166, 0, 0.6);
+  }
+}
+
+.animate-glow-pulse {
+  animation: glow-pulse 3s ease-in-out infinite;
 }
