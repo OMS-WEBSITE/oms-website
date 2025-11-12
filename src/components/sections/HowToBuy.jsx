@@ -19,12 +19,13 @@ const HowToBuy = () => {
       icon: <FaLaptopCode className="text-orange-500 text-4xl mb-4" />,
       title: "Request a live demo",
       text: "Experience OMS firsthand and see how it fits your workflow.",
+      isDemoStep: true,
     },
-    {
-      icon: <FaClipboardList className="text-orange-500 text-4xl mb-4" />,
-      title: "Define modules and reporting scope",
-      text: "Choose the specific features and reports your lab requires.",
-    },
+    // {
+    //   icon: <FaClipboardList className="text-orange-500 text-4xl mb-4" />,
+    //   title: "Define modules and reporting scope",
+    //   text: "Choose the specific features and reports your lab requires.",
+    // },
     {
       icon: <FaFileContract className="text-orange-500 text-4xl mb-4" />,
       title: "Receive proposal and subscription plan",
@@ -37,6 +38,9 @@ const HowToBuy = () => {
     },
   ];
 
+  const handleDemoClick = () => {
+    window.dispatchEvent(new CustomEvent("openQuickConnect"));
+  };
   return (
     <section id="how-to-buy" className="py-16 sm:py-20 bg-white">
       <div className="w-[90%] mx-auto py-4 px-2 text-center">
@@ -64,7 +68,7 @@ const HowToBuy = () => {
         </motion.p>
 
         {/* Steps Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mt-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8 mt-6">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -82,7 +86,8 @@ const HowToBuy = () => {
                 transition: { duration: 0.25, ease: "easeOut" }, // smooth hover-in
               }}
               whileTap={{ scale: 1.03 }} // optional subtle click feedback
-              className="relative flex flex-col items-center text-center bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-transform duration-200 ease-out border border-orange-100"
+              onClick={step.isDemoStep ? handleDemoClick : undefined}
+              className="cursor-pointer relative flex flex-col items-center text-center bg-gray-50 p-6 rounded-2xl shadow-md hover:shadow-lg transition-transform duration-200 ease-out border border-orange-100"
             >
               <motion.div
                 variants={fadeUp}

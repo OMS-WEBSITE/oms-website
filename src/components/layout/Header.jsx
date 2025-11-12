@@ -174,8 +174,9 @@ const Header = () => {
         </nav>
         {/* Right side: Search + Mobile Hamburger */}
         <div className="flex items-center space-x-4">
-          <div className="relative flex items-center justify-center w-10" 
-          aria-label="Search"
+          <div
+            className="relative flex items-center justify-center w-10"
+            aria-label="Search"
           >
             <SearchBar />
           </div>
@@ -216,7 +217,7 @@ const Header = () => {
             {/* Mobile Try Free / Login / Language */}
             <div className="flex flex-col space-y-2 mt-4">
               <Button className=" text-sm bg-gradient-to-r from-[#ea885e] to-[#fe781f] hover:from-orange-500 hover:to-orange-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
-                Try 14 days free
+                Request Demo
               </Button>
 
               <div className="relative">

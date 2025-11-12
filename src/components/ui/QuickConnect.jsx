@@ -67,7 +67,7 @@ const QuickConnect = () => {
                 method="align"
                 // spacing="auto"
               >
-                — ONE CLICK, INSTANT REPLY — OMS SOFTWARE —
+                — ONE CLICK, INSTANT REPLY — OMS SOFTWARE 
               </textPath>
             </text>
           </svg>

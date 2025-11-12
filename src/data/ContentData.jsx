@@ -1,5 +1,5 @@
 /**
- * NOTE:
+ * IMP NOTE:
  * When adding a new section:
  *  - Ensure the heading name in ContentData matches the corresponding name
  *    in ProductsAndServices navItems.
@@ -1752,7 +1752,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "When you receive client specific material requirements for a job, the OMS will be able to provide detailed information of the grade of material (if added to the system prior). This information includes: Grade, Description, Engineering Properties, Charpy impact strength, Chemical composition, Other chemical properties.",
+            text: "When client-specific material requirements are received for a job, the OMS can provide detailed information about the material grade (if it has been added to the system beforehand). This information includes the grade, description, engineering properties, fastener properties, nut mechanical properties, Charpy impact strength, chemical composition, and other relevant chemical properties.",
           },
           {
             type: "images",
@@ -1917,6 +1917,32 @@ export const contentMap = {
           },
         ],
       },
+      {
+        heading: "Notes on reports",
+        content: [
+          {
+            type: "List",
+            items: ["Notes on reports"],
+          },
+          {
+            type: "paragraph",
+            text: "OMS provides the functionality to print specific notes required in reports, with support for module-wise customization.",
+          },
+        ],
+      },
+      {
+        heading: "JSA assessment criteria",
+        content: [
+          {
+            type: "List",
+            items: ["JSA assessment criteria"],
+          },
+          {
+            type: "paragraph",
+            text: "The JSA Menu allows users to create additional Job Safety Analyses as needed. It ensures that safety assessments are well-documented and easily accessible, supporting a safer and more organized work environment",
+          },
+        ],
+      },
     ],
   },
 
@@ -1938,7 +1964,7 @@ export const contentMap = {
               "Frequently providing one of the client’s staff",
               "Automatic pre-filling of client contact details such as email ID, contact number, any special instructions",
               "Active Specifications such as Product Standards, test-inspection or process Standards, Materials Standards",
-              "Prompting user to complete several other mandatory data selection to create a self-explanatory Job sheet.",
+              "Prompting user to complete several other mandatory data selection to create a self-explanatory Project Job Information.",
               "Fetch materials directly from a vast and dynamic materials list.",
               "Attach acceptance criteria, assign job schedules, and more - all within a few clicks.",
             ],

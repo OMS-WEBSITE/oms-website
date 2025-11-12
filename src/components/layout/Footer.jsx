@@ -28,7 +28,7 @@ const Footer = () => {
     "EN-IN": {
       href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8463906383313!2d77.57476527484036!3d12.9175925873928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15006211cc43%3A0xd8fd6177f4784417!2sOMS-Business%20Digitalisation%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1762237270659!5m2!1sen!2sin",
       address:
-        "#32 YEDLA, 4th Floor, 45th cross, 8th block, Jayanagar, Near Sangam Circle, Bengaluru – 560041",
+        "OMS-Business Digitalisation Pvt Ltd #32 YEDLA, 4th Floor, 45th cross, 8th block, Jayanagar, Near Sangam Circle, Bengaluru – 560041",
       phone: "+91 7829810381",
       email: "jayant@omssoftware.com.au",
     },

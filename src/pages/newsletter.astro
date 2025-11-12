@@ -57,31 +57,108 @@ const seo = {
       </div>
     </section>
 
-    {/* Newsletter Subscription */}
-    <section class="py-16 bg-gradient-to-r from-orange-100 to-blue-100">
-      <div class="container mx-auto max-w-7xl px-4 text-center">
-        <h2 class="text-3xl font-bold text-gray-800 mb-6">
-          Get New Resources First
-        </h2>
-        <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-        If you’d like to be notified when the first issue is ready, leave your email below.
-        <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
-          <input
-            type="email"
-            placeholder="Enter your email"
-            class="flex-1 h-12 px-6 rounded-lg border border-gray-200 focus:outline-none focus:ring-2 focus:ring-blue-500"
-          />
-          <Button
-            size="lg"
-            className="h-12 bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center"
-          >
-            <a href="/newsletter" class="text-white w-full text-center">
-               Notify Me
-            </a>
-          </Button>
-        </div>
-      </div>
-    </section>
+       <!-- Newsletter Subscription -->
+<section class="py-16 bg-gradient-to-r from-orange-100 to-blue-100 relative overflow-hidden">
+  <div class="container mx-auto max-w-7xl px-4 text-center">
+    <h2 class="text-3xl font-bold text-gray-800 mb-6">
+      Get New Resources First
+    </h2>
+    <p class="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+      Want early access when our first resource bundle is live? Subscribe to get notified when each ebook is released.
+    </p>
+
+    <div class="max-w-xl mx-auto flex flex-col sm:flex-row gap-4">
+      <input
+        id="newsletterEmail"
+        type="email"
+        placeholder="Enter your email"
+        class="flex-1 h-12 px-6 rounded-lg border border-gray-200 focus:outline-none focus:ring-1 focus:ring-orange-500"
+      />
+      <button
+        id="newsletterSubmit"
+        class="h-12 bg-orange-500 hover:bg-orange-600 text-white px-6 rounded-lg font-medium transition-all"
+      >
+         Notify Me
+      </button>
+    </div>
+  </div>
+
+  <!-- Popup Modal -->
+  <div
+    id="popupModal"
+    class="fixed inset-0  bg-opacity-50 flex items-center justify-center hidden z-50 backdrop-blur-sm transition-opacity duration-300"
+  >
+    <div
+      id="popupCard"
+      class="bg-white rounded-2xl shadow-2xl p-8 max-w-sm w-[90%] text-center relative transform transition-all duration-300 scale-95"
+    >
+      <button
+        id="closePopup"
+        class="absolute top-3 right-3 text-gray-400 hover:text-gray-600 text-xl font-bold"
+      >
+        &times;
+      </button>
+      <h3 class="text-2xl font-semibold text-gray-800 mb-3 flex items-center justify-center gap-2">
+        Subscribed Successfully
+        <svg xmlns="http://www.w3.org/2000/svg" fill="orange" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 animate-bounce">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+        </svg>
+      </h3>
+      <p class="text-gray-600 text-sm sm:text-base">
+        You’ll be notified when our first ebook bundle is released 🚀
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Inline Script for Popup Logic -->
+      <script is:inline>
+  document.addEventListener("DOMContentLoaded", () => {
+    const submitBtn = document.getElementById("newsletterSubmit");
+    const popup = document.getElementById("popupModal");
+    const popupCard = document.getElementById("popupCard");
+    const closeBtn = document.getElementById("closePopup");
+
+    function openPopup() {
+      popup.classList.remove("hidden");
+      popup.style.opacity = "1";
+      popupCard.style.transform = "scale(1)";
+      popupCard.style.transition = "transform 0.3s ease, opacity 0.3s ease";
+    }
+
+    function closePopup() {
+      popup.style.opacity = "0";
+      popupCard.style.transform = "scale(0.95)";
+      popupCard.style.opacity = "0";
+      setTimeout(() => {
+        popup.classList.add("hidden");
+        popupCard.style.opacity = "1"; // reset for next open
+        document.body.style.overflow = "auto";
+      }, 300);
+    }
+
+    // Open popup on submit
+    submitBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      openPopup();
+    });
+
+    // Close popup on close button click
+    closeBtn.addEventListener("click", closePopup);
+
+    // Close popup when clicking outside the card
+    popup.addEventListener("click", (e) => {
+      if (e.target === popup) closePopup();
+    });
+
+    // ✅ Close popup when user scrolls
+    window.addEventListener("scroll", () => {
+      if (!popup.classList.contains("hidden")) {
+        closePopup();
+      }
+    });
+  });
+</script>
 
   </main>
 

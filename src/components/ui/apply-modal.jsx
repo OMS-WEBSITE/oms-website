@@ -10,9 +10,6 @@ export default function ApplyModal({ job, onClose }) {
     e.preventDefault();
     setStatus("sending");
 
-    console.log("SERVICE:", import.meta.env.PUBLIC_EMAILJS_SERVICE_ID);
-    console.log("TEMPLATE:", import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID);
-    console.log("PUBLIC KEY:", import.meta.env.PUBLIC_EMAILJS_PUBLIC_KEY);
     emailjs
       .sendForm(
         import.meta.env.PUBLIC_EMAILJS_SERVICE_ID,

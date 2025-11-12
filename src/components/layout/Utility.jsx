@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { FaGlobe } from "react-icons/fa";
-import { useLanguage } from "@/context/LanguageContext"; 
+import { useLanguage } from "@/context/LanguageContext";
 
 const Utility = () => {
   const [dropdownOpen, setDropdownOpen] = useState(false);
@@ -45,10 +45,14 @@ const Utility = () => {
     <div className="hidden md:flex w-full bg-gray-100 border-b border-gray-200 shadow-sm z-40">
       <div className="w-[90%] mx-auto h-[50px] flex justify-end items-center space-x-4 px-4">
         {/* Try Free Button */}
-        <Button className="hover:cursor-pointer bg-gradient-to-r from-[#ea885e] to-[#fe781f] hover:from-orange-500 hover:to-orange-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
-          Try 14 days free
+        <Button
+          onClick={() =>
+            window.dispatchEvent(new CustomEvent("openQuickConnect"))
+          }
+          className="hover:cursor-pointer bg-gradient-to-r from-[#ea885e] to-[#fe781f] hover:from-orange-500 hover:to-orange-600 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300"
+        >
+          Request Demo
         </Button>
-
         {/* Login Button */}
         {/* <Button
           variant="outline"
