@@ -174,13 +174,16 @@ const Header = () => {
         </nav>
         {/* Right side: Search + Mobile Hamburger */}
         <div className="flex items-center space-x-4">
-          <div className="relative flex items-center justify-center w-10">
+          <div className="relative flex items-center justify-center w-10" 
+          aria-label="Search"
+          >
             <SearchBar />
           </div>
 
           {/* Mobile Hamburger */}
           <button
             className="md:hidden flex items-center justify-center p-2 rounded-full border border-gray-200 hover:bg-orange-50 transition-all duration-300"
+            aria-label="Open menu"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? (
@@ -232,6 +235,7 @@ const Header = () => {
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
+                        aria-label="Select language"
                         className="block w-full text-sm text-left px-4 py-2 hover:bg-orange-50 transition-all duration-200"
                         onClick={() => selectLanguage(lang.code)}
                       >
