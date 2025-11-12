@@ -108,7 +108,7 @@ const Footer = () => {
       title: "Platform",
       links: [
         "Pricing",
-        "Explore Organizations",
+        // "Explore Organizations",
         "Explore Industries",
         "Best Practices",
         // "Help Center",
