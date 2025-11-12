@@ -744,7 +744,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Once defined, these master entries can be reused across the platform without the need to redefine details repeatedly. This ensures consistency, accuracy, and efficiency when assigning competencies or uploading new qualification records — allowing OMS to automatically apply predefined validation and reminder logic.",
+            text: "Once defined, these master entries can be reused across the platform without the need to redefine details repeatedly. This ensures consistency, accuracy, and efficiency when assigning competencies or uploading new qualification records - allowing OMS to automatically apply predefined validation and reminder logic.",
           },
           {
             type: "paragraph",
@@ -764,7 +764,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Instead of adding each master record individually, users can select a predefined group to automatically include all associated records — greatly reducing repetitive data entry and setup time.",
+            text: "Instead of adding each master record individually, users can select a predefined group to automatically include all associated records - greatly reducing repetitive data entry and setup time.",
           },
           {
             type: "paragraph",
@@ -772,7 +772,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "A PAUT Tester Certification group can include multiple related records, such as PAUT Level 1, PAUT Level 2, PAUT Level 3, and corresponding ISO Certificates — allowing all of them to be applied together in a single action.",
+            text: "A PAUT Tester Certification group can include multiple related records, such as PAUT Level 1, PAUT Level 2, PAUT Level 3, and corresponding ISO Certificates - allowing all of them to be applied together in a single action.",
           },
           {
             type: "paragraph",
@@ -933,7 +933,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "But it doesn’t stop there — OMS provides real-time visibility into the current status of every employee, whether LOGIN-SUSPENDED, CURRENT ACTIVE, or otherwise.",
+            text: "But it doesn’t stop there - OMS provides real-time visibility into the current status of every employee, whether LOGIN-SUSPENDED, CURRENT ACTIVE, or otherwise.",
           },
           {
             type: "paragraph",
@@ -945,7 +945,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "With OMS, view the entire user authorization matrix on a single consolidated page — accessible with just one click, simplifying oversight, improving governance, and enhancing system security.",
+            text: "With OMS, view the entire user authorization matrix on a single consolidated page - accessible with just one click, simplifying oversight, improving governance, and enhancing system security.",
           },
         ],
       },
@@ -1385,7 +1385,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "The OMS platform enables you to configure both activities and locations relevant to your business operations — for example, activities like Administration, Chemical Testing, NDT, Report Writing, Training, and Meetings, and locations such as Client Site, Home, or Office.",
+            text: "The OMS platform enables you to configure both activities and locations relevant to your business operations - for example, activities like Administration, Chemical Testing, NDT, Report Writing, Training, and Meetings, and locations such as Client Site, Home, or Office.",
           },
           {
             type: "paragraph",
@@ -1774,7 +1774,7 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "In this section, you can list all specifications — information that may be provided by your client, derived from product or manufacturing standards, defined acceptance criteria, or criteria specified within the relevant standards.",
+            text: "In this section, you can list all specifications - information that may be provided by your client, derived from product or manufacturing standards, defined acceptance criteria, or criteria specified within the relevant standards.",
           },
           {
             type: "paragraph",
@@ -1940,7 +1940,7 @@ export const contentMap = {
               "Active Specifications such as Product Standards, test-inspection or process Standards, Materials Standards",
               "Prompting user to complete several other mandatory data selection to create a self-explanatory Job sheet.",
               "Fetch materials directly from a vast and dynamic materials list.",
-              "Attach acceptance criteria, assign job schedules, and more — all within a few clicks.",
+              "Attach acceptance criteria, assign job schedules, and more - all within a few clicks.",
             ],
           },
           {
@@ -1979,7 +1979,7 @@ export const contentMap = {
         content: [
           {
             type: "paragraph",
-            text: "The Search Jobs feature in the OMS platform empowers users to take full control of their workflow. It allows them to easily locate, review, and manage any job in the system — whether it’s ongoing, in process, invoiced, closed, in draft, or yet to begin.",
+            text: "The Search Jobs feature in the OMS platform empowers users to take full control of their workflow. It allows them to easily locate, review, and manage any job in the system - whether it’s ongoing, in process, invoiced, closed, in draft, or yet to begin.",
           },
           {
             type: "list",
