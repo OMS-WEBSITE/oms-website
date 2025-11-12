@@ -18,6 +18,7 @@ const Header = () => {
   const languages = [
     { code: "EN-IN", label: "India English" },
     { code: "EN-AU", label: "Australia English" },
+    { code: "EN-GB", label: "Global" },
   ];
 
   const [activeSection, setActiveSection] = useState(null);
@@ -86,7 +87,7 @@ const Header = () => {
       setActiveSection(id);
       setMobileMenuOpen(false);
 
-      // Reset URL 
+      // Reset URL
       setTimeout(() => {
         window.history.replaceState(null, "", "/");
       }, 800);
@@ -199,7 +200,7 @@ const Header = () => {
               <button
                 key={item.id}
                 onClick={() => handleScroll(item.id)}
-                className={`text-gray-700 font-semibold text-left transition-colors duration-300 px-3 py-2 rounded-lg ${
+                className={`text-gray-700 font-semibold text-sm text-left transition-colors duration-300 px-3 py-2 rounded-lg ${
                   activeSection === item.id
                     ? "text-orange-500 bg-orange-50"
                     : "hover:text-orange-500 hover:bg-orange-50"
@@ -211,32 +212,27 @@ const Header = () => {
 
             {/* Mobile Try Free / Login / Language */}
             <div className="flex flex-col space-y-2 mt-4">
-              <Button className="bg-gradient-to-r from-orange-500 to-pink-500 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
+              <Button className=" text-sm bg-gradient-to-r from-orange-500 to-pink-500 text-white py-2 px-4 rounded-md shadow-md hover:shadow-lg transition-all duration-300">
                 Try 14 days free
               </Button>
-              {/* <Button
-                variant="outline"
-                className="border border-orange-500 text-orange-500 hover:bg-gradient-to-r hover:from-orange-500 hover:to-pink-500 hover:text-white py-2 px-4 rounded-md shadow-sm hover:shadow-md transition-all duration-300"
-              >
-                Login
-              </Button> */}
+
               <div className="relative">
                 <button
                   className="flex items-center justify-center gap-2 p-2 rounded-full border border-gray-200 hover:bg-orange-50 transition-all duration-300 w-full"
                   onClick={toggleDropdown}
                 >
                   <FaGlobe className="text-orange-500" size={18} />
-                  <span className="truncate text-orange-500">
+                  <span className="truncate text-orange-500 text-sm">
                     {" "}
                     {language || "Detecting..."}
                   </span>
                 </button>
                 {dropdownOpen && (
-                  <div className="absolute right-0 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
+                  <div className="absolute text-sm right-0 mt-2 w-full bg-white border border-gray-200 rounded-md shadow-lg z-50">
                     {languages.map((lang) => (
                       <button
                         key={lang.code}
-                        className="block w-full text-left px-4 py-2 hover:bg-orange-50 transition-all duration-200"
+                        className="block w-full text-sm text-left px-4 py-2 hover:bg-orange-50 transition-all duration-200"
                         onClick={() => selectLanguage(lang.code)}
                       >
                         {lang.label}

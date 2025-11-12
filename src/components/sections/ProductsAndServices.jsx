@@ -321,7 +321,7 @@ const ProductsAndService = () => {
                 );
 
                 return (
-                  <p key={idx} className="text-justify ml-6">
+                  <p key={idx} className="text-justify text-sm ml-6">
                     {formattedText}
                   </p>
                 );
@@ -329,7 +329,7 @@ const ProductsAndService = () => {
 
               if (block.type === "list")
                 return (
-                  <ul key={idx} className="list-disc list-inside ml-4">
+                  <ul key={idx} className="list-disc text-sm list-inside ml-4">
                     {block.items.map((li, i) => (
                       <li key={i}>{li}</li>
                     ))}

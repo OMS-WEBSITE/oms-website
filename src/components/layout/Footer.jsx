@@ -135,7 +135,7 @@ const Footer = () => {
           viewport={{ once: false, amount: 0.3 }} // trigger once when 30% visible
           variants={fadeUp}
           transition={{ duration: 0.5 }}
-          className="text-center p-3 rounded-xl"
+          className="text-center p-3 rounded-xl text-sm"
         >
           {/* Title */}
           <motion.h2
@@ -152,7 +152,7 @@ const Footer = () => {
           </motion.h2>
 
           {/* Description */}
-          <p className="text-gray-600 mb-4 leading-relaxed">
+          <p className="text-gray-600 mb-4 text-sm leading-relaxed">
             {affiliation.description}
           </p>
 
@@ -161,13 +161,13 @@ const Footer = () => {
             {affiliation.items.map((item, idx) => (
               <li key={idx} className="flex items-center space-x-2">
                 <span className="text-orange-500 font-bold">•</span>
-                <span className="text-gray-700 font-semibold">{item}</span>
+                <span className="text-gray-700 text-sm font-semibold">{item}</span>
               </li>
             ))}
           </ul>
 
           {/* Note */}
-          <p className="text-gray-600 italic leading-relaxed">
+          <p className="text-gray-600 italic text-sm leading-relaxed">
             {affiliation.note}
           </p>
         </motion.div>
