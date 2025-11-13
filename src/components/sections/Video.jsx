@@ -13,7 +13,7 @@ const features = [
     id: "accounting",
     style: { top: "25%", right: "25%" },
   },
-  { label: "Personnel", id: "personnel", style: { top: "40%", right: "20%" } },
+  { label: "Personnel Management", id: "personnelmanagement", style: { top: "40%", right: "20%" } },
   {
     label: "Supplier Management",
     id: "suppliermanagement",
@@ -251,7 +251,7 @@ const VideoSection = () => {
                 >
                   {/* Heading */}
                   <h2 className="text-xl sm:text-2xl md:text-4xl font-semibold leading-relaxed max-w-[95%] sm:max-w-2xl mb-2 sm:mb-3 text-gray-100">
-                    Run your lab on the cloud — secure, scalable, and compliant.
+                    Run your lab on the cloud - secure, scalable, and compliant.
                   </h2>
 
                   {/* Subtext */}
@@ -260,11 +260,11 @@ const VideoSection = () => {
                     <span className="text-orange-500 font-semibold">
                       testing, inspection, and calibration workflows
                     </span>{" "}
-                    — all in one secure platform.
+                    - all in one secure platform.
                   </p>
 
                   <p className="text-xs sm:text-sm md:text-lg mt-2 text-gray-300">
-                    Audit-ready from day one — no servers, no stress.
+                    Audit-ready from day one - no servers, no stress.
                   </p>
 
                   <div className="relative group w-fit mx-auto">

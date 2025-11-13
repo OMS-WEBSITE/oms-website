@@ -1,3 +1,4 @@
+<!--
 ---
 import Layout from '../layouts/main.astro';
 import Header from '@/components/layout/Header';
@@ -129,4 +130,78 @@ import { Button } from '@/components/ui/button';
   </main>
 
    
+</Layout>
+-->
+
+
+---
+import Layout from '../layouts/main.astro';
+import { Button } from '@/components/ui/button';
+---
+
+<Layout>
+  <main>
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-indigo-50 to-white py-16 sm:py-20">
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-800 mb-4 sm:mb-6">
+          🌍 Teams of 1 to 100 Win More with OMS Software
+        </h1>
+      <!-- <p class="text-base sm:text-lg text-gray-600 max-w-3xl mx-auto">
+          Working with LMATS, IXT, OMS Engineering, SWA Inspection, and others. <br />
+          References available on request.
+        </p> -->
+      </div>
+    </section>
+
+    {/* Client Testimonials Placeholder */}
+    <section class="py-12 sm:py-16">
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
+          Client Testimonials
+        </h2>
+        <p class="text-gray-500 text-lg">
+          Coming Soon...
+        </p>
+      </div>
+    </section>
+
+    {/* Global Testimonials Placeholder */}
+    <section class="py-12 sm:py-16 bg-gray-50">
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-6">
+          Trusted by Labs Worldwide
+        </h2>
+        <p class="text-gray-500 text-lg">
+          Coming Soon...
+        </p>
+      </div>
+    </section>
+
+    {/* CTA Section */}
+    <section class="py-12 sm:py-16 bg-gradient-to-r from-orange-100 to-blue-100">
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h2 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-4 sm:mb-6">
+          Ready to Transform Your Lab Operations?
+        </h2>
+        <p class="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto">
+          Join top NDT and calibration teams who trust OMS to manage testing, inspection, and compliance with confidence.
+        </p>
+        <div class="max-w-xl mx-auto flex flex-col sm:flex-row justify-center gap-4">
+          <button
+            onclick="window.dispatchEvent(new CustomEvent('openQuickConnect'))"
+            class="h-10 bg-orange-500 hover:bg-orange-600 text-white flex items-center justify-center rounded-lg px-4 font-medium transition cursor-pointer"
+          >
+            Request a Demo
+          </button>
+          <button
+            onclick="window.dispatchEvent(new CustomEvent('openQuickConnect'))"
+            class="h-10 border border-black text-black hover:border-orange-500 hover:text-orange-500 flex items-center justify-center rounded-lg px-4 font-medium transition cursor-pointer"
+          >
+            Talk to an Expert
+          </button>
+        </div>
+      </div>
+    </section>
+  </main>
 </Layout>

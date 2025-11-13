@@ -28,7 +28,7 @@ const Footer = () => {
     "EN-IN": {
       href: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3888.8463906383313!2d77.57476527484036!3d12.9175925873928!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3bae15006211cc43%3A0xd8fd6177f4784417!2sOMS-Business%20Digitalisation%20Pvt.%20Ltd.!5e0!3m2!1sen!2sin!4v1762237270659!5m2!1sen!2sin",
       address:
-        "#32 YEDLA, 4th Floor, 45th cross, 8th block, Jayanagar, Near Sangam Circle, Bengaluru – 560041",
+        "OMS-Business Digitalisation Pvt Ltd #32 YEDLA, 4th Floor, 45th cross, 8th block, Jayanagar, Near Sangam Circle, Bengaluru – 560041",
       phone: "+91 7829810381",
       email: "jayant@omssoftware.com.au",
     },
@@ -108,7 +108,7 @@ const Footer = () => {
       title: "Platform",
       links: [
         "Pricing",
-        "Explore Organizations",
+        // "Explore Organizations",
         "Explore Industries",
         "Best Practices",
         // "Help Center",
@@ -116,7 +116,13 @@ const Footer = () => {
     },
     {
       title: "Why OMS Software",
-      links: ["How We are Different", "Success Stories", "Testimonials", "FAQ"],
+      links: [
+        "How We are Different",
+        "Success Stories",
+        // "New Feature",
+        "Testimonials",
+        "FAQ",
+      ],
     },
     {
       title: "Resources",
@@ -125,14 +131,70 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-gray-50 py-10 sm:py-16 md:py-20 border-t border-gray-200">
+    <footer className="bg-gray-50 py-5 sm:py-6 md:py-8 border-t border-gray-200">
       <div className="w-[90%] mx-auto text-center sm:text-left">
+        {/* Affiliations */}
+        <motion.div
+          key={`affiliation-${language}`} // ensures remount on language change
+          initial="hidden"
+          whileInView="visible" // animate when scrolled into view
+          viewport={{ once: false, amount: 0.3 }} // trigger once when 30% visible
+          variants={fadeUp}
+          transition={{ duration: 0.5 }}
+          className="text-center p-3 rounded-xl text-sm"
+        >
+          {/* Title */}
+          <motion.h2
+            className="text-2xl font-semibold mb-4 text-gray-900 inline-block relative"
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: false, amount: 0.3 }}
+            variants={fadeUp}
+            transition={{ duration: 0.6 }}
+          >
+            {affiliation.title}
+            {/* Bottom line exactly as wide as text */}
+            <span className="absolute left-0 bottom-0 h-0.5 w-full bg-orange-500 rounded-full"></span>
+          </motion.h2>
+
+          {/* Description */}
+          <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+            {affiliation.description}
+          </p>
+
+          {/* List */}
+          <ul className="list-none flex flex-col items-center space-y-3 mb-4">
+            {affiliation.items.map((item, idx) => (
+              <li key={idx} className="flex items-center space-x-2">
+                <span className="text-orange-500 font-bold">•</span>
+                <span className="text-gray-700 text-sm font-semibold">
+                  {item}
+                </span>
+              </li>
+            ))}
+          </ul>
+
+          {/* Note */}
+          <p className="text-gray-600 italic text-sm leading-relaxed">
+            {affiliation.note}
+          </p>
+        </motion.div>
+
+        {/* Divider */}
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          transition={{ delay: 0.3, duration: 0.6 }}
+          className="h-0.5 w-24 bg-orange-500 mx-auto my-1 rounded-full"
+        />
+
         <motion.div
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
           transition={{ duration: 0.5 }}
-          className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-2"
+          className="grid grid-cols-1 py-4 pt-10 sm:grid-cols-3 lg:grid-cols-5 gap-2"
         >
           {/* Logo & Socials */}
           <motion.div
@@ -174,7 +236,11 @@ const Footer = () => {
                 {section.links.map((item, i) => (
                   <li key={i}>
                     <a
-                      href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    //working one
+                      // href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+
+                      // testing
+                      href={`/${item.toLowerCase().replace(/\s+/g, "-")}/`}
                       className="relative text-gray-600 hover:text-orange-500 transition-all duration-300 hover:pl-2 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-orange-500 hover:after:w-full after:transition-all"
                     >
                       {item}
@@ -315,58 +381,13 @@ Regards,
           </motion.div>
         </motion.div>
 
-        {/* Divider */}
-        <motion.div
-          variants={fadeIn}
-          initial="hidden"
-          whileInView="visible"
-          transition={{ delay: 0.3, duration: 0.6 }}
-          className="h-0.5 w-24 bg-orange-500 mx-auto my-8 rounded-full"
-        />
-
-        {/* Affiliations */}
-        <motion.div
-          key={language}
-          initial="hidden"
-          animate="visible"
-          variants={fadeUp}
-          transition={{ duration: 0.5 }}
-          // className="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto my-12 text-center"
-          className="text-center  p-8 rounded-xl "
-        >
-          {/* Title */}
-          <h2 className="text-2xl font-semibold mb-6 text-gray-900 inline-block">
-            {affiliation.title}
-          </h2>
-
-          {/* Description */}
-          <p className="text-gray-600 mb-6 leading-relaxed">
-            {affiliation.description}
-          </p>
-
-          {/* List */}
-          <ul className="list-none flex flex-col items-center space-y-3 mb-6">
-            {affiliation.items.map((item, idx) => (
-              <li key={idx} className="flex items-center space-x-2">
-                <span className="text-orange-500 font-bold">•</span>
-                <span className="text-gray-700 font-semibold">{item}</span>
-              </li>
-            ))}
-          </ul>
-
-          {/* Note */}
-          <p className="text-gray-600 italic leading-relaxed">
-            {affiliation.note}
-          </p>
-        </motion.div>
-
         {/* Copyright */}
         <motion.div
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
           transition={{ delay: 0.2, duration: 0.6 }}
-          className="border-t border-gray-200 mt-8 pt-6 text-sm text-gray-600 text-center"
+          className="border-t border-gray-200 mb-3 pt-2 text-sm text-gray-600 text-center"
         >
           © {new Date().getFullYear()}, OMS Software. All rights reserved.
         </motion.div>
@@ -376,3 +397,38 @@ Regards,
 };
 
 export default Footer;
+
+// <motion.div
+//         key={language}
+//         initial="hidden"
+//         animate="visible"
+//         variants={fadeUp}
+//         transition={{ duration: 0.5 }}
+//         // className="bg-white p-8 rounded-2xl shadow-lg max-w-3xl mx-auto my-12 text-center"
+//         className="text-center  p-8 rounded-xl "
+//       >
+//         {/* Title */}
+//         <h2 className="text-2xl font-semibold mb-6 text-gray-900 inline-block">
+//           {affiliation.title}
+//         </h2>
+
+//         {/* Description */}
+//         <p className="text-gray-600 mb-6 leading-relaxed">
+//           {affiliation.description}
+//         </p>
+
+//         {/* List */}
+//         <ul className="list-none flex flex-col items-center space-y-3 mb-6">
+//           {affiliation.items.map((item, idx) => (
+//             <li key={idx} className="flex items-center space-x-2">
+//               <span className="text-orange-500 font-bold">•</span>
+//               <span className="text-gray-700 font-semibold">{item}</span>
+//             </li>
+//           ))}
+//         </ul>
+
+//         {/* Note */}
+//         <p className="text-gray-600 italic leading-relaxed">
+//           {affiliation.note}
+//         </p>
+//       </motion.div>

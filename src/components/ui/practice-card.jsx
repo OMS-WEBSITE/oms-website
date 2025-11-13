@@ -1,18 +1,20 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 
 const PracticeCard = ({
   title,
   description,
   icon,
   category,
-  difficulty = 'Intermediate',
+  difficulty = "Intermediate",
   timeEstimate,
   steps = /** @type {string[]} */ ([]),
   resources = /** @type {{ title: string, url: string }[]} */ ([]),
-  className = ""
+  className = "",
 }) => {
   return (
-    <div className={`bg-white rounded-xl shadow-md overflow-hidden ${className}`}>
+    <div
+      className={`bg-white rounded-xl shadow-md overflow-hidden ${className}`}
+    >
       <div className="p-6">
         <div className="flex items-center mb-4">
           <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mr-4">
@@ -33,10 +35,8 @@ const PracticeCard = ({
             </div>
           </div>
         </div>
-        
-        <p className="text-gray-600 mb-4">
-          {description}
-        </p>
+
+        <p className="text-gray-600 mb-4">{description}</p>
 
         {steps.length > 0 && (
           <div className="mb-4">
@@ -53,25 +53,24 @@ const PracticeCard = ({
             </ul>
           </div>
         )}
-
-        {resources.length > 0 && (
-          <div className="border-t border-gray-100 pt-4 mb-4">
-            <h4 className="font-medium text-gray-800 mb-2">Resources:</h4>
-            <ul className="space-y-1">
-              {resources.map((resource, index) => (
-                <li key={index}>
-                  <a href={resource.url} className="text-blue-600 hover:text-blue-700 text-sm">
-                    {resource.title}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
-
       </div>
     </div>
   );
 };
 
 export default PracticeCard;
+
+// {resources.length > 0 && (
+//           <div className="border-t border-gray-100 pt-4 mb-4">
+//             <h4 className="font-medium text-gray-800 mb-2">Resources:</h4>
+//             <ul className="space-y-1">
+//               {resources.map((resource, index) => (
+//                 <li key={index}>
+//                   <a href={resource.url} className="text-blue-600 hover:text-blue-700 text-sm">
+//                     {resource.title}
+//                   </a>
+//                 </li>
+//               ))}
+//             </ul>
+//           </div>
+//         )}

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const Solutions = () => {
@@ -268,6 +268,79 @@ const Solutions = () => {
       ),
     },
     {
+      id: "list-of-modules",
+      title: "List of Modules",
+      tagline: "Explore OMS’s testing, inspection, and process modules.",
+      content: (
+        <>
+          <p className="mt-4">
+            Currently, there are several test, inspection, and process modules
+            available in the OMS. Some of them are{" "}
+            <strong>
+              Intelligence Augmented Automatic Compliance Evaluator (IAACE)
+            </strong>{" "}
+            modules which use Standards and material properties to evaluate test
+            results - eliminating human errors in interpreting Standards
+            requirements. These modules have been used by laboratories for
+            years, witnessing over{" "}
+            <span className="text-orange-500 font-semibold">
+              a million hours of production testing
+            </span>{" "}
+            by real users (150+).
+          </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            ⚙️ Available Modules
+          </h4>
+          <ul className="list-disc list-inside space-y-2 mt-2">
+            <li>
+              <strong>NDT modules:</strong> VT, MT, PT, ET, UT, UTT, RT, and
+              more.
+            </li>
+            <li>
+              <strong>Mechanical testing:</strong> Tensile, Impact, and others.
+            </li>
+            <li>
+              <strong>Weld mechanical testing:</strong> VT, Macro, Bend,
+              Fracture, Transverse tension, Web-flange tension, Impact, Hardness
+              survey.
+            </li>
+            <li>
+              <strong>Inspection modules:</strong> VI, PVI, and more.
+            </li>
+            <li>
+              <strong>Pressure testing:</strong> Hydrostatic test.
+            </li>
+            <li>
+              <strong>Survey modules:</strong> Rail alignment, Pipe ovality
+              measurement, and more.
+            </li>
+            <li>
+              <strong>Process modules:</strong> Welding supervision and more.
+            </li>
+            <li>
+              <strong>Chemical testing:</strong> O.E.S Spectroscopy (Beta) and
+              others.
+            </li>
+            <li>
+              <strong>IAACE:</strong> Intelligence Augmented Automatic
+              Compliance Evaluator modules.
+            </li>
+          </ul>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            🧱 Structure of Modules
+          </h4>
+          <p>
+            The most common excuses for data losses in the industry are - tablet
+            broke down, battery drained, internet lost, or user forgot to save.
+            OMS modules are designed to handle such situations gracefully,
+            ensuring data integrity and uninterrupted operations.
+          </p>
+        </>
+      ),
+    },
+    {
       id: "Job Test Record Management",
       title: "Job Test Record Management",
       tagline:
@@ -295,7 +368,7 @@ const Solutions = () => {
           </p>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
             With a simple single click, a document can be viewed as a PDF, then
-            digitally signed and then emailed to the pre-loaded email ID..
+            digitally signed and then emailed to the pre-loaded email ID.
           </h4>
           <img
             src="/images/Solutions-Report-sign.jpg"
@@ -709,6 +782,30 @@ const Solutions = () => {
             associated with the logged-in user, ensuring accurate tracking and
             compliance.
           </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Personnel Schedule Calendar
+          </h4>
+          <p className="mt-2">
+            Stay organized and in control with the Personnel Schedule Calendar
+            in OMS-your smart solution for managing staff assignments,
+            availability, and workload. Designed for operational efficiency,
+            this module provides a complete visual overview of all personnel
+            schedules across projects, branches, and locations.
+          </p>
+          <p className="mt-2">
+            Assign jobs, plan shifts, and track team availability in real time
+            to avoid overlaps or gaps in scheduling. Whether you’re managing
+            field technicians, inspectors, or office teams, the calendar helps
+            you allocate resources efficiently and ensure every project runs
+            smoothly.
+          </p>
+          <p className="mt-2">
+            With color-coded views, instant updates, and role-based access, the
+            Personnel Schedule Calendar simplifies workforce management,
+            improves coordination, and enhances productivity-all from one
+            integrated platform.
+          </p>
         </>
       ),
     },
@@ -788,8 +885,8 @@ const Solutions = () => {
     },
     {
       id: "swms-jsa",
-      title: "Safe Work Method Statement (SWMS) / Job Safety Analysis (JSA)",
-      tagline: "Digitize and track SWMS/JSA with risk scoring and sign-offs.",
+      title: "Safe Work Method Statement (SWMS)",
+      tagline: "Digitize and track SWMS with risk scoring and sign-offs.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -968,6 +1065,24 @@ const Solutions = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("solutions");
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      // If "Solutions" is not visible, close any expanded section
+      if (!isVisible && expandedSection !== null) {
+        setExpandedSection(null);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [expandedSection]);
+
   return (
     <section
       id="solutions"
@@ -1018,30 +1133,32 @@ const Solutions = () => {
               {/* Accordion Content */}
               {expandedSection === index && (
                 <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-gray-700 text-sm sm:text-base leading-relaxed border-t border-gray-200">
-                  {React.Children.map(
-                    section.content.props.children,
-                    (child) => {
-                      if (!React.isValidElement(child)) return null;
+                  <div className="custom-scroll max-h-[500px] overflow-y-auto pr-2  rounded-lg">
+                    {React.Children.map(
+                      section.content.props.children,
+                      (child) => {
+                        if (!React.isValidElement(child)) return null;
 
-                      if (child.type === "p") {
-                        return <div className="mb-3">{child}</div>;
+                        if (child.type === "p") {
+                          return <div className="mb-3">{child}</div>;
+                        }
+                        if (child.type === "ul") {
+                          return <div className="my-3 sm:my-4">{child}</div>;
+                        }
+                        if (child.type === "img") {
+                          return (
+                            <div className="my-4 sm:my-5 flex justify-center">
+                              <img
+                                {...child.props}
+                                className="max-w-full h-auto rounded-lg"
+                              />
+                            </div>
+                          );
+                        }
+                        return child;
                       }
-                      if (child.type === "ul") {
-                        return <div className="my-3 sm:my-4">{child}</div>;
-                      }
-                      if (child.type === "img") {
-                        return (
-                          <div className="my-4 sm:my-5 flex justify-center">
-                            <img
-                              {...child.props}
-                              className="max-w-full h-auto rounded-lg"
-                            />
-                          </div>
-                        );
-                      }
-                      return child;
-                    }
-                  )}
+                    )}
+                  </div>
                 </div>
               )}
             </div>

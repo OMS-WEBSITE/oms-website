@@ -12,22 +12,25 @@ const CTASection = () => {
 
         {/* Description */}
         <p className="text-base sm:text-lg text-gray-700 mb-6 sm:mb-8">
-          Since 2015, over 4,000 organizations have used OMS Software to find
+          Since 2010, over 4,000 organizations have used OMS Software to find
           and win more audit opportunities, empowering them to expand their
           impact on critical missions such as evaluating Quality & Compliance
-	 measures,
-          ensuring data protection, and improving IT security standards.
+          measures, ensuring data protection, and improving IT security
+          standards.
         </p>
 
-        {/* Input + Button */}
+        {/* Button */}
         <div className="flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 max-w-xl mx-auto">
-          <input
-            type="email"
-            placeholder="Enter your work email address"
-            className="px-4 py-3 rounded-md border border-gray-300 flex-grow w-full sm:w-auto h-12 sm:h-12 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:border-orange-400"
-          />
-          <Button className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-3 w-full sm:w-auto h-12 sm:h-12">
-            Start your free trial
+          <Button
+            onClick={() =>
+              window.dispatchEvent(new CustomEvent("openQuickConnect"))
+            }
+            className="hover:cursor-pointer bg-gradient-to-r from-[#ea885e] to-[#fe781f] 
+                       hover:from-orange-500 hover:to-orange-600 text-white 
+                       py-3 px-6 rounded-md shadow-md hover:shadow-lg 
+                       transition-all duration-300 w-full sm:w-auto"
+          >
+            Request Demo
           </Button>
         </div>
       </div>

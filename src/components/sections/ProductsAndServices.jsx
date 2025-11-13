@@ -2,12 +2,13 @@ import { useState, useEffect } from "react";
 import { contentMap } from "../../data/ContentData";
 import { FiChevronDown, FiChevronRight } from "react-icons/fi";
 import { FaArrowLeft } from "react-icons/fa";
+import { useLanguage } from "@/context/LanguageContext"; // 1️⃣ import hook
 
 const ProductsAndService = () => {
   const navItems = [
     "Business Performance",
     "Accounting",
-    "Personnel",
+    "Personnel Management",
     "Supplier Management",
     "CRM",
     "System Configuration",
@@ -20,8 +21,10 @@ const ProductsAndService = () => {
   const [activeItem, setActiveItem] = useState(null);
   const [expandedSection, setExpandedSection] = useState(null);
   const [ignoreAutoClose, setIgnoreAutoClose] = useState(false);
-
+  const { language } = useLanguage();
   const sectionList = activeItem ? contentMap[activeItem]?.sections || [] : [];
+
+  console.log("Current Language in ProductsAndService:", language);
 
   // for search function
   useEffect(() => {
@@ -196,6 +199,22 @@ const ProductsAndService = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [ignoreAutoClose]);
 
+  const formatCurrency = (amount, locale) => {
+    const normalizedLocale = (locale || "en-US").toLowerCase();
+
+    let currency = "USD";
+    if (normalizedLocale.includes("in")) currency = "INR";
+    else if (normalizedLocale.includes("au")) currency = "AUD";
+
+    console.log("🟦 Locale:", locale, "→ Currency:", currency);
+
+    return new Intl.NumberFormat(locale || "en-US", {
+      style: "currency",
+      currency,
+      maximumFractionDigits: 0,
+    }).format(amount);
+  };
+
   return (
     <section id="productsandservice" className="min-h-screen bg-gray-50">
       {/* Header */}
@@ -286,11 +305,31 @@ const ProductsAndService = () => {
 
           <div className="text-gray-700 space-y-3 leading-relaxed">
             {sectionList[expandedSection]?.content.map((block, idx) => {
-              if (block.type === "paragraph")
-                return <p key={idx}>{block.text}</p>;
+              if (block.type === "paragraph") {
+                let formattedText = block.text;
+
+                // Regex catches all variations like:
+                // "$156,000", "≈ $156,000", "$64,000/annum", "$2.50", etc.
+                const currencyRegex = /\$([\d,.]+)/g;
+
+                formattedText = formattedText.replace(
+                  currencyRegex,
+                  (_, amountStr) => {
+                    const amount = parseFloat(amountStr.replace(/,/g, "")); // Handles decimals too
+                    return formatCurrency(amount, language || "en-US");
+                  }
+                );
+
+                return (
+                  <p key={idx} className="text-justify text-sm ml-6">
+                    {formattedText}
+                  </p>
+                );
+              }
+
               if (block.type === "list")
                 return (
-                  <ul key={idx} className="list-disc list-inside ml-4">
+                  <ul key={idx} className="list-disc text-sm list-inside ml-4">
                     {block.items.map((li, i) => (
                       <li key={i}>{li}</li>
                     ))}
@@ -446,9 +485,10 @@ const ProductsAndService = () => {
                         </button>
 
                         {/* Submini Content */}
-                        {expandedSection === `${mainIdx}-${secIdx}` && (
+                        {/* {expandedSection === `${mainIdx}-${secIdx}` && (
                           <div className="bg-white px-8 py-4 text-gray-700 space-y-3 leading-relaxed">
                             {section.content.map((block, i) => {
+                              
                               if (block.type === "subheading") {
                                 return (
                                   <h4
@@ -460,12 +500,32 @@ const ProductsAndService = () => {
                                 );
                               }
 
-                              if (block.type === "paragraph")
+                              if (block.type === "paragraph") {
+                                let formattedText = block.text;
+
+                                // Regex catches all variations like:
+                                // "$156,000", "≈ $156,000", "$64,000/annum", "$2.50", etc.
+                                const currencyRegex = /\$([\d,.]+)/g;
+
+                                formattedText = formattedText.replace(
+                                  currencyRegex,
+                                  (_, amountStr) => {
+                                    const amount = parseFloat(
+                                      amountStr.replace(/,/g, "")
+                                    ); // Handles decimals too
+                                    return formatCurrency(
+                                      amount,
+                                      language || "en-US"
+                                    );
+                                  }
+                                );
+
                                 return (
                                   <p key={i} className="text-justify ml-6">
-                                    {block.text}
+                                    {formattedText}
                                   </p>
                                 );
+                              }
 
                               if (block.type === "list")
                                 return (
@@ -495,6 +555,83 @@ const ProductsAndService = () => {
 
                               return null;
                             })}
+                          </div>
+                        )} */}
+                        {expandedSection === `${mainIdx}-${secIdx}` && (
+                          <div className="bg-white px-8 py-4 text-gray-700 leading-relaxed">
+                            {/* Scrollable wrapper */}
+                            <div className="custom-scroll max-h-[500px] overflow-y-auto pr-2 space-y-3 rounded-lg">
+                              {section.content.map((block, i) => {
+                                if (block.type === "subheading") {
+                                  return (
+                                    <h4
+                                      key={i}
+                                      className="text-lg font-semibold mt-6 mb-2 text-gray-800"
+                                    >
+                                      {block.text}
+                                    </h4>
+                                  );
+                                }
+
+                                if (block.type === "paragraph") {
+                                  let formattedText = block.text;
+
+                                  // Regex catches currency values like "$156,000", "$2.50", etc.
+                                  const currencyRegex = /\$([\d,.]+)/g;
+                                  formattedText = formattedText.replace(
+                                    currencyRegex,
+                                    (_, amountStr) => {
+                                      const amount = parseFloat(
+                                        amountStr.replace(/,/g, "")
+                                      );
+                                      return formatCurrency(
+                                        amount,
+                                        language || "en-US"
+                                      );
+                                    }
+                                  );
+
+                                  return (
+                                    <p key={i} className="text-justify ml-6">
+                                      {formattedText}
+                                    </p>
+                                  );
+                                }
+
+                                if (block.type === "list") {
+                                  return (
+                                    <ul
+                                      key={i}
+                                      className="list-disc list-inside ml-6"
+                                    >
+                                      {block.items.map((li, j) => (
+                                        <li key={j}>{li}</li>
+                                      ))}
+                                    </ul>
+                                  );
+                                }
+
+                                if (block.type === "images") {
+                                  return (
+                                    <div
+                                      key={i}
+                                      className="my-4 flex flex-col items-center gap-4"
+                                    >
+                                      {block.items.map((img, j) => (
+                                        <img
+                                          key={j}
+                                          src={img}
+                                          alt={`Image ${j + 1}`}
+                                          className="w-full max-w-3xl rounded-md shadow-md border border-gray-200"
+                                        />
+                                      ))}
+                                    </div>
+                                  );
+                                }
+
+                                return null;
+                              })}
+                            </div>
                           </div>
                         )}
                       </div>

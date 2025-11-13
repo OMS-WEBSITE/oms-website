@@ -1,0 +1,84 @@
+---
+import Layout from '../layouts/main.astro';
+import { Button } from '@/components/ui/button';
+
+// SEO metadata for the new feature page
+const seo = {
+  title: "OMS Software News & Updates | Achievements & Collaborations",
+  description: "Stay up-to-date with OMS Software's latest achievements, collaborations, and software updates enhancing efficiency and compliance.",
+  image: "/og-news-updates.png",
+  canonicalURL: Astro.site + Astro.url.pathname,
+};
+---
+
+<Layout {...seo}>
+
+  <main class="bg-white">
+
+    {/* Hero Section */}
+    <section class="bg-gradient-to-b from-indigo-50 to-white py-20">
+      <div class="container mx-auto max-w-7xl px-4 text-center">
+        <h1 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6">
+          📰 OMS Software: News & Updates
+        </h1>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Discover the latest achievements, collaborations, and milestones from OMS Software, helping labs and inspection companies work smarter.
+        </p>
+        <Button class="mt-6">Learn More</Button>
+      </div>
+    </section>
+
+    {/* Overview Section */}
+    <section class="py-16">
+      <div class="container mx-auto max-w-4xl px-4 prose prose-lg mx-auto">
+        <p>
+          Our “News & Updates” feature keeps clients and partners informed about new achievements, collaborations, software enhancements, and industry contributions. Each update highlights OMS Software’s commitment to innovation and quality.
+        </p>
+      </div>
+    </section>
+
+    {/* Updates/Announcements Section */}
+    <section class="py-16 bg-gray-50">
+      <div class="container mx-auto max-w-7xl px-4">
+        <h2 class="text-3xl font-bold text-gray-800 mb-12 text-center">🚀 Latest Achievements & Collaborations</h2>
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+          {/* Card 1 */}
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">🏆 Partnership with XYZ Labs</h3>
+            <p class="text-gray-700">
+              OMS Software partnered with XYZ Labs to streamline NDT reporting and compliance tracking, enhancing lab efficiency.
+            </p>
+          </div>
+
+          {/* Card 2 */}
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">💡 New Software Update</h3>
+            <p class="text-gray-700">
+              The latest release introduces automated report generation, real-time job tracking, and improved client portal features.
+            </p>
+          </div>
+
+          {/* Card 3 */}
+          <div class="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow">
+            <h3 class="text-xl font-bold mb-4">🤝 Collaboration with Welding Association</h3>
+            <p class="text-gray-700">
+              OMS Software joins forces with the National Welding Association to standardize procedures and certifications across labs.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    {/* Call-to-Action Section */}
+    <section class="py-16 text-center">
+      <div class="container mx-auto max-w-4xl px-4">
+        <h2 class="text-3xl font-bold text-gray-800 mb-6">Stay Updated with OMS Software</h2>
+        <Button>Subscribe to Updates</Button>
+      </div>
+    </section>
+
+  </main>
+
+</Layout>
