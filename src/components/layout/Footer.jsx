@@ -116,7 +116,13 @@ const Footer = () => {
     },
     {
       title: "Why OMS Software",
-      links: ["How We are Different", "Success Stories", "Testimonials", "FAQ"],
+      links: [
+        "How We are Different",
+        "Success Stories",
+        // "New Feature",
+        "Testimonials",
+        "FAQ",
+      ],
     },
     {
       title: "Resources",
@@ -161,7 +167,9 @@ const Footer = () => {
             {affiliation.items.map((item, idx) => (
               <li key={idx} className="flex items-center space-x-2">
                 <span className="text-orange-500 font-bold">•</span>
-                <span className="text-gray-700 text-sm font-semibold">{item}</span>
+                <span className="text-gray-700 text-sm font-semibold">
+                  {item}
+                </span>
               </li>
             ))}
           </ul>
@@ -228,7 +236,11 @@ const Footer = () => {
                 {section.links.map((item, i) => (
                   <li key={i}>
                     <a
-                      href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+                    //working one
+                      // href={`/${item.toLowerCase().replace(/\s+/g, "-")}`}
+
+                      // testing
+                      href={`/${item.toLowerCase().replace(/\s+/g, "-")}/`}
                       className="relative text-gray-600 hover:text-orange-500 transition-all duration-300 hover:pl-2 after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-[2px] after:bg-orange-500 hover:after:w-full after:transition-all"
                     >
                       {item}

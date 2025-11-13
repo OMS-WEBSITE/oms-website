@@ -485,7 +485,7 @@ const ProductsAndService = () => {
                         </button>
 
                         {/* Submini Content */}
-                        {expandedSection === `${mainIdx}-${secIdx}` && (
+                        {/* {expandedSection === `${mainIdx}-${secIdx}` && (
                           <div className="bg-white px-8 py-4 text-gray-700 space-y-3 leading-relaxed">
                             {section.content.map((block, i) => {
                               
@@ -555,6 +555,83 @@ const ProductsAndService = () => {
 
                               return null;
                             })}
+                          </div>
+                        )} */}
+                        {expandedSection === `${mainIdx}-${secIdx}` && (
+                          <div className="bg-white px-8 py-4 text-gray-700 leading-relaxed">
+                            {/* Scrollable wrapper */}
+                            <div className="custom-scroll max-h-[500px] overflow-y-auto pr-2 space-y-3 rounded-lg">
+                              {section.content.map((block, i) => {
+                                if (block.type === "subheading") {
+                                  return (
+                                    <h4
+                                      key={i}
+                                      className="text-lg font-semibold mt-6 mb-2 text-gray-800"
+                                    >
+                                      {block.text}
+                                    </h4>
+                                  );
+                                }
+
+                                if (block.type === "paragraph") {
+                                  let formattedText = block.text;
+
+                                  // Regex catches currency values like "$156,000", "$2.50", etc.
+                                  const currencyRegex = /\$([\d,.]+)/g;
+                                  formattedText = formattedText.replace(
+                                    currencyRegex,
+                                    (_, amountStr) => {
+                                      const amount = parseFloat(
+                                        amountStr.replace(/,/g, "")
+                                      );
+                                      return formatCurrency(
+                                        amount,
+                                        language || "en-US"
+                                      );
+                                    }
+                                  );
+
+                                  return (
+                                    <p key={i} className="text-justify ml-6">
+                                      {formattedText}
+                                    </p>
+                                  );
+                                }
+
+                                if (block.type === "list") {
+                                  return (
+                                    <ul
+                                      key={i}
+                                      className="list-disc list-inside ml-6"
+                                    >
+                                      {block.items.map((li, j) => (
+                                        <li key={j}>{li}</li>
+                                      ))}
+                                    </ul>
+                                  );
+                                }
+
+                                if (block.type === "images") {
+                                  return (
+                                    <div
+                                      key={i}
+                                      className="my-4 flex flex-col items-center gap-4"
+                                    >
+                                      {block.items.map((img, j) => (
+                                        <img
+                                          key={j}
+                                          src={img}
+                                          alt={`Image ${j + 1}`}
+                                          className="w-full max-w-3xl rounded-md shadow-md border border-gray-200"
+                                        />
+                                      ))}
+                                    </div>
+                                  );
+                                }
+
+                                return null;
+                              })}
+                            </div>
                           </div>
                         )}
                       </div>

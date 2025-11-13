@@ -169,7 +169,7 @@ const Support = () => {
         {/* Description */}
         <div className="max-w-3xl mx-auto space-y-6 sm:space-y-8">
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed px-2 sm:px-0">
-            24 × 7 email and remote support, plus optional on-site assistance
+            24×7 email and remote support, plus optional on-site assistance
             for audits and system training.
           </p>
           <p className="text-gray-700 text-sm sm:text-base leading-relaxed px-2 sm:px-0">

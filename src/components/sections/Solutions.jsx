@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FiChevronDown, FiChevronUp } from "react-icons/fi";
 
 const Solutions = () => {
@@ -368,7 +368,7 @@ const Solutions = () => {
           </p>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
             With a simple single click, a document can be viewed as a PDF, then
-            digitally signed and then emailed to the pre-loaded email ID..
+            digitally signed and then emailed to the pre-loaded email ID.
           </h4>
           <img
             src="/images/Solutions-Report-sign.jpg"
@@ -782,6 +782,30 @@ const Solutions = () => {
             associated with the logged-in user, ensuring accurate tracking and
             compliance.
           </p>
+
+          <h4 className="text-lg font-semibold text-orange-600 mt-6">
+            Personnel Schedule Calendar
+          </h4>
+          <p className="mt-2">
+            Stay organized and in control with the Personnel Schedule Calendar
+            in OMS-your smart solution for managing staff assignments,
+            availability, and workload. Designed for operational efficiency,
+            this module provides a complete visual overview of all personnel
+            schedules across projects, branches, and locations.
+          </p>
+          <p className="mt-2">
+            Assign jobs, plan shifts, and track team availability in real time
+            to avoid overlaps or gaps in scheduling. Whether you’re managing
+            field technicians, inspectors, or office teams, the calendar helps
+            you allocate resources efficiently and ensure every project runs
+            smoothly.
+          </p>
+          <p className="mt-2">
+            With color-coded views, instant updates, and role-based access, the
+            Personnel Schedule Calendar simplifies workforce management,
+            improves coordination, and enhances productivity-all from one
+            integrated platform.
+          </p>
         </>
       ),
     },
@@ -861,8 +885,8 @@ const Solutions = () => {
     },
     {
       id: "swms-jsa",
-      title: "Safe Work Method Statement (SWMS) / Job Safety Analysis (JSA)",
-      tagline: "Digitize and track SWMS/JSA with risk scoring and sign-offs.",
+      title: "Safe Work Method Statement (SWMS)",
+      tagline: "Digitize and track SWMS with risk scoring and sign-offs.",
       content: (
         <>
           <h4 className="text-lg font-semibold text-orange-600 mt-6">
@@ -1041,6 +1065,24 @@ const Solutions = () => {
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      const section = document.getElementById("solutions");
+      if (!section) return;
+
+      const rect = section.getBoundingClientRect();
+      const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+      // If "Solutions" is not visible, close any expanded section
+      if (!isVisible && expandedSection !== null) {
+        setExpandedSection(null);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [expandedSection]);
+
   return (
     <section
       id="solutions"
@@ -1091,30 +1133,32 @@ const Solutions = () => {
               {/* Accordion Content */}
               {expandedSection === index && (
                 <div className="px-4 sm:px-6 pb-4 sm:pb-5 text-gray-700 text-sm sm:text-base leading-relaxed border-t border-gray-200">
-                  {React.Children.map(
-                    section.content.props.children,
-                    (child) => {
-                      if (!React.isValidElement(child)) return null;
+                  <div className="custom-scroll max-h-[500px] overflow-y-auto pr-2  rounded-lg">
+                    {React.Children.map(
+                      section.content.props.children,
+                      (child) => {
+                        if (!React.isValidElement(child)) return null;
 
-                      if (child.type === "p") {
-                        return <div className="mb-3">{child}</div>;
+                        if (child.type === "p") {
+                          return <div className="mb-3">{child}</div>;
+                        }
+                        if (child.type === "ul") {
+                          return <div className="my-3 sm:my-4">{child}</div>;
+                        }
+                        if (child.type === "img") {
+                          return (
+                            <div className="my-4 sm:my-5 flex justify-center">
+                              <img
+                                {...child.props}
+                                className="max-w-full h-auto rounded-lg"
+                              />
+                            </div>
+                          );
+                        }
+                        return child;
                       }
-                      if (child.type === "ul") {
-                        return <div className="my-3 sm:my-4">{child}</div>;
-                      }
-                      if (child.type === "img") {
-                        return (
-                          <div className="my-4 sm:my-5 flex justify-center">
-                            <img
-                              {...child.props}
-                              className="max-w-full h-auto rounded-lg"
-                            />
-                          </div>
-                        );
-                      }
-                      return child;
-                    }
-                  )}
+                    )}
+                  </div>
                 </div>
               )}
             </div>

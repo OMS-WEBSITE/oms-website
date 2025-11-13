@@ -14,7 +14,14 @@
   [functions.format]
     type = "esm"
 
+# Redirect /api/* to Netlify Functions
 [[redirects]]
   from = "/api/*"
   to = "/.netlify/functions/:splat"
+  status = 200
+
+# Redirect all other routes to index.html for SPA routing
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
   status = 200

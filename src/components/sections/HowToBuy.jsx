@@ -30,11 +30,13 @@ const HowToBuy = () => {
       icon: <FaFileContract className="text-orange-500 text-4xl mb-4" />,
       title: "Receive proposal and subscription plan",
       text: "Get a tailored plan and quotation based on your requirements.",
+      isDemoStep: true,
     },
     {
       icon: <FaDatabase className="text-orange-500 text-4xl mb-4" />,
       title: "Onboard your lab data",
       text: "Migrate and configure your existing lab data securely.",
+      isDemoStep: true,
     },
   ];
 
@@ -106,13 +108,14 @@ const HowToBuy = () => {
         </div>
 
         {/* Final Step */}
-        <motion.div
+         <motion.div
           variants={fadeUp}
           initial="hidden"
           whileInView="visible"
           transition={{ delay: 0.1, duration: 0.6 }}
           whileHover={{ scale: 1.05 }}
-          className="mt-10 sm:mt-12 flex flex-col items-center text-center bg-orange-50 border border-orange-200 p-6 sm:p-8 rounded-2xl shadow-md "
+          onClick={handleDemoClick} // 👈 Added click event here
+          className="mt-10 sm:mt-12 flex flex-col items-center text-center bg-orange-50 border border-orange-200 p-6 sm:p-8 rounded-2xl shadow-md cursor-pointer hover:shadow-lg transition-transform duration-200 ease-out"
         >
           <motion.div
             whileHover={{ rotate: 10 }}

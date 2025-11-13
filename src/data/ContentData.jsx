@@ -1086,8 +1086,28 @@ export const contentMap = {
         heading: "Supplier",
         content: [
           {
+            type: "list",
+            items: ["Supplier Page, Smart, Centralized Supplier Management."],
+          },
+          {
             type: "paragraph",
-            text: " Maintain accurate profiles for each supplier, including contacts, terms, and compliance details.",
+            text: "Experience the power of seamless supplier management with the Supplier Page in OMS software-your one-stop solution for organizing and controlling all vendor-related information. Designed for efficiency and transparency, our Supplier module enables you to add, view, edit, and track supplier records effortlessly. Manage every detail, from company information, multiple addresses, and key contact persons to purchase order history and approval status, all from a single, intuitive dashboard.",
+          },
+          {
+            type: "paragraph",
+            text: "With real-time tracking, visual indicators, and quick action buttons, you’ll gain complete visibility and instant access to critical supplier data. Whether you’re onboarding new vendors or maintaining long-term partnerships, OMS empowers your team to make faster, smarter decisions. Simplify your workflow, improve accuracy, and ensure smooth collaboration across all operations-because managing your suppliers should be as efficient as your business.",
+          },
+          {
+            type: "paragraph",
+            text: "The Supplier Reassessment feature ensures that vendor approvals remain current and compliant with internal and international quality standards. Upcoming reassessment dates and alerts help your team proactively review supplier performance, documentation, and certifications-maintaining reliability, transparency, and continuous quality improvement.",
+          },
+          {
+            type: "paragraph",
+            text: "Simplify your workflow, improve accuracy, and ensure smooth collaboration across all operations-because managing your suppliers should be as efficient as your business.",
+          },
+          {
+            type: "images",
+            items: ["/images/supplier-first.jpg"],
           },
         ],
       },
@@ -1095,17 +1115,61 @@ export const contentMap = {
         heading: "Purchase Orders",
         content: [
           {
+            type: "list",
+            items: [
+              "Purchase Order Page – Simplify and Streamline Your Procurement Process.",
+            ],
+          },
+          {
             type: "paragraph",
-            text: "Create, approve, and track POs against jobs, projects, or cost centres.",
+            text: "The Purchase Order (PO) page in OMS software revolutionizes the way organizations handle procurement. Designed for speed, accuracy, and control, it allows users to create, approve, and track purchase orders digitally-eliminating paperwork and reducing manual errors. With every transaction captured in real time, the system ensures complete transparency and accountability across your purchasing operations.",
+          },
+          {
+            type: "paragraph",
+            text: "From the intuitive Purchase Order List, users can search, filter, and create new POs effortlessly. Each PO provides a detailed view where you can add or edit purchase lines, define item details, costs, and taxes, and verify totals before approval. Once approved, the PO can be instantly shared with suppliers or downloaded for record-keeping, ensuring a seamless end-to-end procurement experience.",
+          },
+          {
+            type: "paragraph",
+            text: "Empower your team to manage purchasing with confidence-OMS makes buying smarter, faster, and more efficient, all through one centralized digital platform.",
+          },
+          {
+            type: "images",
+            items: ["/images/Purchase-Order.jpg"],
           },
         ],
       },
       {
-        heading: "Upload Bills",
+        heading: "Bills",
         content: [
           {
+            type: "list",
+            items: [
+              "Bills Management Module, Smarter, Faster, and More Transparent Billing",
+            ],
+          },
+          {
             type: "paragraph",
-            text: "Upload supplier bills, attach them to POs, and reconcile quantities and values.",
+            text: "Experience next-level efficiency in supplier billing with the Bills Management Module in OMS software-your all-in-one solution for effortless bill creation, approval, and tracking. Designed to simplify complex financial workflows, this powerful module brings accuracy, transparency, and control to every stage of the billing process.",
+          },
+          {
+            type: "paragraph",
+            text: "Easily create new bills, link them directly to suppliers and purchase orders, and capture key details-like invoice numbers, dates, and branch information-in seconds. With built-in fields for Expense Codes, Tax Types, Job Numbers, and Cost Details, OMS ensures that every transaction is precise and compliant. The system’s automated calculations for Subtotal, GST, and Total Price eliminate manual errors, helping you process payments faster and smarter.",
+          },
+          {
+            type: "paragraph",
+            text: "Enjoy a seamless workflow with automated approval actions-such as Approve, Update, and Cancel-while maintaining full visibility into who created, modified, and approved each bill. The intuitive dashboard provides instant access to all bills, displaying Supplier, Bill Number, Payable Date, Amount, Credit Balance, PO Number, Branch, and Status, along with quick tools to search, refresh, and send approval notifications.",
+          },
+           {
+            type: "paragraph",
+            text: "The Bills Management Module also ensures transparency, accountability, and full traceability of all financial transactions related to procurement and supplier payments. It allows you to systematically record bill payments, maintain payment histories, and track bill export file logs-ensuring complete visibility and audit readiness throughout the billing lifecycle.",
+          },
+          {
+            type: "paragraph",
+            text: "Whether you’re managing dozens or thousands of invoices, OMS empowers your finance team to save time, reduce manual effort, and achieve complete financial transparency-all from one intelligent, integrated platform.",
+          },
+          {
+            type: "images",
+            items: ["/images/Upload-Bills.jpg"],
           },
         ],
       },
@@ -1132,23 +1196,11 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "Many SMEs either do not have a CRM program or if they have it, it is fragmented and not integrated with their operations and job management programs or accounting packages, or if connected, there is a need for management to visit the CRM to find performance of marketing or business development activities.",
+            text: "Our OMS Lead Management system is designed to streamline your sales process and enhance lead tracking with precision. With powerful features such as filtering leads by Company Name, Contact Name, and Client Relationship Manager, you can quickly access the most relevant information and stay organized. Lead Status options (Active/Inactive) ensure you can prioritize high-potential leads, while the Combined Weightage score helps assess the value of each lead, focusing your team on the most promising opportunities. By integrating Target Services, Notes, and Contact Details, the system keeps all lead-related information in one place, enabling better collaboration and more informed decision-making. Whether you're generating a quote or updating lead details, OMS empowers your team to act swiftly and efficiently. Maximize your sales potential, stay ahead of the competition, and convert more leads into loyal customers with the OMS Lead Management system.",
           },
           {
-            type: "paragraph",
-            text: "OMS is designed to save time for business owners, directors and managers. Hence, instead of a person wasting their time to open the CRM program, then login, then search for the required business performance reports for a date period, OMS emails monthly reports automatically to the nominated staff of the company. This saves time for multiple employees of the company for accessing the same information.",
-          },
-          {
-            type: "paragraph",
-            text: "Some businesses either have no process in place to manage or prioritise their leads, or some of the fragmented CRM programs do not have adequate configurable tools to filter or prioritise leads. In the OMS, a user can create ranking by creating a list of parameters and its own weighing criteria. OMS can then use these weighting parameters to calculate highest ranking lead and display to the marketing/business development staff in the order of priority. Without prioritising leads, a company may lose opportunity if not acted in a timely manner.",
-          },
-          {
-            type: "paragraph",
-            text: "Most importantly, the BRM / CRM list is secured within the OMS. Except SuperUser login (Generally Directors or their delegates), other users cannot readily download the CRM data and move to another business.",
-          },
-          {
-            type: "paragraph",
-            text: "For further information on this feature, contact us for an obligation free demonstration.",
+            type: "images",
+            items: ["/images/Leads.jpg"],
           },
         ],
       },
@@ -1183,6 +1235,22 @@ export const contentMap = {
           {
             type: "paragraph",
             text: "Turn enquiries into revenue with a structured quotation process. Quotation Management helps you standardise pricing, respond faster, and maintain a clear history of every proposal.",
+          },
+          {
+            type: "paragraph",
+            text: "Never miss a potential lead again. The Non-Verified Enquiries section in OMS captures and organizes every incoming request-even incomplete or unverified submissions-ensuring your team has full visibility into all opportunities.",
+          },
+          {
+            type: "paragraph",
+            text: "Quickly validate, categorize, and convert enquiries into verified leads or fee proposals, maintaining a clean and traceable sales pipeline. Built-in alerts and status tracking make it easy to follow up promptly, maximize conversions, and sustain strong client engagement.",
+          },
+          {
+            type: "paragraph",
+            text: "Empower your clients to initiate quotes directly through your website using the integrated “Request for Quotation” form. Once submitted, data flows seamlessly into OMS, allowing your team to review, customize, and approve proposals-without any manual entry.",
+          },
+          {
+            type: "paragraph",
+            text: "Stay proactive, responsive, and connected-OMS turns every enquiry into an opportunity for growth.",
           },
           {
             type: "list",
@@ -1939,7 +2007,7 @@ export const contentMap = {
           },
           {
             type: "paragraph",
-            text: "The JSA Menu allows users to create additional Job Safety Analyses as needed. It ensures that safety assessments are well-documented and easily accessible, supporting a safer and more organized work environment",
+            text: "The JSA Menu allows users to create additional Job Safety Analyses as needed. It ensures that all safety assessments are well-documented and easily accessible, promoting a safer and more organized work environment.",
           },
         ],
       },
